@@ -1,0 +1,271 @@
+
+<!DOCTYPE html>
+<html lang="zh-CN" class="loading">
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>css中的flex布局 - ly-blog</title>
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="google" content="notranslate" />
+    <meta name="keywords" content="Fechin,"> 
+    <meta name="description" content="一个超级懒虫的博客,弹性盒布局：flex弹性盒基础使用弹性盒后内容呈现顺序不再受到源码顺序的限制
+声明display:flex或display:inline-flex即可激活弹性盒布局，然后该元素被称为弹性容器，其子元,"> 
+    <meta name="author" content="Lazy-ly"> 
+    <link rel="alternative" href="atom.xml" title="ly-blog" type="application/atom+xml"> 
+    <link rel="icon" href="/img/favicon.jpg"> 
+    
+    
+    
+    <meta name="twitter:card" content="summary"/>
+    <meta name="twitter:title" content="css中的flex布局 - ly-blog"/>
+    <meta name="twitter:description" content="一个超级懒虫的博客,弹性盒布局：flex弹性盒基础使用弹性盒后内容呈现顺序不再受到源码顺序的限制
+声明display:flex或display:inline-flex即可激活弹性盒布局，然后该元素被称为弹性容器，其子元,"/>
+    
+    
+    
+    
+    <meta property="og:site_name" content="ly-blog"/>
+    <meta property="og:type" content="object"/>
+    <meta property="og:title" content="css中的flex布局 - ly-blog"/>
+    <meta property="og:description" content="一个超级懒虫的博客,弹性盒布局：flex弹性盒基础使用弹性盒后内容呈现顺序不再受到源码顺序的限制
+声明display:flex或display:inline-flex即可激活弹性盒布局，然后该元素被称为弹性容器，其子元,"/>
+    
+<link rel="stylesheet" href="/css/diaspora.css">
+
+    <script>window.searchDbPath = "/search.xml";</script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Source+Code+Pro&display=swap" rel="stylesheet">
+<meta name="generator" content="Hexo 6.2.0"></head>
+
+<body class="loading">
+    <span id="config-title" style="display:none">ly-blog</span>
+    <div id="loader"></div>
+    <div id="single">
+    <div id="top" style="display: block;">
+    <div class="bar" style="width: 0;"></div>
+    <a class="iconfont icon-home image-icon" href="javascript:;" data-url="http://example.com"></a>
+    <div title="播放/暂停" class="iconfont icon-play"></div>
+    <h3 class="subtitle">css中的flex布局</h3>
+    <div class="social">
+        <div>
+            <div class="share">
+                <a title="获取二维码" class="iconfont icon-scan" href="javascript:;"></a>
+            </div>
+            <div id="qr"></div>
+        </div>
+    </div>
+    <div class="scrollbar"></div>
+</div>
+
+    <div class="section">
+        <div class="article">
+    <div class='main'>
+        <h1 class="title">css中的flex布局</h1>
+        <div class="stuff">
+            <span>八月 03, 2022</span>
+            
+  <ul class="post-tags-list" itemprop="keywords"><li class="post-tags-list-item"><a class="post-tags-list-link" href="/tags/css/" rel="tag">css</a></li></ul>
+
+
+        </div>
+        <div class="content markdown">
+            <h1 id="弹性盒布局：flex"><a href="#弹性盒布局：flex" class="headerlink" title="弹性盒布局：flex"></a>弹性盒布局：flex</h1><h3 id="弹性盒基础"><a href="#弹性盒基础" class="headerlink" title="弹性盒基础"></a>弹性盒基础</h3><p>使用弹性盒后内容呈现顺序不再受到源码顺序的限制</p>
+<p>声明<code>display:flex</code>或<code>display:inline-flex</code>即可激活弹性盒布局，然后该元素被称为弹性容器，其子元素被成为弹性元素</p>
+<p>两种的区别是前者生成一个块级框，子元素在其中布局</p>
+<p>后者生成一个行内级框，子元素在其中布局</p>
+<p>把一个元素设为弹性容器后，只有直接子元素使用弹性盒布局</p>
+<h3 id="flex-direction属性"><a href="#flex-direction属性" class="headerlink" title="flex-direction属性"></a>flex-direction属性</h3><p>设置布局的方向，指定在弹性容器中如何摆放弹性元素</p>
+<p>可使用：</p>
+<p><code>row</code>:横向</p>
+<p><code>row-reverse</code>:横向相反</p>
+<p><code>column</code>:竖向</p>
+<p><code>column-reverse</code>:竖向相反</p>
+<p>如果改变了书写模式，例如规定书写模式是竖向书写（如从上向下），则row表示从上到下</p>
+<p>column表示从右向左</p>
+<h3 id="换行"><a href="#换行" class="headerlink" title="换行"></a>换行</h3><p>默认情况下元素不会换行，有可能从容器框的边界溢出</p>
+<p>设置flex-wrap属性允许弹性元素换行</p>
+<p><code>flex-wrap:nowrap/wrap/wrap-reverse</code>(默认<code>nowrap</code>)</p>
+<p>默认情况下：无论多少元素都在一行显示</p>
+<p>warp：超出的部分换行到之后</p>
+<p>wrap-reverse:超出部分换行到之前</p>
+<h3 id="定义弹性流"><a href="#定义弹性流" class="headerlink" title="定义弹性流"></a>定义弹性流</h3><p>flex-flow：确定主轴和垂轴方向，以及元素是否换行</p>
+<p><code>flex-flow:&lt;flex-direction&gt; &lt;flex-wrap&gt;</code></p>
+<p>弹性元素沿主轴排列，沿垂轴添加（如果换行的话）</p>
+<p>主轴一定和垂轴垂直</p>
+<h3 id="调整内容"><a href="#调整内容" class="headerlink" title="调整内容"></a>调整内容</h3><p><code>justify-content</code>属性指明在弹性容器的主轴上如何分布各行里的弹性元素</p>
+<p>应用于弹性容器上而不是弹性元素上</p>
+<p><code>justify-content:flex-start/flex-end/center/space-between/space-around/space-evenly</code></p>
+<p>默认flex-start</p>
+<p><code>flex-start</code>:元素沿主轴起边排列</p>
+<p><code>flex-end</code>:元素沿主轴终边排列</p>
+<p><code>center</code>:元素视为一个整体排列在主轴中央</p>
+<p><code>space-between</code>:把第一个元素放在主轴起边，最后一个元素放在主轴终边，中间的元素等间距排列</p>
+<p><code>space-around</code>:让元素左边和右边分出等同的距离（第一个元素距离主轴起边的距离会是每两个元素之间距离的一半）</p>
+<p><code>space-evenly</code>:与space-around类似但第一个元素距离主轴起边的距离与每两个元素之间距离相等</p>
+<p>justify-content还会影响元素的溢出方式</p>
+<h3 id="对齐元素"><a href="#对齐元素" class="headerlink" title="对齐元素"></a>对齐元素</h3><p>justify-content定义主轴方向的对齐方式，而align-items定义垂轴方向的对齐方式</p>
+<p>align-items同样应用于容器上</p>
+<p><code>align-items:flex-start/flex-end/center/baseline/stretch</code></p>
+<p>初始值：stretch</p>
+<p>stretch:可拉伸：即所有可拉伸的弹性元素将与所在行最高或最宽的弹性元素一样高或一样宽</p>
+<p>如果显示设置了元素的垂轴方向尺寸，元素将不可拉伸</p>
+<p>拉伸后的元素尺寸包含外边距的长度</p>
+<p>弹性元素行的高或宽是正好能够放下弹性元素的尺寸</p>
+<p>baseline：基线对齐，基线是文本第一行文字的底部，受到字号影响</p>
+<h3 id="align-self"><a href="#align-self" class="headerlink" title="align-self"></a>align-self</h3><p>align-self设置的值会覆盖align-items的值</p>
+<p>取值与align-item相同</p>
+<h3 id="对齐内容"><a href="#对齐内容" class="headerlink" title="对齐内容"></a>对齐内容</h3><p>align-content属性指定弹性容器中垂轴方向上的额外空间如何分配到弹性元素行之间和周围</p>
+<p>取值与align-items相同</p>
+<p>如果只有一行，align-content对内容没有影响</p>
+<h3 id="弹性元素"><a href="#弹性元素" class="headerlink" title="弹性元素"></a>弹性元素</h3><p>float和clear对弹性元素不起作用</p>
+<p>变成弹性元素后，只要没有绝对定位，就是块级的</p>
+<p>没有被标签包裹的文本是匿名弹性元素，不能直接选择，只能从弹性容器上继承样式</p>
+<p>绝对定位的弹性元素不再参与弹性布局，它们不在文档流中，但会受到弹性容器的样式影响，先确定在弹性容器中的位置再进行position</p>
+<p>弹性元素的min-width默认为auto，如果不想溢出可以设置为0，元素会被压缩</p>
+<h3 id="flex属性"><a href="#flex属性" class="headerlink" title="flex属性"></a>flex属性</h3><p>flex属性是flex-grow，flex-shrink和flex-basis的简写形式（弹性增长因子，弹性缩减因子和弹性基准）</p>
+<p>默认值是0，1，auto</p>
+<p>flex属性指定确定弹性长度的各要素，弹性元素所在的框体尺寸由flex决定</p>
+<p>弹性基准指明如何应用弹性增长因子和弹性缩减因子</p>
+<h4 id="flex-grow"><a href="#flex-grow" class="headerlink" title="flex-grow"></a>flex-grow</h4><p>定义有多余空间时是否允许弹性元素增大，以及有多余空间时，相对于同辈弹性元素会以什么比例增大</p>
+<p><strong>不鼓励通过flex-grow定义增长因子，只建议在flex简写中指定增长因子</strong></p>
+<p>flex-grow的值始终是正数，小于零无效</p>
+<p>flex-grow的值用于计算比例，若只有一个元素设置了flex-grow，则剩余的所有空间都被它占有，若有多个元素设置了，则会通过设置值之间的比例确定各自所占剩余空间的比例</p>
+<p>如果flex属性没有设定增长因子和缩减因子，flex-grow默认为1，如果flex和flex-grow都没有被声明出来，默认为0</p>
+<p>使用flex声明flex-grow属性和单独使用flex-grow声明的区别：</p>
+<p>flex声明将把所有空间按比例分配，而flex-grow声明只会将余下空间按比例分配</p>
+<h4 id="flex-shrink"><a href="#flex-shrink" class="headerlink" title="flex-shrink"></a>flex-shrink</h4><p><strong>同样只建议在flex简写属性中声明</strong></p>
+<p>弹性缩减因子定义空间不足以放下所有弹性元素时，当前元素相对于其他同辈弹性元素将缩小多少</p>
+<p>缩减因子默认为1</p>
+<p>计算方法与grow类似：</p>
+<p>如果设置shrink为1，1，3，长度均为300，容纳器长度为750</p>
+<p>那么元素将分别缩小：30，30，90</p>
+<p>如果弹性元素中的内容将要超出容器大小，且不能换行和缩小，弹性元素将无法缩小</p>
+<p>缩减因子为任何正数都会导致内容换行，换行次数和缩减因子比例差不多</p>
+<h4 id="flex-basis"><a href="#flex-basis" class="headerlink" title="flex-basis"></a>flex-basis</h4><p>定义弹性元素的初始或默认尺寸，即根据增长因子或缩减因子分配空间前，弹性元素的大小</p>
+<p>如果提前声明了width和height，值为width和height，如果没声明，值为content</p>
+<h5 id="content"><a href="#content" class="headerlink" title="content"></a>content</h5><p>在支持的环境中，使用content的basis值为弹性元素中内容的尺寸，即最长一行内容或最宽的媒体对象在主轴上的长度</p>
+<p>弹性基准会覆盖元素的width和height，但不会忽略mid-width和mid-height</p>
+<h5 id="auto与0"><a href="#auto与0" class="headerlink" title="auto与0"></a>auto与0</h5><p>auto下会根据grow或shrink决定<strong>剩下</strong>的区域的划分</p>
+<p>0决定<strong>所有</strong>区域的划分</p>
+<h3 id="flex简写模式"><a href="#flex简写模式" class="headerlink" title="flex简写模式"></a>flex简写模式</h3><p>如果只给flex一个值(数字)，实际上声明的是flex-grow</p>
+<p><code>flex: initial</code>&#x3D;<code>flex:0 1 auto</code></p>
+<p><code>flex:auto</code>&#x3D;<code>flex:1 1 auto</code></p>
+<p><code>flex:none</code>&#x3D;<code>flex:0 0 auto</code></p>
+<p><code>flex:1</code>&#x3D;<code>flex:1,0,auto</code></p>
+<h3 id="order属性"><a href="#order属性" class="headerlink" title="order属性"></a>order属性</h3><p>order属性可以改变元素的出现顺序，但读取代码的顺序是不变的</p>
+<p>默认值是0，负数会先出现，正数会后出现</p>
+<h3 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h3><p>弹性盒布局的效果用float也可以实现，但比float方便得多。</p>
+
+            <!--[if lt IE 9]><script>document.createElement('audio');</script><![endif]-->
+            <audio id="audio" loop="1" preload="auto" controls="controls" data-autoplay="false">
+                <source type="audio/mpeg" src="">
+            </audio>
+            
+                <ul id="audio-list" style="display:none">
+                    
+                        
+                            <li title="0" data-url="http://link.hhtjim.com/163/425570952.mp3"></li>
+                        
+                    
+                        
+                            <li title="1" data-url="http://link.hhtjim.com/163/425570952.mp3"></li>
+                        
+                    
+                </ul>
+            
+        </div>
+        
+        
+    <div id="gitalk-container" class="comment link"
+		data-enable="false"
+        data-ae="false"
+        data-ci=""
+        data-cs=""
+        data-r=""
+        data-o=""
+        data-a=""
+        data-d="false"
+    >查看评论</div>
+
+
+    </div>
+    
+</div>
+
+
+    </div>
+</div>
+</body>
+
+
+<script src="//lib.baomitu.com/jquery/1.8.3/jquery.min.js"></script>
+<script src="/js/plugin.js"></script>
+<script src="/js/typed.js"></script>
+<script src="/js/diaspora.js"></script>
+
+
+<link rel="stylesheet" href="/photoswipe/photoswipe.css">
+<link rel="stylesheet" href="/photoswipe/default-skin/default-skin.css">
+
+
+<script src="/photoswipe/photoswipe.min.js"></script>
+<script src="/photoswipe/photoswipe-ui-default.min.js"></script>
+
+
+<!-- Root element of PhotoSwipe. Must have class pswp. -->
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+    <!-- Background of PhotoSwipe. 
+         It's a separate element as animating opacity is faster than rgba(). -->
+    <div class="pswp__bg"></div>
+    <!-- Slides wrapper with overflow:hidden. -->
+    <div class="pswp__scroll-wrap">
+        <!-- Container that holds slides. 
+            PhotoSwipe keeps only 3 of them in the DOM to save memory.
+            Don't modify these 3 pswp__item elements, data is added later on. -->
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+        <!-- Default (PhotoSwipeUI_Default) interface on top of sliding area. Can be changed. -->
+        <div class="pswp__ui pswp__ui--hidden">
+            <div class="pswp__top-bar">
+                <!--  Controls are self-explanatory. Order can be changed. -->
+                <div class="pswp__counter"></div>
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+                <button class="pswp__button pswp__button--share" title="Share"></button>
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+                <!-- Preloader demo http://codepen.io/dimsemenov/pen/yyBWoR -->
+                <!-- element will get class pswp__preloader--active when preloader is running -->
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                      <div class="pswp__preloader__cut">
+                        <div class="pswp__preloader__donut"></div>
+                      </div>
+                    </div>
+                </div>
+            </div>
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div> 
+            </div>
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+</html>

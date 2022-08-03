@@ -402,13 +402,411 @@
   <entry>
     <title>Welcome to my BLOG!</title>
     <url>/2022/08/03/hello-world/</url>
-    <content><![CDATA[<p>欢迎来到我的博客</p>
+    <content><![CDATA[<p>欢迎来到我的博客<br>我会在这里记录自己的学习，生活<br>谢谢你的到来！！</p>
 ]]></content>
       <categories>
         <category>欢迎</category>
       </categories>
       <tags>
         <tag>日常</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>css动画</title>
+    <url>/2022/08/03/%E5%8A%A8%E7%94%BB/</url>
+    <content><![CDATA[<h1 id="动画"><a href="#动画" class="headerlink" title="动画"></a>动画</h1><h2 id="定义关键帧"><a href="#定义关键帧" class="headerlink" title="定义关键帧"></a>定义关键帧</h2><p>一个<code>@keyframes</code>规则有一个动画标识符（动画名称），以及一到多个关键帧块。</p>
+<p>每个关键帧块有一到多个关键帧选择符（百分数或from&#x2F;to），声明属性及其值</p>
+<p>关键帧没有指明动画的持续时间，在选择符中使用时间会使动画失效</p>
+<p>0必须写成0%</p>
+<p>选择符无需按照升序排序，但为了方便辨识建议从0%到100%</p>
+<p>如果没有定义0%和100%的状态，默认到初始状态</p>
+<p>如果定义了重复的关键帧选择符，那么会进行层叠（覆盖）</p>
+<h2 id="把动画应用到元素上"><a href="#把动画应用到元素上" class="headerlink" title="把动画应用到元素上"></a>把动画应用到元素上</h2><p><code>animation-name</code>属性的值为一个逗号分隔的列表，指定想应用的关键帧动画的名称</p>
+<p>如果列表中有标识符不存在，则会单个失效而不会全体失效</p>
+<h3 id="定义时长"><a href="#定义时长" class="headerlink" title="定义时长"></a>定义时长</h3><p><code>animation-duration</code>用于定义动画时长，单位为秒或毫秒</p>
+<p>必须带单位，且可以用逗号分隔来定义不同动画</p>
+<p>如果时间比动画数少，那么缺少的值将成组复制</p>
+<p>如果时间比动画数多或定义不存在的动画，动画和对应的时间都会被忽略</p>
+<h3 id="声明迭代次数"><a href="#声明迭代次数" class="headerlink" title="声明迭代次数"></a>声明迭代次数</h3><p><code>animation-iteration-count</code>声明迭代次数</p>
+<p>初始值为1，即动画只播放一次</p>
+<p>如果值不是整数，动画会在最后一次迭代的中途停止</p>
+<p>不允许设置负值，无效值会变成1</p>
+<p>0是有效值，但动画迭代0次，仍会触发开始和结束事件</p>
+<p>多出的值忽略，缺少的值根据现有的值重复</p>
+<p>无效的值会使整个声明失效，受影响的动画只会播放一次</p>
+<p>值为infinite无限次迭代播放</p>
+<h3 id="设置播放方向"><a href="#设置播放方向" class="headerlink" title="设置播放方向"></a>设置播放方向</h3><p><code>animation-direction</code>属性可以控制动画播放的方向（从0%到100%还是从100%到0%）</p>
+<p><code>animation-direction:normal/reverse/alternate/alternate-reverse</code></p>
+<p>初始值：normal:动画每次都从0%到100%播放</p>
+<p><code>reverse</code>:每次迭代都从100%到0%播放</p>
+<p><code>alternate</code>:奇数次迭代从0%到100%，偶数次迭代从100%到0%</p>
+<p><code>alternate-reverse</code>:奇数次迭代从100%到0%，偶数次迭代从0%到100%</p>
+<h3 id="延迟播放"><a href="#延迟播放" class="headerlink" title="延迟播放"></a>延迟播放</h3><p><code>animation-delay</code>属性定义元素等待多久开始第一次迭代</p>
+<p>单位为秒或毫秒</p>
+<p>如果设置为负值，元素将立即开始播放，但是是从动画中途开始的</p>
+<h3 id="动画事件"><a href="#动画事件" class="headerlink" title="动画事件"></a>动画事件</h3><p>与动画有关的事件有三个：<code>animationstart  animationiteration  animationend</code></p>
+<p>每个事件都有三个只读属性：<code>animationName elapsedTime pseudoElement</code></p>
+<p><code>animation-start</code>事件在动画开始时触发，如果delay为负值，则立即触发</p>
+<p><code>animation-end</code>事件在动画结束时出啊发，如果迭代次数为infinite且duration值为正数，将永远不会触发animation-end事件，如果duration为0，<code>animationstart</code>和<code>animationend</code>将同时触发，而且按此顺序</p>
+<p><code>animationiteration</code>事件在两次迭代之间触发，只要一次迭代后又发生迭代（不管是否完整），该事件都会触发</p>
+<h3 id="改变动画的内部时序"><a href="#改变动画的内部时序" class="headerlink" title="改变动画的内部时序"></a>改变动画的内部时序</h3><p><code>animation-timing-function</code>指明动画在一次循环（或迭代）中如何演进</p>
+<p>内容与<code>transition-timing-function</code>相同</p>
+<p>如果将其应用到关键帧上，只对当前关键帧块上的元素有影响，且只有播放到包含那些属性的关键帧时时序函数才会生效</p>
+<h3 id="设置动画的播放状态"><a href="#设置动画的播放状态" class="headerlink" title="设置动画的播放状态"></a>设置动画的播放状态</h3><p>使用<code>animation-play-state</code>属性定义动画的播放状态</p>
+<p>值为running时动画播放，值为pause时动画暂停，在delay时pause也会使delay时钟暂停</p>
+<h3 id="动画的填充模式"><a href="#动画的填充模式" class="headerlink" title="动画的填充模式"></a>动画的填充模式</h3><p><code>animation-fill-mode</code>属性定义动画播放结束后是否应用原来的属性值</p>
+<p><code>animation-fill-mode:none/forwards/backwards/both</code></p>
+<p><code>none</code>:动画不播放就没有效果，在delay结束前0%的效果不会应用到元素上</p>
+<p><code>backwards</code>:0%定义的属性立即生效，而不用等待animation-delay属性结束</p>
+<p><code>forwards</code>:动画触发<code>animationend</code>时的属性继续应用到元素上</p>
+<p><code>both</code>:同时包含<code>backwards</code>和<code>forwards</code>两个值的作用</p>
+<h2 id="写为一个属性"><a href="#写为一个属性" class="headerlink" title="写为一个属性"></a>写为一个属性</h2><p><code>animation</code></p>
+<p>前面的时间是duration,后面的是delay</p>
+<p>如果动画标识符的值和某个动画属性的值相同，<code>animation-name</code>应该放在最后</p>
+<p>如果有多个动画为同一个属性指定了不同的值，最后一个应用的动画覆盖之前动画中声明的值</p>
+<p>先把后声明的先走完，如果有多余时间再播放前面声明的动画</p>
+]]></content>
+      <categories>
+        <category>技术</category>
+      </categories>
+      <tags>
+        <tag>css</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>css中list列表相关</title>
+    <url>/2022/08/03/%E5%88%97%E8%A1%A8%E5%92%8C%E7%94%9F%E6%88%90%E7%9A%84%E5%86%85%E5%AE%B9/</url>
+    <content><![CDATA[<h1 id="列表和生成的内容"><a href="#列表和生成的内容" class="headerlink" title="列表和生成的内容"></a>列表和生成的内容</h1><h3 id="改变记号类型"><a href="#改变记号类型" class="headerlink" title="改变记号类型"></a>改变记号类型</h3><p>使用<code>list-style-type</code>属性</p>
+<p>与列表相关的属性只能应用到display属性为list-item的元素上，css并不区分有序列表和无序列表的项目。可以让有序列表使用圆点</p>
+<p>如果不想要记号，可以设置none值，但none值只是让记号不显示，并没有阻断计数</p>
+<p><code>list-style-type</code>的值是继承的，因此如果嵌套的列表需要使用不同的记号需要分别定义</p>
+<p>除了默认提供的<code>list-style-type</code>值外，还可以使用字符串值作为记号</p>
+<p>使用<code>list-style-image</code>属性</p>
+<p>使用该属性可以将列表记号设置为图片</p>
+<p>可以在声明图片记号之后再声明一个<code>list-style-type</code>作为后备记号类型</p>
+<p>嵌套的列表同样会继承image属性</p>
+<p>为嵌套的列表的image设置none阻止继承</p>
+<p>但实际情况中用户代理可能会为列表设置一个list-style-type值，因此继承的list-style-type值可能不能生效</p>
+<p>使用<code>list-style-position</code></p>
+<p>该属性会改变列表记号的位置，设置为outside（默认值）时，记号显示在外部，设置为inside时，显示在内容内部</p>
+<p>使用<code>list-style</code>简写属性</p>
+<p><code>list-style:list-style-type list-style-image list-style-position</code></p>
+<p>可以按任意顺序列出</p>
+<p>列表项目本身是类似块级的元素，放在列表内容外部的记号对其他元素的布局没有影响，记号相对于列表内容类似于绝对定位</p>
+<h3 id="生成的内容"><a href="#生成的内容" class="headerlink" title="生成的内容"></a>生成的内容</h3><p>生成的内容使用::before和::after伪元素插入文档。通过设置伪元素的content属性将指定的内容插入文档内容之前或之后</p>
+<p>如果::before或::after选择符的目标是块级元素，那么display的值只能为none，inline，block，和marker，其他值都为block</p>
+<p>如果是行内元素，那么display的值只能为none或inline，其他值都为inline</p>
+<h5 id="content"><a href="#content" class="headerlink" title="content"></a>content</h5><p>content的值为字符串时，显示为字面当量，即使有特殊标签也直接显示出来</p>
+<p>如果需要换行需要添加\A,如果需要将较长的字符串分多行书写需要\</p>
+<p>content值为URI时，会将引入的资源插入合适的位置，如果是用户代理不支持的资源会完全忽略</p>
+<p>如果想把属性值显示出来，可以使用<code>attr()</code>,如<code>content:attr(href)</code></p>
+<p>如果属性不存在，将显示空字符串</p>
+<h5 id="生成引号"><a href="#生成引号" class="headerlink" title="生成引号"></a>生成引号</h5><p>引号使用quote或open-quote等值生成</p>
+<p><code>quote:&lt;string&gt; &lt;string&gt;</code></p>
+<p>第一个字符定义开始引号，第二个字符定义结束引号</p>
+]]></content>
+      <categories>
+        <category>技术</category>
+      </categories>
+      <tags>
+        <tag>css</tag>
+        <tag>不常用</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>css中transform</title>
+    <url>/2022/08/03/%E5%8F%98%E5%BD%A2/</url>
+    <content><![CDATA[<h1 id="变形"><a href="#变形" class="headerlink" title="变形"></a>变形</h1><h2 id="坐标系"><a href="#坐标系" class="headerlink" title="坐标系"></a>坐标系</h2><p>笛卡尔坐标系：即xyz坐标系，x向右，y向下，z和z-index相同</p>
+<p>球坐标系：显示3D效果所用的坐标系</p>
+<h2 id="变形-1"><a href="#变形-1" class="headerlink" title="变形"></a>变形</h2><p>使用<code>transform:&lt;transform-list&gt;</code></p>
+<p>变形的元素在视觉上可能会缩小或放大，但在页面中所占的空间是不变的</p>
+<p>变形函数一次只处理一个，从左向右。如果顺序变了结果可能大变</p>
+<p>有多个变形函数时，一旦有一个设置不正确导致失效，整个transform都会失效</p>
+<p>变形通常不叠加</p>
+<h3 id="平移函数"><a href="#平移函数" class="headerlink" title="平移函数"></a>平移函数</h3><p>平移函数是指沿一个轴或多个轴移动</p>
+<p><code>translateX()和translateY()</code>通常称为2D平移函数</p>
+<p>如果先进行旋转变形，那么xy轴也会对应旋转变换从而影响平移效果</p>
+<p>如果值是百分数，那么移动距离相对于元素自身的尺寸计算</p>
+<p>只移动XY轴方向时，可以使用<code>translate()</code>简写，第一个值是x轴移动量，第二个是y轴移动量，如果只有一个值，空缺的值视为0</p>
+<p>使用<code>translateZ</code>沿z轴平移</p>
+<p><code>translateZ()</code>只接受长度值</p>
+<p><code>translate3d()</code>可以同时设置XYZ轴方向的平移量，如果赋值小于3个，视作无效</p>
+<h3 id="缩放函数"><a href="#缩放函数" class="headerlink" title="缩放函数"></a>缩放函数</h3><p>缩放函数把元素放大或缩小，值始终为没有单位的正数</p>
+<p><code>scaleX() scaleY() scaleZ()</code></p>
+<p>赋值当作乘数，但缩放值不能为百分数</p>
+<p>如果想在两个轴上同时缩放，可以使用<code>scale()</code>，第一个值是x，第二个值是y，如果只提供一个值，视作两个值相等</p>
+<p><code>scaleZ()</code>仅在z轴上缩放，需要元素具有一定的深度，如沿x，y轴旋转</p>
+<p><code>scale3d()</code>可以在三个轴方向缩放，不足三个值同样视为无效</p>
+<h3 id="旋转函数"><a href="#旋转函数" class="headerlink" title="旋转函数"></a>旋转函数</h3><p><code>rotate() rotateX() rotateY() rotateZ()</code></p>
+<p>只接受一种值，即角度（deg grad rad turn）,当不使用动画时，如果角度超过了常规范围，将转换为常规范围内的值</p>
+<p><code>rotate</code>使用的是2d旋转，和<code>rotateZ()</code>功能相同</p>
+<p><code>rotateX()</code>沿x轴旋转，<code>rotateY()</code>沿y轴旋转，使元素倾斜</p>
+<p><code>rotate3d()</code>可以在3d空间内旋转元素，前三个值是xyz轴分量，第四个值是旋转角度</p>
+<p>绕两个轴旋转和在绕3d空间中的向量旋转是有区别的</p>
+<h3 id="倾斜函数"><a href="#倾斜函数" class="headerlink" title="倾斜函数"></a>倾斜函数</h3><p><code>skewX() skewY()</code>值为角度，z轴方向不允许倾斜</p>
+<p><code>skew(a,b)</code>通过矩阵运算[ax,ay]实施2d倾斜，与分别设置的效果有所不同</p>
+<h3 id="视域函数"><a href="#视域函数" class="headerlink" title="视域函数"></a>视域函数</h3><p>视域为元素赋予先后深度</p>
+<p>使用<code>perspective(&lt;length&gt;)</code>设置</p>
+<p>小于200px的值特别失真，2000px以上的值失真“特别温和”，500px-100px值产生“适中的视域”</p>
+<p><code>perspective</code>函数在变形函数列表中的位置十分重要，一般将其放在首位</p>
+<h3 id="矩阵函数"><a href="#矩阵函数" class="headerlink" title="矩阵函数"></a>矩阵函数</h3><p><code>martrix()</code>函数通过6个值确定的变换矩阵指定2d空间内的变形</p>
+<p><code>martrix3d()</code>指定3d变形</p>
+<p>可以使用多个变形函数达到matrix函数的最终状态</p>
+<h2 id="其他变形属性"><a href="#其他变形属性" class="headerlink" title="其他变形属性"></a>其他变形属性</h2><h3 id="移动原点"><a href="#移动原点" class="headerlink" title="移动原点"></a>移动原点</h3><p>不设置移动原点，默认的移动原点是元素的绝对中心</p>
+<p>可以使用<code>transform-origin</code>修改</p>
+<p><code>transform-origin</code>的值为2个或三个关键字，用于指定相对于哪个点变形，第一个值指定横向，第二个值指定纵向，可选的第三个值是z轴长度。前两个值可以使用top和right，也可以使用百分数等，z轴只能使用长度</p>
+<p>长度值设置的是距元素左上角的距离</p>
+<p>百分数根据元素尺寸计算</p>
+<h3 id="选择3D变形方式"><a href="#选择3D变形方式" class="headerlink" title="选择3D变形方式"></a>选择3D变形方式</h3><p>通过<code>transform-style:preserve-3d</code>修改3D变形方式</p>
+<p>然而这样设定的3D变形方式可能被其他属性覆盖，因为那些属性必须要元素扁平才能发挥作用</p>
+<p>如果修改CSS属性时发现3d元素被拍扁了，可能是</p>
+<ul>
+<li>overflow</li>
+<li>filter</li>
+<li>clip</li>
+<li>clip-path</li>
+<li>mask-image</li>
+<li>mask-border-source</li>
+<li>mix-blend-mode</li>
+</ul>
+<p>中的某些值发生了改变</p>
+<h3 id="修改视域"><a href="#修改视域" class="headerlink" title="修改视域"></a>修改视域</h3><h4 id="定义视距"><a href="#定义视距" class="headerlink" title="定义视距"></a>定义视距</h4><p>使用perspective修改视域</p>
+<p><code>perspective</code>与<code>perspective()</code>的区别：</p>
+<p><code>perspective</code>运用到当前元素的所有子元素中，而<code>perspective()</code>只运用到当前元素上</p>
+<p>多数时候应该使用perspective</p>
+<h4 id="移动视距原点"><a href="#移动视距原点" class="headerlink" title="移动视距原点"></a>移动视距原点</h4><p>使用<code>perspective-origin</code>修改</p>
+<p>初始值：50% 50%</p>
+<p>和<code>transform-origin</code>用法类似</p>
+<p><code>transform-origin</code>定义在哪点变形，<code>perspective-origin</code>定义视线汇聚于哪一点</p>
+<h3 id="处理背面"><a href="#处理背面" class="headerlink" title="处理背面"></a>处理背面</h3><p>由<code>backface-visibility</code>属性决定</p>
+<p>值：visible&#x2F;hidden</p>
+<p>该属性仅仅决定当背面朝向我们时是否渲染背面</p>
+<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>变形在二维和三维空间中改变元素形态，可以制作出很多引人注目的效果，利用3d变形还可以创造出交互界面，为设计开辟了新天地</p>
+]]></content>
+      <categories>
+        <category>技术</category>
+      </categories>
+      <tags>
+        <tag>css</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>css中position</title>
+    <url>/2022/08/03/%E5%AE%9A%E4%BD%8D/</url>
+    <content><![CDATA[<h1 id="定位"><a href="#定位" class="headerlink" title="定位"></a>定位</h1><h3 id="类型"><a href="#类型" class="headerlink" title="类型"></a>类型</h3><p>static:正常生成元素框</p>
+<p>relative：元素框偏移一定距离，所占空间不变</p>
+<p>absolute：元素框完全从文档流中移除，相对容纳块定位</p>
+<p>fixed：行为类似absolute，容纳块是视区自身</p>
+<p>sticky：触发粘滞条件时，相当于相对容纳块绝对定位；触发粘滞的条件失效后，回到最初位置</p>
+<h3 id="容纳块"><a href="#容纳块" class="headerlink" title="容纳块"></a>容纳块</h3><p>一般来说，容纳块指包含另一个元素的框体</p>
+<p>对定位元素：</p>
+<p>relative或static：容纳块由最近的祖辈元素框体的内容边界划定</p>
+<p>absolute：容纳块是最近的不是static的祖辈元素</p>
+<ul>
+<li>块级元素：内边距边界</li>
+<li>行内元素：内容边界</li>
+<li>没有：初始容纳块</li>
+</ul>
+<p>定位元素可能位于容纳块之外</p>
+<h3 id="偏移属性"><a href="#偏移属性" class="headerlink" title="偏移属性"></a>偏移属性</h3><p>top</p>
+<p>bottom</p>
+<p>left</p>
+<p>right</p>
+<h3 id="限制宽高"><a href="#限制宽高" class="headerlink" title="限制宽高"></a>限制宽高</h3><p>min-height,min-width:限制最小</p>
+<p>max-width,max-height:限制最大</p>
+<h3 id="内容溢出"><a href="#内容溢出" class="headerlink" title="内容溢出"></a>内容溢出</h3><p>某个元素在内容里放不下：设置overflow属性</p>
+<p>visible：超出内容的部分可见</p>
+<p>hidden：超出部分不可见</p>
+<p>scroll：超出部分会隐藏，但可以通过滚动条查看</p>
+<p>auto：让用户代理自己决定使用哪种方式，在必要时使用滚动条</p>
+<h3 id="可见性"><a href="#可见性" class="headerlink" title="可见性"></a>可见性</h3><p><code>visibility:visible/hidden/collapse</code></p>
+<p><code>visible</code>:可见</p>
+<p><code>hidden</code>:隐藏（仍会占据空间，但不显示，相当于完全透明）</p>
+<p><code>collapse</code>:用于渲染表格，在渲染非表格元素时和hidden一致</p>
+<h3 id="绝对定位"><a href="#绝对定位" class="headerlink" title="绝对定位"></a>绝对定位</h3><p>如果文档能滚动，绝对定位元素也会随之滚动</p>
+<h5 id="自动确定边界"><a href="#自动确定边界" class="headerlink" title="自动确定边界"></a>自动确定边界</h5><p>将绝对定位元素除bottom外的某个偏移属性值设置为auto将得到一种特殊的行为</p>
+<p>即元素的位置会成为静态状态时的位置（即在常规文档流中的位置）</p>
+<p>将left和right同时设成auto会让绝对定位元素水平居中</p>
+<p>当元素各种属性值加起来不足容纳块的长度时（过约束），会对auto的值重新计算，当无auto时，会重新计算left或right的值</p>
+<p>如果属性的值导致过约束，top将永远<strong>不被</strong>忽略</p>
+<h3 id="Z-index"><a href="#Z-index" class="headerlink" title="Z-index"></a>Z-index</h3><p>z-index值越大，元素离读者越近</p>
+<p>设立z-index的父元素的子元素的位置是相对于父元素的，无论子元素设置多小的z-index值都会显示在父元素上方</p>
+<p>z-index：auto可视为z-index：0</p>
+<h3 id="固定定位"><a href="#固定定位" class="headerlink" title="固定定位"></a>固定定位</h3><p>与绝对定位类似，但容纳块是整个视区</p>
+<h3 id="相对定位"><a href="#相对定位" class="headerlink" title="相对定位"></a>相对定位</h3><p>相对定位使用偏移属性移动元素</p>
+<p>如<code>bottom:20px</code>将把元素向上平移20px</p>
+<p>在相对定位中，元素从常规的位置移开了，但其占据的空间没有消失</p>
+<p>相对定位的元素同样可能会重叠</p>
+<h3 id="粘滞定位"><a href="#粘滞定位" class="headerlink" title="粘滞定位"></a>粘滞定位</h3><p>粘滞定位元素通过设置偏移属性确定相对容纳块的粘滞定位矩形</p>
+<p>如<code>.h2 &#123;position:stick;top:2em;bottom:auto;left:auto;right:auto&#125;</code></p>
+<p>就设置了一个到达顶部就被粘滞的举行，想要让矩形在某个方向被粘滞，只需要将那个方向不设成auto即可</p>
+<h3 id="小结"><a href="#小结" class="headerlink" title="小结"></a>小结</h3><p>借助定位可以随意移动元素，这是常规文档流难以企及的。通过z轴确定叠放次序，加上各种溢出模式，定位依旧有用武之力</p>
+]]></content>
+      <categories>
+        <category>技术</category>
+      </categories>
+      <tags>
+        <tag>css</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>css中的flex布局</title>
+    <url>/2022/08/03/%E5%BC%B9%E6%80%A7%E7%9B%92%E5%B8%83%E5%B1%80%EF%BC%9Aflex/</url>
+    <content><![CDATA[<h1 id="弹性盒布局：flex"><a href="#弹性盒布局：flex" class="headerlink" title="弹性盒布局：flex"></a>弹性盒布局：flex</h1><h3 id="弹性盒基础"><a href="#弹性盒基础" class="headerlink" title="弹性盒基础"></a>弹性盒基础</h3><p>使用弹性盒后内容呈现顺序不再受到源码顺序的限制</p>
+<p>声明<code>display:flex</code>或<code>display:inline-flex</code>即可激活弹性盒布局，然后该元素被称为弹性容器，其子元素被成为弹性元素</p>
+<p>两种的区别是前者生成一个块级框，子元素在其中布局</p>
+<p>后者生成一个行内级框，子元素在其中布局</p>
+<p>把一个元素设为弹性容器后，只有直接子元素使用弹性盒布局</p>
+<h3 id="flex-direction属性"><a href="#flex-direction属性" class="headerlink" title="flex-direction属性"></a>flex-direction属性</h3><p>设置布局的方向，指定在弹性容器中如何摆放弹性元素</p>
+<p>可使用：</p>
+<p><code>row</code>:横向</p>
+<p><code>row-reverse</code>:横向相反</p>
+<p><code>column</code>:竖向</p>
+<p><code>column-reverse</code>:竖向相反</p>
+<p>如果改变了书写模式，例如规定书写模式是竖向书写（如从上向下），则row表示从上到下</p>
+<p>column表示从右向左</p>
+<h3 id="换行"><a href="#换行" class="headerlink" title="换行"></a>换行</h3><p>默认情况下元素不会换行，有可能从容器框的边界溢出</p>
+<p>设置flex-wrap属性允许弹性元素换行</p>
+<p><code>flex-wrap:nowrap/wrap/wrap-reverse</code>(默认<code>nowrap</code>)</p>
+<p>默认情况下：无论多少元素都在一行显示</p>
+<p>warp：超出的部分换行到之后</p>
+<p>wrap-reverse:超出部分换行到之前</p>
+<h3 id="定义弹性流"><a href="#定义弹性流" class="headerlink" title="定义弹性流"></a>定义弹性流</h3><p>flex-flow：确定主轴和垂轴方向，以及元素是否换行</p>
+<p><code>flex-flow:&lt;flex-direction&gt; &lt;flex-wrap&gt;</code></p>
+<p>弹性元素沿主轴排列，沿垂轴添加（如果换行的话）</p>
+<p>主轴一定和垂轴垂直</p>
+<h3 id="调整内容"><a href="#调整内容" class="headerlink" title="调整内容"></a>调整内容</h3><p><code>justify-content</code>属性指明在弹性容器的主轴上如何分布各行里的弹性元素</p>
+<p>应用于弹性容器上而不是弹性元素上</p>
+<p><code>justify-content:flex-start/flex-end/center/space-between/space-around/space-evenly</code></p>
+<p>默认flex-start</p>
+<p><code>flex-start</code>:元素沿主轴起边排列</p>
+<p><code>flex-end</code>:元素沿主轴终边排列</p>
+<p><code>center</code>:元素视为一个整体排列在主轴中央</p>
+<p><code>space-between</code>:把第一个元素放在主轴起边，最后一个元素放在主轴终边，中间的元素等间距排列</p>
+<p><code>space-around</code>:让元素左边和右边分出等同的距离（第一个元素距离主轴起边的距离会是每两个元素之间距离的一半）</p>
+<p><code>space-evenly</code>:与space-around类似但第一个元素距离主轴起边的距离与每两个元素之间距离相等</p>
+<p>justify-content还会影响元素的溢出方式</p>
+<h3 id="对齐元素"><a href="#对齐元素" class="headerlink" title="对齐元素"></a>对齐元素</h3><p>justify-content定义主轴方向的对齐方式，而align-items定义垂轴方向的对齐方式</p>
+<p>align-items同样应用于容器上</p>
+<p><code>align-items:flex-start/flex-end/center/baseline/stretch</code></p>
+<p>初始值：stretch</p>
+<p>stretch:可拉伸：即所有可拉伸的弹性元素将与所在行最高或最宽的弹性元素一样高或一样宽</p>
+<p>如果显示设置了元素的垂轴方向尺寸，元素将不可拉伸</p>
+<p>拉伸后的元素尺寸包含外边距的长度</p>
+<p>弹性元素行的高或宽是正好能够放下弹性元素的尺寸</p>
+<p>baseline：基线对齐，基线是文本第一行文字的底部，受到字号影响</p>
+<h3 id="align-self"><a href="#align-self" class="headerlink" title="align-self"></a>align-self</h3><p>align-self设置的值会覆盖align-items的值</p>
+<p>取值与align-item相同</p>
+<h3 id="对齐内容"><a href="#对齐内容" class="headerlink" title="对齐内容"></a>对齐内容</h3><p>align-content属性指定弹性容器中垂轴方向上的额外空间如何分配到弹性元素行之间和周围</p>
+<p>取值与align-items相同</p>
+<p>如果只有一行，align-content对内容没有影响</p>
+<h3 id="弹性元素"><a href="#弹性元素" class="headerlink" title="弹性元素"></a>弹性元素</h3><p>float和clear对弹性元素不起作用</p>
+<p>变成弹性元素后，只要没有绝对定位，就是块级的</p>
+<p>没有被标签包裹的文本是匿名弹性元素，不能直接选择，只能从弹性容器上继承样式</p>
+<p>绝对定位的弹性元素不再参与弹性布局，它们不在文档流中，但会受到弹性容器的样式影响，先确定在弹性容器中的位置再进行position</p>
+<p>弹性元素的min-width默认为auto，如果不想溢出可以设置为0，元素会被压缩</p>
+<h3 id="flex属性"><a href="#flex属性" class="headerlink" title="flex属性"></a>flex属性</h3><p>flex属性是flex-grow，flex-shrink和flex-basis的简写形式（弹性增长因子，弹性缩减因子和弹性基准）</p>
+<p>默认值是0，1，auto</p>
+<p>flex属性指定确定弹性长度的各要素，弹性元素所在的框体尺寸由flex决定</p>
+<p>弹性基准指明如何应用弹性增长因子和弹性缩减因子</p>
+<h4 id="flex-grow"><a href="#flex-grow" class="headerlink" title="flex-grow"></a>flex-grow</h4><p>定义有多余空间时是否允许弹性元素增大，以及有多余空间时，相对于同辈弹性元素会以什么比例增大</p>
+<p><strong>不鼓励通过flex-grow定义增长因子，只建议在flex简写中指定增长因子</strong></p>
+<p>flex-grow的值始终是正数，小于零无效</p>
+<p>flex-grow的值用于计算比例，若只有一个元素设置了flex-grow，则剩余的所有空间都被它占有，若有多个元素设置了，则会通过设置值之间的比例确定各自所占剩余空间的比例</p>
+<p>如果flex属性没有设定增长因子和缩减因子，flex-grow默认为1，如果flex和flex-grow都没有被声明出来，默认为0</p>
+<p>使用flex声明flex-grow属性和单独使用flex-grow声明的区别：</p>
+<p>flex声明将把所有空间按比例分配，而flex-grow声明只会将余下空间按比例分配</p>
+<h4 id="flex-shrink"><a href="#flex-shrink" class="headerlink" title="flex-shrink"></a>flex-shrink</h4><p><strong>同样只建议在flex简写属性中声明</strong></p>
+<p>弹性缩减因子定义空间不足以放下所有弹性元素时，当前元素相对于其他同辈弹性元素将缩小多少</p>
+<p>缩减因子默认为1</p>
+<p>计算方法与grow类似：</p>
+<p>如果设置shrink为1，1，3，长度均为300，容纳器长度为750</p>
+<p>那么元素将分别缩小：30，30，90</p>
+<p>如果弹性元素中的内容将要超出容器大小，且不能换行和缩小，弹性元素将无法缩小</p>
+<p>缩减因子为任何正数都会导致内容换行，换行次数和缩减因子比例差不多</p>
+<h4 id="flex-basis"><a href="#flex-basis" class="headerlink" title="flex-basis"></a>flex-basis</h4><p>定义弹性元素的初始或默认尺寸，即根据增长因子或缩减因子分配空间前，弹性元素的大小</p>
+<p>如果提前声明了width和height，值为width和height，如果没声明，值为content</p>
+<h5 id="content"><a href="#content" class="headerlink" title="content"></a>content</h5><p>在支持的环境中，使用content的basis值为弹性元素中内容的尺寸，即最长一行内容或最宽的媒体对象在主轴上的长度</p>
+<p>弹性基准会覆盖元素的width和height，但不会忽略mid-width和mid-height</p>
+<h5 id="auto与0"><a href="#auto与0" class="headerlink" title="auto与0"></a>auto与0</h5><p>auto下会根据grow或shrink决定<strong>剩下</strong>的区域的划分</p>
+<p>0决定<strong>所有</strong>区域的划分</p>
+<h3 id="flex简写模式"><a href="#flex简写模式" class="headerlink" title="flex简写模式"></a>flex简写模式</h3><p>如果只给flex一个值(数字)，实际上声明的是flex-grow</p>
+<p><code>flex: initial</code>&#x3D;<code>flex:0 1 auto</code></p>
+<p><code>flex:auto</code>&#x3D;<code>flex:1 1 auto</code></p>
+<p><code>flex:none</code>&#x3D;<code>flex:0 0 auto</code></p>
+<p><code>flex:1</code>&#x3D;<code>flex:1,0,auto</code></p>
+<h3 id="order属性"><a href="#order属性" class="headerlink" title="order属性"></a>order属性</h3><p>order属性可以改变元素的出现顺序，但读取代码的顺序是不变的</p>
+<p>默认值是0，负数会先出现，正数会后出现</p>
+<h3 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h3><p>弹性盒布局的效果用float也可以实现，但比float方便得多。</p>
+]]></content>
+      <categories>
+        <category>技术</category>
+      </categories>
+      <tags>
+        <tag>css</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>css中的滤镜，混合，遮罩，裁剪</title>
+    <url>/2022/08/03/%E6%BB%A4%E9%95%9C%E3%80%81%E6%B7%B7%E5%90%88%E3%80%81%E8%A3%81%E5%89%AA%E5%92%8C%E9%81%AE%E7%BD%A9/</url>
+    <content><![CDATA[<h1 id="滤镜、混合、裁剪和遮罩"><a href="#滤镜、混合、裁剪和遮罩" class="headerlink" title="滤镜、混合、裁剪和遮罩"></a>滤镜、混合、裁剪和遮罩</h1><h2 id="CSS滤镜"><a href="#CSS滤镜" class="headerlink" title="CSS滤镜"></a>CSS滤镜</h2><p><code>filter:none/blur()/brightness()/contrast()/drop-shadow()/grayscale()/</code></p>
+<p><code>hue-rotate()/invert()/opacity()/sepia()/saturate()/url()</code></p>
+<p>滤镜函数可以有多个，之间以空格分隔，各滤镜按列出的顺序应用</p>
+<h3 id="基本滤镜"><a href="#基本滤镜" class="headerlink" title="基本滤镜"></a>基本滤镜</h3><p><code>blur(&lt;length&gt;)</code>使用高斯模糊对元素进行处理，标准偏差由length的值确定，设为0时不做模糊处理，不能为负值</p>
+<p><code>opacity(&lt;number&gt;|&lt;percentage&gt;)</code>把透明度应用到元素上，与opacity属性十分相似，0表示完全透明，1或100%不做处理，不能使用负值</p>
+<p><code>drop-shadow(&lt;length&gt;&#123;2,3&#125;&lt;color&gt;?)</code>长度和颜色的处理方式和box-shadow一样，如果不提供color，则使用元素的color属性决定阴影颜色</p>
+<h3 id="颜色滤镜"><a href="#颜色滤镜" class="headerlink" title="颜色滤镜"></a>颜色滤镜</h3><p><code>grayscale([&lt;length&gt;|&lt;percentage&gt;])</code>把元素颜色变为指定的灰阶，当为0时不变，值为1或100%时完全变灰</p>
+<p><code>sepia([&lt;number|&lt;percentage&gt;])</code>把元素由原色变为墨色调，当为0时不变，值为1或100%时完全变褐色</p>
+<p><code>invert([&lt;number|&lt;percentage&gt;])</code>把元素作反相处理，0时不变，1时完全反相，0.5时得到均匀的灰色</p>
+<p><code>hue-rotate(&lt;angle&gt;)</code>在色轮上旋转色相，而饱和度和透明度不变，0deg时无变化，360deg时也没变化，也可以为负数，表示逆时针转动</p>
+<h3 id="亮度，对比度，饱和度"><a href="#亮度，对比度，饱和度" class="headerlink" title="亮度，对比度，饱和度"></a>亮度，对比度，饱和度</h3><p><code>brightness([&lt;number|&lt;percentage&gt;])</code>调整亮度，0时为黑色，1时正常，大于1时变亮，最终可能会变为白色</p>
+<p><code>contrast([&lt;number|&lt;percentage&gt;])</code>调整对比度，0时变为纯灰色，1时正常，大于1时对比度加大</p>
+<p><code>saturate([&lt;number|&lt;percentage&gt;])</code>调整饱和度,值越大颜色越鲜艳，越小颜色越暗淡</p>
+<h3 id="SVG滤镜"><a href="#SVG滤镜" class="headerlink" title="SVG滤镜"></a>SVG滤镜</h3><p><code>url()</code>可以使用这个函数指定在SVG中定义的滤镜，实现从外部引用滤镜</p>
+<h2 id="合成和混合"><a href="#合成和混合" class="headerlink" title="合成和混合"></a>合成和混合</h2><p>使用<code>mix-bend-mode</code>属性设定</p>
+<p><code>mix-bend-mode: normal/multiply/screen/overlay/darken/lighten/color-dodge</code></p>
+<p><code>/color-burn/hard-light/soft-light/difference/exclusion/hue/saturation/color/luminosity</code></p>
+<ul>
+<li>应用<code>mix-bend-mode</code>的元素是前景</li>
+<li>位于元素背后的是背着物</li>
+<li>像素分量是某个像素的颜色分量</li>
+</ul>
+<h3 id="变暗，变亮，差值和排除"><a href="#变暗，变亮，差值和排除" class="headerlink" title="变暗，变亮，差值和排除"></a>变暗，变亮，差值和排除</h3><p><code>darken</code>:前景中每个像素与背着物每个像素比较，取R,G,B中的较小值</p>
+<p><code>lighten</code>:前景中每个像素与背着物每个像素比较，取R,G,B中的较大值</p>
+<p><code>difference</code>:前景中每个像素与背着物每个像素比较，取R,G,B差的绝对值</p>
+<p><code>exclusion</code>:<code>difference</code>的温和版本，所用公式是back+fore-|2 x back x fore|,back和fore是0到1之间的值</p>
+<h3 id="正片叠底，滤色和叠加"><a href="#正片叠底，滤色和叠加" class="headerlink" title="正片叠底，滤色和叠加"></a>正片叠底，滤色和叠加</h3><p><code>multiply</code>:前景中每个像素分量与背着物中对应位置上的像素分量相乘。得到的结果与前景相比更暗</p>
+<p><code>screen</code>:对前景和背着物中同一位置的像素分量作反相处理，相乘后再反相。得到的结果与前景相比更亮</p>
+<p><code>overlay</code>:<code>multiply</code>和<code>screen</code>的综合运用，如果前景像素分量比50%暗，执行multiply，反之执行screen</p>
+<h3 id="强光和柔光"><a href="#强光和柔光" class="headerlink" title="强光和柔光"></a>强光和柔光</h3><p><code>hard-light</code>: 与<code>overlay</code>相反，起决定作用的是背着物</p>
+<p><code>soft-light</code>:<code>hard-light</code>的柔和版本，效果有所缓和</p>
+<h3 id="颜色减淡和加深"><a href="#颜色减淡和加深" class="headerlink" title="颜色减淡和加深"></a>颜色减淡和加深</h3><p><code>color-dodge</code>:前景中各像素分量做反相处理，再拿背着物中对应的像素分量除以反相后的前景值。得到的结果是背着物变得更亮</p>
+<p><code>color-bend</code>:与<code>color-dodge</code>的作用相反。背着物各像素分量做反相处理，反相后的背着物值除以没有修改的前景值，然后再反相。结果是背着物中越暗的像素，由前景中像素加深的程度越大</p>
+<h3 id="色相，饱和度，明度和颜色"><a href="#色相，饱和度，明度和颜色" class="headerlink" title="色相，饱和度，明度和颜色"></a>色相，饱和度，明度和颜色</h3><p><code>hue</code>:把背着物中每一像素的明度和饱和度与前景中对应像素的色相角度合并</p>
+<p><code>saturation</code>:把背着物中每一像素的色相角度和明度与前景中对应像素的饱和度合并</p>
+<p><code>color</code>:把背着物中每一像素的明度与前景中对应像素的色相角度和饱和度合并</p>
+<p><code>luminosity</code>:把背着物中每一像素的色相角度和饱和度与前景中的对应像素合并</p>
+<h2 id="与背景混合"><a href="#与背景混合" class="headerlink" title="与背景混合"></a>与背景混合</h2><p><code>mix-blend-mode</code>只能将元素与背着物混合，当元素有多个背景图且背景图有重叠时，可以使用<code>background-blend-mode</code>属性</p>
+<p>该属性的值与<code>mix-blend-mode</code>相同</p>
+<h3 id="独立混合"><a href="#独立混合" class="headerlink" title="独立混合"></a>独立混合</h3><p>使用<code>isolation:isolate</code>将父元素独立出来从而影响子元素的混合方式</p>
+<h2 id="裁剪和遮罩"><a href="#裁剪和遮罩" class="headerlink" title="裁剪和遮罩"></a>裁剪和遮罩</h2><p>如果只想把元素的一部分裁掉，可以使用<code>clip-path</code>属性</p>
+<h3 id="裁剪形状"><a href="#裁剪形状" class="headerlink" title="裁剪形状"></a>裁剪形状</h3><p><code>inset()</code>:值为1到4个长度或百分数，定义距离范围框各边的偏移量,可以使用<code>round</code>关键字或另一组4个长度或百分比定义圆角</p>
+<p><code>circle()</code>:只接受一个值定义圆的半径。在一或两个长度或百分数后使用at关键字定义圆心位置</p>
+<p><code>ellispse()</code>值为两个长度或百分数或关键字定义椭圆在横轴或纵轴上的半径，在一或两个长度或百分数后使用at关键字定义圆心位置</p>
+<p><code>polygon()</code>一系列以x和y坐标值（空格分开）定义多边形</p>
+<h2 id="蒙版"><a href="#蒙版" class="headerlink" title="蒙版"></a>蒙版</h2><p>“蒙版的意思是”：位于形状内部的内容可见，而在形状外部的内容不可见</p>
+<h3 id="定义蒙版"><a href="#定义蒙版" class="headerlink" title="定义蒙版"></a>定义蒙版</h3><p>指定用什么图像作为蒙版:<code>mask-image</code></p>
+<h3 id="改变蒙版模式"><a href="#改变蒙版模式" class="headerlink" title="改变蒙版模式"></a>改变蒙版模式</h3><p>使用<code>mask-mode</code>改变蒙版模式</p>
+<p><code>mask-mode:alpha/luminance/match-source</code></p>
+<p><code>alpha</code>:通过alpha通道计算蒙版，<code>luminance</code>使用亮度计算蒙版</p>
+<p><code>match-source</code>:是<code>alpha</code>和<code>luminance</code>的结合体</p>
+<h3 id="调整蒙版尺寸和重复方式"><a href="#调整蒙版尺寸和重复方式" class="headerlink" title="调整蒙版尺寸和重复方式"></a>调整蒙版尺寸和重复方式</h3><p>使用<code>mask-size</code>调整蒙版尺寸</p>
+]]></content>
+      <categories>
+        <category>技术</category>
+      </categories>
+      <tags>
+        <tag>css</tag>
       </tags>
   </entry>
   <entry>
@@ -453,6 +851,76 @@
       </categories>
       <tags>
         <tag>计算机网络</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>css中表格样式</title>
+    <url>/2022/08/03/%E8%A1%A8%E6%A0%BC%E5%B8%83%E5%B1%80/</url>
+    <content><![CDATA[<h1 id="表格布局"><a href="#表格布局" class="headerlink" title="表格布局"></a>表格布局</h1><h3 id="表格格式化"><a href="#表格格式化" class="headerlink" title="表格格式化"></a>表格格式化</h3>]]></content>
+      <categories>
+        <category>技术</category>
+      </categories>
+      <tags>
+        <tag>css</tag>
+        <tag>未完成（鸽）</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>css中的过渡</title>
+    <url>/2022/08/03/%E8%BF%87%E6%B8%A1/</url>
+    <content><![CDATA[<h1 id="过渡"><a href="#过渡" class="headerlink" title="过渡"></a>过渡</h1><h2 id="定义过渡属性"><a href="#定义过渡属性" class="headerlink" title="定义过渡属性"></a>定义过渡属性</h2><p>CSS中使用四个属性定义过渡</p>
+<p><code>transition-property</code></p>
+<p><code>transition-duration</code></p>
+<p><code>transition-timing-function</code></p>
+<p><code>transition-delay</code></p>
+<p>以及简写属性<code>transition</code></p>
+<p>与过渡相关的属性加在非悬停状态上可以使开始和结束状态都实现过渡</p>
+<p>而加在悬停状态上只会使开始时实现过渡，结束时瞬时切换</p>
+<h3 id="设置使用过渡的属性transition-property"><a href="#设置使用过渡的属性transition-property" class="headerlink" title="设置使用过渡的属性transition-property"></a>设置使用过渡的属性<code>transition-property</code></h3><p>属性的值是以逗号分隔的属性列表，指使用过渡的属性</p>
+<p>默认值为all，即所有支持动画的属性都采用过渡</p>
+<p>不支持动画的属性会立即变为过渡后的值</p>
+<p>如果需要对某些例外属性单独设置，应该把all设在首位，然后声明例外的属性如：</p>
+<p><code>transition:all,color;  transition-duration:1s,2s;</code></p>
+<p>值为none时禁用所有过渡，如果想禁用部分只能单独列出其他所有元素</p>
+<h3 id="设置过渡持续时间transition-duration"><a href="#设置过渡持续时间transition-duration" class="headerlink" title="设置过渡持续时间transition-duration"></a>设置过渡持续时间<code>transition-duration</code></h3><p>值是以逗号分隔的长度列表，单位为s或ms，指定从一个状态过渡到另一个状态需要多久</p>
+<p>如果在两个状态间来回切换但只设置了一个时间，则那么这个时间只在向那个状态过渡时起作用</p>
+<p>即使值为零也要写成0s</p>
+<p>如果设置的<code>transition-delay</code>时长不为正数，<code>transition-duration</code>又没有声明，不会触发<code>transitionend</code>事件，只要过渡总时间大于0s，就会触发<code>transitionend</code>事件</p>
+<p>如果列表中有一个时间为负数，整个<code>transition-duration</code>属性都会失效</p>
+<p>如果时间列表中时间数量与属性数量不一致，按照浏览器的规则处理</p>
+<p>如果时间数多于属性数，忽略后面的属性</p>
+<p>如果时间数少于属性数且恰好为2个，奇数属性使用第一个，偶数属性使用第二个</p>
+<p>100ms到200ms的时间最佳</p>
+<h3 id="调整过渡的内部时序transition-timing-function"><a href="#调整过渡的内部时序transition-timing-function" class="headerlink" title="调整过渡的内部时序transition-timing-function"></a>调整过渡的内部时序<code>transition-timing-function</code></h3><p>可以取的值有<code>ease,linear,ease-in,ease-out,ease-in-out,step-start,step-end,steps(n,start)(n是步进的次数),step(n,end),cubic-bezier(x1,y1,x2,y2)</code></p>
+<h4 id="通过三次方贝塞尔函数定义"><a href="#通过三次方贝塞尔函数定义" class="headerlink" title="通过三次方贝塞尔函数定义"></a>通过三次方贝塞尔函数定义</h4><p><code>ease</code>慢速开始，中间很快，然后变慢，结尾特别慢</p>
+<p><code>linear</code>整个过程匀速</p>
+<p><code>ease-in</code>慢速开始，然后加速</p>
+<p><code>ease-out</code>快速开始，然后慢速</p>
+<p><code>ease-in-out</code>于ease类似，两端慢中间快，但两端不同速</p>
+<p><code>cubic-bezier(x1,y1,x2,y2)</code>定义一个三次方贝塞尔函数</p>
+<h4 id="通过步进时序函数定义"><a href="#通过步进时序函数定义" class="headerlink" title="通过步进时序函数定义"></a>通过步进时序函数定义</h4><p><code>step-start</code>整个过程都处于最终关键帧上，等同于<code>steps(1,start)</code></p>
+<p><code>step-end</code>整个过渡都在初始关键帧上，等同于<code>steps(1,end)</code></p>
+<p><code>steps(n,start)</code></p>
+<p><code>step(n,end)</code></p>
+<p>这两个函数可以显示固定的镜头数</p>
+<p>使用<code>transition-timing-function</code>不改变过渡的持续时间，只控制过渡的行进节奏</p>
+<h3 id="延时过渡transition-delay"><a href="#延时过渡transition-delay" class="headerlink" title="延时过渡transition-delay"></a>延时过渡<code>transition-delay</code></h3><p>该属性在元素上发生触发过渡的变化与开始过渡之间引入一定的延迟</p>
+<p>默认是0s，即无延迟</p>
+<p>值也可以为负数</p>
+<p>设置延迟可以防止误操作</p>
+<h5 id="值为负数"><a href="#值为负数" class="headerlink" title="值为负数"></a>值为负数</h5><p>如果值为负数，则会从中间某个位置立即过渡</p>
+<p>如：让元素x移动200像素，<code>transition-duration</code>设置为200ms,<code>transition-delay</code>设置为-150ms，那么元素x将立即移动150px，再过渡运动到200px</p>
+<p>从悬停状态回到初始状态时，默认还会使用相同的delay值，所以x会立即反向运动150px，再过渡回到原点</p>
+<h3 id="transition简写"><a href="#transition简写" class="headerlink" title="transition简写"></a><code>transition</code>简写</h3><p>可以同时书写四个属性</p>
+<p>如果没有声明<code>transition-timing-function</code>默认为ease</p>
+<p>要注意<code>transition-duration</code>和<code>transition-delay</code>的顺序，前面的是<code>duration</code>,后面的是<code>delay</code></p>
+<p>持续时间必须设置，否则过渡不可见</p>
+]]></content>
+      <categories>
+        <category>技术</category>
+      </categories>
+      <tags>
+        <tag>css</tag>
       </tags>
   </entry>
 </search>
