@@ -1,0 +1,233 @@
+
+<!DOCTYPE html>
+<html lang="zh-CN" class="loading">
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>浏览器的工作原理 - ly-blog</title>
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="google" content="notranslate" />
+    <meta name="keywords" content="Fechin,"> 
+    <meta name="description" content="一个超级懒虫的博客,浏览器的工作原理（简易版）输入url后
+
+浏览器进行dns查找，把域名转换为ip地址，根据ip地址找到对应的服务器
+
+浏览器通过TCP握手机制跟服务器建立连接，如果为https还有一步TLS握手
+
+,"> 
+    <meta name="author" content="Lazy-ly"> 
+    <link rel="alternative" href="atom.xml" title="ly-blog" type="application/atom+xml"> 
+    <link rel="icon" href="/img/favicon.jpg"> 
+    
+    
+    
+    <meta name="twitter:card" content="summary"/>
+    <meta name="twitter:title" content="浏览器的工作原理 - ly-blog"/>
+    <meta name="twitter:description" content="一个超级懒虫的博客,浏览器的工作原理（简易版）输入url后
+
+浏览器进行dns查找，把域名转换为ip地址，根据ip地址找到对应的服务器
+
+浏览器通过TCP握手机制跟服务器建立连接，如果为https还有一步TLS握手
+
+,"/>
+    
+    
+    
+    
+    <meta property="og:site_name" content="ly-blog"/>
+    <meta property="og:type" content="object"/>
+    <meta property="og:title" content="浏览器的工作原理 - ly-blog"/>
+    <meta property="og:description" content="一个超级懒虫的博客,浏览器的工作原理（简易版）输入url后
+
+浏览器进行dns查找，把域名转换为ip地址，根据ip地址找到对应的服务器
+
+浏览器通过TCP握手机制跟服务器建立连接，如果为https还有一步TLS握手
+
+,"/>
+    
+<link rel="stylesheet" href="/css/diaspora.css">
+
+    <script>window.searchDbPath = "/search.xml";</script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Source+Code+Pro&display=swap" rel="stylesheet">
+<meta name="generator" content="Hexo 6.2.0"></head>
+
+<body class="loading">
+    <span id="config-title" style="display:none">ly-blog</span>
+    <div id="loader"></div>
+    <div id="single">
+    <div id="top" style="display: block;">
+    <div class="bar" style="width: 0;"></div>
+    <a class="iconfont icon-home image-icon" href="javascript:;" data-url="http://example.com"></a>
+    <div title="播放/暂停" class="iconfont icon-play"></div>
+    <h3 class="subtitle">浏览器的工作原理</h3>
+    <div class="social">
+        <div>
+            <div class="share">
+                <a title="获取二维码" class="iconfont icon-scan" href="javascript:;"></a>
+            </div>
+            <div id="qr"></div>
+        </div>
+    </div>
+    <div class="scrollbar"></div>
+</div>
+
+    <div class="section">
+        <div class="article">
+    <div class='main'>
+        <h1 class="title">浏览器的工作原理</h1>
+        <div class="stuff">
+            <span>八月 03, 2022</span>
+            
+  <ul class="post-tags-list" itemprop="keywords"><li class="post-tags-list-item"><a class="post-tags-list-link" href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/" rel="tag">计算机网络</a></li></ul>
+
+
+        </div>
+        <div class="content markdown">
+            <h3 id="浏览器的工作原理（简易版）"><a href="#浏览器的工作原理（简易版）" class="headerlink" title="浏览器的工作原理（简易版）"></a>浏览器的工作原理（简易版）</h3><p>输入url后</p>
+<ol>
+<li><p>浏览器进行dns查找，把域名转换为ip地址，根据ip地址找到对应的服务器</p>
+</li>
+<li><p>浏览器通过TCP握手机制跟服务器建立连接，如果为https还有一步TLS握手</p>
+</li>
+<li><p>浏览器发起http&#x2F;https请求，获取响应。在浏览器接收响应时，受制于TCP连接的性质，浏览器先收到前14kb的数据，后续才会慢慢增加传输速度下载其他文件</p>
+</li>
+<li><p>收到html代码后，浏览器开始渲染网页</p>
+<ol>
+<li><p>解析html代码，构建DOM树（HTML文档在浏览器中的对象表示）</p>
+<p>浏览器在解析HTML时顺序执行并且只有一个主线程负责，遇到script标签会先执行js代码，暂停解析html代码。对于图片，css文件，设置了defer&#x2F;async的script标签不会影响html解析，会异步加载</p>
+<p>浏览器具有预扫描线程，扫描html代码，提前把css文件，字体，js文件下载下来，不影响主线程</p>
+<p><img src="/image/image1.png" alt="dom树"></p>
+</li>
+<li><p>构建CSSOM树</p>
+<p><img src="/image/image2.png" alt="CSSOM树"></p>
+</li>
+<li><p>合并DOM和CSSOM，形成渲染树</p>
+<p><img src="/image/image3.png" alt="渲染树"></p>
+</li>
+<li><p>布局</p>
+<p>对于图片这样的结点，如果没有指定宽高，会先忽略大小。图片下载完成后，浏览器根据图片的大小重新计算受影响的结点的宽高，这种方法被称为回流（reflow）</p>
+</li>
+<li><p>绘制</p>
+<p>第一次布局之后，浏览器会把结点和结点的样式绘制在屏幕上，要求过程快速</p>
+<p>如果布局发生回流，浏览器会发生重绘，把变化的布局重新绘制在屏幕上</p>
+<p>绘制期间可能会有组合发生（产生了新的图层）,浏览器需要把图层组合起来，按正确的图层顺序渲染，发生了重绘也会导致重新组合</p>
+<p>上述五步完成后，设置了defer&#x2F;async的script中的内容，网页加载完成</p>
+</li>
+</ol>
+</li>
+</ol>
+
+            <!--[if lt IE 9]><script>document.createElement('audio');</script><![endif]-->
+            <audio id="audio" loop="1" preload="auto" controls="controls" data-autoplay="false">
+                <source type="audio/mpeg" src="">
+            </audio>
+            
+                <ul id="audio-list" style="display:none">
+                    
+                        
+                            <li title="0" data-url="http://link.hhtjim.com/163/425570952.mp3"></li>
+                        
+                    
+                        
+                            <li title="1" data-url="http://link.hhtjim.com/163/425570952.mp3"></li>
+                        
+                    
+                </ul>
+            
+        </div>
+        
+        
+    <div id="gitalk-container" class="comment link"
+		data-enable="false"
+        data-ae="false"
+        data-ci=""
+        data-cs=""
+        data-r=""
+        data-o=""
+        data-a=""
+        data-d="false"
+    >查看评论</div>
+
+
+    </div>
+    
+</div>
+
+
+    </div>
+</div>
+</body>
+
+
+<script src="//lib.baomitu.com/jquery/1.8.3/jquery.min.js"></script>
+<script src="/js/plugin.js"></script>
+<script src="/js/typed.js"></script>
+<script src="/js/diaspora.js"></script>
+
+
+<link rel="stylesheet" href="/photoswipe/photoswipe.css">
+<link rel="stylesheet" href="/photoswipe/default-skin/default-skin.css">
+
+
+<script src="/photoswipe/photoswipe.min.js"></script>
+<script src="/photoswipe/photoswipe-ui-default.min.js"></script>
+
+
+<!-- Root element of PhotoSwipe. Must have class pswp. -->
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+    <!-- Background of PhotoSwipe. 
+         It's a separate element as animating opacity is faster than rgba(). -->
+    <div class="pswp__bg"></div>
+    <!-- Slides wrapper with overflow:hidden. -->
+    <div class="pswp__scroll-wrap">
+        <!-- Container that holds slides. 
+            PhotoSwipe keeps only 3 of them in the DOM to save memory.
+            Don't modify these 3 pswp__item elements, data is added later on. -->
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+        <!-- Default (PhotoSwipeUI_Default) interface on top of sliding area. Can be changed. -->
+        <div class="pswp__ui pswp__ui--hidden">
+            <div class="pswp__top-bar">
+                <!--  Controls are self-explanatory. Order can be changed. -->
+                <div class="pswp__counter"></div>
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+                <button class="pswp__button pswp__button--share" title="Share"></button>
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+                <!-- Preloader demo http://codepen.io/dimsemenov/pen/yyBWoR -->
+                <!-- element will get class pswp__preloader--active when preloader is running -->
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                      <div class="pswp__preloader__cut">
+                        <div class="pswp__preloader__donut"></div>
+                      </div>
+                    </div>
+                </div>
+            </div>
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div> 
+            </div>
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+</html>
