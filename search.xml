@@ -1,6 +1,50 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>css中的float</title>
+    <url>/2022/08/04/CSS%E6%B5%AE%E5%8A%A8/</url>
+    <content><![CDATA[<h1 id="CSS浮动"><a href="#CSS浮动" class="headerlink" title="CSS浮动"></a>CSS浮动</h1><h3 id="浮动规则"><a href="#浮动规则" class="headerlink" title="浮动规则"></a>浮动规则</h3><p>1.浮动元素不会超过容纳块的边界</p>
+<p>2.排队浮动</p>
+<p>3.浮动元素间不会重叠</p>
+<p>4.浮动元素的顶边不能比父级元素的内顶边高</p>
+<p>5.浮动元素的顶边不能比之前任何一个浮动元素或块元素的顶边高</p>
+<p>6.浮动元素顶边不能高于源码中出现浮动元素之前的元素生成的框体所在行框的顶边</p>
+<p>7.浮动元素必须放在尽可能高的位置</p>
+<p>8.左浮动元素尽量向左移动，右浮动元素尽量向右移动</p>
+<p>浮动元素的后代也会浮动</p>
+<h3 id="浮动元素与内容重叠"><a href="#浮动元素与内容重叠" class="headerlink" title="浮动元素与内容重叠"></a>浮动元素与内容重叠</h3><p>与行内元素重叠时：行内元素边框背景内容都会在浮动元素”之上“渲染</p>
+<p>与块元素重叠时：边框和背景在浮动元素”背后“渲染，内容在”之上“渲染</p>
+<p>重叠方式与元素出现顺序无关</p>
+<h3 id="清除浮动"><a href="#清除浮动" class="headerlink" title="清除浮动"></a>清除浮动</h3><p>禁止每个区域的第一个元素出现在浮动元素旁</p>
+<p>如：禁止元素出现在左浮动元素的右侧：<code>clear：left</code></p>
+<p>确保某个元素不与任何浮动元素共处一行：<code>clear both</code></p>
+<p>实现方式：<strong>间距</strong></p>
+<p><strong>间距</strong>：为了把元素向下移动，确保显示在浮动元素下方而在元素上外边距<strong>上方额外增加的空白</strong>，不影响上外边距</p>
+<p>为确保清除浮动了的元素与浮动元素间的边距，可以为浮动元素设置下外边距</p>
+<h3 id="形状浮动"><a href="#形状浮动" class="headerlink" title="形状浮动"></a>形状浮动</h3><p>可以让文字按照浮动<strong>透明</strong>图片的轮廓填充在旁边</p>
+<p>先为浮动图片定义一个形状：</p>
+<p><code>shape-outside:url(&quot;绝对路径&quot;);</code></p>
+<p>若图片向左浮动则会填充在右边，若为向右浮动则填充左边</p>
+<p><strong>必须是透明图片！！！！</strong></p>
+<p>shape-outside还可以直接使用设置其他形状,分为basic-shape和shape-box两类</p>
+<p>basic-shape:</p>
+<p><code>inset() circle() ellipse() polygon()</code></p>
+<p>shape-box:</p>
+<p><code>margin-box border-box padding-box content-box</code>指形状最外边的界限</p>
+<p>默认使用外边距框</p>
+<p>如果设置的形状超过了浮动框，则不会按形状填充而是按浮动框进行填充</p>
+<p>可以使用shape-margin为形状设置”外边距“</p>
+<p>但设置时要注意设置之后有没有超过浮动框，有时候浮动框要设置的更大才能体现出效果</p>
+<h3 id="小结"><a href="#小结" class="headerlink" title="小结"></a>小结</h3><p>浮动是css的基础，虽然简单，但十分强大和有用。浮动不可或缺，有了浮动才能把内容放在某一边，让其他内容围绕它流动。引入浮动形状后，浮动框不再局限为方形</p>
+]]></content>
+      <categories>
+        <category>技术</category>
+      </categories>
+      <tags>
+        <tag>css</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>HTTP知识点总结</title>
     <url>/2022/08/03/HTTP/</url>
     <content><![CDATA[<h1 id="HTTP"><a href="#HTTP" class="headerlink" title="HTTP"></a>HTTP</h1><hr>
@@ -538,50 +582,6 @@
       </tags>
   </entry>
   <entry>
-    <title>css中的float</title>
-    <url>/2022/08/04/CSS%E6%B5%AE%E5%8A%A8/</url>
-    <content><![CDATA[<h1 id="CSS浮动"><a href="#CSS浮动" class="headerlink" title="CSS浮动"></a>CSS浮动</h1><h3 id="浮动规则"><a href="#浮动规则" class="headerlink" title="浮动规则"></a>浮动规则</h3><p>1.浮动元素不会超过容纳块的边界</p>
-<p>2.排队浮动</p>
-<p>3.浮动元素间不会重叠</p>
-<p>4.浮动元素的顶边不能比父级元素的内顶边高</p>
-<p>5.浮动元素的顶边不能比之前任何一个浮动元素或块元素的顶边高</p>
-<p>6.浮动元素顶边不能高于源码中出现浮动元素之前的元素生成的框体所在行框的顶边</p>
-<p>7.浮动元素必须放在尽可能高的位置</p>
-<p>8.左浮动元素尽量向左移动，右浮动元素尽量向右移动</p>
-<p>浮动元素的后代也会浮动</p>
-<h3 id="浮动元素与内容重叠"><a href="#浮动元素与内容重叠" class="headerlink" title="浮动元素与内容重叠"></a>浮动元素与内容重叠</h3><p>与行内元素重叠时：行内元素边框背景内容都会在浮动元素”之上“渲染</p>
-<p>与块元素重叠时：边框和背景在浮动元素”背后“渲染，内容在”之上“渲染</p>
-<p>重叠方式与元素出现顺序无关</p>
-<h3 id="清除浮动"><a href="#清除浮动" class="headerlink" title="清除浮动"></a>清除浮动</h3><p>禁止每个区域的第一个元素出现在浮动元素旁</p>
-<p>如：禁止元素出现在左浮动元素的右侧：<code>clear：left</code></p>
-<p>确保某个元素不与任何浮动元素共处一行：<code>clear both</code></p>
-<p>实现方式：<strong>间距</strong></p>
-<p><strong>间距</strong>：为了把元素向下移动，确保显示在浮动元素下方而在元素上外边距<strong>上方额外增加的空白</strong>，不影响上外边距</p>
-<p>为确保清除浮动了的元素与浮动元素间的边距，可以为浮动元素设置下外边距</p>
-<h3 id="形状浮动"><a href="#形状浮动" class="headerlink" title="形状浮动"></a>形状浮动</h3><p>可以让文字按照浮动<strong>透明</strong>图片的轮廓填充在旁边</p>
-<p>先为浮动图片定义一个形状：</p>
-<p><code>shape-outside:url(&quot;绝对路径&quot;);</code></p>
-<p>若图片向左浮动则会填充在右边，若为向右浮动则填充左边</p>
-<p><strong>必须是透明图片！！！！</strong></p>
-<p>shape-outside还可以直接使用设置其他形状,分为basic-shape和shape-box两类</p>
-<p>basic-shape:</p>
-<p><code>inset() circle() ellipse() polygon()</code></p>
-<p>shape-box:</p>
-<p><code>margin-box border-box padding-box content-box</code>指形状最外边的界限</p>
-<p>默认使用外边距框</p>
-<p>如果设置的形状超过了浮动框，则不会按形状填充而是按浮动框进行填充</p>
-<p>可以使用shape-margin为形状设置”外边距“</p>
-<p>但设置时要注意设置之后有没有超过浮动框，有时候浮动框要设置的更大才能体现出效果</p>
-<h3 id="小结"><a href="#小结" class="headerlink" title="小结"></a>小结</h3><p>浮动是css的基础，虽然简单，但十分强大和有用。浮动不可或缺，有了浮动才能把内容放在某一边，让其他内容围绕它流动。引入浮动形状后，浮动框不再局限为方形</p>
-]]></content>
-      <categories>
-        <category>技术</category>
-      </categories>
-      <tags>
-        <tag>css</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>自学Vue第一章笔记</title>
     <url>/2022/08/03/VUE-chapter3/</url>
     <content><![CDATA[<h1 id="VUE"><a href="#VUE" class="headerlink" title="VUE"></a>VUE</h1><p>创建Vue应用:<code>Vue.createApp().mount(&quot;&quot;)</code></p>
@@ -684,18 +684,6 @@
       </tags>
   </entry>
   <entry>
-    <title>Welcome to my BLOG!</title>
-    <url>/2022/08/03/hello-world/</url>
-    <content><![CDATA[<p>欢迎来到我的博客<br>我会在这里记录自己的学习，生活<br>谢谢你的到来！！</p>
-]]></content>
-      <categories>
-        <category>欢迎</category>
-      </categories>
-      <tags>
-        <tag>日常</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>自学Vue第二章笔记</title>
     <url>/2022/08/03/VUE-chapter4/</url>
     <content><![CDATA[<h4 id="v-html在模板中输出html"><a href="#v-html在模板中输出html" class="headerlink" title="v-html在模板中输出html"></a>v-html在模板中输出html</h4><p>使用v-html在标签内输出html，为防止恶意代码，最好使用自己定义的html，对于用户输入要做过滤处理</p>
@@ -792,6 +780,18 @@
       </categories>
       <tags>
         <tag>vue</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Welcome to my BLOG!</title>
+    <url>/2022/08/03/hello-world/</url>
+    <content><![CDATA[<p>欢迎来到我的博客<br>我会在这里记录自己的学习，生活<br>谢谢你的到来！！</p>
+]]></content>
+      <categories>
+        <category>欢迎</category>
+      </categories>
+      <tags>
+        <tag>日常</tag>
       </tags>
   </entry>
   <entry>
@@ -1393,6 +1393,18 @@
       </tags>
   </entry>
   <entry>
+    <title>css中表格样式</title>
+    <url>/2022/08/03/%E8%A1%A8%E6%A0%BC%E5%B8%83%E5%B1%80/</url>
+    <content><![CDATA[<h1 id="表格布局"><a href="#表格布局" class="headerlink" title="表格布局"></a>表格布局</h1><h3 id="表格格式化"><a href="#表格格式化" class="headerlink" title="表格格式化"></a>表格格式化</h3>]]></content>
+      <categories>
+        <category>技术</category>
+      </categories>
+      <tags>
+        <tag>css</tag>
+        <tag>未完成（鸽）</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>css中的滤镜，混合，遮罩，裁剪</title>
     <url>/2022/08/03/%E6%BB%A4%E9%95%9C%E3%80%81%E6%B7%B7%E5%90%88%E3%80%81%E8%A3%81%E5%89%AA%E5%92%8C%E9%81%AE%E7%BD%A9/</url>
     <content><![CDATA[<h1 id="滤镜、混合、裁剪和遮罩"><a href="#滤镜、混合、裁剪和遮罩" class="headerlink" title="滤镜、混合、裁剪和遮罩"></a>滤镜、混合、裁剪和遮罩</h1><h2 id="CSS滤镜"><a href="#CSS滤镜" class="headerlink" title="CSS滤镜"></a>CSS滤镜</h2><p><code>filter:none/blur()/brightness()/contrast()/drop-shadow()/grayscale()/</code></p>
@@ -1453,18 +1465,6 @@
       </categories>
       <tags>
         <tag>css</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>css中表格样式</title>
-    <url>/2022/08/03/%E8%A1%A8%E6%A0%BC%E5%B8%83%E5%B1%80/</url>
-    <content><![CDATA[<h1 id="表格布局"><a href="#表格布局" class="headerlink" title="表格布局"></a>表格布局</h1><h3 id="表格格式化"><a href="#表格格式化" class="headerlink" title="表格格式化"></a>表格格式化</h3>]]></content>
-      <categories>
-        <category>技术</category>
-      </categories>
-      <tags>
-        <tag>css</tag>
-        <tag>未完成（鸽）</tag>
       </tags>
   </entry>
   <entry>
