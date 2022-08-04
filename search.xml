@@ -1,6 +1,50 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>css中的float</title>
+    <url>/2022/08/04/CSS%E6%B5%AE%E5%8A%A8/</url>
+    <content><![CDATA[<h1 id="CSS浮动"><a href="#CSS浮动" class="headerlink" title="CSS浮动"></a>CSS浮动</h1><h3 id="浮动规则"><a href="#浮动规则" class="headerlink" title="浮动规则"></a>浮动规则</h3><p>1.浮动元素不会超过容纳块的边界</p>
+<p>2.排队浮动</p>
+<p>3.浮动元素间不会重叠</p>
+<p>4.浮动元素的顶边不能比父级元素的内顶边高</p>
+<p>5.浮动元素的顶边不能比之前任何一个浮动元素或块元素的顶边高</p>
+<p>6.浮动元素顶边不能高于源码中出现浮动元素之前的元素生成的框体所在行框的顶边</p>
+<p>7.浮动元素必须放在尽可能高的位置</p>
+<p>8.左浮动元素尽量向左移动，右浮动元素尽量向右移动</p>
+<p>浮动元素的后代也会浮动</p>
+<h3 id="浮动元素与内容重叠"><a href="#浮动元素与内容重叠" class="headerlink" title="浮动元素与内容重叠"></a>浮动元素与内容重叠</h3><p>与行内元素重叠时：行内元素边框背景内容都会在浮动元素”之上“渲染</p>
+<p>与块元素重叠时：边框和背景在浮动元素”背后“渲染，内容在”之上“渲染</p>
+<p>重叠方式与元素出现顺序无关</p>
+<h3 id="清除浮动"><a href="#清除浮动" class="headerlink" title="清除浮动"></a>清除浮动</h3><p>禁止每个区域的第一个元素出现在浮动元素旁</p>
+<p>如：禁止元素出现在左浮动元素的右侧：<code>clear：left</code></p>
+<p>确保某个元素不与任何浮动元素共处一行：<code>clear both</code></p>
+<p>实现方式：<strong>间距</strong></p>
+<p><strong>间距</strong>：为了把元素向下移动，确保显示在浮动元素下方而在元素上外边距<strong>上方额外增加的空白</strong>，不影响上外边距</p>
+<p>为确保清除浮动了的元素与浮动元素间的边距，可以为浮动元素设置下外边距</p>
+<h3 id="形状浮动"><a href="#形状浮动" class="headerlink" title="形状浮动"></a>形状浮动</h3><p>可以让文字按照浮动<strong>透明</strong>图片的轮廓填充在旁边</p>
+<p>先为浮动图片定义一个形状：</p>
+<p><code>shape-outside:url(&quot;绝对路径&quot;);</code></p>
+<p>若图片向左浮动则会填充在右边，若为向右浮动则填充左边</p>
+<p><strong>必须是透明图片！！！！</strong></p>
+<p>shape-outside还可以直接使用设置其他形状,分为basic-shape和shape-box两类</p>
+<p>basic-shape:</p>
+<p><code>inset() circle() ellipse() polygon()</code></p>
+<p>shape-box:</p>
+<p><code>margin-box border-box padding-box content-box</code>指形状最外边的界限</p>
+<p>默认使用外边距框</p>
+<p>如果设置的形状超过了浮动框，则不会按形状填充而是按浮动框进行填充</p>
+<p>可以使用shape-margin为形状设置”外边距“</p>
+<p>但设置时要注意设置之后有没有超过浮动框，有时候浮动框要设置的更大才能体现出效果</p>
+<h3 id="小结"><a href="#小结" class="headerlink" title="小结"></a>小结</h3><p>浮动是css的基础，虽然简单，但十分强大和有用。浮动不可或缺，有了浮动才能把内容放在某一边，让其他内容围绕它流动。引入浮动形状后，浮动框不再局限为方形</p>
+]]></content>
+      <categories>
+        <category>技术</category>
+      </categories>
+      <tags>
+        <tag>css</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>自学Vue第一章笔记</title>
     <url>/2022/08/03/VUE-chapter3/</url>
     <content><![CDATA[<h1 id="VUE"><a href="#VUE" class="headerlink" title="VUE"></a>VUE</h1><p>创建Vue应用:<code>Vue.createApp().mount(&quot;&quot;)</code></p>
@@ -502,18 +546,6 @@
       </tags>
   </entry>
   <entry>
-    <title>Welcome to my BLOG!</title>
-    <url>/2022/08/03/hello-world/</url>
-    <content><![CDATA[<p>欢迎来到我的博客<br>我会在这里记录自己的学习，生活<br>谢谢你的到来！！</p>
-]]></content>
-      <categories>
-        <category>欢迎</category>
-      </categories>
-      <tags>
-        <tag>日常</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>自学Vue第二章笔记</title>
     <url>/2022/08/03/VUE-chapter4/</url>
     <content><![CDATA[<h4 id="v-html在模板中输出html"><a href="#v-html在模板中输出html" class="headerlink" title="v-html在模板中输出html"></a>v-html在模板中输出html</h4><p>使用v-html在标签内输出html，为防止恶意代码，最好使用自己定义的html，对于用户输入要做过滤处理</p>
@@ -613,6 +645,58 @@
       </tags>
   </entry>
   <entry>
+    <title>Welcome to my BLOG!</title>
+    <url>/2022/08/03/hello-world/</url>
+    <content><![CDATA[<p>欢迎来到我的博客<br>我会在这里记录自己的学习，生活<br>谢谢你的到来！！</p>
+]]></content>
+      <categories>
+        <category>欢迎</category>
+      </categories>
+      <tags>
+        <tag>日常</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>css中list列表相关</title>
+    <url>/2022/08/03/%E5%88%97%E8%A1%A8%E5%92%8C%E7%94%9F%E6%88%90%E7%9A%84%E5%86%85%E5%AE%B9/</url>
+    <content><![CDATA[<h1 id="列表和生成的内容"><a href="#列表和生成的内容" class="headerlink" title="列表和生成的内容"></a>列表和生成的内容</h1><h3 id="改变记号类型"><a href="#改变记号类型" class="headerlink" title="改变记号类型"></a>改变记号类型</h3><p>使用<code>list-style-type</code>属性</p>
+<p>与列表相关的属性只能应用到display属性为list-item的元素上，css并不区分有序列表和无序列表的项目。可以让有序列表使用圆点</p>
+<p>如果不想要记号，可以设置none值，但none值只是让记号不显示，并没有阻断计数</p>
+<p><code>list-style-type</code>的值是继承的，因此如果嵌套的列表需要使用不同的记号需要分别定义</p>
+<p>除了默认提供的<code>list-style-type</code>值外，还可以使用字符串值作为记号</p>
+<p>使用<code>list-style-image</code>属性</p>
+<p>使用该属性可以将列表记号设置为图片</p>
+<p>可以在声明图片记号之后再声明一个<code>list-style-type</code>作为后备记号类型</p>
+<p>嵌套的列表同样会继承image属性</p>
+<p>为嵌套的列表的image设置none阻止继承</p>
+<p>但实际情况中用户代理可能会为列表设置一个list-style-type值，因此继承的list-style-type值可能不能生效</p>
+<p>使用<code>list-style-position</code></p>
+<p>该属性会改变列表记号的位置，设置为outside（默认值）时，记号显示在外部，设置为inside时，显示在内容内部</p>
+<p>使用<code>list-style</code>简写属性</p>
+<p><code>list-style:list-style-type list-style-image list-style-position</code></p>
+<p>可以按任意顺序列出</p>
+<p>列表项目本身是类似块级的元素，放在列表内容外部的记号对其他元素的布局没有影响，记号相对于列表内容类似于绝对定位</p>
+<h3 id="生成的内容"><a href="#生成的内容" class="headerlink" title="生成的内容"></a>生成的内容</h3><p>生成的内容使用::before和::after伪元素插入文档。通过设置伪元素的content属性将指定的内容插入文档内容之前或之后</p>
+<p>如果::before或::after选择符的目标是块级元素，那么display的值只能为none，inline，block，和marker，其他值都为block</p>
+<p>如果是行内元素，那么display的值只能为none或inline，其他值都为inline</p>
+<h5 id="content"><a href="#content" class="headerlink" title="content"></a>content</h5><p>content的值为字符串时，显示为字面当量，即使有特殊标签也直接显示出来</p>
+<p>如果需要换行需要添加\A,如果需要将较长的字符串分多行书写需要\</p>
+<p>content值为URI时，会将引入的资源插入合适的位置，如果是用户代理不支持的资源会完全忽略</p>
+<p>如果想把属性值显示出来，可以使用<code>attr()</code>,如<code>content:attr(href)</code></p>
+<p>如果属性不存在，将显示空字符串</p>
+<h5 id="生成引号"><a href="#生成引号" class="headerlink" title="生成引号"></a>生成引号</h5><p>引号使用quote或open-quote等值生成</p>
+<p><code>quote:&lt;string&gt; &lt;string&gt;</code></p>
+<p>第一个字符定义开始引号，第二个字符定义结束引号</p>
+]]></content>
+      <categories>
+        <category>技术</category>
+      </categories>
+      <tags>
+        <tag>css</tag>
+        <tag>不常用</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>css动画</title>
     <url>/2022/08/03/%E5%8A%A8%E7%94%BB/</url>
     <content><![CDATA[<h1 id="动画"><a href="#动画" class="headerlink" title="动画"></a>动画</h1><h2 id="定义关键帧"><a href="#定义关键帧" class="headerlink" title="定义关键帧"></a>定义关键帧</h2><p>一个<code>@keyframes</code>规则有一个动画标识符（动画名称），以及一到多个关键帧块。</p>
@@ -672,46 +756,6 @@
       </categories>
       <tags>
         <tag>css</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>css中list列表相关</title>
-    <url>/2022/08/03/%E5%88%97%E8%A1%A8%E5%92%8C%E7%94%9F%E6%88%90%E7%9A%84%E5%86%85%E5%AE%B9/</url>
-    <content><![CDATA[<h1 id="列表和生成的内容"><a href="#列表和生成的内容" class="headerlink" title="列表和生成的内容"></a>列表和生成的内容</h1><h3 id="改变记号类型"><a href="#改变记号类型" class="headerlink" title="改变记号类型"></a>改变记号类型</h3><p>使用<code>list-style-type</code>属性</p>
-<p>与列表相关的属性只能应用到display属性为list-item的元素上，css并不区分有序列表和无序列表的项目。可以让有序列表使用圆点</p>
-<p>如果不想要记号，可以设置none值，但none值只是让记号不显示，并没有阻断计数</p>
-<p><code>list-style-type</code>的值是继承的，因此如果嵌套的列表需要使用不同的记号需要分别定义</p>
-<p>除了默认提供的<code>list-style-type</code>值外，还可以使用字符串值作为记号</p>
-<p>使用<code>list-style-image</code>属性</p>
-<p>使用该属性可以将列表记号设置为图片</p>
-<p>可以在声明图片记号之后再声明一个<code>list-style-type</code>作为后备记号类型</p>
-<p>嵌套的列表同样会继承image属性</p>
-<p>为嵌套的列表的image设置none阻止继承</p>
-<p>但实际情况中用户代理可能会为列表设置一个list-style-type值，因此继承的list-style-type值可能不能生效</p>
-<p>使用<code>list-style-position</code></p>
-<p>该属性会改变列表记号的位置，设置为outside（默认值）时，记号显示在外部，设置为inside时，显示在内容内部</p>
-<p>使用<code>list-style</code>简写属性</p>
-<p><code>list-style:list-style-type list-style-image list-style-position</code></p>
-<p>可以按任意顺序列出</p>
-<p>列表项目本身是类似块级的元素，放在列表内容外部的记号对其他元素的布局没有影响，记号相对于列表内容类似于绝对定位</p>
-<h3 id="生成的内容"><a href="#生成的内容" class="headerlink" title="生成的内容"></a>生成的内容</h3><p>生成的内容使用::before和::after伪元素插入文档。通过设置伪元素的content属性将指定的内容插入文档内容之前或之后</p>
-<p>如果::before或::after选择符的目标是块级元素，那么display的值只能为none，inline，block，和marker，其他值都为block</p>
-<p>如果是行内元素，那么display的值只能为none或inline，其他值都为inline</p>
-<h5 id="content"><a href="#content" class="headerlink" title="content"></a>content</h5><p>content的值为字符串时，显示为字面当量，即使有特殊标签也直接显示出来</p>
-<p>如果需要换行需要添加\A,如果需要将较长的字符串分多行书写需要\</p>
-<p>content值为URI时，会将引入的资源插入合适的位置，如果是用户代理不支持的资源会完全忽略</p>
-<p>如果想把属性值显示出来，可以使用<code>attr()</code>,如<code>content:attr(href)</code></p>
-<p>如果属性不存在，将显示空字符串</p>
-<h5 id="生成引号"><a href="#生成引号" class="headerlink" title="生成引号"></a>生成引号</h5><p>引号使用quote或open-quote等值生成</p>
-<p><code>quote:&lt;string&gt; &lt;string&gt;</code></p>
-<p>第一个字符定义开始引号，第二个字符定义结束引号</p>
-]]></content>
-      <categories>
-        <category>技术</category>
-      </categories>
-      <tags>
-        <tag>css</tag>
-        <tag>不常用</tag>
       </tags>
   </entry>
   <entry>
@@ -948,6 +992,181 @@
       </tags>
   </entry>
   <entry>
+    <title>css中的grid</title>
+    <url>/2022/08/04/%E6%A0%85%E6%A0%BC%E5%B8%83%E5%B1%80/</url>
+    <content><![CDATA[<h1 id="栅格布局"><a href="#栅格布局" class="headerlink" title="栅格布局"></a>栅格布局</h1><h3 id="创建栅格容器"><a href="#创建栅格容器" class="headerlink" title="创建栅格容器"></a>创建栅格容器</h3><p><code>display:grid</code>:创建常规栅格</p>
+<p><code>display:inline-grid</code>:创建行内栅格</p>
+<p>常规栅格与块级元素仍有区别：</p>
+<p>浮动元素不会打乱栅格容器，栅格不会移动到浮动元素下方</p>
+<p>栅格容器的外边距不与其后代的外边距折叠</p>
+<ul>
+<li><p>栅格容器上所有column属性都被忽略</p>
+</li>
+<li><p>栅格容器没有::first-line和::first-letter伪元素</p>
+</li>
+<li><p>栅格元素的float和clear属性会被忽略</p>
+</li>
+<li><p>vertical-align属性对栅格元素不起作用</p>
+</li>
+<li><p>如果设置的是inline-grid，但目标元素是浮动的或者绝对定位的，inline-grid将变成grid</p>
+</li>
+</ul>
+<h3 id="栅格术语"><a href="#栅格术语" class="headerlink" title="栅格术语"></a>栅格术语</h3><ul>
+<li>栅格元素：通常是栅格容器的子元素或者其中的匿名文本，参与栅格布局</li>
+<li>栅格轨道：两条相邻栅格线之间夹住的整个区域（栅格列，栅格行）</li>
+<li>栅格单元：四条栅格线确定的区域，内部没有其他栅格线（最小单元格）</li>
+<li>栅格区域：任意四条栅格线确定的区域，最小的栅格区域是栅格单元</li>
+</ul>
+<h3 id="放置栅格线"><a href="#放置栅格线" class="headerlink" title="放置栅格线"></a>放置栅格线</h3><p>使用<code>grid-template-rows</code>和<code>grid-template-columns</code>定义栅格模板中的栅格线</p>
+<h4 id="宽度固定的栅格轨道"><a href="#宽度固定的栅格轨道" class="headerlink" title="宽度固定的栅格轨道"></a>宽度固定的栅格轨道</h4><p>宽度固定指栅格线之间的距离不随着栅格轨道中内容的变化而变化，百分数也算宽度固定</p>
+<p>如<code>grid-template-columns:100px 50% 200px</code>;</p>
+<p>为栅格线命名：使用中括号，如：</p>
+<p><code>grid-template-columns:[start]100px[first] 50%[second] 200px[end]</code>为四条栅格线分别命名</p>
+<p>名称可以重用</p>
+<p>设置百分数时可能会使内容超出容器，可以使用设置极值的方式解决</p>
+<p>设定极值<code>minmax(a,b)</code>指明行的高度不能小于一个值也不能大于一个值</p>
+<p>如<code>grid-template-columns:[start]100px[first] minmax(3em,50%)[second] 200px[end]</code>规定列宽不能大于50%也不能小于3个字号</p>
+<p>使用设定极值时浏览器会自动计算让其在范围内把剩余空间尽量铺满</p>
+<p>除了使用minmax()还可以使用calc()计算</p>
+<h4 id="弹性栅格轨道"><a href="#弹性栅格轨道" class="headerlink" title="弹性栅格轨道"></a>弹性栅格轨道</h4><p>弹性栅格轨道的尺寸基于整个轨道中的具体内容而定</p>
+<p>份数单位：fr</p>
+<p><code>grid-template-columns:1fr 1fr 1fr 1fr</code>&#x3D;<code>grid-template-columns:25% 25% 25% 25%</code></p>
+<p>除了替代百分数外，fr还可以实现部分弹性伸缩</p>
+<p>例如：<code>grid-template-columns:100px 1fr 100px</code></p>
+<p>容器宽度大于200px时，剩余部分会全被分给1fr对应的部分</p>
+<p>minmax()设定的最小值不允许以fr为单位，但最大值可以</p>
+<h5 id="min-content和max-content"><a href="#min-content和max-content" class="headerlink" title="min-content和max-content"></a>min-content和max-content</h5><p>max-content:占据内容所需的最大空间&#x2F;内容尽量宽，以免换行</p>
+<p>min-content:尽量少占据空间，能够显示出内容即可</p>
+<p>这两个属性会应用到整个栅格轨道之上，如果把一列的尺寸设置成max-content,整列的宽度都与列中最宽的内容一样</p>
+<p>如果在minmax中设置<code>minmax(0,max-content)</code>；那么将在确保不超出弹性容器的基础上尽量向max的值靠拢</p>
+<p>如果将列和行都设置为max-content，浏览器先解析列再解析行，和只设置列是一样的</p>
+<h5 id="auto"><a href="#auto" class="headerlink" title="auto"></a>auto</h5><p>auto用作最小值时，视作栅格元素的最小尺寸（由mid-width和mid-height定义）</p>
+<p>作最大值时，作用等同于max-content</p>
+<p>任何地方都可以使用auto，要么作最小值，要么作最大值，但<strong>尽量避免使用auto</strong></p>
+<h5 id="fit-content"><a href="#fit-content" class="headerlink" title="fit-content"></a>fit-content</h5><p><code>fit-content(argument)=minmax(argument&gt;min-content?argument:min-content , argument&lt;max-content?arguement:max-content);</code></p>
+<p>使用fit-content,内容不多时，轨道将缩小为最小内容尺寸，内容较多时，能为轨道尺寸设置一个上限</p>
+<h4 id="重复栅格线"><a href="#重复栅格线" class="headerlink" title="重复栅格线"></a>重复栅格线</h4><p>使用repeat（）设置重复栅格线</p>
+<p>例如：<code>grid-template-columns:repeat(10,5em)</code>将创建10个5字号轨道宽度的列轨道</p>
+<p>也可以重复固定模式的列轨道</p>
+<p>如：<code>grid-template-columns:repeat(10,5em 1fr 1fr)</code>将创建列结构为5em，1fr，1fr，然后重复10次，也就是创建了30个列轨道</p>
+<p>如果想额外增加列，可以：<code>grid-template-columns:repeat(10,5em 1fr 1fr) 5em</code>在重复结束后加上一个列轨道</p>
+<p>repeat（）中几乎可以使用任意值，但不能在重复中嵌套重复</p>
+<h5 id="自动填充轨道"><a href="#自动填充轨道" class="headerlink" title="自动填充轨道"></a>自动填充轨道</h5><p>如果想让一直重复：<code>repeat(auto-fill,5em)</code>将会把5em的宽度一直重复到放不下为止</p>
+<p>在一个模板里只能有一个自动重复的模式</p>
+<p>固定数量的重复模式可以与自动填充的轨道结合到一起使用</p>
+<p>使用auto-fill，没有元素的单元格会得到保留</p>
+<p>但如果使用auto-fit，则会剔除</p>
+<h4 id="栅格区域"><a href="#栅格区域" class="headerlink" title="栅格区域"></a>栅格区域</h4><p><code>grid-template-areas:none/String</code></p>
+<p>使用字符串作为标识符，合并相同字符串</p>
+<p>如：</p>
+<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="attribute">grid-template-areas</span>:</span><br><span class="line"><span class="string">&quot;h h h h&quot;</span></span><br><span class="line"><span class="string">&quot;b c c c&quot;</span></span><br><span class="line"><span class="string">&quot;f f d d&quot;</span>;</span><br></pre></td></tr></table></figure>
+
+<p>第一行只有一列，第二行两列，宽度1：3，第三行同理</p>
+<p>只能合并矩形区域，不能合并非矩形区域，形状太复杂会导致模板失效</p>
+<p>通过area为区域标记名称，区域的栅格线实际上也已经隐式确定了名称</p>
+<p>为了与内容匹配可以设置元素的grid-area</p>
+<h3 id="在栅格中添加元素"><a href="#在栅格中添加元素" class="headerlink" title="在栅格中添加元素"></a>在栅格中添加元素</h3><p>可以引用栅格线，也可以引用栅格区域</p>
+<h4 id="使用行线和列线"><a href="#使用行线和列线" class="headerlink" title="使用行线和列线"></a>使用行线和列线</h4><p><code>grid-row-start</code>:规定元素起始的行线（栅格线）</p>
+<p><code>grid-row-end</code>:规定元素在那条行线结束</p>
+<p><code>grid-column-start</code>和<code>grid-column-end</code>同理</p>
+<p>如果省略的结束线，则自动使用起始线的下一条线结束，这等同于</p>
+<p><code>grid-column-end:span 1 </code>或<code>grid-column-end: span</code></p>
+<p>span后面的数字表示”跨越指定数目的栅格轨道“，只能用正整数</p>
+<p>span既可以用于开始线也可以用于结束线。用于开始线时，意思是”从结束线开始，向开始方向计数“</p>
+<p>通过显式定义的栅格线编号可以为负数，代表从后往前数第|n|个栅格线</p>
+<p>栅格线编号除了通过数字引用也可以通过声明过的命名调用</p>
+<p>还可以通过<code>grid-template-area</code>中定义的名称调用</p>
+<h4 id="行和列的简写"><a href="#行和列的简写" class="headerlink" title="行和列的简写"></a>行和列的简写</h4><p>使用<code>grid-row</code>和<code>grid-column</code>可以简化声明开始和结束栅格线的过程</p>
+<p>如：<code>grid-row:1/3</code></p>
+<p>以斜线分割的两部分中，前半部分定义开始栅格线，后半部分定义结束栅格线</p>
+<p>如果没有斜杆，定义的是开始栅格线，结束栅格线的位置却决于开始栅格线</p>
+<ul>
+<li>如果开始栅格线是名称，结束栅格线就是下一条同名栅格线</li>
+<li>如果只提供一个数字，下一个栅格线是auto</li>
+</ul>
+<h4 id="隐式栅格"><a href="#隐式栅格" class="headerlink" title="隐式栅格"></a>隐式栅格</h4><p>如果行线只显示定义了三条，却进行了类似<code>grid-row:1/4</code>这样的声明，浏览器会再创建一条行线，这条栅格线和由此产生的栅格轨道是隐式栅格的一部分</p>
+<p>span是从显示栅格内部开始计数的，但不一定在显示栅格内部结束</p>
+<h4 id="错误处理"><a href="#错误处理" class="headerlink" title="错误处理"></a>错误处理</h4><p>如果开始线在结束线后面，会将两者对调</p>
+<p>如果开始线和结束线都为跨度，忽略结束线并将值设置成auto</p>
+<h4 id="使用区域"><a href="#使用区域" class="headerlink" title="使用区域"></a>使用区域</h4><p>将预先声明的<code>grid-template-areas</code>的标识符通过<code>grid-area</code>赋给元素</p>
+<p>grid-area也可以直接使用</p>
+<p><code>grid-area:row-start/column-start/row-end/column-end</code>根据这种规范来确定区域</p>
+<h4 id="栅格元素重叠"><a href="#栅格元素重叠" class="headerlink" title="栅格元素重叠"></a>栅格元素重叠</h4><p>栅格元素是有可能重叠的</p>
+<h3 id="栅格流"><a href="#栅格流" class="headerlink" title="栅格流"></a>栅格流</h3><p>栅格流主要分为两种模式：行优先和列优先，二者都可以通过密集流增强</p>
+<p>通过grid-auto-flow设置栅格流</p>
+<p><code>grid-auto-flow:row/column||dense</code>默认是row</p>
+<p>栅格流放置的实际上是栅格区域，然后再把栅格元素放置到栅格区域中</p>
+<p>行流和列流的工作方式是：如果下一个单元格可以放下对应的元素则放下，如果不能则跳过此单元格保证顺序。</p>
+<p>如果想让元素尽量堆满单元格而不考虑顺序，可以在<code>grid-auto-flow</code>中加入dense</p>
+<h3 id="自动增加栅格线"><a href="#自动增加栅格线" class="headerlink" title="自动增加栅格线"></a>自动增加栅格线</h3><p>如果有元素超出了声明的行&#x2F;列，系统会自动增加栅格线</p>
+<p>一般来说，自动增加的栅格线对应的是最小尺寸，如果需要修改最小尺寸，可以使用</p>
+<p><code>grid-auto-columns,grid-auto-rpws</code></p>
+<p>可以为其添加一个属性值（极值）来为自动添加的行规范尺寸</p>
+<h3 id="栏距"><a href="#栏距" class="headerlink" title="栏距"></a>栏距</h3><p>栏距由row-gap和column-gap设置，只能为非负数，不能为百分数或fr</p>
+<p>简写是grid-gap</p>
+<h3 id="栅格元素与盒模型"><a href="#栅格元素与盒模型" class="headerlink" title="栅格元素与盒模型"></a>栅格元素与盒模型</h3><p>当未为元素设置width和height时，设置正外边距会让元素向中心收缩，负外边距会向周围扩张</p>
+<p>如果元素尺寸设置了，那么外边距将被覆盖</p>
+<p>元素外边距不会影响栅格轨道尺寸的计算</p>
+<p>如果栅格元素声明了绝对定位：对应的栅格区域充当容纳块和定位上下文</p>
+<h3 id="对齐"><a href="#对齐" class="headerlink" title="对齐"></a>对齐</h3><p><code>justify-self</code>和<code>align-self</code>:控制元素在对应栅格区域内的横向&#x2F;纵向对齐方式</p>
+<p><code>justify-item</code>和<code>align-item</code>:控制栅格容器内所有元素的横向&#x2F;纵向对齐方式</p>
+<p><code>justify-content</code>和<code>align-content</code>:控制栅格的对齐属性，为栅格分配多余的空间事实上是调整栅格的栏距尺寸</p>
+<h3 id="分层和排序"><a href="#分层和排序" class="headerlink" title="分层和排序"></a>分层和排序</h3><p>元素若重叠，分层可以使用z-index</p>
+<p>若想控制元素出现的顺序，同样可以使用order，只改变视觉顺序不改变阅读源码顺序</p>
+<h3 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h3><p>栅格布局内容繁杂，引入了大量新特性，需要时常温故知新</p>
+]]></content>
+      <categories>
+        <category>技术</category>
+      </categories>
+      <tags>
+        <tag>css</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>浏览器的工作原理</title>
+    <url>/2022/08/03/%E6%B5%8F%E8%A7%88%E5%99%A8%E7%9A%84%E5%B7%A5%E4%BD%9C%E5%8E%9F%E7%90%86%EF%BC%88%E7%AE%80%E6%98%93%E7%89%88%EF%BC%89/</url>
+    <content><![CDATA[<h3 id="浏览器的工作原理（简易版）"><a href="#浏览器的工作原理（简易版）" class="headerlink" title="浏览器的工作原理（简易版）"></a>浏览器的工作原理（简易版）</h3><p>输入url后</p>
+<ol>
+<li><p>浏览器进行dns查找，把域名转换为ip地址，根据ip地址找到对应的服务器</p>
+</li>
+<li><p>浏览器通过TCP握手机制跟服务器建立连接，如果为https还有一步TLS握手</p>
+</li>
+<li><p>浏览器发起http&#x2F;https请求，获取响应。在浏览器接收响应时，受制于TCP连接的性质，浏览器先收到前14kb的数据，后续才会慢慢增加传输速度下载其他文件</p>
+</li>
+<li><p>收到html代码后，浏览器开始渲染网页</p>
+<ol>
+<li><p>解析html代码，构建DOM树（HTML文档在浏览器中的对象表示）</p>
+<p>浏览器在解析HTML时顺序执行并且只有一个主线程负责，遇到script标签会先执行js代码，暂停解析html代码。对于图片，css文件，设置了defer&#x2F;async的script标签不会影响html解析，会异步加载</p>
+<p>浏览器具有预扫描线程，扫描html代码，提前把css文件，字体，js文件下载下来，不影响主线程</p>
+<p><img src="/image/image1.png" alt="dom树"></p>
+</li>
+<li><p>构建CSSOM树</p>
+<p><img src="/image/image2.png" alt="CSSOM树"></p>
+</li>
+<li><p>合并DOM和CSSOM，形成渲染树</p>
+<p><img src="/image/image3.png" alt="渲染树"></p>
+</li>
+<li><p>布局</p>
+<p>对于图片这样的结点，如果没有指定宽高，会先忽略大小。图片下载完成后，浏览器根据图片的大小重新计算受影响的结点的宽高，这种方法被称为回流（reflow）</p>
+</li>
+<li><p>绘制</p>
+<p>第一次布局之后，浏览器会把结点和结点的样式绘制在屏幕上，要求过程快速</p>
+<p>如果布局发生回流，浏览器会发生重绘，把变化的布局重新绘制在屏幕上</p>
+<p>绘制期间可能会有组合发生（产生了新的图层）,浏览器需要把图层组合起来，按正确的图层顺序渲染，发生了重绘也会导致重新组合</p>
+<p>上述五步完成后，设置了defer&#x2F;async的script中的内容，网页加载完成</p>
+</li>
+</ol>
+</li>
+</ol>
+]]></content>
+      <categories>
+        <category>技术</category>
+      </categories>
+      <tags>
+        <tag>计算机网络</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>css中的滤镜，混合，遮罩，裁剪</title>
     <url>/2022/08/03/%E6%BB%A4%E9%95%9C%E3%80%81%E6%B7%B7%E5%90%88%E3%80%81%E8%A3%81%E5%89%AA%E5%92%8C%E9%81%AE%E7%BD%A9/</url>
     <content><![CDATA[<h1 id="滤镜、混合、裁剪和遮罩"><a href="#滤镜、混合、裁剪和遮罩" class="headerlink" title="滤镜、混合、裁剪和遮罩"></a>滤镜、混合、裁剪和遮罩</h1><h2 id="CSS滤镜"><a href="#CSS滤镜" class="headerlink" title="CSS滤镜"></a>CSS滤镜</h2><p><code>filter:none/blur()/brightness()/contrast()/drop-shadow()/grayscale()/</code></p>
@@ -1011,62 +1230,6 @@
       </tags>
   </entry>
   <entry>
-    <title>浏览器的工作原理</title>
-    <url>/2022/08/03/%E6%B5%8F%E8%A7%88%E5%99%A8%E7%9A%84%E5%B7%A5%E4%BD%9C%E5%8E%9F%E7%90%86%EF%BC%88%E7%AE%80%E6%98%93%E7%89%88%EF%BC%89/</url>
-    <content><![CDATA[<h3 id="浏览器的工作原理（简易版）"><a href="#浏览器的工作原理（简易版）" class="headerlink" title="浏览器的工作原理（简易版）"></a>浏览器的工作原理（简易版）</h3><p>输入url后</p>
-<ol>
-<li><p>浏览器进行dns查找，把域名转换为ip地址，根据ip地址找到对应的服务器</p>
-</li>
-<li><p>浏览器通过TCP握手机制跟服务器建立连接，如果为https还有一步TLS握手</p>
-</li>
-<li><p>浏览器发起http&#x2F;https请求，获取响应。在浏览器接收响应时，受制于TCP连接的性质，浏览器先收到前14kb的数据，后续才会慢慢增加传输速度下载其他文件</p>
-</li>
-<li><p>收到html代码后，浏览器开始渲染网页</p>
-<ol>
-<li><p>解析html代码，构建DOM树（HTML文档在浏览器中的对象表示）</p>
-<p>浏览器在解析HTML时顺序执行并且只有一个主线程负责，遇到script标签会先执行js代码，暂停解析html代码。对于图片，css文件，设置了defer&#x2F;async的script标签不会影响html解析，会异步加载</p>
-<p>浏览器具有预扫描线程，扫描html代码，提前把css文件，字体，js文件下载下来，不影响主线程</p>
-<p><img src="/image/image1.png" alt="dom树"></p>
-</li>
-<li><p>构建CSSOM树</p>
-<p><img src="/image/image2.png" alt="CSSOM树"></p>
-</li>
-<li><p>合并DOM和CSSOM，形成渲染树</p>
-<p><img src="/image/image3.png" alt="渲染树"></p>
-</li>
-<li><p>布局</p>
-<p>对于图片这样的结点，如果没有指定宽高，会先忽略大小。图片下载完成后，浏览器根据图片的大小重新计算受影响的结点的宽高，这种方法被称为回流（reflow）</p>
-</li>
-<li><p>绘制</p>
-<p>第一次布局之后，浏览器会把结点和结点的样式绘制在屏幕上，要求过程快速</p>
-<p>如果布局发生回流，浏览器会发生重绘，把变化的布局重新绘制在屏幕上</p>
-<p>绘制期间可能会有组合发生（产生了新的图层）,浏览器需要把图层组合起来，按正确的图层顺序渲染，发生了重绘也会导致重新组合</p>
-<p>上述五步完成后，设置了defer&#x2F;async的script中的内容，网页加载完成</p>
-</li>
-</ol>
-</li>
-</ol>
-]]></content>
-      <categories>
-        <category>技术</category>
-      </categories>
-      <tags>
-        <tag>计算机网络</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>css中表格样式</title>
-    <url>/2022/08/03/%E8%A1%A8%E6%A0%BC%E5%B8%83%E5%B1%80/</url>
-    <content><![CDATA[<h1 id="表格布局"><a href="#表格布局" class="headerlink" title="表格布局"></a>表格布局</h1><h3 id="表格格式化"><a href="#表格格式化" class="headerlink" title="表格格式化"></a>表格格式化</h3>]]></content>
-      <categories>
-        <category>技术</category>
-      </categories>
-      <tags>
-        <tag>css</tag>
-        <tag>未完成（鸽）</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>css中的过渡</title>
     <url>/2022/08/03/%E8%BF%87%E6%B8%A1/</url>
     <content><![CDATA[<h1 id="过渡"><a href="#过渡" class="headerlink" title="过渡"></a>过渡</h1><h2 id="定义过渡属性"><a href="#定义过渡属性" class="headerlink" title="定义过渡属性"></a>定义过渡属性</h2><p>CSS中使用四个属性定义过渡</p>
@@ -1122,6 +1285,18 @@
       </categories>
       <tags>
         <tag>css</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>css中表格样式</title>
+    <url>/2022/08/03/%E8%A1%A8%E6%A0%BC%E5%B8%83%E5%B1%80/</url>
+    <content><![CDATA[<h1 id="表格布局"><a href="#表格布局" class="headerlink" title="表格布局"></a>表格布局</h1><h3 id="表格格式化"><a href="#表格格式化" class="headerlink" title="表格格式化"></a>表格格式化</h3>]]></content>
+      <categories>
+        <category>技术</category>
+      </categories>
+      <tags>
+        <tag>css</tag>
+        <tag>未完成（鸽）</tag>
       </tags>
   </entry>
 </search>
