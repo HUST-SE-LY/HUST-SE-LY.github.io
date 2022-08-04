@@ -1,0 +1,314 @@
+
+<!DOCTYPE html>
+<html lang="zh-CN" class="loading">
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>TCP/IP知识点总结 - ly-blog</title>
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="google" content="notranslate" />
+    <meta name="keywords" content="Fechin,"> 
+    <meta name="description" content="一个超级懒虫的博客,TCP&amp;#x2F;IP第一章 网络基础知识1.1 计算机网络出现的背景1.1.1 计算机的普及及多样化如题
+1.1.2 从独立模式到网络互连模式
+独立模式（单机模式）：计算机未接入网络，各自独立使用,"> 
+    <meta name="author" content="Lazy-ly"> 
+    <link rel="alternative" href="atom.xml" title="ly-blog" type="application/atom+xml"> 
+    <link rel="icon" href="/img/favicon.jpg"> 
+    
+    
+    
+    <meta name="twitter:card" content="summary"/>
+    <meta name="twitter:title" content="TCP/IP知识点总结 - ly-blog"/>
+    <meta name="twitter:description" content="一个超级懒虫的博客,TCP&amp;#x2F;IP第一章 网络基础知识1.1 计算机网络出现的背景1.1.1 计算机的普及及多样化如题
+1.1.2 从独立模式到网络互连模式
+独立模式（单机模式）：计算机未接入网络，各自独立使用,"/>
+    
+    
+    
+    
+    <meta property="og:site_name" content="ly-blog"/>
+    <meta property="og:type" content="object"/>
+    <meta property="og:title" content="TCP/IP知识点总结 - ly-blog"/>
+    <meta property="og:description" content="一个超级懒虫的博客,TCP&amp;#x2F;IP第一章 网络基础知识1.1 计算机网络出现的背景1.1.1 计算机的普及及多样化如题
+1.1.2 从独立模式到网络互连模式
+独立模式（单机模式）：计算机未接入网络，各自独立使用,"/>
+    
+<link rel="stylesheet" href="/css/diaspora.css">
+
+    <script>window.searchDbPath = "/search.xml";</script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Source+Code+Pro&display=swap" rel="stylesheet">
+<meta name="generator" content="Hexo 6.2.0"></head>
+
+<body class="loading">
+    <span id="config-title" style="display:none">ly-blog</span>
+    <div id="loader"></div>
+    <div id="single">
+    <div id="top" style="display: block;">
+    <div class="bar" style="width: 0;"></div>
+    <a class="iconfont icon-home image-icon" href="javascript:;" data-url="http://example.com"></a>
+    <div title="播放/暂停" class="iconfont icon-play"></div>
+    <h3 class="subtitle">TCP/IP知识点总结</h3>
+    <div class="social">
+        <div>
+            <div class="share">
+                <a title="获取二维码" class="iconfont icon-scan" href="javascript:;"></a>
+            </div>
+            <div id="qr"></div>
+        </div>
+    </div>
+    <div class="scrollbar"></div>
+</div>
+
+    <div class="section">
+        <div class="article">
+    <div class='main'>
+        <h1 class="title">TCP/IP知识点总结</h1>
+        <div class="stuff">
+            <span>八月 04, 2022</span>
+            
+  <ul class="post-tags-list" itemprop="keywords"><li class="post-tags-list-item"><a class="post-tags-list-link" href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/" rel="tag">计算机网络</a></li></ul>
+
+
+        </div>
+        <div class="content markdown">
+            <h1 id="TCP-x2F-IP"><a href="#TCP-x2F-IP" class="headerlink" title="TCP&#x2F;IP"></a>TCP&#x2F;IP</h1><h2 id="第一章-网络基础知识"><a href="#第一章-网络基础知识" class="headerlink" title="第一章 网络基础知识"></a>第一章 网络基础知识</h2><h3 id="1-1-计算机网络出现的背景"><a href="#1-1-计算机网络出现的背景" class="headerlink" title="1.1 计算机网络出现的背景"></a>1.1 计算机网络出现的背景</h3><h4 id="1-1-1-计算机的普及及多样化"><a href="#1-1-1-计算机的普及及多样化" class="headerlink" title="1.1.1 计算机的普及及多样化"></a>1.1.1 计算机的普及及多样化</h4><p>如题</p>
+<h4 id="1-1-2-从独立模式到网络互连模式"><a href="#1-1-2-从独立模式到网络互连模式" class="headerlink" title="1.1.2 从独立模式到网络互连模式"></a>1.1.2 从独立模式到网络互连模式</h4><ul>
+<li>独立模式（单机模式）：计算机未接入网络，各自独立使用的模式</li>
+<li>网络互联模式：<ul>
+<li>WAN: 广域网</li>
+<li>MAN: 城域网</li>
+<li>LAN: 局域网</li>
+</ul>
+</li>
+</ul>
+<h3 id="1-2-计算机与网络发展的七个阶段"><a href="#1-2-计算机与网络发展的七个阶段" class="headerlink" title="1.2 计算机与网络发展的七个阶段"></a>1.2 计算机与网络发展的七个阶段</h3><h4 id="1-2-1-批处理"><a href="#1-2-1-批处理" class="headerlink" title="1.2.1 批处理"></a>1.2.1 批处理</h4><p>事先将用户程序和数据装入卡带或磁带，并由计算机按照一定的顺序读取，使程序和数据能够批量得到处理的方式</p>
+<p>此时计算机还不是普通人使用的工具</p>
+<h4 id="1-2-2-分时系统"><a href="#1-2-2-分时系统" class="headerlink" title="1.2.2 分时系统"></a>1.2.2 分时系统</h4><p>分时系统（TSS）指多台终端与同一个计算机相连，允许多个用户同时使用一台计算机系统</p>
+<h4 id="1-2-3-计算机间的通信"><a href="#1-2-3-计算机间的通信" class="headerlink" title="1.2.3 计算机间的通信"></a>1.2.3 计算机间的通信</h4><p>分时系统中，一台计算机与多个终端相连，但计算机之间是不能相连的，这时候如果需要转移数据，需要将数据保存在软盘，磁带等介质中，再将介质送到目的计算机，相当繁琐</p>
+<p>计算机间的通信技术（计算机与计算机之间由通信链路相连）使人们能很轻松的读取另一台计算机中的数据，极大的缩短了传送数据的时间</p>
+<h3 id="1-3-协议"><a href="#1-3-协议" class="headerlink" title="1.3 协议"></a>1.3 协议</h3><p>在计算机通信中，实现达成一个详细的约定，并遵循这一约定进行处理。这种约定就是”协议“</p>
+<h4 id="1-3-5-分组交换协议"><a href="#1-3-5-分组交换协议" class="headerlink" title="1.3.5 分组交换协议"></a>1.3.5 分组交换协议</h4><p>分组交换是指将大数据分割成一个个交包（packet）的较小单位进行传输的方法。</p>
+<h3 id="1-5-协议分层与OSI参考模型"><a href="#1-5-协议分层与OSI参考模型" class="headerlink" title="1.5 协议分层与OSI参考模型"></a>1.5 协议分层与OSI参考模型</h3><h4 id="1-5-1-协议的分层"><a href="#1-5-1-协议的分层" class="headerlink" title="1.5.1 协议的分层"></a>1.5.1 协议的分层</h4><p>ISO制定标准化OSI之前，提出了作为通信协议设计指标的OSI参考模型,这一模型将通信协议中必要的功能分为了七层</p>
+<p>每一分层接收由它下一分层提供的特定服务，并为自己的上一层提供特定服务。上下层之间交互时遵循的约定叫”接口“，同一层之间交互所遵循的约定叫”协议“</p>
+<h4 id="1-5-3-OSI参考模型"><a href="#1-5-3-OSI参考模型" class="headerlink" title="1.5.3 OSI参考模型"></a>1.5.3 OSI参考模型</h4><p>OSI参考模型将分组通信协议整理并分为了易于理解的七个分层</p>
+<ul>
+<li>7.应用层：针对特定应用的协议</li>
+<li>6.表示层：设备固有数据格式和网络标准数据格式的转换</li>
+<li>5.会话层：通信管理。负责建立和断开通信连接。管理传输层以下的分层</li>
+<li>4.传输层：管理两个节点之间的数据传输，负责可靠传输</li>
+<li>3.网络层：地址管理和路由选择</li>
+<li>2.数据链路层：互连设备之间传送和识别数据帧</li>
+<li>1.物理层：以”0“，”1“代表电压的高低，灯光的闪灭。界定连接器和网线的规格</li>
+</ul>
+<h3 id="1-7-传输方式的分类"><a href="#1-7-传输方式的分类" class="headerlink" title="1.7 传输方式的分类"></a>1.7 传输方式的分类</h3><h4 id="1-7-1-面向有连接型和无连接型"><a href="#1-7-1-面向有连接型和无连接型" class="headerlink" title="1.7.1 面向有连接型和无连接型"></a>1.7.1 面向有连接型和无连接型</h4><ul>
+<li>面向有连接型：在发送数据前，需要在收发主机之间连接一条通信链路</li>
+<li>面向无连接型：不要求建立和断开连接，发送端可于任何时候自由发送数据。接收端不知道会在何时从哪里收到数据</li>
+</ul>
+<h4 id="1-7-2-电路交换和分组交换"><a href="#1-7-2-电路交换和分组交换" class="headerlink" title="1.7.2 电路交换和分组交换"></a>1.7.2 电路交换和分组交换</h4><ul>
+<li>电路交换：两个计算机独占一条电路，其他计算机无法使用</li>
+<li>分组交换：将数据分为一个个分组，多台计算机可以同时通信</li>
+</ul>
+<h4 id="1-7-3-根据接收端数量分类"><a href="#1-7-3-根据接收端数量分类" class="headerlink" title="1.7.3 根据接收端数量分类"></a>1.7.3 根据接收端数量分类</h4><ul>
+<li>单播：一对一通信</li>
+<li>广播：一台主机发送到与之相连的所有其他主机</li>
+<li>多播：一台主机发送到与之相连的特定一组主机</li>
+<li>任播：从特定的多台主机中选出一台进行通信</li>
+</ul>
+<h3 id="1-8-地址"><a href="#1-8-地址" class="headerlink" title="1.8 地址"></a>1.8 地址</h3><h4 id="1-8-1-地址的唯一性"><a href="#1-8-1-地址的唯一性" class="headerlink" title="1.8.1 地址的唯一性"></a>1.8.1 地址的唯一性</h4><p>同一个通信网络中不允许有两个相同地址的通信主体存在</p>
+<h4 id="1-8-2-地址的层次性"><a href="#1-8-2-地址的层次性" class="headerlink" title="1.8.2 地址的层次性"></a>1.8.2 地址的层次性</h4><p>将地址分层从而实现更快速的定位</p>
+<p>IP地址是分层的，MAC地址不分层</p>
+<h3 id="1-9-网络构成要素"><a href="#1-9-网络构成要素" class="headerlink" title="1.9 网络构成要素"></a>1.9 网络构成要素</h3><h4 id="1-9-1-通信媒介与数据链路"><a href="#1-9-1-通信媒介与数据链路" class="headerlink" title="1.9.1 通信媒介与数据链路"></a>1.9.1 通信媒介与数据链路</h4><p>计算机之间通过电缆相互连接</p>
+<p>根据数据链路（相互直连的设备之间进行通信所涉及的协议及网络）不同而选用的电缆类型也不尽相同</p>
+<h4 id="1-9-2-网卡"><a href="#1-9-2-网卡" class="headerlink" title="1.9.2 网卡"></a>1.9.2 网卡</h4><p>任何一台计算机连接网络都必须使用网卡</p>
+<h4 id="1-9-3-中继器"><a href="#1-9-3-中继器" class="headerlink" title="1.9.3 中继器"></a>1.9.3 中继器</h4><p>中继器是在OSI模型的第一层——物理层面延长网络的设备</p>
+<p>由电缆传来的电信号或光信号通过中继器的波形调整和放大传给另一个电缆</p>
+<p>中继器不能改变传输速率，是对减弱的信号进行放大的设备</p>
+<p>中继器进行的网络延长并不能无限放大</p>
+<p>有的中继器提供多个端口服务，也被成为集线器。集线器每个端口都可以看作一个中继器</p>
+<h4 id="1-9-4-网桥-x2F-2层交换机"><a href="#1-9-4-网桥-x2F-2层交换机" class="headerlink" title="1.9.4 网桥&#x2F;2层交换机"></a>1.9.4 网桥&#x2F;2层交换机</h4><p>网桥是在OSI模型第二层——数据链路层面连接两个网络的设备</p>
+<h4 id="1-9-5-路由器-x2F-3层交换机"><a href="#1-9-5-路由器-x2F-3层交换机" class="headerlink" title="1.9.5 路由器&#x2F;3层交换机"></a>1.9.5 路由器&#x2F;3层交换机</h4><p>路由器是在OSI模型的第三层——网络层面上连接两个网络，并对分组报文进行转发的设备</p>
+<p>网桥根据MAC地址处理，而路由器根据IP地址处理</p>
+<p>路由器还具有分担网络负荷的作用，有些路由器具有一定的网络安全功能</p>
+<h4 id="1-9-6-4-7层交换机"><a href="#1-9-6-4-7层交换机" class="headerlink" title="1.9.6 4-7层交换机"></a>1.9.6 4-7层交换机</h4><p>4-7层交换机负责处理OSI模型中从传输层到应用层的数据</p>
+<h4 id="1-9-7-网关"><a href="#1-9-7-网关" class="headerlink" title="1.9.7 网关"></a>1.9.7 网关</h4><p>网关是OSI参考模型中负责将传输层到应用层的协议的转换和数据的转发的设备</p>
+<p>只转发数据的网关被成为应用网关。代理服务器就是应用网关</p>
+<h3 id="1-10-现代网络实态"><a href="#1-10-现代网络实态" class="headerlink" title="1.10 现代网络实态"></a>1.10 现代网络实态</h3><p>由骨干网和边缘网络组成</p>
+<h4 id="1-10-2-互联网通信"><a href="#1-10-2-互联网通信" class="headerlink" title="1.10.2 互联网通信"></a>1.10.2 互联网通信</h4><p>联网之后，汇集到无线局域网路由器和最近交换机的通信再次被连接到“接入层”。甚至通过“边缘网络”或“主干网”实现与目标地址之间的通信</p>
+<h4 id="1-10-3-移动通信"><a href="#1-10-3-移动通信" class="headerlink" title="1.10.3 移动通信"></a>1.10.3 移动通信</h4><p>手机一开机就会自动与最近的基站进行无线通信。基站本身相当于网络中的“接入层”</p>
+<p>手机终端之间的通信通过基站通信</p>
+<hr>
+<h2 id="第二章-TCP-x2F-IP基础知识"><a href="#第二章-TCP-x2F-IP基础知识" class="headerlink" title="第二章 TCP&#x2F;IP基础知识"></a>第二章 TCP&#x2F;IP基础知识</h2><h3 id="2-1-TCP-x2F-IP出现的背景及历史"><a href="#2-1-TCP-x2F-IP出现的背景及历史" class="headerlink" title="2.1 TCP&#x2F;IP出现的背景及历史"></a>2.1 TCP&#x2F;IP出现的背景及历史</h3><p>略</p>
+<h3 id="2-2-TCP-x2F-IP的标准化"><a href="#2-2-TCP-x2F-IP的标准化" class="headerlink" title="2.2 TCP&#x2F;IP的标准化"></a>2.2 TCP&#x2F;IP的标准化</h3><h4 id="2-2-1-TCP-x2F-IP的具体含义"><a href="#2-2-1-TCP-x2F-IP的具体含义" class="headerlink" title="2.2.1 TCP&#x2F;IP的具体含义"></a>2.2.1 TCP&#x2F;IP的具体含义</h4><p>很多情况下，TCP&#x2F;IP协议指的是利用IP通信时所必须用到的协议群的统称</p>
+<h4 id="2-2-2-TCP-x2F-IP标准化精髓"><a href="#2-2-2-TCP-x2F-IP标准化精髓" class="headerlink" title="2.2.2 TCP&#x2F;IP标准化精髓"></a>2.2.2 TCP&#x2F;IP标准化精髓</h4><ul>
+<li>具有开放性</li>
+<li>注重实用性</li>
+</ul>
+<h4 id="2-2-3-TCP-x2F-IP规范——RFC"><a href="#2-2-3-TCP-x2F-IP规范——RFC" class="headerlink" title="2.2.3 TCP&#x2F;IP规范——RFC"></a>2.2.3 TCP&#x2F;IP规范——RFC</h4><h3 id="2-3-互联网基础知识"><a href="#2-3-互联网基础知识" class="headerlink" title="2.3 互联网基础知识"></a>2.3 互联网基础知识</h3><h4 id="2-3-1-互联网定义"><a href="#2-3-1-互联网定义" class="headerlink" title="2.3.1 互联网定义"></a>2.3.1 互联网定义</h4><p>从字面上来看internet是将多个网络连接形成一个更大的网络，意为“国际网”</p>
+<p>互联网是指由阿帕网发展而来，互联全世界的计算机网络</p>
+<h4 id="2-3-2-互联网与TCP-x2F-IP的关系"><a href="#2-3-2-互联网与TCP-x2F-IP的关系" class="headerlink" title="2.3.2 互联网与TCP&#x2F;IP的关系"></a>2.3.2 互联网与TCP&#x2F;IP的关系</h4><p>互联网的协议就是TCP&#x2F;IP，TCP&#x2F;IP就是互联网的协议</p>
+<h4 id="2-3-3-互联网的结构"><a href="#2-3-3-互联网的结构" class="headerlink" title="2.3.3 互联网的结构"></a>2.3.3 互联网的结构</h4><p>互联网中的每个网络都是由骨干网和末端网组成的。每个网络之间通过NOC（网络操作中心）相连。如果网络的运营商不同，网络连接方式和使用方法也有不同，连接这种异构网络需要IX（网络交换中心）的支持</p>
+<p>互联网就是众多异构网络通过IX互连的巨型网络</p>
+<h4 id="2-3-4-ISP和区域网"><a href="#2-3-4-ISP和区域网" class="headerlink" title="2.3.4 ISP和区域网"></a>2.3.4 ISP和区域网</h4><p>连接互联网需要向ISP或区域网提出申请</p>
+<h3 id="2-4-TCP-x2F-IP协议分层模型"><a href="#2-4-TCP-x2F-IP协议分层模型" class="headerlink" title="2.4 TCP&#x2F;IP协议分层模型"></a>2.4 TCP&#x2F;IP协议分层模型</h3><h4 id="2-4-1-TCP-x2F-IP与OSI参考模型"><a href="#2-4-1-TCP-x2F-IP与OSI参考模型" class="headerlink" title="2.4.1 TCP&#x2F;IP与OSI参考模型"></a>2.4.1 TCP&#x2F;IP与OSI参考模型</h4><ul>
+<li>应用层：对应OSI应用层，表示层，会话层</li>
+<li>传输层：对应OSI传输层</li>
+<li>互联网层：对应OSI网络层</li>
+<li>网卡层：对应OSI数据链路层</li>
+<li>硬件（物理层）：对应OSI物理层</li>
+</ul>
+<h4 id="2-4-2-硬件（物理层）"><a href="#2-4-2-硬件（物理层）" class="headerlink" title="2.4.2 硬件（物理层）"></a>2.4.2 硬件（物理层）</h4><p>TCP&#x2F;IP底层是负责数据传输的硬件（相当于电话线路等物理设备）</p>
+<h4 id="2-4-3-网络接口层"><a href="#2-4-3-网络接口层" class="headerlink" title="2.4.3 网络接口层"></a>2.4.3 网络接口层</h4><p>网络接口层利用以太网中的数据链路进行通信，属于接口层。它可以被当作让网卡起作用的“驱动程序”（驱动程序是在操作系统与硬件之间起桥梁作用的软件）</p>
+<h4 id="2-4-4-互联网层（网络层）"><a href="#2-4-4-互联网层（网络层）" class="headerlink" title="2.4.4 互联网层（网络层）"></a>2.4.4 互联网层（网络层）</h4><p>互联网层使用IP协议。IP协议基于IP地址转发分包数据</p>
+<ul>
+<li><p>IP</p>
+<p>IP是跨越网络传送数据包，使整个互联网都能收到数据的协议。这期间它使用IP地址作为主机的标识</p>
+<p>IP还隐含着数据链路层的功能。通过IP，互相通信的主机无论经过怎样的底层数据链路都能实现通信</p>
+<p>IP不具有重发机制，属于非可靠传输协议</p>
+</li>
+<li><p>ICMP</p>
+<p>IP数据包在发送途中一旦发生异常导致无法到达目标地址时，需要给发送端发送一个异常通知。ICMP就是为实现这一功能制定的</p>
+</li>
+<li><p>ARP</p>
+<p>从分组数据包的IP地址中解析出MAC地址的一种协议</p>
+</li>
+</ul>
+<h4 id="2-4-5-传输层"><a href="#2-4-5-传输层" class="headerlink" title="2.4.5 传输层"></a>2.4.5 传输层</h4><p>传输层的主要功能是让应用程序间实现通信</p>
+<ul>
+<li>TCP：面向有连接的传输层协议。保证两端通信主机之间的通信可达。为了建立和断开连接，有时会造成网络流量的浪费。不利于视频会议等场合使用</li>
+<li>UDP：面向无连接的传输层协议。不会关注对端是否真收到了传送过去的数据，多用于分组较少或多播，广播通信以及视频通信等多媒体领域</li>
+</ul>
+<h4 id="2-4-6-应用层"><a href="#2-4-6-应用层" class="headerlink" title="2.4.6 应用层"></a>2.4.6 应用层</h4><p>TCP&#x2F;IP的应用的架构绝大多数属于客户端&#x2F;服务端模型</p>
+<ul>
+<li><p>WWW</p>
+<p>中文叫万维网，是一种互联网上数据读取的规范，也叫Web，W3。用户在一种叫做Web浏览器的软件上借助鼠标和键盘进行网络冲浪</p>
+<p>浏览器与服务器端之间的通信使用的协议是HTTP，传输协议的主要格式是HTML</p>
+</li>
+<li><p>电子邮件</p>
+<p>发送电子邮件使用的协议叫做SMTP</p>
+<p>经MIME协议拓展后，可以发送声音，图像等各种各样的信息</p>
+</li>
+<li><p>文件传输（FTP）</p>
+<p>在FTP中进行文件传播时会创建两个TCP连接，分别是发送请求时用到的控制连接和实际传输时用到的数据连接</p>
+</li>
+<li><p>远程登陆</p>
+<p>使用TELNET和SSH两种协议</p>
+</li>
+<li><p>网络管理</p>
+<p>使用SNMP协议。被管理的路由器，网桥等被称作SNMP代理，进行管理的叫做管理器。SNMP是管理器和代理需要用到的协议</p>
+</li>
+</ul>
+
+            <!--[if lt IE 9]><script>document.createElement('audio');</script><![endif]-->
+            <audio id="audio" loop="1" preload="auto" controls="controls" data-autoplay="false">
+                <source type="audio/mpeg" src="">
+            </audio>
+            
+                <ul id="audio-list" style="display:none">
+                    
+                        
+                            <li title="0" data-url="http://link.hhtjim.com/163/425570952.mp3"></li>
+                        
+                    
+                        
+                            <li title="1" data-url="http://link.hhtjim.com/163/425570952.mp3"></li>
+                        
+                    
+                </ul>
+            
+        </div>
+        
+        
+    <div id="gitalk-container" class="comment link"
+		data-enable="false"
+        data-ae="false"
+        data-ci=""
+        data-cs=""
+        data-r=""
+        data-o=""
+        data-a=""
+        data-d="false"
+    >查看评论</div>
+
+
+    </div>
+    
+</div>
+
+
+    </div>
+</div>
+</body>
+
+
+<script src="//lib.baomitu.com/jquery/1.8.3/jquery.min.js"></script>
+<script src="/js/plugin.js"></script>
+<script src="/js/typed.js"></script>
+<script src="/js/diaspora.js"></script>
+
+
+<link rel="stylesheet" href="/photoswipe/photoswipe.css">
+<link rel="stylesheet" href="/photoswipe/default-skin/default-skin.css">
+
+
+<script src="/photoswipe/photoswipe.min.js"></script>
+<script src="/photoswipe/photoswipe-ui-default.min.js"></script>
+
+
+<!-- Root element of PhotoSwipe. Must have class pswp. -->
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+    <!-- Background of PhotoSwipe. 
+         It's a separate element as animating opacity is faster than rgba(). -->
+    <div class="pswp__bg"></div>
+    <!-- Slides wrapper with overflow:hidden. -->
+    <div class="pswp__scroll-wrap">
+        <!-- Container that holds slides. 
+            PhotoSwipe keeps only 3 of them in the DOM to save memory.
+            Don't modify these 3 pswp__item elements, data is added later on. -->
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+        <!-- Default (PhotoSwipeUI_Default) interface on top of sliding area. Can be changed. -->
+        <div class="pswp__ui pswp__ui--hidden">
+            <div class="pswp__top-bar">
+                <!--  Controls are self-explanatory. Order can be changed. -->
+                <div class="pswp__counter"></div>
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+                <button class="pswp__button pswp__button--share" title="Share"></button>
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+                <!-- Preloader demo http://codepen.io/dimsemenov/pen/yyBWoR -->
+                <!-- element will get class pswp__preloader--active when preloader is running -->
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                      <div class="pswp__preloader__cut">
+                        <div class="pswp__preloader__donut"></div>
+                      </div>
+                    </div>
+                </div>
+            </div>
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div> 
+            </div>
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+</html>
