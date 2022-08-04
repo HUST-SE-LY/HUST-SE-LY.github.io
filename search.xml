@@ -1,6 +1,50 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>css中的float</title>
+    <url>/2022/08/04/CSS%E6%B5%AE%E5%8A%A8/</url>
+    <content><![CDATA[<h1 id="CSS浮动"><a href="#CSS浮动" class="headerlink" title="CSS浮动"></a>CSS浮动</h1><h3 id="浮动规则"><a href="#浮动规则" class="headerlink" title="浮动规则"></a>浮动规则</h3><p>1.浮动元素不会超过容纳块的边界</p>
+<p>2.排队浮动</p>
+<p>3.浮动元素间不会重叠</p>
+<p>4.浮动元素的顶边不能比父级元素的内顶边高</p>
+<p>5.浮动元素的顶边不能比之前任何一个浮动元素或块元素的顶边高</p>
+<p>6.浮动元素顶边不能高于源码中出现浮动元素之前的元素生成的框体所在行框的顶边</p>
+<p>7.浮动元素必须放在尽可能高的位置</p>
+<p>8.左浮动元素尽量向左移动，右浮动元素尽量向右移动</p>
+<p>浮动元素的后代也会浮动</p>
+<h3 id="浮动元素与内容重叠"><a href="#浮动元素与内容重叠" class="headerlink" title="浮动元素与内容重叠"></a>浮动元素与内容重叠</h3><p>与行内元素重叠时：行内元素边框背景内容都会在浮动元素”之上“渲染</p>
+<p>与块元素重叠时：边框和背景在浮动元素”背后“渲染，内容在”之上“渲染</p>
+<p>重叠方式与元素出现顺序无关</p>
+<h3 id="清除浮动"><a href="#清除浮动" class="headerlink" title="清除浮动"></a>清除浮动</h3><p>禁止每个区域的第一个元素出现在浮动元素旁</p>
+<p>如：禁止元素出现在左浮动元素的右侧：<code>clear：left</code></p>
+<p>确保某个元素不与任何浮动元素共处一行：<code>clear both</code></p>
+<p>实现方式：<strong>间距</strong></p>
+<p><strong>间距</strong>：为了把元素向下移动，确保显示在浮动元素下方而在元素上外边距<strong>上方额外增加的空白</strong>，不影响上外边距</p>
+<p>为确保清除浮动了的元素与浮动元素间的边距，可以为浮动元素设置下外边距</p>
+<h3 id="形状浮动"><a href="#形状浮动" class="headerlink" title="形状浮动"></a>形状浮动</h3><p>可以让文字按照浮动<strong>透明</strong>图片的轮廓填充在旁边</p>
+<p>先为浮动图片定义一个形状：</p>
+<p><code>shape-outside:url(&quot;绝对路径&quot;);</code></p>
+<p>若图片向左浮动则会填充在右边，若为向右浮动则填充左边</p>
+<p><strong>必须是透明图片！！！！</strong></p>
+<p>shape-outside还可以直接使用设置其他形状,分为basic-shape和shape-box两类</p>
+<p>basic-shape:</p>
+<p><code>inset() circle() ellipse() polygon()</code></p>
+<p>shape-box:</p>
+<p><code>margin-box border-box padding-box content-box</code>指形状最外边的界限</p>
+<p>默认使用外边距框</p>
+<p>如果设置的形状超过了浮动框，则不会按形状填充而是按浮动框进行填充</p>
+<p>可以使用shape-margin为形状设置”外边距“</p>
+<p>但设置时要注意设置之后有没有超过浮动框，有时候浮动框要设置的更大才能体现出效果</p>
+<h3 id="小结"><a href="#小结" class="headerlink" title="小结"></a>小结</h3><p>浮动是css的基础，虽然简单，但十分强大和有用。浮动不可或缺，有了浮动才能把内容放在某一边，让其他内容围绕它流动。引入浮动形状后，浮动框不再局限为方形</p>
+]]></content>
+      <categories>
+        <category>技术</category>
+      </categories>
+      <tags>
+        <tag>css</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>TCP/IP知识点总结</title>
     <url>/2022/08/04/TCP_IP/</url>
     <content><![CDATA[<h1 id="TCP-x2F-IP"><a href="#TCP-x2F-IP" class="headerlink" title="TCP&#x2F;IP"></a>TCP&#x2F;IP</h1><h2 id="第一章-网络基础知识"><a href="#第一章-网络基础知识" class="headerlink" title="第一章 网络基础知识"></a>第一章 网络基础知识</h2><h3 id="1-1-计算机网络出现的背景"><a href="#1-1-计算机网络出现的背景" class="headerlink" title="1.1 计算机网络出现的背景"></a>1.1 计算机网络出现的背景</h3><h4 id="1-1-1-计算机的普及及多样化"><a href="#1-1-1-计算机的普及及多样化" class="headerlink" title="1.1.1 计算机的普及及多样化"></a>1.1.1 计算机的普及及多样化</h4><p>如题</p>
@@ -538,6 +582,105 @@
       </tags>
   </entry>
   <entry>
+    <title>自学Vue第二章笔记</title>
+    <url>/2022/08/03/VUE-chapter4/</url>
+    <content><![CDATA[<h4 id="v-html在模板中输出html"><a href="#v-html在模板中输出html" class="headerlink" title="v-html在模板中输出html"></a>v-html在模板中输出html</h4><p>使用v-html在标签内输出html，为防止恶意代码，最好使用自己定义的html，对于用户输入要做过滤处理</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">const</span> app=<span class="title class_">Vue</span>.<span class="title function_">createApp</span>(&#123;</span><br><span class="line">        <span class="title function_">data</span>(<span class="params"></span>) &#123;</span><br><span class="line">            <span class="keyword">return</span> &#123;</span><br><span class="line">                <span class="attr">content</span>:<span class="string">&quot;&lt;p&gt;用v-html输出html&lt;/p&gt;&quot;</span></span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;)</span><br><span class="line">    app.<span class="title function_">mount</span>(<span class="string">&quot;#app&quot;</span>)</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">v-html</span>=<span class="string">&quot;content&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<h4 id="v-once只渲染一次模板"><a href="#v-once只渲染一次模板" class="headerlink" title="v-once只渲染一次模板"></a>v-once只渲染一次模板</h4><p>如果只需要显示原始数据，当数据发生改变时不重新渲染，可以使用v-once</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">const</span> app=<span class="title class_">Vue</span>.<span class="title function_">createApp</span>(&#123;</span><br><span class="line">       <span class="title function_">data</span>(<span class="params"></span>) &#123;</span><br><span class="line">           <span class="keyword">return</span> &#123;</span><br><span class="line">               <span class="attr">list</span>:[],</span><br><span class="line">           &#125;</span><br><span class="line">       &#125;</span><br><span class="line">   &#125;)</span><br><span class="line">   app.<span class="title function_">mount</span>(<span class="string">&quot;#app&quot;</span>)</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">&quot;app&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">p</span> <span class="attr">v-once</span>&gt;</span>原始长度:&#123;&#123;list.length&#125;&#125;<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">p</span>&gt;</span>当前长度:&#123;&#123;list.length&#125;&#125;<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">button</span> @<span class="attr">click</span>=<span class="string">&quot;this.list.push(this.list.length)&quot;</span>&gt;</span>添加<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<h4 id="v-bind和v-on绑定动态参数"><a href="#v-bind和v-on绑定动态参数" class="headerlink" title="v-bind和v-on绑定动态参数"></a>v-bind和v-on绑定动态参数</h4><p>在：或@后加上中括号[]，在中括号中加入js代码，就可以为v-bind和v-on绑定动态参数</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">const</span> app=<span class="title class_">Vue</span>.<span class="title function_">createApp</span>(&#123;</span><br><span class="line">        <span class="title function_">data</span>(<span class="params"></span>) &#123;</span><br><span class="line">            <span class="keyword">return</span> &#123;</span><br><span class="line">                <span class="attr">attr</span>:<span class="string">&quot;placeholder&quot;</span>,</span><br><span class="line">                <span class="attr">event</span>:<span class="string">&quot;change&quot;</span>,</span><br><span class="line">                <span class="attr">value</span>:<span class="string">&quot;请输入内容&quot;</span></span><br><span class="line">            &#125;</span><br><span class="line">        &#125;,</span><br><span class="line">        <span class="attr">methods</span>:&#123;</span><br><span class="line">            <span class="title function_">handleInput</span>(<span class="params"></span>)&#123;</span><br><span class="line">                <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&quot;changed!&quot;</span>)</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;)</span><br><span class="line">    app.<span class="title function_">mount</span>(<span class="string">&quot;#app&quot;</span>)</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">&quot;app&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">&quot;text&quot;</span> <span class="attr">:</span>[<span class="attr">attr</span>]=<span class="string">&quot;value&quot;</span> @[<span class="attr">event</span>]=<span class="string">&quot;handleInput&quot;</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<h4 id="v-for高级用法"><a href="#v-for高级用法" class="headerlink" title="v-for高级用法"></a>v-for高级用法</h4><ul>
+<li>v-for循环除了可以遍历数组外还可以遍历对象，形式与遍历数组基本一致</li>
+<li>v-for循环中可以为循环变量增添一个key值，当数组或对象中的元素顺序改变时，vue也会做出顺序的改变而不是直接修改值</li>
+<li>v-for还可以直接指定一个数，如n in 5,结果输出12345</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">const</span> app=<span class="title class_">Vue</span>.<span class="title function_">createApp</span>(&#123;</span><br><span class="line">        <span class="title function_">data</span>(<span class="params"></span>)&#123;</span><br><span class="line">            <span class="keyword">return</span> &#123;</span><br><span class="line">                <span class="attr">todo_list</span>:&#123;</span><br><span class="line">                    <span class="attr">todo1</span>:&#123;</span><br><span class="line">                        <span class="attr">id</span>:<span class="number">1</span>,</span><br><span class="line">                        <span class="attr">content</span>:<span class="string">&quot;代办1&quot;</span></span><br><span class="line">                    &#125;,</span><br><span class="line">                    <span class="attr">todo2</span>:&#123;</span><br><span class="line">                        <span class="attr">id</span>:<span class="number">2</span>,</span><br><span class="line">                        <span class="attr">content</span>:<span class="string">&quot;代办2&quot;</span>,</span><br><span class="line">                    &#125;,</span><br><span class="line">                    <span class="attr">todo3</span>:&#123;</span><br><span class="line">                        <span class="attr">id</span>:<span class="number">3</span>,</span><br><span class="line">                        <span class="attr">content</span>:<span class="string">&quot;代办3&quot;</span></span><br><span class="line">                    &#125;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;)</span><br><span class="line">    app.<span class="title function_">mount</span>(<span class="string">&quot;#app&quot;</span>)</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">&quot;app&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">v-for</span>=<span class="string">&quot;todo in todo_list&quot;</span> <span class="attr">:key</span>=<span class="string">&quot;todo.id&quot;</span>&gt;</span>&#123;&#123;todo.content&#125;&#125;<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">v-for</span>=<span class="string">&quot;n in 5&quot;</span>&gt;</span>&#123;&#123;n&#125;&#125;<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<h4 id="template标签"><a href="#template标签" class="headerlink" title="template标签"></a>template标签</h4><p>使用<code>&lt;template&gt;</code>标签可以只渲染里面的内容而不渲染外层的template标签</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">const</span> app=<span class="title class_">Vue</span>.<span class="title function_">createApp</span>(&#123;</span><br><span class="line">        <span class="title function_">data</span>(<span class="params"></span>) &#123;</span><br><span class="line">            <span class="keyword">return</span> &#123;</span><br><span class="line">                <span class="attr">value</span>: <span class="number">10</span></span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;)</span><br><span class="line">    app.<span class="title function_">mount</span>(<span class="string">&quot;#app&quot;</span>)</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">&quot;app&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">template</span> <span class="attr">v-if</span>=<span class="string">&quot;value&gt;0&quot;</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">p</span>&gt;</span>不会渲染出外层template标签<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">template</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<h4 id="事件传参和多事件处理"><a href="#事件传参和多事件处理" class="headerlink" title="事件传参和多事件处理"></a>事件传参和多事件处理</h4><p>可以在@绑定的事件函数中直接调用函数并传入参数，事件参数固定为@event，想绑定多个事件函数可以用<code>,</code>，事件函数会依次执行</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">const</span> app=<span class="title class_">Vue</span>.<span class="title function_">createApp</span>(&#123;</span><br><span class="line">        <span class="title function_">data</span>(<span class="params"></span>)&#123;</span><br><span class="line">            <span class="keyword">return</span> &#123;</span><br><span class="line">                <span class="attr">todos</span>:[&#123;</span><br><span class="line">                    <span class="attr">content</span>:<span class="string">&quot;代办1&quot;</span>,</span><br><span class="line">                    <span class="attr">id</span>:<span class="number">1</span>,</span><br><span class="line">                &#125;,&#123;</span><br><span class="line">                    <span class="attr">content</span>:<span class="string">&quot;代办2&quot;</span>,</span><br><span class="line">                    <span class="attr">id</span>:<span class="number">2</span>,</span><br><span class="line"></span><br><span class="line">                &#125;,&#123;</span><br><span class="line">                    <span class="attr">content</span>:<span class="string">&quot;代办3&quot;</span>,</span><br><span class="line">                    <span class="attr">id</span>:<span class="number">3</span>,</span><br><span class="line">                &#125;]</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;,</span><br><span class="line">        <span class="attr">methods</span>:&#123;</span><br><span class="line">            <span class="title function_">calculate</span>(<span class="params">msg,e</span>)&#123;</span><br><span class="line">                <span class="variable language_">console</span>.<span class="title function_">log</span>(msg);</span><br><span class="line">                <span class="variable language_">console</span>.<span class="title function_">log</span>(e.<span class="property">clientX</span>+<span class="string">&quot; &quot;</span>+e.<span class="property">clientY</span>);</span><br><span class="line">            &#125;,</span><br><span class="line">            <span class="title function_">output</span>(<span class="params">msg</span>)&#123;</span><br><span class="line">                <span class="title function_">alert</span>(msg);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;).<span class="title function_">mount</span>(<span class="string">&quot;#app&quot;</span>)</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">&quot;app&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">v-for</span>=<span class="string">&quot;todo in todos&quot;</span> <span class="attr">:key</span>=<span class="string">&quot;todo.id&quot;</span> @<span class="attr">click</span>=<span class="string">&quot;calculate(todo.content,$event), output(todo.id)&quot;</span>&gt;</span>&#123;&#123;todo.content&#125;&#125;<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<h4 id="事件相关修饰符"><a href="#事件相关修饰符" class="headerlink" title="事件相关修饰符"></a>事件相关修饰符</h4><ul>
+<li>.prevent:阻止浏览器默认行为</li>
+<li>.stop：阻止事件冒泡</li>
+<li>.capture:捕获触发，从父元素触发至子元素</li>
+<li>.self:当元素自身触发事件时才执行函数</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">const</span> app=<span class="title class_">Vue</span>.<span class="title function_">createApp</span>(&#123;</span><br><span class="line">        <span class="attr">methods</span>:&#123;</span><br><span class="line">            <span class="title function_">handleFather</span>(<span class="params"></span>)&#123;</span><br><span class="line">                <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&#x27;触发父事件&#x27;</span>)</span><br><span class="line">            &#125;,</span><br><span class="line">            <span class="title function_">handleChild</span>(<span class="params"></span>)&#123;</span><br><span class="line">                <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&#x27;触发子事件&#x27;</span>)</span><br><span class="line">            &#125;</span><br><span class="line"></span><br><span class="line">        &#125;</span><br><span class="line">    &#125;).<span class="title function_">mount</span>(<span class="string">&quot;#app&quot;</span>)</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">&quot;app&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">ul</span> @<span class="attr">click</span>=<span class="string">&quot;handleFather&quot;</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">&quot;#&quot;</span> @<span class="attr">click.prevent</span>&gt;</span>.prevent阻止默认行为，点击链接不会跳转<span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">li</span> @<span class="attr">click.stop</span>=<span class="string">&quot;handleChild&quot;</span>&gt;</span>.stop阻止事件冒泡<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">li</span> @<span class="attr">click</span>&gt;</span><span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">ul</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">ul</span> @<span class="attr">click.capture</span>=<span class="string">&quot;handleFather&quot;</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">li</span> @<span class="attr">click</span>=<span class="string">&quot;handleChild&quot;</span>&gt;</span>capture会让事件的触发变为捕获触发，即会先捕获父元素，再触发子元素<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">ul</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">ul</span> @<span class="attr">click.self</span>=<span class="string">&quot;handleFather&quot;</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">li</span> @<span class="attr">click</span>=<span class="string">&quot;handleChild&quot;</span>&gt;</span>self使只有当元素自身触发事件时才会执行函数<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">ul</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<h4 id="处理键盘和鼠标事件"><a href="#处理键盘和鼠标事件" class="headerlink" title="处理键盘和鼠标事件"></a>处理键盘和鼠标事件</h4><p>使用.+按键名来绑定特定键位</p>
+<p>使用.exact使只有特定按键被按下且其他按键没有被按下时才触发事件</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">const</span> app=<span class="title class_">Vue</span>.<span class="title function_">createApp</span>(&#123;</span><br><span class="line">    <span class="title function_">data</span>(<span class="params"></span>) &#123;</span><br><span class="line">        <span class="keyword">return</span> &#123;</span><br><span class="line">            <span class="attr">list</span>:[<span class="string">&quot;好&quot;</span>,<span class="string">&quot;非常好&quot;</span>,<span class="string">&quot;很好&quot;</span>],</span><br><span class="line">            <span class="attr">content</span>:<span class="string">&quot;&quot;</span></span><br><span class="line">        &#125;</span><br><span class="line">    &#125;,</span><br><span class="line">    <span class="attr">methods</span>:&#123;</span><br><span class="line">        <span class="title function_">submitlist</span>(<span class="params"></span>) &#123;</span><br><span class="line">            <span class="variable language_">this</span>.<span class="property">list</span>.<span class="title function_">push</span>(<span class="variable language_">this</span>.<span class="property">content</span>);</span><br><span class="line">            <span class="variable language_">this</span>.<span class="property">content</span>=<span class="string">&quot;&quot;</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;).<span class="title function_">mount</span>(<span class="string">&quot;#app&quot;</span>)</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">&quot;app&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">v-for</span>=<span class="string">&quot;comment in list&quot;</span>&gt;</span>&#123;&#123;comment&#125;&#125;<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">&quot;text&quot;</span> <span class="attr">v-model</span>=<span class="string">&quot;content&quot;</span> @<span class="attr">keyup.ctrl.enter.exact</span>=<span class="string">&quot;submitlist&quot;</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>查询按键的网址：</p>
+<h4 id="与表单相关的修饰符"><a href="#与表单相关的修饰符" class="headerlink" title="与表单相关的修饰符"></a>与表单相关的修饰符</h4><ul>
+<li>.lazy：当用户输入完，取消聚焦之后才触发双向绑定</li>
+<li>.number：把用户输入的字段转换成num类型</li>
+<li>.trim：去除用户输入的前后空格</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">const</span> app=<span class="title class_">Vue</span>.<span class="title function_">createApp</span>(&#123;</span><br><span class="line">        <span class="title function_">data</span>(<span class="params"></span>) &#123;</span><br><span class="line">            <span class="keyword">return</span> &#123;</span><br><span class="line">                <span class="attr">username</span>:<span class="string">&quot;&quot;</span>,</span><br><span class="line">                <span class="attr">year</span>:<span class="number">2000</span>,</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;)</span><br><span class="line">    app.<span class="title function_">mount</span>(<span class="string">&quot;#app&quot;</span>);</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">&quot;app&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">form</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">&quot;text&quot;</span> <span class="attr">v-model.lazy.trim</span>=<span class="string">&quot;username&quot;</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">&quot;text&quot;</span> <span class="attr">v-model.number</span>=<span class="string">&quot;year&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">form</span>&gt;</span></span><br><span class="line">    &#123;&#123;username&#125;&#125;</span><br><span class="line">    &#123;&#123;year&#125;&#125;</span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<h4 id="通过vue实例访问和修改应用配置"><a href="#通过vue实例访问和修改应用配置" class="headerlink" title="通过vue实例访问和修改应用配置"></a>通过vue实例访问和修改应用配置</h4><figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">const</span> vm=app.<span class="title function_">mount</span>(<span class="string">&quot;#app&quot;</span>)</span><br></pre></td></tr></table></figure>
+
+<p>然后可以访问vm的属性值或者做修改，是得可以使用外部js修改vue内部的值</p>
+<h4 id="生命周期钩子"><a href="#生命周期钩子" class="headerlink" title="生命周期钩子"></a>生命周期钩子</h4><p>生命周期钩子是一个函数，会在合适的时期自动调用</p>
+<ul>
+<li><p><img src="/image/img_2.png" alt="image-20220709171124439"></p>
+</li>
+<li><p><img src="/image/img_3.png" alt="image-20220709171145368"></p>
+</li>
+<li><p><img src="/image/img_4.png" alt="image-20220709171208373"></p>
+</li>
+<li><p><img src="/image/img_5.png" alt="image-20220709171232027"></p>
+</li>
+<li><p><img src="/image/img_6.png" alt="image-20220709171335571"></p>
+</li>
+<li><p><img src="/image/img_7.png" alt="image-20220709171349173"></p>
+</li>
+<li><p><img src="/image/img_8.png" alt="image-20220709171400830"></p>
+</li>
+<li><p><img src="/image/img_9.png" alt="image-20220709171417499"></p>
+</li>
+</ul>
+<p>常用的为created和mounted钩子</p>
+<p><img src="/image/img_10.png" alt="image-20220709171500826"></p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">const</span> app=<span class="title class_">Vue</span>.<span class="title function_">createApp</span>(&#123;</span><br><span class="line">        <span class="title function_">data</span>(<span class="params"></span>) &#123;</span><br><span class="line">            <span class="keyword">return</span> &#123;</span><br><span class="line">                <span class="attr">posts</span>: [],</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;,</span><br><span class="line">        <span class="attr">methods</span>:&#123;</span><br><span class="line">            <span class="keyword">async</span> <span class="title function_">getPosts</span>(<span class="params"></span>) &#123;</span><br><span class="line">                <span class="keyword">const</span> res=<span class="keyword">await</span> <span class="title function_">fetch</span>(<span class="string">&quot;./posts.json&quot;</span>);</span><br><span class="line">                <span class="keyword">const</span> data=<span class="keyword">await</span> res.<span class="title function_">json</span>();</span><br><span class="line">                <span class="variable language_">this</span>.<span class="property">posts</span>=data;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;,</span><br><span class="line">        <span class="title function_">created</span>(<span class="params"></span>) &#123;</span><br><span class="line">            <span class="variable language_">this</span>.<span class="title function_">getPosts</span>();</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;)</span><br><span class="line">    <span class="keyword">const</span> vm=app.<span class="title function_">mount</span>(<span class="string">&quot;#app&quot;</span>)</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">&quot;app&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">v-for</span>=<span class="string">&quot;post in posts&quot;</span> <span class="attr">:key</span>=<span class="string">&quot;post.id&quot;</span>&gt;</span>&#123;&#123;post.content&#125;&#125;<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+]]></content>
+      <categories>
+        <category>技术</category>
+      </categories>
+      <tags>
+        <tag>vue</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>自学Vue第一章笔记</title>
     <url>/2022/08/03/VUE-chapter3/</url>
     <content><![CDATA[<h1 id="VUE"><a href="#VUE" class="headerlink" title="VUE"></a>VUE</h1><p>创建Vue应用:<code>Vue.createApp().mount(&quot;&quot;)</code></p>
@@ -640,161 +783,6 @@
       </tags>
   </entry>
   <entry>
-    <title>css中的float</title>
-    <url>/2022/08/04/CSS%E6%B5%AE%E5%8A%A8/</url>
-    <content><![CDATA[<h1 id="CSS浮动"><a href="#CSS浮动" class="headerlink" title="CSS浮动"></a>CSS浮动</h1><h3 id="浮动规则"><a href="#浮动规则" class="headerlink" title="浮动规则"></a>浮动规则</h3><p>1.浮动元素不会超过容纳块的边界</p>
-<p>2.排队浮动</p>
-<p>3.浮动元素间不会重叠</p>
-<p>4.浮动元素的顶边不能比父级元素的内顶边高</p>
-<p>5.浮动元素的顶边不能比之前任何一个浮动元素或块元素的顶边高</p>
-<p>6.浮动元素顶边不能高于源码中出现浮动元素之前的元素生成的框体所在行框的顶边</p>
-<p>7.浮动元素必须放在尽可能高的位置</p>
-<p>8.左浮动元素尽量向左移动，右浮动元素尽量向右移动</p>
-<p>浮动元素的后代也会浮动</p>
-<h3 id="浮动元素与内容重叠"><a href="#浮动元素与内容重叠" class="headerlink" title="浮动元素与内容重叠"></a>浮动元素与内容重叠</h3><p>与行内元素重叠时：行内元素边框背景内容都会在浮动元素”之上“渲染</p>
-<p>与块元素重叠时：边框和背景在浮动元素”背后“渲染，内容在”之上“渲染</p>
-<p>重叠方式与元素出现顺序无关</p>
-<h3 id="清除浮动"><a href="#清除浮动" class="headerlink" title="清除浮动"></a>清除浮动</h3><p>禁止每个区域的第一个元素出现在浮动元素旁</p>
-<p>如：禁止元素出现在左浮动元素的右侧：<code>clear：left</code></p>
-<p>确保某个元素不与任何浮动元素共处一行：<code>clear both</code></p>
-<p>实现方式：<strong>间距</strong></p>
-<p><strong>间距</strong>：为了把元素向下移动，确保显示在浮动元素下方而在元素上外边距<strong>上方额外增加的空白</strong>，不影响上外边距</p>
-<p>为确保清除浮动了的元素与浮动元素间的边距，可以为浮动元素设置下外边距</p>
-<h3 id="形状浮动"><a href="#形状浮动" class="headerlink" title="形状浮动"></a>形状浮动</h3><p>可以让文字按照浮动<strong>透明</strong>图片的轮廓填充在旁边</p>
-<p>先为浮动图片定义一个形状：</p>
-<p><code>shape-outside:url(&quot;绝对路径&quot;);</code></p>
-<p>若图片向左浮动则会填充在右边，若为向右浮动则填充左边</p>
-<p><strong>必须是透明图片！！！！</strong></p>
-<p>shape-outside还可以直接使用设置其他形状,分为basic-shape和shape-box两类</p>
-<p>basic-shape:</p>
-<p><code>inset() circle() ellipse() polygon()</code></p>
-<p>shape-box:</p>
-<p><code>margin-box border-box padding-box content-box</code>指形状最外边的界限</p>
-<p>默认使用外边距框</p>
-<p>如果设置的形状超过了浮动框，则不会按形状填充而是按浮动框进行填充</p>
-<p>可以使用shape-margin为形状设置”外边距“</p>
-<p>但设置时要注意设置之后有没有超过浮动框，有时候浮动框要设置的更大才能体现出效果</p>
-<h3 id="小结"><a href="#小结" class="headerlink" title="小结"></a>小结</h3><p>浮动是css的基础，虽然简单，但十分强大和有用。浮动不可或缺，有了浮动才能把内容放在某一边，让其他内容围绕它流动。引入浮动形状后，浮动框不再局限为方形</p>
-]]></content>
-      <categories>
-        <category>技术</category>
-      </categories>
-      <tags>
-        <tag>css</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Welcome to my BLOG!</title>
-    <url>/2022/08/03/hello-world/</url>
-    <content><![CDATA[<p>欢迎来到我的博客<br>我会在这里记录自己的学习，生活<br>谢谢你的到来！！</p>
-]]></content>
-      <categories>
-        <category>欢迎</category>
-      </categories>
-      <tags>
-        <tag>日常</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>自学Vue第二章笔记</title>
-    <url>/2022/08/03/VUE-chapter4/</url>
-    <content><![CDATA[<h4 id="v-html在模板中输出html"><a href="#v-html在模板中输出html" class="headerlink" title="v-html在模板中输出html"></a>v-html在模板中输出html</h4><p>使用v-html在标签内输出html，为防止恶意代码，最好使用自己定义的html，对于用户输入要做过滤处理</p>
-<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">const</span> app=<span class="title class_">Vue</span>.<span class="title function_">createApp</span>(&#123;</span><br><span class="line">        <span class="title function_">data</span>(<span class="params"></span>) &#123;</span><br><span class="line">            <span class="keyword">return</span> &#123;</span><br><span class="line">                <span class="attr">content</span>:<span class="string">&quot;&lt;p&gt;用v-html输出html&lt;/p&gt;&quot;</span></span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;)</span><br><span class="line">    app.<span class="title function_">mount</span>(<span class="string">&quot;#app&quot;</span>)</span><br></pre></td></tr></table></figure>
-
-<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">v-html</span>=<span class="string">&quot;content&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
-
-<h4 id="v-once只渲染一次模板"><a href="#v-once只渲染一次模板" class="headerlink" title="v-once只渲染一次模板"></a>v-once只渲染一次模板</h4><p>如果只需要显示原始数据，当数据发生改变时不重新渲染，可以使用v-once</p>
-<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">const</span> app=<span class="title class_">Vue</span>.<span class="title function_">createApp</span>(&#123;</span><br><span class="line">       <span class="title function_">data</span>(<span class="params"></span>) &#123;</span><br><span class="line">           <span class="keyword">return</span> &#123;</span><br><span class="line">               <span class="attr">list</span>:[],</span><br><span class="line">           &#125;</span><br><span class="line">       &#125;</span><br><span class="line">   &#125;)</span><br><span class="line">   app.<span class="title function_">mount</span>(<span class="string">&quot;#app&quot;</span>)</span><br></pre></td></tr></table></figure>
-
-<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">&quot;app&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">p</span> <span class="attr">v-once</span>&gt;</span>原始长度:&#123;&#123;list.length&#125;&#125;<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">p</span>&gt;</span>当前长度:&#123;&#123;list.length&#125;&#125;<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">button</span> @<span class="attr">click</span>=<span class="string">&quot;this.list.push(this.list.length)&quot;</span>&gt;</span>添加<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
-
-<h4 id="v-bind和v-on绑定动态参数"><a href="#v-bind和v-on绑定动态参数" class="headerlink" title="v-bind和v-on绑定动态参数"></a>v-bind和v-on绑定动态参数</h4><p>在：或@后加上中括号[]，在中括号中加入js代码，就可以为v-bind和v-on绑定动态参数</p>
-<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">const</span> app=<span class="title class_">Vue</span>.<span class="title function_">createApp</span>(&#123;</span><br><span class="line">        <span class="title function_">data</span>(<span class="params"></span>) &#123;</span><br><span class="line">            <span class="keyword">return</span> &#123;</span><br><span class="line">                <span class="attr">attr</span>:<span class="string">&quot;placeholder&quot;</span>,</span><br><span class="line">                <span class="attr">event</span>:<span class="string">&quot;change&quot;</span>,</span><br><span class="line">                <span class="attr">value</span>:<span class="string">&quot;请输入内容&quot;</span></span><br><span class="line">            &#125;</span><br><span class="line">        &#125;,</span><br><span class="line">        <span class="attr">methods</span>:&#123;</span><br><span class="line">            <span class="title function_">handleInput</span>(<span class="params"></span>)&#123;</span><br><span class="line">                <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&quot;changed!&quot;</span>)</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;)</span><br><span class="line">    app.<span class="title function_">mount</span>(<span class="string">&quot;#app&quot;</span>)</span><br></pre></td></tr></table></figure>
-
-<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">&quot;app&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">&quot;text&quot;</span> <span class="attr">:</span>[<span class="attr">attr</span>]=<span class="string">&quot;value&quot;</span> @[<span class="attr">event</span>]=<span class="string">&quot;handleInput&quot;</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
-
-<h4 id="v-for高级用法"><a href="#v-for高级用法" class="headerlink" title="v-for高级用法"></a>v-for高级用法</h4><ul>
-<li>v-for循环除了可以遍历数组外还可以遍历对象，形式与遍历数组基本一致</li>
-<li>v-for循环中可以为循环变量增添一个key值，当数组或对象中的元素顺序改变时，vue也会做出顺序的改变而不是直接修改值</li>
-<li>v-for还可以直接指定一个数，如n in 5,结果输出12345</li>
-</ul>
-<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">const</span> app=<span class="title class_">Vue</span>.<span class="title function_">createApp</span>(&#123;</span><br><span class="line">        <span class="title function_">data</span>(<span class="params"></span>)&#123;</span><br><span class="line">            <span class="keyword">return</span> &#123;</span><br><span class="line">                <span class="attr">todo_list</span>:&#123;</span><br><span class="line">                    <span class="attr">todo1</span>:&#123;</span><br><span class="line">                        <span class="attr">id</span>:<span class="number">1</span>,</span><br><span class="line">                        <span class="attr">content</span>:<span class="string">&quot;代办1&quot;</span></span><br><span class="line">                    &#125;,</span><br><span class="line">                    <span class="attr">todo2</span>:&#123;</span><br><span class="line">                        <span class="attr">id</span>:<span class="number">2</span>,</span><br><span class="line">                        <span class="attr">content</span>:<span class="string">&quot;代办2&quot;</span>,</span><br><span class="line">                    &#125;,</span><br><span class="line">                    <span class="attr">todo3</span>:&#123;</span><br><span class="line">                        <span class="attr">id</span>:<span class="number">3</span>,</span><br><span class="line">                        <span class="attr">content</span>:<span class="string">&quot;代办3&quot;</span></span><br><span class="line">                    &#125;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;)</span><br><span class="line">    app.<span class="title function_">mount</span>(<span class="string">&quot;#app&quot;</span>)</span><br></pre></td></tr></table></figure>
-
-<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">&quot;app&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">v-for</span>=<span class="string">&quot;todo in todo_list&quot;</span> <span class="attr">:key</span>=<span class="string">&quot;todo.id&quot;</span>&gt;</span>&#123;&#123;todo.content&#125;&#125;<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">v-for</span>=<span class="string">&quot;n in 5&quot;</span>&gt;</span>&#123;&#123;n&#125;&#125;<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
-
-<h4 id="template标签"><a href="#template标签" class="headerlink" title="template标签"></a>template标签</h4><p>使用<code>&lt;template&gt;</code>标签可以只渲染里面的内容而不渲染外层的template标签</p>
-<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">const</span> app=<span class="title class_">Vue</span>.<span class="title function_">createApp</span>(&#123;</span><br><span class="line">        <span class="title function_">data</span>(<span class="params"></span>) &#123;</span><br><span class="line">            <span class="keyword">return</span> &#123;</span><br><span class="line">                <span class="attr">value</span>: <span class="number">10</span></span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;)</span><br><span class="line">    app.<span class="title function_">mount</span>(<span class="string">&quot;#app&quot;</span>)</span><br></pre></td></tr></table></figure>
-
-<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">&quot;app&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">template</span> <span class="attr">v-if</span>=<span class="string">&quot;value&gt;0&quot;</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">p</span>&gt;</span>不会渲染出外层template标签<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">template</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
-
-<h4 id="事件传参和多事件处理"><a href="#事件传参和多事件处理" class="headerlink" title="事件传参和多事件处理"></a>事件传参和多事件处理</h4><p>可以在@绑定的事件函数中直接调用函数并传入参数，事件参数固定为@event，想绑定多个事件函数可以用<code>,</code>，事件函数会依次执行</p>
-<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">const</span> app=<span class="title class_">Vue</span>.<span class="title function_">createApp</span>(&#123;</span><br><span class="line">        <span class="title function_">data</span>(<span class="params"></span>)&#123;</span><br><span class="line">            <span class="keyword">return</span> &#123;</span><br><span class="line">                <span class="attr">todos</span>:[&#123;</span><br><span class="line">                    <span class="attr">content</span>:<span class="string">&quot;代办1&quot;</span>,</span><br><span class="line">                    <span class="attr">id</span>:<span class="number">1</span>,</span><br><span class="line">                &#125;,&#123;</span><br><span class="line">                    <span class="attr">content</span>:<span class="string">&quot;代办2&quot;</span>,</span><br><span class="line">                    <span class="attr">id</span>:<span class="number">2</span>,</span><br><span class="line"></span><br><span class="line">                &#125;,&#123;</span><br><span class="line">                    <span class="attr">content</span>:<span class="string">&quot;代办3&quot;</span>,</span><br><span class="line">                    <span class="attr">id</span>:<span class="number">3</span>,</span><br><span class="line">                &#125;]</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;,</span><br><span class="line">        <span class="attr">methods</span>:&#123;</span><br><span class="line">            <span class="title function_">calculate</span>(<span class="params">msg,e</span>)&#123;</span><br><span class="line">                <span class="variable language_">console</span>.<span class="title function_">log</span>(msg);</span><br><span class="line">                <span class="variable language_">console</span>.<span class="title function_">log</span>(e.<span class="property">clientX</span>+<span class="string">&quot; &quot;</span>+e.<span class="property">clientY</span>);</span><br><span class="line">            &#125;,</span><br><span class="line">            <span class="title function_">output</span>(<span class="params">msg</span>)&#123;</span><br><span class="line">                <span class="title function_">alert</span>(msg);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;).<span class="title function_">mount</span>(<span class="string">&quot;#app&quot;</span>)</span><br></pre></td></tr></table></figure>
-
-<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">&quot;app&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">v-for</span>=<span class="string">&quot;todo in todos&quot;</span> <span class="attr">:key</span>=<span class="string">&quot;todo.id&quot;</span> @<span class="attr">click</span>=<span class="string">&quot;calculate(todo.content,$event), output(todo.id)&quot;</span>&gt;</span>&#123;&#123;todo.content&#125;&#125;<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
-
-<h4 id="事件相关修饰符"><a href="#事件相关修饰符" class="headerlink" title="事件相关修饰符"></a>事件相关修饰符</h4><ul>
-<li>.prevent:阻止浏览器默认行为</li>
-<li>.stop：阻止事件冒泡</li>
-<li>.capture:捕获触发，从父元素触发至子元素</li>
-<li>.self:当元素自身触发事件时才执行函数</li>
-</ul>
-<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">const</span> app=<span class="title class_">Vue</span>.<span class="title function_">createApp</span>(&#123;</span><br><span class="line">        <span class="attr">methods</span>:&#123;</span><br><span class="line">            <span class="title function_">handleFather</span>(<span class="params"></span>)&#123;</span><br><span class="line">                <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&#x27;触发父事件&#x27;</span>)</span><br><span class="line">            &#125;,</span><br><span class="line">            <span class="title function_">handleChild</span>(<span class="params"></span>)&#123;</span><br><span class="line">                <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&#x27;触发子事件&#x27;</span>)</span><br><span class="line">            &#125;</span><br><span class="line"></span><br><span class="line">        &#125;</span><br><span class="line">    &#125;).<span class="title function_">mount</span>(<span class="string">&quot;#app&quot;</span>)</span><br></pre></td></tr></table></figure>
-
-<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">&quot;app&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">ul</span> @<span class="attr">click</span>=<span class="string">&quot;handleFather&quot;</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">&quot;#&quot;</span> @<span class="attr">click.prevent</span>&gt;</span>.prevent阻止默认行为，点击链接不会跳转<span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">li</span> @<span class="attr">click.stop</span>=<span class="string">&quot;handleChild&quot;</span>&gt;</span>.stop阻止事件冒泡<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">li</span> @<span class="attr">click</span>&gt;</span><span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">ul</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">ul</span> @<span class="attr">click.capture</span>=<span class="string">&quot;handleFather&quot;</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">li</span> @<span class="attr">click</span>=<span class="string">&quot;handleChild&quot;</span>&gt;</span>capture会让事件的触发变为捕获触发，即会先捕获父元素，再触发子元素<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">ul</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">ul</span> @<span class="attr">click.self</span>=<span class="string">&quot;handleFather&quot;</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">li</span> @<span class="attr">click</span>=<span class="string">&quot;handleChild&quot;</span>&gt;</span>self使只有当元素自身触发事件时才会执行函数<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">ul</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
-
-<h4 id="处理键盘和鼠标事件"><a href="#处理键盘和鼠标事件" class="headerlink" title="处理键盘和鼠标事件"></a>处理键盘和鼠标事件</h4><p>使用.+按键名来绑定特定键位</p>
-<p>使用.exact使只有特定按键被按下且其他按键没有被按下时才触发事件</p>
-<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">const</span> app=<span class="title class_">Vue</span>.<span class="title function_">createApp</span>(&#123;</span><br><span class="line">    <span class="title function_">data</span>(<span class="params"></span>) &#123;</span><br><span class="line">        <span class="keyword">return</span> &#123;</span><br><span class="line">            <span class="attr">list</span>:[<span class="string">&quot;好&quot;</span>,<span class="string">&quot;非常好&quot;</span>,<span class="string">&quot;很好&quot;</span>],</span><br><span class="line">            <span class="attr">content</span>:<span class="string">&quot;&quot;</span></span><br><span class="line">        &#125;</span><br><span class="line">    &#125;,</span><br><span class="line">    <span class="attr">methods</span>:&#123;</span><br><span class="line">        <span class="title function_">submitlist</span>(<span class="params"></span>) &#123;</span><br><span class="line">            <span class="variable language_">this</span>.<span class="property">list</span>.<span class="title function_">push</span>(<span class="variable language_">this</span>.<span class="property">content</span>);</span><br><span class="line">            <span class="variable language_">this</span>.<span class="property">content</span>=<span class="string">&quot;&quot;</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;).<span class="title function_">mount</span>(<span class="string">&quot;#app&quot;</span>)</span><br></pre></td></tr></table></figure>
-
-<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">&quot;app&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">v-for</span>=<span class="string">&quot;comment in list&quot;</span>&gt;</span>&#123;&#123;comment&#125;&#125;<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">&quot;text&quot;</span> <span class="attr">v-model</span>=<span class="string">&quot;content&quot;</span> @<span class="attr">keyup.ctrl.enter.exact</span>=<span class="string">&quot;submitlist&quot;</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
-
-<p>查询按键的网址：</p>
-<h4 id="与表单相关的修饰符"><a href="#与表单相关的修饰符" class="headerlink" title="与表单相关的修饰符"></a>与表单相关的修饰符</h4><ul>
-<li>.lazy：当用户输入完，取消聚焦之后才触发双向绑定</li>
-<li>.number：把用户输入的字段转换成num类型</li>
-<li>.trim：去除用户输入的前后空格</li>
-</ul>
-<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">const</span> app=<span class="title class_">Vue</span>.<span class="title function_">createApp</span>(&#123;</span><br><span class="line">        <span class="title function_">data</span>(<span class="params"></span>) &#123;</span><br><span class="line">            <span class="keyword">return</span> &#123;</span><br><span class="line">                <span class="attr">username</span>:<span class="string">&quot;&quot;</span>,</span><br><span class="line">                <span class="attr">year</span>:<span class="number">2000</span>,</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;)</span><br><span class="line">    app.<span class="title function_">mount</span>(<span class="string">&quot;#app&quot;</span>);</span><br></pre></td></tr></table></figure>
-
-<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">&quot;app&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">form</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">&quot;text&quot;</span> <span class="attr">v-model.lazy.trim</span>=<span class="string">&quot;username&quot;</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">&quot;text&quot;</span> <span class="attr">v-model.number</span>=<span class="string">&quot;year&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">form</span>&gt;</span></span><br><span class="line">    &#123;&#123;username&#125;&#125;</span><br><span class="line">    &#123;&#123;year&#125;&#125;</span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
-
-<h4 id="通过vue实例访问和修改应用配置"><a href="#通过vue实例访问和修改应用配置" class="headerlink" title="通过vue实例访问和修改应用配置"></a>通过vue实例访问和修改应用配置</h4><figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">const</span> vm=app.<span class="title function_">mount</span>(<span class="string">&quot;#app&quot;</span>)</span><br></pre></td></tr></table></figure>
-
-<p>然后可以访问vm的属性值或者做修改，是得可以使用外部js修改vue内部的值</p>
-<h4 id="生命周期钩子"><a href="#生命周期钩子" class="headerlink" title="生命周期钩子"></a>生命周期钩子</h4><p>生命周期钩子是一个函数，会在合适的时期自动调用</p>
-<ul>
-<li><p><img src="/image/img_2.png" alt="image-20220709171124439"></p>
-</li>
-<li><p><img src="/image/img_3.png" alt="image-20220709171145368"></p>
-</li>
-<li><p><img src="/image/img_4.png" alt="image-20220709171208373"></p>
-</li>
-<li><p><img src="/image/img_5.png" alt="image-20220709171232027"></p>
-</li>
-<li><p><img src="/image/img_6.png" alt="image-20220709171335571"></p>
-</li>
-<li><p><img src="/image/img_7.png" alt="image-20220709171349173"></p>
-</li>
-<li><p><img src="/image/img_8.png" alt="image-20220709171400830"></p>
-</li>
-<li><p><img src="/image/img_9.png" alt="image-20220709171417499"></p>
-</li>
-</ul>
-<p>常用的为created和mounted钩子</p>
-<p><img src="/image/img_10.png" alt="image-20220709171500826"></p>
-<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">const</span> app=<span class="title class_">Vue</span>.<span class="title function_">createApp</span>(&#123;</span><br><span class="line">        <span class="title function_">data</span>(<span class="params"></span>) &#123;</span><br><span class="line">            <span class="keyword">return</span> &#123;</span><br><span class="line">                <span class="attr">posts</span>: [],</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;,</span><br><span class="line">        <span class="attr">methods</span>:&#123;</span><br><span class="line">            <span class="keyword">async</span> <span class="title function_">getPosts</span>(<span class="params"></span>) &#123;</span><br><span class="line">                <span class="keyword">const</span> res=<span class="keyword">await</span> <span class="title function_">fetch</span>(<span class="string">&quot;./posts.json&quot;</span>);</span><br><span class="line">                <span class="keyword">const</span> data=<span class="keyword">await</span> res.<span class="title function_">json</span>();</span><br><span class="line">                <span class="variable language_">this</span>.<span class="property">posts</span>=data;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;,</span><br><span class="line">        <span class="title function_">created</span>(<span class="params"></span>) &#123;</span><br><span class="line">            <span class="variable language_">this</span>.<span class="title function_">getPosts</span>();</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;)</span><br><span class="line">    <span class="keyword">const</span> vm=app.<span class="title function_">mount</span>(<span class="string">&quot;#app&quot;</span>)</span><br></pre></td></tr></table></figure>
-
-<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">&quot;app&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">v-for</span>=<span class="string">&quot;post in posts&quot;</span> <span class="attr">:key</span>=<span class="string">&quot;post.id&quot;</span>&gt;</span>&#123;&#123;post.content&#125;&#125;<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
-
-]]></content>
-      <categories>
-        <category>技术</category>
-      </categories>
-      <tags>
-        <tag>vue</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>我的ppt制作经验</title>
     <url>/2022/08/04/ppt%E6%80%9D%E8%B7%AF/</url>
     <content><![CDATA[<h2 id="我的PPT设计思路"><a href="#我的PPT设计思路" class="headerlink" title="我的PPT设计思路"></a>我的PPT设计思路</h2><h3 id="前置"><a href="#前置" class="headerlink" title="前置"></a>前置</h3><ol>
@@ -881,6 +869,18 @@
       </categories>
       <tags>
         <tag>ppt</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Welcome to my BLOG!</title>
+    <url>/2022/08/03/hello-world/</url>
+    <content><![CDATA[<p>欢迎来到我的博客<br>我会在这里记录自己的学习，生活<br>谢谢你的到来！！</p>
+]]></content>
+      <categories>
+        <category>欢迎</category>
+      </categories>
+      <tags>
+        <tag>日常</tag>
       </tags>
   </entry>
   <entry>
@@ -1063,65 +1063,6 @@
       </tags>
   </entry>
   <entry>
-    <title>css中position</title>
-    <url>/2022/08/03/%E5%AE%9A%E4%BD%8D/</url>
-    <content><![CDATA[<h1 id="定位"><a href="#定位" class="headerlink" title="定位"></a>定位</h1><h3 id="类型"><a href="#类型" class="headerlink" title="类型"></a>类型</h3><p>static:正常生成元素框</p>
-<p>relative：元素框偏移一定距离，所占空间不变</p>
-<p>absolute：元素框完全从文档流中移除，相对容纳块定位</p>
-<p>fixed：行为类似absolute，容纳块是视区自身</p>
-<p>sticky：触发粘滞条件时，相当于相对容纳块绝对定位；触发粘滞的条件失效后，回到最初位置</p>
-<h3 id="容纳块"><a href="#容纳块" class="headerlink" title="容纳块"></a>容纳块</h3><p>一般来说，容纳块指包含另一个元素的框体</p>
-<p>对定位元素：</p>
-<p>relative或static：容纳块由最近的祖辈元素框体的内容边界划定</p>
-<p>absolute：容纳块是最近的不是static的祖辈元素</p>
-<ul>
-<li>块级元素：内边距边界</li>
-<li>行内元素：内容边界</li>
-<li>没有：初始容纳块</li>
-</ul>
-<p>定位元素可能位于容纳块之外</p>
-<h3 id="偏移属性"><a href="#偏移属性" class="headerlink" title="偏移属性"></a>偏移属性</h3><p>top</p>
-<p>bottom</p>
-<p>left</p>
-<p>right</p>
-<h3 id="限制宽高"><a href="#限制宽高" class="headerlink" title="限制宽高"></a>限制宽高</h3><p>min-height,min-width:限制最小</p>
-<p>max-width,max-height:限制最大</p>
-<h3 id="内容溢出"><a href="#内容溢出" class="headerlink" title="内容溢出"></a>内容溢出</h3><p>某个元素在内容里放不下：设置overflow属性</p>
-<p>visible：超出内容的部分可见</p>
-<p>hidden：超出部分不可见</p>
-<p>scroll：超出部分会隐藏，但可以通过滚动条查看</p>
-<p>auto：让用户代理自己决定使用哪种方式，在必要时使用滚动条</p>
-<h3 id="可见性"><a href="#可见性" class="headerlink" title="可见性"></a>可见性</h3><p><code>visibility:visible/hidden/collapse</code></p>
-<p><code>visible</code>:可见</p>
-<p><code>hidden</code>:隐藏（仍会占据空间，但不显示，相当于完全透明）</p>
-<p><code>collapse</code>:用于渲染表格，在渲染非表格元素时和hidden一致</p>
-<h3 id="绝对定位"><a href="#绝对定位" class="headerlink" title="绝对定位"></a>绝对定位</h3><p>如果文档能滚动，绝对定位元素也会随之滚动</p>
-<h5 id="自动确定边界"><a href="#自动确定边界" class="headerlink" title="自动确定边界"></a>自动确定边界</h5><p>将绝对定位元素除bottom外的某个偏移属性值设置为auto将得到一种特殊的行为</p>
-<p>即元素的位置会成为静态状态时的位置（即在常规文档流中的位置）</p>
-<p>将left和right同时设成auto会让绝对定位元素水平居中</p>
-<p>当元素各种属性值加起来不足容纳块的长度时（过约束），会对auto的值重新计算，当无auto时，会重新计算left或right的值</p>
-<p>如果属性的值导致过约束，top将永远<strong>不被</strong>忽略</p>
-<h3 id="Z-index"><a href="#Z-index" class="headerlink" title="Z-index"></a>Z-index</h3><p>z-index值越大，元素离读者越近</p>
-<p>设立z-index的父元素的子元素的位置是相对于父元素的，无论子元素设置多小的z-index值都会显示在父元素上方</p>
-<p>z-index：auto可视为z-index：0</p>
-<h3 id="固定定位"><a href="#固定定位" class="headerlink" title="固定定位"></a>固定定位</h3><p>与绝对定位类似，但容纳块是整个视区</p>
-<h3 id="相对定位"><a href="#相对定位" class="headerlink" title="相对定位"></a>相对定位</h3><p>相对定位使用偏移属性移动元素</p>
-<p>如<code>bottom:20px</code>将把元素向上平移20px</p>
-<p>在相对定位中，元素从常规的位置移开了，但其占据的空间没有消失</p>
-<p>相对定位的元素同样可能会重叠</p>
-<h3 id="粘滞定位"><a href="#粘滞定位" class="headerlink" title="粘滞定位"></a>粘滞定位</h3><p>粘滞定位元素通过设置偏移属性确定相对容纳块的粘滞定位矩形</p>
-<p>如<code>.h2 &#123;position:stick;top:2em;bottom:auto;left:auto;right:auto&#125;</code></p>
-<p>就设置了一个到达顶部就被粘滞的举行，想要让矩形在某个方向被粘滞，只需要将那个方向不设成auto即可</p>
-<h3 id="小结"><a href="#小结" class="headerlink" title="小结"></a>小结</h3><p>借助定位可以随意移动元素，这是常规文档流难以企及的。通过z轴确定叠放次序，加上各种溢出模式，定位依旧有用武之力</p>
-]]></content>
-      <categories>
-        <category>技术</category>
-      </categories>
-      <tags>
-        <tag>css</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>css中的flex布局</title>
     <url>/2022/08/03/%E5%BC%B9%E6%80%A7%E7%9B%92%E5%B8%83%E5%B1%80%EF%BC%9Aflex/</url>
     <content><![CDATA[<h1 id="弹性盒布局：flex"><a href="#弹性盒布局：flex" class="headerlink" title="弹性盒布局：flex"></a>弹性盒布局：flex</h1><h3 id="弹性盒基础"><a href="#弹性盒基础" class="headerlink" title="弹性盒基础"></a>弹性盒基础</h3><p>使用弹性盒后内容呈现顺序不再受到源码顺序的限制</p>
@@ -1216,6 +1157,109 @@
       </categories>
       <tags>
         <tag>css</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>css中position</title>
+    <url>/2022/08/03/%E5%AE%9A%E4%BD%8D/</url>
+    <content><![CDATA[<h1 id="定位"><a href="#定位" class="headerlink" title="定位"></a>定位</h1><h3 id="类型"><a href="#类型" class="headerlink" title="类型"></a>类型</h3><p>static:正常生成元素框</p>
+<p>relative：元素框偏移一定距离，所占空间不变</p>
+<p>absolute：元素框完全从文档流中移除，相对容纳块定位</p>
+<p>fixed：行为类似absolute，容纳块是视区自身</p>
+<p>sticky：触发粘滞条件时，相当于相对容纳块绝对定位；触发粘滞的条件失效后，回到最初位置</p>
+<h3 id="容纳块"><a href="#容纳块" class="headerlink" title="容纳块"></a>容纳块</h3><p>一般来说，容纳块指包含另一个元素的框体</p>
+<p>对定位元素：</p>
+<p>relative或static：容纳块由最近的祖辈元素框体的内容边界划定</p>
+<p>absolute：容纳块是最近的不是static的祖辈元素</p>
+<ul>
+<li>块级元素：内边距边界</li>
+<li>行内元素：内容边界</li>
+<li>没有：初始容纳块</li>
+</ul>
+<p>定位元素可能位于容纳块之外</p>
+<h3 id="偏移属性"><a href="#偏移属性" class="headerlink" title="偏移属性"></a>偏移属性</h3><p>top</p>
+<p>bottom</p>
+<p>left</p>
+<p>right</p>
+<h3 id="限制宽高"><a href="#限制宽高" class="headerlink" title="限制宽高"></a>限制宽高</h3><p>min-height,min-width:限制最小</p>
+<p>max-width,max-height:限制最大</p>
+<h3 id="内容溢出"><a href="#内容溢出" class="headerlink" title="内容溢出"></a>内容溢出</h3><p>某个元素在内容里放不下：设置overflow属性</p>
+<p>visible：超出内容的部分可见</p>
+<p>hidden：超出部分不可见</p>
+<p>scroll：超出部分会隐藏，但可以通过滚动条查看</p>
+<p>auto：让用户代理自己决定使用哪种方式，在必要时使用滚动条</p>
+<h3 id="可见性"><a href="#可见性" class="headerlink" title="可见性"></a>可见性</h3><p><code>visibility:visible/hidden/collapse</code></p>
+<p><code>visible</code>:可见</p>
+<p><code>hidden</code>:隐藏（仍会占据空间，但不显示，相当于完全透明）</p>
+<p><code>collapse</code>:用于渲染表格，在渲染非表格元素时和hidden一致</p>
+<h3 id="绝对定位"><a href="#绝对定位" class="headerlink" title="绝对定位"></a>绝对定位</h3><p>如果文档能滚动，绝对定位元素也会随之滚动</p>
+<h5 id="自动确定边界"><a href="#自动确定边界" class="headerlink" title="自动确定边界"></a>自动确定边界</h5><p>将绝对定位元素除bottom外的某个偏移属性值设置为auto将得到一种特殊的行为</p>
+<p>即元素的位置会成为静态状态时的位置（即在常规文档流中的位置）</p>
+<p>将left和right同时设成auto会让绝对定位元素水平居中</p>
+<p>当元素各种属性值加起来不足容纳块的长度时（过约束），会对auto的值重新计算，当无auto时，会重新计算left或right的值</p>
+<p>如果属性的值导致过约束，top将永远<strong>不被</strong>忽略</p>
+<h3 id="Z-index"><a href="#Z-index" class="headerlink" title="Z-index"></a>Z-index</h3><p>z-index值越大，元素离读者越近</p>
+<p>设立z-index的父元素的子元素的位置是相对于父元素的，无论子元素设置多小的z-index值都会显示在父元素上方</p>
+<p>z-index：auto可视为z-index：0</p>
+<h3 id="固定定位"><a href="#固定定位" class="headerlink" title="固定定位"></a>固定定位</h3><p>与绝对定位类似，但容纳块是整个视区</p>
+<h3 id="相对定位"><a href="#相对定位" class="headerlink" title="相对定位"></a>相对定位</h3><p>相对定位使用偏移属性移动元素</p>
+<p>如<code>bottom:20px</code>将把元素向上平移20px</p>
+<p>在相对定位中，元素从常规的位置移开了，但其占据的空间没有消失</p>
+<p>相对定位的元素同样可能会重叠</p>
+<h3 id="粘滞定位"><a href="#粘滞定位" class="headerlink" title="粘滞定位"></a>粘滞定位</h3><p>粘滞定位元素通过设置偏移属性确定相对容纳块的粘滞定位矩形</p>
+<p>如<code>.h2 &#123;position:stick;top:2em;bottom:auto;left:auto;right:auto&#125;</code></p>
+<p>就设置了一个到达顶部就被粘滞的举行，想要让矩形在某个方向被粘滞，只需要将那个方向不设成auto即可</p>
+<h3 id="小结"><a href="#小结" class="headerlink" title="小结"></a>小结</h3><p>借助定位可以随意移动元素，这是常规文档流难以企及的。通过z轴确定叠放次序，加上各种溢出模式，定位依旧有用武之力</p>
+]]></content>
+      <categories>
+        <category>技术</category>
+      </categories>
+      <tags>
+        <tag>css</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>浏览器的工作原理</title>
+    <url>/2022/08/03/%E6%B5%8F%E8%A7%88%E5%99%A8%E7%9A%84%E5%B7%A5%E4%BD%9C%E5%8E%9F%E7%90%86%EF%BC%88%E7%AE%80%E6%98%93%E7%89%88%EF%BC%89/</url>
+    <content><![CDATA[<h3 id="浏览器的工作原理（简易版）"><a href="#浏览器的工作原理（简易版）" class="headerlink" title="浏览器的工作原理（简易版）"></a>浏览器的工作原理（简易版）</h3><p>输入url后</p>
+<ol>
+<li><p>浏览器进行dns查找，把域名转换为ip地址，根据ip地址找到对应的服务器</p>
+</li>
+<li><p>浏览器通过TCP握手机制跟服务器建立连接，如果为https还有一步TLS握手</p>
+</li>
+<li><p>浏览器发起http&#x2F;https请求，获取响应。在浏览器接收响应时，受制于TCP连接的性质，浏览器先收到前14kb的数据，后续才会慢慢增加传输速度下载其他文件</p>
+</li>
+<li><p>收到html代码后，浏览器开始渲染网页</p>
+<ol>
+<li><p>解析html代码，构建DOM树（HTML文档在浏览器中的对象表示）</p>
+<p>浏览器在解析HTML时顺序执行并且只有一个主线程负责，遇到script标签会先执行js代码，暂停解析html代码。对于图片，css文件，设置了defer&#x2F;async的script标签不会影响html解析，会异步加载</p>
+<p>浏览器具有预扫描线程，扫描html代码，提前把css文件，字体，js文件下载下来，不影响主线程</p>
+<p><img src="/image/image1.png" alt="dom树"></p>
+</li>
+<li><p>构建CSSOM树</p>
+<p><img src="/image/image2.png" alt="CSSOM树"></p>
+</li>
+<li><p>合并DOM和CSSOM，形成渲染树</p>
+<p><img src="/image/image3.png" alt="渲染树"></p>
+</li>
+<li><p>布局</p>
+<p>对于图片这样的结点，如果没有指定宽高，会先忽略大小。图片下载完成后，浏览器根据图片的大小重新计算受影响的结点的宽高，这种方法被称为回流（reflow）</p>
+</li>
+<li><p>绘制</p>
+<p>第一次布局之后，浏览器会把结点和结点的样式绘制在屏幕上，要求过程快速</p>
+<p>如果布局发生回流，浏览器会发生重绘，把变化的布局重新绘制在屏幕上</p>
+<p>绘制期间可能会有组合发生（产生了新的图层）,浏览器需要把图层组合起来，按正确的图层顺序渲染，发生了重绘也会导致重新组合</p>
+<p>上述五步完成后，设置了defer&#x2F;async的script中的内容，网页加载完成</p>
+</li>
+</ol>
+</li>
+</ol>
+]]></content>
+      <categories>
+        <category>技术</category>
+      </categories>
+      <tags>
+        <tag>计算机网络</tag>
       </tags>
   </entry>
   <entry>
@@ -1347,50 +1391,6 @@
       </categories>
       <tags>
         <tag>css</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>浏览器的工作原理</title>
-    <url>/2022/08/03/%E6%B5%8F%E8%A7%88%E5%99%A8%E7%9A%84%E5%B7%A5%E4%BD%9C%E5%8E%9F%E7%90%86%EF%BC%88%E7%AE%80%E6%98%93%E7%89%88%EF%BC%89/</url>
-    <content><![CDATA[<h3 id="浏览器的工作原理（简易版）"><a href="#浏览器的工作原理（简易版）" class="headerlink" title="浏览器的工作原理（简易版）"></a>浏览器的工作原理（简易版）</h3><p>输入url后</p>
-<ol>
-<li><p>浏览器进行dns查找，把域名转换为ip地址，根据ip地址找到对应的服务器</p>
-</li>
-<li><p>浏览器通过TCP握手机制跟服务器建立连接，如果为https还有一步TLS握手</p>
-</li>
-<li><p>浏览器发起http&#x2F;https请求，获取响应。在浏览器接收响应时，受制于TCP连接的性质，浏览器先收到前14kb的数据，后续才会慢慢增加传输速度下载其他文件</p>
-</li>
-<li><p>收到html代码后，浏览器开始渲染网页</p>
-<ol>
-<li><p>解析html代码，构建DOM树（HTML文档在浏览器中的对象表示）</p>
-<p>浏览器在解析HTML时顺序执行并且只有一个主线程负责，遇到script标签会先执行js代码，暂停解析html代码。对于图片，css文件，设置了defer&#x2F;async的script标签不会影响html解析，会异步加载</p>
-<p>浏览器具有预扫描线程，扫描html代码，提前把css文件，字体，js文件下载下来，不影响主线程</p>
-<p><img src="/image/image1.png" alt="dom树"></p>
-</li>
-<li><p>构建CSSOM树</p>
-<p><img src="/image/image2.png" alt="CSSOM树"></p>
-</li>
-<li><p>合并DOM和CSSOM，形成渲染树</p>
-<p><img src="/image/image3.png" alt="渲染树"></p>
-</li>
-<li><p>布局</p>
-<p>对于图片这样的结点，如果没有指定宽高，会先忽略大小。图片下载完成后，浏览器根据图片的大小重新计算受影响的结点的宽高，这种方法被称为回流（reflow）</p>
-</li>
-<li><p>绘制</p>
-<p>第一次布局之后，浏览器会把结点和结点的样式绘制在屏幕上，要求过程快速</p>
-<p>如果布局发生回流，浏览器会发生重绘，把变化的布局重新绘制在屏幕上</p>
-<p>绘制期间可能会有组合发生（产生了新的图层）,浏览器需要把图层组合起来，按正确的图层顺序渲染，发生了重绘也会导致重新组合</p>
-<p>上述五步完成后，设置了defer&#x2F;async的script中的内容，网页加载完成</p>
-</li>
-</ol>
-</li>
-</ol>
-]]></content>
-      <categories>
-        <category>技术</category>
-      </categories>
-      <tags>
-        <tag>计算机网络</tag>
       </tags>
   </entry>
   <entry>
