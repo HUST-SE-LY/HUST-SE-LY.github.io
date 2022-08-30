@@ -1,0 +1,241 @@
+
+<!DOCTYPE html>
+<html lang="zh-CN" class="loading">
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>js数据结构：队列 - ly-blog</title>
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="google" content="notranslate" />
+    <meta name="keywords" content="Fechin,"> 
+    <meta name="description" content="一个超级懒虫的博客,队列队列是一种先进先出的数据结构
+用JavaScript实现队列的下列功能：
+enqueue:入队
+dequeue:出队
+peek:返回队首元素
+isEmpty:判断队列是否为空
+size:返回队列,"> 
+    <meta name="author" content="Lazy-ly"> 
+    <link rel="alternative" href="atom.xml" title="ly-blog" type="application/atom+xml"> 
+    <link rel="icon" href="/img/favicon.jpg"> 
+    
+    
+    
+    <meta name="twitter:card" content="summary"/>
+    <meta name="twitter:title" content="js数据结构：队列 - ly-blog"/>
+    <meta name="twitter:description" content="一个超级懒虫的博客,队列队列是一种先进先出的数据结构
+用JavaScript实现队列的下列功能：
+enqueue:入队
+dequeue:出队
+peek:返回队首元素
+isEmpty:判断队列是否为空
+size:返回队列,"/>
+    
+    
+    
+    
+    <meta property="og:site_name" content="ly-blog"/>
+    <meta property="og:type" content="object"/>
+    <meta property="og:title" content="js数据结构：队列 - ly-blog"/>
+    <meta property="og:description" content="一个超级懒虫的博客,队列队列是一种先进先出的数据结构
+用JavaScript实现队列的下列功能：
+enqueue:入队
+dequeue:出队
+peek:返回队首元素
+isEmpty:判断队列是否为空
+size:返回队列,"/>
+    
+<link rel="stylesheet" href="/css/diaspora.css">
+
+    <script>window.searchDbPath = "/search.xml";</script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Source+Code+Pro&display=swap" rel="stylesheet">
+<meta name="generator" content="Hexo 6.2.0"></head>
+
+<body class="loading">
+    <span id="config-title" style="display:none">ly-blog</span>
+    <div id="loader"></div>
+    <div id="single">
+    <div id="top" style="display: block;">
+    <div class="bar" style="width: 0;"></div>
+    <a class="iconfont icon-home image-icon" href="javascript:;" data-url="http://example.com"></a>
+    <div title="播放/暂停" class="iconfont icon-play"></div>
+    <h3 class="subtitle">js数据结构：队列</h3>
+    <div class="social">
+        <div>
+            <div class="share">
+                <a title="获取二维码" class="iconfont icon-scan" href="javascript:;"></a>
+            </div>
+            <div id="qr"></div>
+        </div>
+    </div>
+    <div class="scrollbar"></div>
+</div>
+
+    <div class="section">
+        <div class="article">
+    <div class='main'>
+        <h1 class="title">js数据结构：队列</h1>
+        <div class="stuff">
+            <span>八月 30, 2022</span>
+            
+  <ul class="post-tags-list" itemprop="keywords"><li class="post-tags-list-item"><a class="post-tags-list-link" href="/tags/JavaScript/" rel="tag">JavaScript</a></li><li class="post-tags-list-item"><a class="post-tags-list-link" href="/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/" rel="tag">数据结构</a></li><li class="post-tags-list-item"><a class="post-tags-list-link" href="/tags/%E9%98%9F%E5%88%97/" rel="tag">队列</a></li></ul>
+
+
+        </div>
+        <div class="content markdown">
+            <h3 id="队列"><a href="#队列" class="headerlink" title="队列"></a>队列</h3><p>队列是一种先进先出的数据结构</p>
+<p>用JavaScript实现队列的下列功能：</p>
+<p><code>enqueue</code>:入队</p>
+<p><code>dequeue</code>:出队</p>
+<p><code>peek</code>:返回队首元素</p>
+<p><code>isEmpty</code>:判断队列是否为空</p>
+<p><code>size</code>:返回队列长度</p>
+<p><code>toString</code>:队列字符串化</p>
+<p><code>clear</code>:清空队列</p>
+<p>代码：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Queue</span> &#123;</span><br><span class="line">  <span class="title function_">constructor</span>(<span class="params"></span>) &#123;</span><br><span class="line">    <span class="variable language_">this</span>.<span class="property">count</span>=<span class="number">0</span>;</span><br><span class="line">    <span class="variable language_">this</span>.<span class="property">lowestCount</span>=<span class="number">0</span>;</span><br><span class="line">    <span class="variable language_">this</span>.<span class="property">items</span>=&#123;&#125;;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="title function_">enqueue</span>(<span class="params">element</span>) &#123;<span class="comment">//入队</span></span><br><span class="line">    <span class="variable language_">this</span>.<span class="property">items</span>[<span class="variable language_">this</span>.<span class="property">count</span>]=element;</span><br><span class="line">    <span class="variable language_">this</span>.<span class="property">count</span>++;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="title function_">dequeue</span>(<span class="params"></span>) &#123;<span class="comment">//出队</span></span><br><span class="line">    <span class="keyword">if</span> (<span class="variable language_">this</span>.<span class="title function_">isEmpty</span>()) &#123;</span><br><span class="line">      <span class="keyword">return</span> <span class="literal">undefined</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">const</span> result=<span class="variable language_">this</span>.<span class="property">items</span>[<span class="variable language_">this</span>.<span class="property">lowestCount</span>];</span><br><span class="line">    <span class="keyword">delete</span> <span class="variable language_">this</span>.<span class="property">items</span>[<span class="variable language_">this</span>.<span class="property">lowestCount</span>];</span><br><span class="line">    <span class="variable language_">this</span>.<span class="property">lowestCount</span>++;</span><br><span class="line">    <span class="keyword">return</span> result</span><br><span class="line"></span><br><span class="line">  &#125;</span><br><span class="line">  <span class="title function_">isEmpty</span>(<span class="params"></span>) &#123;<span class="comment">//是否为空</span></span><br><span class="line">    <span class="keyword">return</span> <span class="variable language_">this</span>.<span class="property">count</span>===<span class="number">0</span>;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="title function_">peek</span>(<span class="params"></span>) &#123;<span class="comment">//返回队首元素</span></span><br><span class="line">    <span class="keyword">if</span>(<span class="variable language_">this</span>.<span class="title function_">isEmpty</span>()) &#123;</span><br><span class="line">      <span class="keyword">return</span> <span class="literal">undefined</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="variable language_">this</span>.<span class="property">items</span>[<span class="variable language_">this</span>.<span class="property">lowestCount</span>];</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="title function_">size</span>(<span class="params"></span>) &#123;<span class="comment">//返回队列长度</span></span><br><span class="line">    <span class="keyword">return</span> <span class="variable language_">this</span>.<span class="property">count</span>-<span class="variable language_">this</span>.<span class="property">lowestCount</span>;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="title function_">clear</span>(<span class="params"></span>) &#123;<span class="comment">//清空队列</span></span><br><span class="line">    <span class="variable language_">this</span>.<span class="property">items</span>=&#123;&#125;;</span><br><span class="line">    <span class="variable language_">this</span>.<span class="property">count</span>=<span class="number">0</span>;</span><br><span class="line">    <span class="variable language_">this</span>.<span class="property">lowestCount</span>=<span class="number">0</span>;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="title function_">toString</span>(<span class="params"></span>) &#123;<span class="comment">//转换成字符串</span></span><br><span class="line">    <span class="keyword">if</span>(<span class="variable language_">this</span>.<span class="title function_">isEmpty</span>()) &#123;</span><br><span class="line">      <span class="keyword">return</span> <span class="string">&quot;&quot;</span></span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">let</span> objString=<span class="string">`<span class="subst">$&#123;<span class="variable language_">this</span>.items[<span class="variable language_">this</span>.lowestCount]&#125;</span>`</span>;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">let</span> i = <span class="variable language_">this</span>.<span class="property">lowestCount</span>+<span class="number">1</span>;i &lt; <span class="variable language_">this</span>.<span class="property">count</span>;i++) &#123;</span><br><span class="line">      objString=<span class="string">`<span class="subst">$&#123;objString&#125;</span>,<span class="subst">$&#123;<span class="variable language_">this</span>.items[i]&#125;</span>`</span></span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> objString;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>使用队列的例子：击鼓传花</p>
+<p>传入一个成员数组，和一个数字，在传到指定数字时淘汰对应的成员</p>
+<p>思路：创建一个队列，每传一次就将队首元素出队并从队尾入队，这样使得拿着花圈的成员永远对应队首元素。到达指定次数之后，将队首元素出队，不再添加至队尾，添加至淘汰者名单中。当队列中只有一个元素时，结束循环，得到胜者</p>
+<p>代码：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">function</span> <span class="title function_">hotPotato</span>(<span class="params">elementsList,num</span>) &#123;</span><br><span class="line">  <span class="keyword">const</span> queue=<span class="keyword">new</span> <span class="title class_">Queue</span>();</span><br><span class="line">  <span class="keyword">let</span> out=[];</span><br><span class="line">  <span class="keyword">for</span>(<span class="keyword">let</span> i <span class="keyword">in</span> elementsList) &#123;</span><br><span class="line">    queue.<span class="title function_">enqueue</span>(elementsList[i]);</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">while</span>(queue.<span class="title function_">size</span>()&gt;<span class="number">1</span>) &#123;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">let</span> i = <span class="number">0</span>;i&lt;num;i++) &#123;</span><br><span class="line">      queue.<span class="title function_">enqueue</span>(queue.<span class="title function_">dequeue</span>());</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">`<span class="subst">$&#123;queue.peek()&#125;</span>被淘汰了！`</span>)</span><br><span class="line">    out.<span class="title function_">push</span>(queue.<span class="title function_">dequeue</span>())</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">return</span> &#123;</span><br><span class="line">    <span class="attr">winner</span>: queue.<span class="title function_">dequeue</span>(),</span><br><span class="line">    <span class="attr">outList</span>: out</span><br><span class="line"></span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="双端队列"><a href="#双端队列" class="headerlink" title="双端队列"></a>双端队列</h3><p>双端队列与队列的区别是双端队列可以任意在队首或队尾增加，删除元素</p>
+<p>用JavaScript实现队列的下列功能：</p>
+<p><code>addFront</code>:从队首添加元素</p>
+<p><code>addBack</code>:从队尾添加元素（与队列中的enqueue类似）</p>
+<p><code>removeFront</code>:从队首删除元素（与队列中dequeue类似）</p>
+<p><code>removeBack</code>:从队尾删除元素（与栈中pop类似）</p>
+<p><code>peekFront</code>:返回队首元素</p>
+<p><code>peekBack</code>:返回队尾元素</p>
+<p><code>isEmpty</code>:判断队列是否为空</p>
+<p><code>size</code>:返回队列长度</p>
+<p><code>clear</code>:清空队列</p>
+<p><code>toString</code>:队列字符串化</p>
+<p>代码实现：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Deque</span> &#123;</span><br><span class="line">  <span class="title function_">constructor</span>(<span class="params"></span>) &#123;</span><br><span class="line">    <span class="variable language_">this</span>.<span class="property">count</span>=<span class="number">0</span>;</span><br><span class="line">    <span class="variable language_">this</span>.<span class="property">lowestCount</span>=<span class="number">0</span>;</span><br><span class="line">    <span class="variable language_">this</span>.<span class="property">items</span>=&#123;&#125;;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="title function_">addBack</span>(<span class="params">element</span>) &#123;<span class="comment">//后端入队</span></span><br><span class="line">    <span class="variable language_">this</span>.<span class="property">items</span>[<span class="variable language_">this</span>.<span class="property">count</span>]=element;</span><br><span class="line">    <span class="variable language_">this</span>.<span class="property">count</span>++;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="title function_">addFront</span>(<span class="params">element</span>) &#123;<span class="comment">//前端入队</span></span><br><span class="line">    <span class="keyword">if</span>(<span class="variable language_">this</span>.<span class="title function_">isEmpty</span>()) &#123;</span><br><span class="line">      <span class="variable language_">this</span>.<span class="title function_">addBack</span>(element);</span><br><span class="line">    &#125; <span class="keyword">else</span> <span class="keyword">if</span>(<span class="variable language_">this</span>.<span class="property">lowestCount</span>&gt;<span class="number">0</span>) &#123;</span><br><span class="line">      <span class="variable language_">this</span>.<span class="property">lowestCount</span>--;</span><br><span class="line">      <span class="variable language_">this</span>.<span class="property">items</span>[<span class="variable language_">this</span>.<span class="property">lowestCount</span>]=element;</span><br><span class="line">    &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">      <span class="keyword">for</span>(<span class="keyword">let</span> i = <span class="variable language_">this</span>.<span class="property">count</span>;i&gt;<span class="number">0</span>;i--) &#123;</span><br><span class="line">        <span class="variable language_">this</span>.<span class="property">items</span>[i]=<span class="variable language_">this</span>.<span class="property">items</span>[i-<span class="number">1</span>];</span><br><span class="line">      &#125;</span><br><span class="line">      <span class="variable language_">this</span>.<span class="property">count</span>++;</span><br><span class="line">      <span class="variable language_">this</span>.<span class="property">lowestCount</span>=<span class="number">0</span>;</span><br><span class="line">      <span class="variable language_">this</span>.<span class="property">items</span>[<span class="number">0</span>]=element;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">  &#125;</span><br><span class="line">  <span class="title function_">removeFront</span>(<span class="params"></span>) &#123;<span class="comment">//前端出队</span></span><br><span class="line">    <span class="keyword">if</span> (<span class="variable language_">this</span>.<span class="title function_">isEmpty</span>()) &#123;</span><br><span class="line">      <span class="keyword">return</span> <span class="literal">undefined</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">const</span> result=<span class="variable language_">this</span>.<span class="property">items</span>[<span class="variable language_">this</span>.<span class="property">lowestCount</span>];</span><br><span class="line">    <span class="keyword">delete</span> <span class="variable language_">this</span>.<span class="property">items</span>[<span class="variable language_">this</span>.<span class="property">lowestCount</span>];</span><br><span class="line">    <span class="variable language_">this</span>.<span class="property">lowestCount</span>++;</span><br><span class="line">    <span class="keyword">return</span> result</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="title function_">removeBack</span>(<span class="params"></span>) &#123;<span class="comment">//后端出队</span></span><br><span class="line">    <span class="keyword">if</span>(<span class="variable language_">this</span>.<span class="title function_">isEmpty</span>()) &#123;</span><br><span class="line">      <span class="keyword">return</span> <span class="literal">undefined</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">let</span> result=<span class="variable language_">this</span>.<span class="property">items</span>[<span class="variable language_">this</span>.<span class="property">count</span>-<span class="number">1</span>];</span><br><span class="line">    <span class="keyword">delete</span> <span class="variable language_">this</span>.<span class="property">items</span>[<span class="variable language_">this</span>.<span class="property">count</span>-<span class="number">1</span>];</span><br><span class="line">    <span class="variable language_">this</span>.<span class="property">count</span>--;</span><br><span class="line">    <span class="keyword">return</span> result;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="title function_">isEmpty</span>(<span class="params"></span>) &#123;<span class="comment">//是否为空</span></span><br><span class="line">    <span class="keyword">return</span> <span class="variable language_">this</span>.<span class="property">count</span>===<span class="number">0</span>;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="title function_">peekFront</span>(<span class="params"></span>) &#123;<span class="comment">//返回队首元素</span></span><br><span class="line">    <span class="keyword">return</span> <span class="variable language_">this</span>.<span class="property">items</span>[<span class="variable language_">this</span>.<span class="property">lowestCount</span>];</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="title function_">peekBack</span>(<span class="params"></span>) &#123;<span class="comment">//返回队尾元素</span></span><br><span class="line">    <span class="keyword">return</span> <span class="variable language_">this</span>.<span class="property">items</span>[<span class="variable language_">this</span>.<span class="property">count</span>-<span class="number">1</span>];</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="title function_">size</span>(<span class="params"></span>) &#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="variable language_">this</span>.<span class="property">count</span>-<span class="variable language_">this</span>.<span class="property">lowestCount</span>;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="title function_">clear</span>(<span class="params"></span>) &#123;</span><br><span class="line">    <span class="variable language_">this</span>.<span class="property">items</span>=&#123;&#125;;</span><br><span class="line">    <span class="variable language_">this</span>.<span class="property">count</span>=<span class="number">0</span>;</span><br><span class="line">    <span class="variable language_">this</span>.<span class="property">lowestCount</span>=<span class="number">0</span>;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="title function_">toString</span>(<span class="params"></span>) &#123;</span><br><span class="line">    <span class="keyword">if</span>(<span class="variable language_">this</span>.<span class="title function_">isEmpty</span>()) &#123;</span><br><span class="line">      <span class="keyword">return</span> <span class="string">&quot;&quot;</span></span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">let</span> objString=<span class="string">`<span class="subst">$&#123;<span class="variable language_">this</span>.items[<span class="variable language_">this</span>.lowestCount]&#125;</span>`</span>;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">let</span> i = <span class="variable language_">this</span>.<span class="property">lowestCount</span>+<span class="number">1</span>;i &lt; <span class="variable language_">this</span>.<span class="property">count</span>;i++) &#123;</span><br><span class="line">      objString=<span class="string">`<span class="subst">$&#123;objString&#125;</span>,<span class="subst">$&#123;<span class="variable language_">this</span>.items[i]&#125;</span>`</span></span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> objString;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>使用双端队列的例子：检测回文串</p>
+<p>回文串就是从前向后和从后向前读起来一样的字符串</p>
+<p>思路：首先检测是否传入以及将字符串字母大写转为小写，然后创建双端队列，不断将队首队尾元素出队比较直至双端队列长度小于等于1即可</p>
+<p>代码：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">function</span> <span class="title function_">palindromeChecker</span>(<span class="params">aString</span>) &#123;</span><br><span class="line">  <span class="keyword">if</span> (aString === <span class="literal">undefined</span> || aString === <span class="literal">null</span> ||</span><br><span class="line">      (aString !== <span class="literal">null</span> &amp;&amp; aString.<span class="property">length</span> === <span class="number">0</span>)) &#123; <span class="comment">// 先判断是否传入字符串</span></span><br><span class="line">    <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">const</span> deque = <span class="keyword">new</span> <span class="title class_">Deque</span>(); <span class="comment">// 创建一个双端对列</span></span><br><span class="line">  <span class="keyword">const</span> lowerString = aString.<span class="title function_">toLocaleLowerCase</span>().<span class="title function_">split</span>(<span class="string">&#x27; &#x27;</span>).<span class="title function_">join</span>(<span class="string">&#x27;&#x27;</span>); <span class="comment">// 将大写全部转换成小写</span></span><br><span class="line">  <span class="keyword">let</span> isEqual = <span class="literal">true</span>;</span><br><span class="line">  <span class="keyword">let</span> firstChar, lastChar;</span><br><span class="line">  <span class="keyword">for</span> (<span class="keyword">let</span> i = <span class="number">0</span>; i &lt; lowerString.<span class="property">length</span>; i++) &#123; <span class="comment">// 向队列中添加字母</span></span><br><span class="line">    deque.<span class="title function_">addBack</span>(lowerString.<span class="title function_">charAt</span>(i));</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">while</span> (deque.<span class="title function_">size</span>() &gt; <span class="number">1</span> &amp;&amp; isEqual) &#123; <span class="comment">// 随时跳出</span></span><br><span class="line">    firstChar = deque.<span class="title function_">removeFront</span>(); <span class="comment">// 首字母</span></span><br><span class="line">    lastChar = deque.<span class="title function_">removeBack</span>(); <span class="comment">// 末尾字母</span></span><br><span class="line">    <span class="keyword">if</span> (firstChar !== lastChar) &#123;</span><br><span class="line">      isEqual = <span class="literal">false</span>;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">return</span> isEqual;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+
+            <!--[if lt IE 9]><script>document.createElement('audio');</script><![endif]-->
+            <audio id="audio" loop="1" preload="auto" controls="controls" data-autoplay="false">
+                <source type="audio/mpeg" src="">
+            </audio>
+            
+                <ul id="audio-list" style="display:none">
+                    
+                        
+                            <li title="0" data-url="http://link.hhtjim.com/163/425570952.mp3"></li>
+                        
+                    
+                        
+                            <li title="1" data-url="http://link.hhtjim.com/163/425570952.mp3"></li>
+                        
+                    
+                </ul>
+            
+        </div>
+        
+        
+    <div id="gitalk-container" class="comment link"
+		data-enable="false"
+        data-ae="false"
+        data-ci=""
+        data-cs=""
+        data-r=""
+        data-o=""
+        data-a=""
+        data-d="false"
+    >查看评论</div>
+
+
+    </div>
+    
+</div>
+
+
+    </div>
+</div>
+</body>
+
+
+<script src="//lib.baomitu.com/jquery/1.8.3/jquery.min.js"></script>
+<script src="/js/plugin.js"></script>
+<script src="/js/typed.js"></script>
+<script src="/js/diaspora.js"></script>
+
+
+<link rel="stylesheet" href="/photoswipe/photoswipe.css">
+<link rel="stylesheet" href="/photoswipe/default-skin/default-skin.css">
+
+
+<script src="/photoswipe/photoswipe.min.js"></script>
+<script src="/photoswipe/photoswipe-ui-default.min.js"></script>
+
+
+<!-- Root element of PhotoSwipe. Must have class pswp. -->
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+    <!-- Background of PhotoSwipe. 
+         It's a separate element as animating opacity is faster than rgba(). -->
+    <div class="pswp__bg"></div>
+    <!-- Slides wrapper with overflow:hidden. -->
+    <div class="pswp__scroll-wrap">
+        <!-- Container that holds slides. 
+            PhotoSwipe keeps only 3 of them in the DOM to save memory.
+            Don't modify these 3 pswp__item elements, data is added later on. -->
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+        <!-- Default (PhotoSwipeUI_Default) interface on top of sliding area. Can be changed. -->
+        <div class="pswp__ui pswp__ui--hidden">
+            <div class="pswp__top-bar">
+                <!--  Controls are self-explanatory. Order can be changed. -->
+                <div class="pswp__counter"></div>
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+                <button class="pswp__button pswp__button--share" title="Share"></button>
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+                <!-- Preloader demo http://codepen.io/dimsemenov/pen/yyBWoR -->
+                <!-- element will get class pswp__preloader--active when preloader is running -->
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                      <div class="pswp__preloader__cut">
+                        <div class="pswp__preloader__donut"></div>
+                      </div>
+                    </div>
+                </div>
+            </div>
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div> 
+            </div>
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+</html>
