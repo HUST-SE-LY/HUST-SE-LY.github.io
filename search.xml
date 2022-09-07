@@ -936,34 +936,6 @@
       </tags>
   </entry>
   <entry>
-    <title>Welcome to my BLOG!</title>
-    <url>/2022/08/03/hello-world/</url>
-    <content><![CDATA[<p>欢迎来到我的博客<br>我会在这里记录自己的学习，生活<br>谢谢你的到来！！</p>
-]]></content>
-      <categories>
-        <category>欢迎</category>
-      </categories>
-      <tags>
-        <tag>日常</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>关于内向和外向</title>
-    <url>/2022/08/08/%E5%86%85%E5%90%91%E4%B8%8E%E5%A4%96%E5%90%91/</url>
-    <content><![CDATA[<h3 id="内向与外向"><a href="#内向与外向" class="headerlink" title="内向与外向"></a>内向与外向</h3><p>​	内向的人可能表现出来是外向的，因为这里的内向是人内心深处的东西，更贴近于本质，而表现出来的外向是社会学上的宏观表现。一个内向的人甚至可能觉得自己非常非常外向，因为他们自己在社交上不怎么怯场，与很多人都能有话可说，但他们内心里是内向的，因为外在的表现可以认为是一种技能的习得，虽然能表现的外向，但背后可能是抗拒，疲惫的。一个外向的人用内向者的放松方式要求自己（如把自己关在房间里读书），或是一个内向的人用外向者的放松方式要求自己（如出门旅游），都会使自己的生活更加疲惫</p>
-<p>​	区分内向者与外向者，要看他们与世界的联系。内向的人能接受世界的能力更弱，面对不断变化的世界，他们往往需要与世界保持一定的距离。而外向者正好相反，外向者擅长与世界融为一体，能积极接纳新事物。内向的人会在内心中建立一个世界，从而做到与真实的世界保持一定距离。理论上讲内心世界应该与真实世界是1：1的但事实并非如此，因此内向的人会在观察自己内心世界的基础上尽可能少的从外部世界获取新东西扩充自己。所以内向的人在心里为了获得安全感会更想去认识认识这个世界，而事实上他却尽可能少的认识，因此内向的人更需要安全感。外向的人则需要不断地从世界获取新事物，因为他总觉得自己还不够，他会认为世界与自己是一体的。</p>
-<p>​	在此基础上，通过审查自己看待世界的方式，就可以知道自己是内向还是外向。比如内向者被亲密的人伤害之后，会因为这件事影响自己内心的世界，很可能会认为这个世界对自己太残忍了，既然亲密者对我都这样那么世界也不会对我温柔了等等想法。而外向者不同，外向者往往表现出我讨厌这个世界，我厌恶这个人。这两者有什么区别呢，区别在于内向者把自己与世界做了一个割舍，认为世界是危险的，完全融入进去就会被吞噬。而外向者则在最开始就是和世界站在一起的，他思考的前提就是自己处在世界之中。</p>
-<p>​	内向者放松的方式，是要更加切断自己与世界探索性的联系，要做的是修补自己的内心世界。因此，他们更需要独处。</p>
-]]></content>
-      <categories>
-        <category>生活</category>
-        <category>未完成</category>
-      </categories>
-      <tags>
-        <tag>心理</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>我的ppt制作经验</title>
     <url>/2022/08/04/ppt%E6%80%9D%E8%B7%AF/</url>
     <content><![CDATA[<h2 id="我的PPT设计思路"><a href="#我的PPT设计思路" class="headerlink" title="我的PPT设计思路"></a>我的PPT设计思路</h2><h3 id="前置"><a href="#前置" class="headerlink" title="前置"></a>前置</h3><ol>
@@ -1056,43 +1028,31 @@
       </tags>
   </entry>
   <entry>
-    <title>css中list列表相关</title>
-    <url>/2022/08/03/%E5%88%97%E8%A1%A8%E5%92%8C%E7%94%9F%E6%88%90%E7%9A%84%E5%86%85%E5%AE%B9/</url>
-    <content><![CDATA[<h1 id="列表和生成的内容"><a href="#列表和生成的内容" class="headerlink" title="列表和生成的内容"></a>列表和生成的内容</h1><h3 id="改变记号类型"><a href="#改变记号类型" class="headerlink" title="改变记号类型"></a>改变记号类型</h3><p>使用<code>list-style-type</code>属性</p>
-<p>与列表相关的属性只能应用到display属性为list-item的元素上，css并不区分有序列表和无序列表的项目。可以让有序列表使用圆点</p>
-<p>如果不想要记号，可以设置none值，但none值只是让记号不显示，并没有阻断计数</p>
-<p><code>list-style-type</code>的值是继承的，因此如果嵌套的列表需要使用不同的记号需要分别定义</p>
-<p>除了默认提供的<code>list-style-type</code>值外，还可以使用字符串值作为记号</p>
-<p>使用<code>list-style-image</code>属性</p>
-<p>使用该属性可以将列表记号设置为图片</p>
-<p>可以在声明图片记号之后再声明一个<code>list-style-type</code>作为后备记号类型</p>
-<p>嵌套的列表同样会继承image属性</p>
-<p>为嵌套的列表的image设置none阻止继承</p>
-<p>但实际情况中用户代理可能会为列表设置一个list-style-type值，因此继承的list-style-type值可能不能生效</p>
-<p>使用<code>list-style-position</code></p>
-<p>该属性会改变列表记号的位置，设置为outside（默认值）时，记号显示在外部，设置为inside时，显示在内容内部</p>
-<p>使用<code>list-style</code>简写属性</p>
-<p><code>list-style:list-style-type list-style-image list-style-position</code></p>
-<p>可以按任意顺序列出</p>
-<p>列表项目本身是类似块级的元素，放在列表内容外部的记号对其他元素的布局没有影响，记号相对于列表内容类似于绝对定位</p>
-<h3 id="生成的内容"><a href="#生成的内容" class="headerlink" title="生成的内容"></a>生成的内容</h3><p>生成的内容使用::before和::after伪元素插入文档。通过设置伪元素的content属性将指定的内容插入文档内容之前或之后</p>
-<p>如果::before或::after选择符的目标是块级元素，那么display的值只能为none，inline，block，和marker，其他值都为block</p>
-<p>如果是行内元素，那么display的值只能为none或inline，其他值都为inline</p>
-<h5 id="content"><a href="#content" class="headerlink" title="content"></a>content</h5><p>content的值为字符串时，显示为字面当量，即使有特殊标签也直接显示出来</p>
-<p>如果需要换行需要添加\A,如果需要将较长的字符串分多行书写需要\</p>
-<p>content值为URI时，会将引入的资源插入合适的位置，如果是用户代理不支持的资源会完全忽略</p>
-<p>如果想把属性值显示出来，可以使用<code>attr()</code>,如<code>content:attr(href)</code></p>
-<p>如果属性不存在，将显示空字符串</p>
-<h5 id="生成引号"><a href="#生成引号" class="headerlink" title="生成引号"></a>生成引号</h5><p>引号使用quote或open-quote等值生成</p>
-<p><code>quote:&lt;string&gt; &lt;string&gt;</code></p>
-<p>第一个字符定义开始引号，第二个字符定义结束引号</p>
+    <title>关于内向和外向</title>
+    <url>/2022/08/08/%E5%86%85%E5%90%91%E4%B8%8E%E5%A4%96%E5%90%91/</url>
+    <content><![CDATA[<h3 id="内向与外向"><a href="#内向与外向" class="headerlink" title="内向与外向"></a>内向与外向</h3><p>​	内向的人可能表现出来是外向的，因为这里的内向是人内心深处的东西，更贴近于本质，而表现出来的外向是社会学上的宏观表现。一个内向的人甚至可能觉得自己非常非常外向，因为他们自己在社交上不怎么怯场，与很多人都能有话可说，但他们内心里是内向的，因为外在的表现可以认为是一种技能的习得，虽然能表现的外向，但背后可能是抗拒，疲惫的。一个外向的人用内向者的放松方式要求自己（如把自己关在房间里读书），或是一个内向的人用外向者的放松方式要求自己（如出门旅游），都会使自己的生活更加疲惫</p>
+<p>​	区分内向者与外向者，要看他们与世界的联系。内向的人能接受世界的能力更弱，面对不断变化的世界，他们往往需要与世界保持一定的距离。而外向者正好相反，外向者擅长与世界融为一体，能积极接纳新事物。内向的人会在内心中建立一个世界，从而做到与真实的世界保持一定距离。理论上讲内心世界应该与真实世界是1：1的但事实并非如此，因此内向的人会在观察自己内心世界的基础上尽可能少的从外部世界获取新东西扩充自己。所以内向的人在心里为了获得安全感会更想去认识认识这个世界，而事实上他却尽可能少的认识，因此内向的人更需要安全感。外向的人则需要不断地从世界获取新事物，因为他总觉得自己还不够，他会认为世界与自己是一体的。</p>
+<p>​	在此基础上，通过审查自己看待世界的方式，就可以知道自己是内向还是外向。比如内向者被亲密的人伤害之后，会因为这件事影响自己内心的世界，很可能会认为这个世界对自己太残忍了，既然亲密者对我都这样那么世界也不会对我温柔了等等想法。而外向者不同，外向者往往表现出我讨厌这个世界，我厌恶这个人。这两者有什么区别呢，区别在于内向者把自己与世界做了一个割舍，认为世界是危险的，完全融入进去就会被吞噬。而外向者则在最开始就是和世界站在一起的，他思考的前提就是自己处在世界之中。</p>
+<p>​	内向者放松的方式，是要更加切断自己与世界探索性的联系，要做的是修补自己的内心世界。因此，他们更需要独处。</p>
 ]]></content>
       <categories>
-        <category>技术</category>
+        <category>生活</category>
+        <category>未完成</category>
       </categories>
       <tags>
-        <tag>css</tag>
-        <tag>不常用</tag>
+        <tag>心理</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Welcome to my BLOG!</title>
+    <url>/2022/08/03/hello-world/</url>
+    <content><![CDATA[<p>欢迎来到我的博客<br>我会在这里记录自己的学习，生活<br>谢谢你的到来！！</p>
+]]></content>
+      <categories>
+        <category>欢迎</category>
+      </categories>
+      <tags>
+        <tag>日常</tag>
       </tags>
   </entry>
   <entry>
@@ -1178,6 +1138,143 @@
         <tag>数组</tag>
         <tag>对象</tag>
         <tag>ES6</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>css中list列表相关</title>
+    <url>/2022/08/03/%E5%88%97%E8%A1%A8%E5%92%8C%E7%94%9F%E6%88%90%E7%9A%84%E5%86%85%E5%AE%B9/</url>
+    <content><![CDATA[<h1 id="列表和生成的内容"><a href="#列表和生成的内容" class="headerlink" title="列表和生成的内容"></a>列表和生成的内容</h1><h3 id="改变记号类型"><a href="#改变记号类型" class="headerlink" title="改变记号类型"></a>改变记号类型</h3><p>使用<code>list-style-type</code>属性</p>
+<p>与列表相关的属性只能应用到display属性为list-item的元素上，css并不区分有序列表和无序列表的项目。可以让有序列表使用圆点</p>
+<p>如果不想要记号，可以设置none值，但none值只是让记号不显示，并没有阻断计数</p>
+<p><code>list-style-type</code>的值是继承的，因此如果嵌套的列表需要使用不同的记号需要分别定义</p>
+<p>除了默认提供的<code>list-style-type</code>值外，还可以使用字符串值作为记号</p>
+<p>使用<code>list-style-image</code>属性</p>
+<p>使用该属性可以将列表记号设置为图片</p>
+<p>可以在声明图片记号之后再声明一个<code>list-style-type</code>作为后备记号类型</p>
+<p>嵌套的列表同样会继承image属性</p>
+<p>为嵌套的列表的image设置none阻止继承</p>
+<p>但实际情况中用户代理可能会为列表设置一个list-style-type值，因此继承的list-style-type值可能不能生效</p>
+<p>使用<code>list-style-position</code></p>
+<p>该属性会改变列表记号的位置，设置为outside（默认值）时，记号显示在外部，设置为inside时，显示在内容内部</p>
+<p>使用<code>list-style</code>简写属性</p>
+<p><code>list-style:list-style-type list-style-image list-style-position</code></p>
+<p>可以按任意顺序列出</p>
+<p>列表项目本身是类似块级的元素，放在列表内容外部的记号对其他元素的布局没有影响，记号相对于列表内容类似于绝对定位</p>
+<h3 id="生成的内容"><a href="#生成的内容" class="headerlink" title="生成的内容"></a>生成的内容</h3><p>生成的内容使用::before和::after伪元素插入文档。通过设置伪元素的content属性将指定的内容插入文档内容之前或之后</p>
+<p>如果::before或::after选择符的目标是块级元素，那么display的值只能为none，inline，block，和marker，其他值都为block</p>
+<p>如果是行内元素，那么display的值只能为none或inline，其他值都为inline</p>
+<h5 id="content"><a href="#content" class="headerlink" title="content"></a>content</h5><p>content的值为字符串时，显示为字面当量，即使有特殊标签也直接显示出来</p>
+<p>如果需要换行需要添加\A,如果需要将较长的字符串分多行书写需要\</p>
+<p>content值为URI时，会将引入的资源插入合适的位置，如果是用户代理不支持的资源会完全忽略</p>
+<p>如果想把属性值显示出来，可以使用<code>attr()</code>,如<code>content:attr(href)</code></p>
+<p>如果属性不存在，将显示空字符串</p>
+<h5 id="生成引号"><a href="#生成引号" class="headerlink" title="生成引号"></a>生成引号</h5><p>引号使用quote或open-quote等值生成</p>
+<p><code>quote:&lt;string&gt; &lt;string&gt;</code></p>
+<p>第一个字符定义开始引号，第二个字符定义结束引号</p>
+]]></content>
+      <categories>
+        <category>技术</category>
+      </categories>
+      <tags>
+        <tag>css</tag>
+        <tag>不常用</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>css中的flex布局</title>
+    <url>/2022/08/03/%E5%BC%B9%E6%80%A7%E7%9B%92%E5%B8%83%E5%B1%80%EF%BC%9Aflex/</url>
+    <content><![CDATA[<h1 id="弹性盒布局：flex"><a href="#弹性盒布局：flex" class="headerlink" title="弹性盒布局：flex"></a>弹性盒布局：flex</h1><h3 id="弹性盒基础"><a href="#弹性盒基础" class="headerlink" title="弹性盒基础"></a>弹性盒基础</h3><p>使用弹性盒后内容呈现顺序不再受到源码顺序的限制</p>
+<p>声明<code>display:flex</code>或<code>display:inline-flex</code>即可激活弹性盒布局，然后该元素被称为弹性容器，其子元素被成为弹性元素</p>
+<p>两种的区别是前者生成一个块级框，子元素在其中布局</p>
+<p>后者生成一个行内级框，子元素在其中布局</p>
+<p>把一个元素设为弹性容器后，只有直接子元素使用弹性盒布局</p>
+<h3 id="flex-direction属性"><a href="#flex-direction属性" class="headerlink" title="flex-direction属性"></a>flex-direction属性</h3><p>设置布局的方向，指定在弹性容器中如何摆放弹性元素</p>
+<p>可使用：</p>
+<p><code>row</code>:横向</p>
+<p><code>row-reverse</code>:横向相反</p>
+<p><code>column</code>:竖向</p>
+<p><code>column-reverse</code>:竖向相反</p>
+<p>如果改变了书写模式，例如规定书写模式是竖向书写（如从上向下），则row表示从上到下</p>
+<p>column表示从右向左</p>
+<h3 id="换行"><a href="#换行" class="headerlink" title="换行"></a>换行</h3><p>默认情况下元素不会换行，有可能从容器框的边界溢出</p>
+<p>设置flex-wrap属性允许弹性元素换行</p>
+<p><code>flex-wrap:nowrap/wrap/wrap-reverse</code>(默认<code>nowrap</code>)</p>
+<p>默认情况下：无论多少元素都在一行显示</p>
+<p>warp：超出的部分换行到之后</p>
+<p>wrap-reverse:超出部分换行到之前</p>
+<h3 id="定义弹性流"><a href="#定义弹性流" class="headerlink" title="定义弹性流"></a>定义弹性流</h3><p>flex-flow：确定主轴和垂轴方向，以及元素是否换行</p>
+<p><code>flex-flow:&lt;flex-direction&gt; &lt;flex-wrap&gt;</code></p>
+<p>弹性元素沿主轴排列，沿垂轴添加（如果换行的话）</p>
+<p>主轴一定和垂轴垂直</p>
+<h3 id="调整内容"><a href="#调整内容" class="headerlink" title="调整内容"></a>调整内容</h3><p><code>justify-content</code>属性指明在弹性容器的主轴上如何分布各行里的弹性元素</p>
+<p>应用于弹性容器上而不是弹性元素上</p>
+<p><code>justify-content:flex-start/flex-end/center/space-between/space-around/space-evenly</code></p>
+<p>默认flex-start</p>
+<p><code>flex-start</code>:元素沿主轴起边排列</p>
+<p><code>flex-end</code>:元素沿主轴终边排列</p>
+<p><code>center</code>:元素视为一个整体排列在主轴中央</p>
+<p><code>space-between</code>:把第一个元素放在主轴起边，最后一个元素放在主轴终边，中间的元素等间距排列</p>
+<p><code>space-around</code>:让元素左边和右边分出等同的距离（第一个元素距离主轴起边的距离会是每两个元素之间距离的一半）</p>
+<p><code>space-evenly</code>:与space-around类似但第一个元素距离主轴起边的距离与每两个元素之间距离相等</p>
+<p>justify-content还会影响元素的溢出方式</p>
+<h3 id="对齐元素"><a href="#对齐元素" class="headerlink" title="对齐元素"></a>对齐元素</h3><p>justify-content定义主轴方向的对齐方式，而align-items定义垂轴方向的对齐方式</p>
+<p>align-items同样应用于容器上</p>
+<p><code>align-items:flex-start/flex-end/center/baseline/stretch</code></p>
+<p>初始值：stretch</p>
+<p>stretch:可拉伸：即所有可拉伸的弹性元素将与所在行最高或最宽的弹性元素一样高或一样宽</p>
+<p>如果显示设置了元素的垂轴方向尺寸，元素将不可拉伸</p>
+<p>拉伸后的元素尺寸包含外边距的长度</p>
+<p>弹性元素行的高或宽是正好能够放下弹性元素的尺寸</p>
+<p>baseline：基线对齐，基线是文本第一行文字的底部，受到字号影响</p>
+<h3 id="align-self"><a href="#align-self" class="headerlink" title="align-self"></a>align-self</h3><p>align-self设置的值会覆盖align-items的值</p>
+<p>取值与align-item相同</p>
+<h3 id="对齐内容"><a href="#对齐内容" class="headerlink" title="对齐内容"></a>对齐内容</h3><p>align-content属性指定弹性容器中垂轴方向上的额外空间如何分配到弹性元素行之间和周围</p>
+<p>取值与align-items相同</p>
+<p>如果只有一行，align-content对内容没有影响</p>
+<h3 id="弹性元素"><a href="#弹性元素" class="headerlink" title="弹性元素"></a>弹性元素</h3><p>float和clear对弹性元素不起作用</p>
+<p>变成弹性元素后，只要没有绝对定位，就是块级的</p>
+<p>没有被标签包裹的文本是匿名弹性元素，不能直接选择，只能从弹性容器上继承样式</p>
+<p>绝对定位的弹性元素不再参与弹性布局，它们不在文档流中，但会受到弹性容器的样式影响，先确定在弹性容器中的位置再进行position</p>
+<p>弹性元素的min-width默认为auto，如果不想溢出可以设置为0，元素会被压缩</p>
+<h3 id="flex属性"><a href="#flex属性" class="headerlink" title="flex属性"></a>flex属性</h3><p>flex属性是flex-grow，flex-shrink和flex-basis的简写形式（弹性增长因子，弹性缩减因子和弹性基准）</p>
+<p>默认值是0，1，auto</p>
+<p>flex属性指定确定弹性长度的各要素，弹性元素所在的框体尺寸由flex决定</p>
+<p>弹性基准指明如何应用弹性增长因子和弹性缩减因子</p>
+<h4 id="flex-grow"><a href="#flex-grow" class="headerlink" title="flex-grow"></a>flex-grow</h4><p>定义有多余空间时是否允许弹性元素增大，以及有多余空间时，相对于同辈弹性元素会以什么比例增大</p>
+<p><strong>不鼓励通过flex-grow定义增长因子，只建议在flex简写中指定增长因子</strong></p>
+<p>flex-grow的值始终是正数，小于零无效</p>
+<p>flex-grow的值用于计算比例，若只有一个元素设置了flex-grow，则剩余的所有空间都被它占有，若有多个元素设置了，则会通过设置值之间的比例确定各自所占剩余空间的比例</p>
+<p>如果flex属性没有设定增长因子和缩减因子，flex-grow默认为1，如果flex和flex-grow都没有被声明出来，默认为0</p>
+<p>使用flex声明flex-grow属性和单独使用flex-grow声明的区别：</p>
+<p>flex声明将把所有空间按比例分配，而flex-grow声明只会将余下空间按比例分配</p>
+<h4 id="flex-shrink"><a href="#flex-shrink" class="headerlink" title="flex-shrink"></a>flex-shrink</h4><p><strong>同样只建议在flex简写属性中声明</strong></p>
+<p>弹性缩减因子定义空间不足以放下所有弹性元素时，当前元素相对于其他同辈弹性元素将缩小多少</p>
+<p>缩减因子默认为1</p>
+<p>计算方法与grow类似：</p>
+<p>如果设置shrink为1，1，3，长度均为300，容纳器长度为750</p>
+<p>那么元素将分别缩小：30，30，90</p>
+<p>如果弹性元素中的内容将要超出容器大小，且不能换行和缩小，弹性元素将无法缩小</p>
+<p>缩减因子为任何正数都会导致内容换行，换行次数和缩减因子比例差不多</p>
+<h4 id="flex-basis"><a href="#flex-basis" class="headerlink" title="flex-basis"></a>flex-basis</h4><p>定义弹性元素的初始或默认尺寸，即根据增长因子或缩减因子分配空间前，弹性元素的大小</p>
+<p>如果提前声明了width和height，值为width和height，如果没声明，值为content</p>
+<h5 id="content"><a href="#content" class="headerlink" title="content"></a>content</h5><p>在支持的环境中，使用content的basis值为弹性元素中内容的尺寸，即最长一行内容或最宽的媒体对象在主轴上的长度</p>
+<p>弹性基准会覆盖元素的width和height，但不会忽略mid-width和mid-height</p>
+<h5 id="auto与0"><a href="#auto与0" class="headerlink" title="auto与0"></a>auto与0</h5><p>auto下会根据grow或shrink决定<strong>剩下</strong>的区域的划分</p>
+<p>0决定<strong>所有</strong>区域的划分</p>
+<h3 id="flex简写模式"><a href="#flex简写模式" class="headerlink" title="flex简写模式"></a>flex简写模式</h3><p>如果只给flex一个值(数字)，实际上声明的是flex-grow</p>
+<p><code>flex: initial</code>&#x3D;<code>flex:0 1 auto</code></p>
+<p><code>flex:auto</code>&#x3D;<code>flex:1 1 auto</code></p>
+<p><code>flex:none</code>&#x3D;<code>flex:0 0 auto</code></p>
+<p><code>flex:1</code>&#x3D;<code>flex:1,0,auto</code></p>
+<h3 id="order属性"><a href="#order属性" class="headerlink" title="order属性"></a>order属性</h3><p>order属性可以改变元素的出现顺序，但读取代码的顺序是不变的</p>
+<p>默认值是0，负数会先出现，正数会后出现</p>
+<h3 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h3><p>弹性盒布局的效果用float也可以实现，但比float方便得多。</p>
+]]></content>
+      <categories>
+        <category>技术</category>
+      </categories>
+      <tags>
+        <tag>css</tag>
       </tags>
   </entry>
   <entry>
@@ -1379,126 +1476,6 @@
       </tags>
   </entry>
   <entry>
-    <title>css中的flex布局</title>
-    <url>/2022/08/03/%E5%BC%B9%E6%80%A7%E7%9B%92%E5%B8%83%E5%B1%80%EF%BC%9Aflex/</url>
-    <content><![CDATA[<h1 id="弹性盒布局：flex"><a href="#弹性盒布局：flex" class="headerlink" title="弹性盒布局：flex"></a>弹性盒布局：flex</h1><h3 id="弹性盒基础"><a href="#弹性盒基础" class="headerlink" title="弹性盒基础"></a>弹性盒基础</h3><p>使用弹性盒后内容呈现顺序不再受到源码顺序的限制</p>
-<p>声明<code>display:flex</code>或<code>display:inline-flex</code>即可激活弹性盒布局，然后该元素被称为弹性容器，其子元素被成为弹性元素</p>
-<p>两种的区别是前者生成一个块级框，子元素在其中布局</p>
-<p>后者生成一个行内级框，子元素在其中布局</p>
-<p>把一个元素设为弹性容器后，只有直接子元素使用弹性盒布局</p>
-<h3 id="flex-direction属性"><a href="#flex-direction属性" class="headerlink" title="flex-direction属性"></a>flex-direction属性</h3><p>设置布局的方向，指定在弹性容器中如何摆放弹性元素</p>
-<p>可使用：</p>
-<p><code>row</code>:横向</p>
-<p><code>row-reverse</code>:横向相反</p>
-<p><code>column</code>:竖向</p>
-<p><code>column-reverse</code>:竖向相反</p>
-<p>如果改变了书写模式，例如规定书写模式是竖向书写（如从上向下），则row表示从上到下</p>
-<p>column表示从右向左</p>
-<h3 id="换行"><a href="#换行" class="headerlink" title="换行"></a>换行</h3><p>默认情况下元素不会换行，有可能从容器框的边界溢出</p>
-<p>设置flex-wrap属性允许弹性元素换行</p>
-<p><code>flex-wrap:nowrap/wrap/wrap-reverse</code>(默认<code>nowrap</code>)</p>
-<p>默认情况下：无论多少元素都在一行显示</p>
-<p>warp：超出的部分换行到之后</p>
-<p>wrap-reverse:超出部分换行到之前</p>
-<h3 id="定义弹性流"><a href="#定义弹性流" class="headerlink" title="定义弹性流"></a>定义弹性流</h3><p>flex-flow：确定主轴和垂轴方向，以及元素是否换行</p>
-<p><code>flex-flow:&lt;flex-direction&gt; &lt;flex-wrap&gt;</code></p>
-<p>弹性元素沿主轴排列，沿垂轴添加（如果换行的话）</p>
-<p>主轴一定和垂轴垂直</p>
-<h3 id="调整内容"><a href="#调整内容" class="headerlink" title="调整内容"></a>调整内容</h3><p><code>justify-content</code>属性指明在弹性容器的主轴上如何分布各行里的弹性元素</p>
-<p>应用于弹性容器上而不是弹性元素上</p>
-<p><code>justify-content:flex-start/flex-end/center/space-between/space-around/space-evenly</code></p>
-<p>默认flex-start</p>
-<p><code>flex-start</code>:元素沿主轴起边排列</p>
-<p><code>flex-end</code>:元素沿主轴终边排列</p>
-<p><code>center</code>:元素视为一个整体排列在主轴中央</p>
-<p><code>space-between</code>:把第一个元素放在主轴起边，最后一个元素放在主轴终边，中间的元素等间距排列</p>
-<p><code>space-around</code>:让元素左边和右边分出等同的距离（第一个元素距离主轴起边的距离会是每两个元素之间距离的一半）</p>
-<p><code>space-evenly</code>:与space-around类似但第一个元素距离主轴起边的距离与每两个元素之间距离相等</p>
-<p>justify-content还会影响元素的溢出方式</p>
-<h3 id="对齐元素"><a href="#对齐元素" class="headerlink" title="对齐元素"></a>对齐元素</h3><p>justify-content定义主轴方向的对齐方式，而align-items定义垂轴方向的对齐方式</p>
-<p>align-items同样应用于容器上</p>
-<p><code>align-items:flex-start/flex-end/center/baseline/stretch</code></p>
-<p>初始值：stretch</p>
-<p>stretch:可拉伸：即所有可拉伸的弹性元素将与所在行最高或最宽的弹性元素一样高或一样宽</p>
-<p>如果显示设置了元素的垂轴方向尺寸，元素将不可拉伸</p>
-<p>拉伸后的元素尺寸包含外边距的长度</p>
-<p>弹性元素行的高或宽是正好能够放下弹性元素的尺寸</p>
-<p>baseline：基线对齐，基线是文本第一行文字的底部，受到字号影响</p>
-<h3 id="align-self"><a href="#align-self" class="headerlink" title="align-self"></a>align-self</h3><p>align-self设置的值会覆盖align-items的值</p>
-<p>取值与align-item相同</p>
-<h3 id="对齐内容"><a href="#对齐内容" class="headerlink" title="对齐内容"></a>对齐内容</h3><p>align-content属性指定弹性容器中垂轴方向上的额外空间如何分配到弹性元素行之间和周围</p>
-<p>取值与align-items相同</p>
-<p>如果只有一行，align-content对内容没有影响</p>
-<h3 id="弹性元素"><a href="#弹性元素" class="headerlink" title="弹性元素"></a>弹性元素</h3><p>float和clear对弹性元素不起作用</p>
-<p>变成弹性元素后，只要没有绝对定位，就是块级的</p>
-<p>没有被标签包裹的文本是匿名弹性元素，不能直接选择，只能从弹性容器上继承样式</p>
-<p>绝对定位的弹性元素不再参与弹性布局，它们不在文档流中，但会受到弹性容器的样式影响，先确定在弹性容器中的位置再进行position</p>
-<p>弹性元素的min-width默认为auto，如果不想溢出可以设置为0，元素会被压缩</p>
-<h3 id="flex属性"><a href="#flex属性" class="headerlink" title="flex属性"></a>flex属性</h3><p>flex属性是flex-grow，flex-shrink和flex-basis的简写形式（弹性增长因子，弹性缩减因子和弹性基准）</p>
-<p>默认值是0，1，auto</p>
-<p>flex属性指定确定弹性长度的各要素，弹性元素所在的框体尺寸由flex决定</p>
-<p>弹性基准指明如何应用弹性增长因子和弹性缩减因子</p>
-<h4 id="flex-grow"><a href="#flex-grow" class="headerlink" title="flex-grow"></a>flex-grow</h4><p>定义有多余空间时是否允许弹性元素增大，以及有多余空间时，相对于同辈弹性元素会以什么比例增大</p>
-<p><strong>不鼓励通过flex-grow定义增长因子，只建议在flex简写中指定增长因子</strong></p>
-<p>flex-grow的值始终是正数，小于零无效</p>
-<p>flex-grow的值用于计算比例，若只有一个元素设置了flex-grow，则剩余的所有空间都被它占有，若有多个元素设置了，则会通过设置值之间的比例确定各自所占剩余空间的比例</p>
-<p>如果flex属性没有设定增长因子和缩减因子，flex-grow默认为1，如果flex和flex-grow都没有被声明出来，默认为0</p>
-<p>使用flex声明flex-grow属性和单独使用flex-grow声明的区别：</p>
-<p>flex声明将把所有空间按比例分配，而flex-grow声明只会将余下空间按比例分配</p>
-<h4 id="flex-shrink"><a href="#flex-shrink" class="headerlink" title="flex-shrink"></a>flex-shrink</h4><p><strong>同样只建议在flex简写属性中声明</strong></p>
-<p>弹性缩减因子定义空间不足以放下所有弹性元素时，当前元素相对于其他同辈弹性元素将缩小多少</p>
-<p>缩减因子默认为1</p>
-<p>计算方法与grow类似：</p>
-<p>如果设置shrink为1，1，3，长度均为300，容纳器长度为750</p>
-<p>那么元素将分别缩小：30，30，90</p>
-<p>如果弹性元素中的内容将要超出容器大小，且不能换行和缩小，弹性元素将无法缩小</p>
-<p>缩减因子为任何正数都会导致内容换行，换行次数和缩减因子比例差不多</p>
-<h4 id="flex-basis"><a href="#flex-basis" class="headerlink" title="flex-basis"></a>flex-basis</h4><p>定义弹性元素的初始或默认尺寸，即根据增长因子或缩减因子分配空间前，弹性元素的大小</p>
-<p>如果提前声明了width和height，值为width和height，如果没声明，值为content</p>
-<h5 id="content"><a href="#content" class="headerlink" title="content"></a>content</h5><p>在支持的环境中，使用content的basis值为弹性元素中内容的尺寸，即最长一行内容或最宽的媒体对象在主轴上的长度</p>
-<p>弹性基准会覆盖元素的width和height，但不会忽略mid-width和mid-height</p>
-<h5 id="auto与0"><a href="#auto与0" class="headerlink" title="auto与0"></a>auto与0</h5><p>auto下会根据grow或shrink决定<strong>剩下</strong>的区域的划分</p>
-<p>0决定<strong>所有</strong>区域的划分</p>
-<h3 id="flex简写模式"><a href="#flex简写模式" class="headerlink" title="flex简写模式"></a>flex简写模式</h3><p>如果只给flex一个值(数字)，实际上声明的是flex-grow</p>
-<p><code>flex: initial</code>&#x3D;<code>flex:0 1 auto</code></p>
-<p><code>flex:auto</code>&#x3D;<code>flex:1 1 auto</code></p>
-<p><code>flex:none</code>&#x3D;<code>flex:0 0 auto</code></p>
-<p><code>flex:1</code>&#x3D;<code>flex:1,0,auto</code></p>
-<h3 id="order属性"><a href="#order属性" class="headerlink" title="order属性"></a>order属性</h3><p>order属性可以改变元素的出现顺序，但读取代码的顺序是不变的</p>
-<p>默认值是0，负数会先出现，正数会后出现</p>
-<h3 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h3><p>弹性盒布局的效果用float也可以实现，但比float方便得多。</p>
-]]></content>
-      <categories>
-        <category>技术</category>
-      </categories>
-      <tags>
-        <tag>css</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>一年的总结（更新中）</title>
-    <url>/2022/08/06/%E6%84%9F%E6%82%9F/</url>
-    <content><![CDATA[<h3 id="感悟"><a href="#感悟" class="headerlink" title="感悟"></a>感悟</h3><p>​	最近学习动力异常低（可能是高温学车debuff），还是写一下自己的生活感悟，简单记录下自己的大学生活。</p>
-<h4 id="大学"><a href="#大学" class="headerlink" title="大学"></a>大学</h4><p>​	高考前看过b站up主阿健一个有关大学的视频，有句话记得很清楚：”我热爱学习，但我讨厌大学“。经过了一年的生活，我对这句话感悟颇深。</p>
-<p>​	首先我并不讨厌大学，大学里我认识了形形色色的人，大学为我提供了更大的社交平台，五湖四海的同学在大学里得以相遇，有趣的灵魂，各异的思想在这里交流，碰撞。大学还有着学习的氛围，即使一整天都呆在寝室里，也会有很多有效学习时间，而在家里可能翻书都困难。大学里的自习室，图书馆更是学习的好去处。总的来说，大学给了我很好的平台。</p>
-<p>​	但也仅仅是一个平台。大学里很多东西就我而言并不合理。</p>
-<p>​	首先是课程的设置，就我所在的软件学院来说，课程的设置就有很多不合理处。举个例子，一些重要的计算机基础课程被设置在了大三，大四里面，然而这个时间段里会有很多学生已经开始在校外找实习，为了找实习这些课程他们不得不提前准备。而就如大学物理这样的通识课，在软件专业根本不会在后续学习中使用，却占据了足足两个学期。</p>
-<p>​	然后是畸形的学习氛围。我所在的软件学院这方面还好，卷分数的和学技术的互不干扰相互尊重。但之前所在的网安学院不是这样。有些学院有着畸形的学习大环境。整个院自上而下的宣传保研，考研的思想。刚入校的学生往往怀有满腔热忱，更愿意在学习上下功夫，学院再加以宣传，整个学院的分数竞争便异常激烈，内卷十分严重。学生把自己卷入其中，首先是会失去或者减少自己对大学的思考，盲目的跟从课程进行学习，日复一日的刷题，内耗。也许高中的意义是进入大学，但大学的意义不应该是研究生。读研是一条清晰的路，只需要跟随课程安排，或保或考。但读研不是唯一的路，或者说读研并不是适合所有人的路。就计算机而言，找到一个适合自己的方向，不断钻研下去，大学毕业时也能进入社会找到工作。我的很多学长都是本科生就业。所以在决心读研之前，先想想自己读研是为了什么。目前社会还没到工作只招研究生的地步</p>
-<p>​	还有随处可见的形式主义，学校很多地方办事效率低下（尤其是教务）等等，不再赘述</p>
-<h3 id="思考"><a href="#思考" class="headerlink" title="思考"></a>思考</h3><p>​	我的过去</p>
-]]></content>
-      <categories>
-        <category>生活</category>
-        <category>感悟</category>
-      </categories>
-      <tags>
-        <tag>生活</tag>
-        <tag>总结</tag>
-        <tag>反思</tag>
-        <tag>感悟</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>js数据结构：栈</title>
     <url>/2022/08/29/%E6%A0%88/</url>
     <content><![CDATA[<h3 id="栈"><a href="#栈" class="headerlink" title="栈"></a>栈</h3><p>栈是一种后入先出的数据结构</p>
@@ -1658,6 +1635,29 @@
       </tags>
   </entry>
   <entry>
+    <title>一年的总结（更新中）</title>
+    <url>/2022/08/06/%E6%84%9F%E6%82%9F/</url>
+    <content><![CDATA[<h3 id="感悟"><a href="#感悟" class="headerlink" title="感悟"></a>感悟</h3><p>​	最近学习动力异常低（可能是高温学车debuff），还是写一下自己的生活感悟，简单记录下自己的大学生活。</p>
+<h4 id="大学"><a href="#大学" class="headerlink" title="大学"></a>大学</h4><p>​	高考前看过b站up主阿健一个有关大学的视频，有句话记得很清楚：”我热爱学习，但我讨厌大学“。经过了一年的生活，我对这句话感悟颇深。</p>
+<p>​	首先我并不讨厌大学，大学里我认识了形形色色的人，大学为我提供了更大的社交平台，五湖四海的同学在大学里得以相遇，有趣的灵魂，各异的思想在这里交流，碰撞。大学还有着学习的氛围，即使一整天都呆在寝室里，也会有很多有效学习时间，而在家里可能翻书都困难。大学里的自习室，图书馆更是学习的好去处。总的来说，大学给了我很好的平台。</p>
+<p>​	但也仅仅是一个平台。大学里很多东西就我而言并不合理。</p>
+<p>​	首先是课程的设置，就我所在的软件学院来说，课程的设置就有很多不合理处。举个例子，一些重要的计算机基础课程被设置在了大三，大四里面，然而这个时间段里会有很多学生已经开始在校外找实习，为了找实习这些课程他们不得不提前准备。而就如大学物理这样的通识课，在软件专业根本不会在后续学习中使用，却占据了足足两个学期。</p>
+<p>​	然后是畸形的学习氛围。我所在的软件学院这方面还好，卷分数的和学技术的互不干扰相互尊重。但之前所在的网安学院不是这样。有些学院有着畸形的学习大环境。整个院自上而下的宣传保研，考研的思想。刚入校的学生往往怀有满腔热忱，更愿意在学习上下功夫，学院再加以宣传，整个学院的分数竞争便异常激烈，内卷十分严重。学生把自己卷入其中，首先是会失去或者减少自己对大学的思考，盲目的跟从课程进行学习，日复一日的刷题，内耗。也许高中的意义是进入大学，但大学的意义不应该是研究生。读研是一条清晰的路，只需要跟随课程安排，或保或考。但读研不是唯一的路，或者说读研并不是适合所有人的路。就计算机而言，找到一个适合自己的方向，不断钻研下去，大学毕业时也能进入社会找到工作。我的很多学长都是本科生就业。所以在决心读研之前，先想想自己读研是为了什么。目前社会还没到工作只招研究生的地步</p>
+<p>​	还有随处可见的形式主义，学校很多地方办事效率低下（尤其是教务）等等，不再赘述</p>
+<h3 id="思考"><a href="#思考" class="headerlink" title="思考"></a>思考</h3><p>​	我的过去</p>
+]]></content>
+      <categories>
+        <category>生活</category>
+        <category>感悟</category>
+      </categories>
+      <tags>
+        <tag>生活</tag>
+        <tag>总结</tag>
+        <tag>反思</tag>
+        <tag>感悟</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>浏览器的工作原理</title>
     <url>/2022/08/03/%E6%B5%8F%E8%A7%88%E5%99%A8%E7%9A%84%E5%B7%A5%E4%BD%9C%E5%8E%9F%E7%90%86%EF%BC%88%E7%AE%80%E6%98%93%E7%89%88%EF%BC%89/</url>
     <content><![CDATA[<h3 id="浏览器的工作原理（简易版）"><a href="#浏览器的工作原理（简易版）" class="headerlink" title="浏览器的工作原理（简易版）"></a>浏览器的工作原理（简易版）</h3><p>输入url后</p>
@@ -1699,34 +1699,6 @@
       </categories>
       <tags>
         <tag>计算机网络</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>关于爱情</title>
-    <url>/2022/08/06/%E7%88%B1%E6%83%85/</url>
-    <content><![CDATA[<h3 id="爱情"><a href="#爱情" class="headerlink" title="爱情"></a>爱情</h3><p>看了b站一个视频，对其中的内容做一个笔记，结合一下自身</p>
-<h3 id="爱与情"><a href="#爱与情" class="headerlink" title="爱与情"></a>爱与情</h3><p><strong>爱是能发自内心的替ta而死，情是能彼此同时能有一种感觉</strong></p>
-<p>​	爱是能发自内心的替ta而死，替ta而死不是为ta而死。为ta而死总有种自我感动的成分在其中，替ta而死更接近于你可以在ta不知道你死的情况下去死。父母的爱是真正的爱，他们往往能做到替孩子而死，即使孩子很叛逆很无知。为ta而死的情感最多可以称为恋，不是爱。</p>
-<p>​	情是彼此同时有一种感觉。情强调双向，如亲情，如果只是父母对孩子很好，而孩子不知感恩，对父母很差的话，我们只能评价他爸他妈对他很好，他爸他妈很惯他，而不能说他们家庭里亲情很浓厚</p>
-<p>​	那么爱情就是双方都能感觉到让对方活比自己活更为快乐</p>
-<h3 id="男性：真理"><a href="#男性：真理" class="headerlink" title="男性：真理"></a>男性：真理</h3><p>​	在谈如何选择爱时，先解释一下男性和女性对待事物的原型。男性的原型是真理，女性的原型是爱。真理和爱是生命的一部分，真理是生命的形式，爱是生命的力量。当谈到爱情的时候，要有爱的感觉，然后也要有途径</p>
-<p>​	真理是强调过程，行为的。当男性谈到一件事的时候，一件不能十分轻松做到的事的时候，相比于判断自己是否真的要做，会花更多的精力研究怎么去做，完成的途径。</p>
-<p>​	男性在对待伴侣的选择问题是，会更想寻找一个对自己有所爱慕，敬仰的。因为真理本身的特点就是渴望被认可，敬佩的，兄弟彼此之间的敬佩也是这个原因。我们谈到智者也会先联想到男性老者而不是女性老者，也是因为男性会更强调认可。</p>
-<h3 id="女性：爱"><a href="#女性：爱" class="headerlink" title="女性：爱"></a>女性：爱</h3><p>​	相比于男性的真理，女性的原型就是爱。<strong>真理强调行为，爱强调选择</strong>。女性会更需要<strong>承认</strong>，承认是指自己不用变，做自己就行了。而男性在这方面是相反的，男性更倾向于改变。男性的真理需要扩充，不断更新，女性的爱则更倾向于自己的内心不被污染，更倾向保护，保护自己的纯真</p>
-<h3 id="判断"><a href="#判断" class="headerlink" title="判断"></a>判断</h3><p>​	通过男性和女性的原型，可以有：<strong>男性看行动，女性看选择</strong>。女性选择男性，要看这个男性做了什么而不是说了什么，因为男性在语言上是可以学习的，可以学习各种话术。他可以让女性认为自己可能是怎样的，通过话术包装自己。男性的行为往往可以反应出他的真理，因此在选择男性时更应该看行为。</p>
-<p>​	而男性选择女性，要看女性在关键时刻做出的选择。我们经常可以发现，一对男女在经历过一件事之后，男性会说自己突然发现她不爱我了，因为他看到了女性的选择。男性选择女性，不必纠结于女性过去做了什么，这是真理层面的内容，而是要看她在人生关键时刻做出的选择。她对这些事情的选择体现了她的爱。例如一个女性，当她的生活安然无恙时她体现的很纯良，但当压力很大，面临危机时，这时候应该看她选择宽恕还是憎恶，戾气还是温柔，这样就知道她的爱了</p>
-<p>最后贴一下视频链接<a href="https://www.bilibili.com/video/BV15a411f7Xt/?spm_id_from=333.788&vd_source=ea0b821b0c66dd7f6257ac303626c797">18分钟解密爱情的核心，男生看行动，女生看选择_哔哩哔哩_bilibili</a>单纯是比较赞同观点而记录下</p>
-]]></content>
-      <categories>
-        <category>爱情</category>
-        <category>生活</category>
-      </categories>
-      <tags>
-        <tag>生活</tag>
-        <tag>爱情</tag>
-        <tag>真理</tag>
-        <tag>爱</tag>
-        <tag>记录</tag>
       </tags>
   </entry>
   <entry>
@@ -1793,6 +1765,46 @@
       </tags>
   </entry>
   <entry>
+    <title>关于爱情</title>
+    <url>/2022/08/06/%E7%88%B1%E6%83%85/</url>
+    <content><![CDATA[<h3 id="爱情"><a href="#爱情" class="headerlink" title="爱情"></a>爱情</h3><p>看了b站一个视频，对其中的内容做一个笔记，结合一下自身</p>
+<h3 id="爱与情"><a href="#爱与情" class="headerlink" title="爱与情"></a>爱与情</h3><p><strong>爱是能发自内心的替ta而死，情是能彼此同时能有一种感觉</strong></p>
+<p>​	爱是能发自内心的替ta而死，替ta而死不是为ta而死。为ta而死总有种自我感动的成分在其中，替ta而死更接近于你可以在ta不知道你死的情况下去死。父母的爱是真正的爱，他们往往能做到替孩子而死，即使孩子很叛逆很无知。为ta而死的情感最多可以称为恋，不是爱。</p>
+<p>​	情是彼此同时有一种感觉。情强调双向，如亲情，如果只是父母对孩子很好，而孩子不知感恩，对父母很差的话，我们只能评价他爸他妈对他很好，他爸他妈很惯他，而不能说他们家庭里亲情很浓厚</p>
+<p>​	那么爱情就是双方都能感觉到让对方活比自己活更为快乐</p>
+<h3 id="男性：真理"><a href="#男性：真理" class="headerlink" title="男性：真理"></a>男性：真理</h3><p>​	在谈如何选择爱时，先解释一下男性和女性对待事物的原型。男性的原型是真理，女性的原型是爱。真理和爱是生命的一部分，真理是生命的形式，爱是生命的力量。当谈到爱情的时候，要有爱的感觉，然后也要有途径</p>
+<p>​	真理是强调过程，行为的。当男性谈到一件事的时候，一件不能十分轻松做到的事的时候，相比于判断自己是否真的要做，会花更多的精力研究怎么去做，完成的途径。</p>
+<p>​	男性在对待伴侣的选择问题是，会更想寻找一个对自己有所爱慕，敬仰的。因为真理本身的特点就是渴望被认可，敬佩的，兄弟彼此之间的敬佩也是这个原因。我们谈到智者也会先联想到男性老者而不是女性老者，也是因为男性会更强调认可。</p>
+<h3 id="女性：爱"><a href="#女性：爱" class="headerlink" title="女性：爱"></a>女性：爱</h3><p>​	相比于男性的真理，女性的原型就是爱。<strong>真理强调行为，爱强调选择</strong>。女性会更需要<strong>承认</strong>，承认是指自己不用变，做自己就行了。而男性在这方面是相反的，男性更倾向于改变。男性的真理需要扩充，不断更新，女性的爱则更倾向于自己的内心不被污染，更倾向保护，保护自己的纯真</p>
+<h3 id="判断"><a href="#判断" class="headerlink" title="判断"></a>判断</h3><p>​	通过男性和女性的原型，可以有：<strong>男性看行动，女性看选择</strong>。女性选择男性，要看这个男性做了什么而不是说了什么，因为男性在语言上是可以学习的，可以学习各种话术。他可以让女性认为自己可能是怎样的，通过话术包装自己。男性的行为往往可以反应出他的真理，因此在选择男性时更应该看行为。</p>
+<p>​	而男性选择女性，要看女性在关键时刻做出的选择。我们经常可以发现，一对男女在经历过一件事之后，男性会说自己突然发现她不爱我了，因为他看到了女性的选择。男性选择女性，不必纠结于女性过去做了什么，这是真理层面的内容，而是要看她在人生关键时刻做出的选择。她对这些事情的选择体现了她的爱。例如一个女性，当她的生活安然无恙时她体现的很纯良，但当压力很大，面临危机时，这时候应该看她选择宽恕还是憎恶，戾气还是温柔，这样就知道她的爱了</p>
+<p>最后贴一下视频链接<a href="https://www.bilibili.com/video/BV15a411f7Xt/?spm_id_from=333.788&vd_source=ea0b821b0c66dd7f6257ac303626c797">18分钟解密爱情的核心，男生看行动，女生看选择_哔哩哔哩_bilibili</a>单纯是比较赞同观点而记录下</p>
+]]></content>
+      <categories>
+        <category>爱情</category>
+        <category>生活</category>
+      </categories>
+      <tags>
+        <tag>生活</tag>
+        <tag>爱情</tag>
+        <tag>真理</tag>
+        <tag>爱</tag>
+        <tag>记录</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>css中表格样式</title>
+    <url>/2022/08/03/%E8%A1%A8%E6%A0%BC%E5%B8%83%E5%B1%80/</url>
+    <content><![CDATA[<h1 id="表格布局"><a href="#表格布局" class="headerlink" title="表格布局"></a>表格布局</h1><h3 id="表格格式化"><a href="#表格格式化" class="headerlink" title="表格格式化"></a>表格格式化</h3>]]></content>
+      <categories>
+        <category>技术</category>
+      </categories>
+      <tags>
+        <tag>css</tag>
+        <tag>未完成（鸽）</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>HUSTSE李院长数据结构课程初评</title>
     <url>/2022/08/31/%E7%AE%80%E8%AF%84%E8%BD%AF%E9%99%A2%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E8%AF%BE/</url>
     <content><![CDATA[<h3 id="HUSTSE数据结构李院长课程听后感"><a href="#HUSTSE数据结构李院长课程听后感" class="headerlink" title="HUSTSE数据结构李院长课程听后感"></a>HUSTSE数据结构李院长课程听后感</h3><p>​	首先，我很少听课，或者很少上课，因为李院长特有的随时提问机制，不得不选择听课，听了两节课之后，简要写一下听后感</p>
@@ -1813,6 +1825,188 @@
       <tags>
         <tag>感悟</tag>
         <tag>课程评价</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>js数据结构：队列</title>
+    <url>/2022/09/07/%E9%93%BE%E8%A1%A8/</url>
+    <content><![CDATA[<h3 id="链表"><a href="#链表" class="headerlink" title="链表"></a>链表</h3><p>​	链表存储有序的元素集合，但不同于数组，链表中的元素在内存中并不是连续放置的。每个 元素由一个存储元素本身的节点和一个指向下一个元素的引用（也称指针或链接）组成。</p>
+<p>​	相对于传统的数组，链表的一个好处在于，添加或移除元素的时候不需要移动其他元素。然 而，链表需要使用指针，因此实现链表时需要额外注意。在数组中，我们可以直接访问任何位置 的任何元素，而要想访问链表中间的一个元素，则需要从起点（表头）开始迭代链表直到找到所 需的元素</p>
+<p>​	想实现最简单的链表数据结构，首先我们需要引入节点类</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> &#123;<span class="title class_">Node</span>&#125; <span class="keyword">from</span> <span class="string">&#x27;./Link-list-model.js&#x27;</span>;</span><br><span class="line"><span class="keyword">import</span> &#123;defaultEquals&#125; <span class="keyword">from</span> <span class="string">&quot;./until.js&quot;</span>;</span><br></pre></td></tr></table></figure>
+
+<p><code>Node</code>类在<code>Link-list-model.js</code>中的定义如下</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Node</span> &#123;</span><br><span class="line">  <span class="title function_">constructor</span>(<span class="params">element</span>) &#123;</span><br><span class="line">    <span class="variable language_">this</span>.<span class="property">element</span>=element;</span><br><span class="line">    <span class="variable language_">this</span>.<span class="property">next</span>=<span class="literal">undefined</span>;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">export</span> &#123;<span class="title class_">Node</span>&#125;</span><br></pre></td></tr></table></figure>
+
+<p>其中节点类包含成分和所指的下一个节点</p>
+<p><code>defaultEquals</code>是定义的默认比较函数，用于比较两元素是否相等</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">function</span> <span class="title function_">defaultEquals</span>(<span class="params">a,b</span>) &#123;</span><br><span class="line">  <span class="keyword">return</span> a===b;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">export</span> &#123;defaultEquals&#125;</span><br></pre></td></tr></table></figure>
+
+<p>引入它们后，就可以编写链表类了</p>
+<h4 id="单向链表"><a href="#单向链表" class="headerlink" title="单向链表"></a>单向链表</h4><p>单向链表是最简单的链表结构，其构造函数如下</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="title function_">constructor</span>(<span class="params">equalsFn=defaultEquals</span>) &#123;</span><br><span class="line">  <span class="variable language_">this</span>.<span class="property">count</span>=<span class="number">0</span>;</span><br><span class="line">  <span class="variable language_">this</span>.<span class="property">head</span>=<span class="literal">undefined</span>;</span><br><span class="line">  <span class="variable language_">this</span>.<span class="property">equalsFn</span>=equalsFn;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>可以看到单向链表的骨架包含一个头节点<code>head</code>，统计链表长度的计数器<code>count</code>和一个比较元素是否相等的<code>equalsFn</code>方法</p>
+<p>现在可以给它添加其他方法了</p>
+<ul>
+<li><p>向链表中插入节点</p>
+<p>向链表中插入节点默认在尾部，逻辑大致为：如果链表没有头节点就设为头节点，如果有头节点就遍历到链表尾部插入，方法是将尾部节点的<code>next</code>属性设置为要插入的节点，代码如下：</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="title function_">push</span>(<span class="params">element</span>) &#123;<span class="comment">//向链表中插入节点</span></span><br><span class="line">  <span class="keyword">const</span> node=<span class="keyword">new</span> <span class="title class_">Node</span>(element);</span><br><span class="line">  <span class="keyword">let</span> currentNode;<span class="comment">//当前节点</span></span><br><span class="line">  <span class="keyword">if</span>(<span class="variable language_">this</span>.<span class="property">head</span>===<span class="literal">undefined</span>) &#123;</span><br><span class="line">    <span class="variable language_">this</span>.<span class="property">head</span>=node;<span class="comment">//没有节点就设为头节点</span></span><br><span class="line">  &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">    currentNode=<span class="variable language_">this</span>.<span class="property">head</span>;</span><br><span class="line">    <span class="keyword">while</span>(currentNode.<span class="property">next</span>!==<span class="literal">undefined</span>) &#123;</span><br><span class="line">      currentNode=currentNode.<span class="property">next</span>;<span class="comment">//遍历链表找到尾部</span></span><br><span class="line">    &#125;</span><br><span class="line">    currentNode.<span class="property">next</span>=node;<span class="comment">//在尾部插入节点</span></span><br><span class="line">  &#125;</span><br><span class="line">  <span class="variable language_">this</span>.<span class="property">count</span>++;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>查找指定位置的节点</p>
+<p>逻辑大致为遍历链表的同时计数，直至所计数与需要的位置index相同，代码如下</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="title function_">getElementAt</span>(<span class="params">index</span>) &#123;<span class="comment">//查找指定位置的节点</span></span><br><span class="line">  <span class="keyword">if</span>(index&gt;=<span class="number">0</span>&amp;&amp;index&lt;=<span class="variable language_">this</span>.<span class="property">count</span>) &#123;</span><br><span class="line">    <span class="keyword">let</span> currentNode=<span class="variable language_">this</span>.<span class="property">head</span>;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">let</span> i = <span class="number">0</span>;i&lt;index&amp;&amp;currentNode!==<span class="literal">undefined</span>;i++) &#123;</span><br><span class="line">      currentNode=currentNode.<span class="property">next</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> currentNode;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">return</span> <span class="literal">undefined</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>这也是一个链表中的工具方法，会在其他方法中复用</p>
+</li>
+<li><p>从指定位置删除节点</p>
+<p>逻辑是如果传入index对应头节点就改变头节点，如果不是就获取指定位置的节点和它的前一个节点，将前一个节点的next指向指定位置的后一个节点，孤立的节点会被js垃圾回收机制回收</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="title function_">removeAt</span>(<span class="params">index</span>) &#123;<span class="comment">//从指定位置删除元素</span></span><br><span class="line">  <span class="keyword">if</span>(index &gt;= <span class="number">0</span> &amp;&amp; index &lt; <span class="variable language_">this</span>.<span class="property">count</span>) &#123;<span class="comment">//检验是否越界</span></span><br><span class="line">    <span class="keyword">let</span> currentNode=<span class="variable language_">this</span>.<span class="property">head</span>;</span><br><span class="line">    <span class="keyword">if</span>(index===<span class="number">0</span>) &#123;</span><br><span class="line">      <span class="variable language_">this</span>.<span class="property">head</span>=currentNode.<span class="property">next</span>;<span class="comment">//从头节点的下一个设为头节点</span></span><br><span class="line">    &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">      <span class="keyword">let</span> previousNode=<span class="variable language_">this</span>.<span class="title function_">getElementAt</span>(index-<span class="number">1</span>);</span><br><span class="line">      <span class="keyword">let</span> currentNode=previousNode.<span class="property">next</span>;</span><br><span class="line">      previousNode.<span class="property">next</span>=currentNode.<span class="property">next</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="variable language_">this</span>.<span class="property">count</span>--;</span><br><span class="line">    <span class="keyword">return</span> currentNode.<span class="property">element</span>;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">return</span> <span class="literal">undefined</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>在指定位置插入元素</p>
+<p>逻辑大致为如果是头节点就改变头节点，如果不是就获取指定位置的节点和前一个节点，前一个节点的next设置为待插入节点，待插入节点的next设置为指定位置的节点</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="title function_">insert</span>(<span class="params">index,element</span>) &#123;<span class="comment">//在指定位置插入元素</span></span><br><span class="line">  <span class="keyword">if</span>(index &gt;= <span class="number">0</span> &amp;&amp; index &lt;= <span class="variable language_">this</span>.<span class="property">count</span>) &#123;</span><br><span class="line">    <span class="keyword">const</span> node=<span class="keyword">new</span> <span class="title class_">Node</span>(element);</span><br><span class="line">    <span class="keyword">let</span> currentNode=<span class="variable language_">this</span>.<span class="property">head</span>;</span><br><span class="line">    <span class="keyword">if</span>(index===<span class="number">0</span>) &#123;</span><br><span class="line">      <span class="variable language_">this</span>.<span class="property">head</span>=node;</span><br><span class="line">      node.<span class="property">next</span>=currentNode;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">else</span> &#123;</span><br><span class="line">      <span class="keyword">let</span> previousNode=<span class="variable language_">this</span>.<span class="title function_">getElementAt</span>(index-<span class="number">1</span>);</span><br><span class="line">      currentNode=previousNode.<span class="property">next</span>;</span><br><span class="line">      previousNode.<span class="property">next</span>=node;</span><br><span class="line">      node.<span class="property">next</span>=currentNode;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="variable language_">this</span>.<span class="property">count</span>++;</span><br><span class="line">    <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">return</span> <span class="literal">false</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>根据值返回某个节点的位置</p>
+<p>逻辑是遍历链表，计数，依次比较值然后返回位置</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="title function_">indexOf</span>(<span class="params">element</span>) &#123;<span class="comment">//根据值返回某个元素的位置</span></span><br><span class="line">  <span class="keyword">let</span> currentNode=<span class="variable language_">this</span>.<span class="property">head</span>;</span><br><span class="line">  <span class="keyword">for</span>(<span class="keyword">let</span> i = <span class="number">0</span>;i&lt;<span class="variable language_">this</span>.<span class="property">count</span>&amp;&amp;currentNode!==<span class="literal">undefined</span>;i++) &#123;</span><br><span class="line">    <span class="keyword">if</span>(<span class="variable language_">this</span>.<span class="title function_">equalsFn</span>(currentNode.<span class="property">element</span>,element)) &#123;</span><br><span class="line">      <span class="keyword">return</span> i;</span><br><span class="line">    &#125;</span><br><span class="line">    currentNode=currentNode.<span class="property">next</span>;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">return</span> -<span class="number">1</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>根据值删除节点</p>
+<p>逻辑是先用<code>indexOf</code>方法获取index，在用<code>removeAt</code>删除</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="title function_">remove</span>(<span class="params">element</span>)&#123;<span class="comment">//根据值删除节点</span></span><br><span class="line">  <span class="keyword">const</span> index=<span class="variable language_">this</span>.<span class="title function_">indexOf</span>(element);</span><br><span class="line">  <span class="keyword">return</span> <span class="variable language_">this</span>.<span class="title function_">removeAt</span>(index);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>获取链表长度</p>
+<p>直接返回count即可</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="title function_">size</span>(<span class="params"></span>) &#123;<span class="comment">//返回链表长度</span></span><br><span class="line">  <span class="keyword">return</span> <span class="variable language_">this</span>.<span class="property">count</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>判断链表是否为空</p>
+<p>即判断count是否为0</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="title function_">isEmpty</span>(<span class="params"></span>) &#123;<span class="comment">//判断链表是否为空</span></span><br><span class="line">  <span class="keyword">return</span> <span class="variable language_">this</span>.<span class="property">count</span>===<span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>获取头节点</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="title function_">getHead</span>(<span class="params"></span>) &#123;<span class="comment">//返回头节点</span></span><br><span class="line">  <span class="keyword">return</span> <span class="variable language_">this</span>.<span class="property">head</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>字符串化</p>
+<p>重写<code>toString</code>方法，依次拼接</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="title function_">toString</span>(<span class="params"></span>) &#123;</span><br><span class="line">  <span class="keyword">if</span>(<span class="variable language_">this</span>.<span class="title function_">isEmpty</span>()) &#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="string">&#x27;&#x27;</span>;</span><br><span class="line">  &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">    <span class="keyword">let</span> objString=<span class="string">`<span class="subst">$&#123;<span class="variable language_">this</span>.head.element&#125;</span>`</span>;</span><br><span class="line">    <span class="keyword">let</span> currentNode=<span class="variable language_">this</span>.<span class="property">head</span>.<span class="property">next</span>;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">let</span> i = <span class="number">0</span>;i&lt;<span class="variable language_">this</span>.<span class="title function_">size</span>()&amp;&amp;currentNode!==<span class="literal">undefined</span>;i++) &#123;</span><br><span class="line">      objString=<span class="string">`<span class="subst">$&#123;objString&#125;</span>,<span class="subst">$&#123;currentNode.element&#125;</span>`</span>;</span><br><span class="line">      currentNode=currentNode.<span class="property">next</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> objString;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
+</ul>
+<p>将方法结合到一起得到单向链表的类声明</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">LinkedList</span> &#123;</span><br><span class="line">  <span class="title function_">constructor</span>(<span class="params">equalsFn=defaultEquals</span>) &#123;</span><br><span class="line">    <span class="variable language_">this</span>.<span class="property">count</span>=<span class="number">0</span>;</span><br><span class="line">    <span class="variable language_">this</span>.<span class="property">head</span>=<span class="literal">undefined</span>;</span><br><span class="line">    <span class="variable language_">this</span>.<span class="property">equalsFn</span>=equalsFn;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="title function_">push</span>(<span class="params">element</span>) &#123;<span class="comment">//向链表中插入节点</span></span><br><span class="line">    <span class="keyword">const</span> node=<span class="keyword">new</span> <span class="title class_">Node</span>(element);</span><br><span class="line">    <span class="keyword">let</span> currentNode;<span class="comment">//当前节点</span></span><br><span class="line">    <span class="keyword">if</span>(<span class="variable language_">this</span>.<span class="property">head</span>===<span class="literal">undefined</span>) &#123;</span><br><span class="line">      <span class="variable language_">this</span>.<span class="property">head</span>=node;<span class="comment">//没有节点就设为头节点</span></span><br><span class="line">    &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">      currentNode=<span class="variable language_">this</span>.<span class="property">head</span>;</span><br><span class="line">      <span class="keyword">while</span>(currentNode.<span class="property">next</span>!==<span class="literal">undefined</span>) &#123;</span><br><span class="line">        currentNode=currentNode.<span class="property">next</span>;<span class="comment">//遍历链表找到尾部</span></span><br><span class="line">      &#125;</span><br><span class="line">      currentNode.<span class="property">next</span>=node;<span class="comment">//在尾部插入节点</span></span><br><span class="line">    &#125;</span><br><span class="line">    <span class="variable language_">this</span>.<span class="property">count</span>++;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="title function_">removeAt</span>(<span class="params">index</span>) &#123;<span class="comment">//从指定位置删除元素</span></span><br><span class="line">    <span class="keyword">if</span>(index &gt;= <span class="number">0</span> &amp;&amp; index &lt; <span class="variable language_">this</span>.<span class="property">count</span>) &#123;<span class="comment">//检验是否越界</span></span><br><span class="line">      <span class="keyword">let</span> currentNode=<span class="variable language_">this</span>.<span class="property">head</span>;</span><br><span class="line">      <span class="keyword">if</span>(index===<span class="number">0</span>) &#123;</span><br><span class="line">        <span class="variable language_">this</span>.<span class="property">head</span>=currentNode.<span class="property">next</span>;<span class="comment">//从头节点的下一个设为头节点</span></span><br><span class="line">      &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">        <span class="keyword">let</span> previousNode=<span class="variable language_">this</span>.<span class="title function_">getElementAt</span>(index-<span class="number">1</span>);</span><br><span class="line">        <span class="keyword">let</span> currentNode=previousNode.<span class="property">next</span>;</span><br><span class="line">        previousNode.<span class="property">next</span>=currentNode.<span class="property">next</span>;</span><br><span class="line">      &#125;</span><br><span class="line">      <span class="variable language_">this</span>.<span class="property">count</span>--;</span><br><span class="line">      <span class="keyword">return</span> currentNode.<span class="property">element</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="literal">undefined</span></span><br><span class="line">  &#125;</span><br><span class="line">  <span class="title function_">getElementAt</span>(<span class="params">index</span>) &#123;<span class="comment">//查找指定位置的节点</span></span><br><span class="line">    <span class="keyword">if</span>(index&gt;=<span class="number">0</span>&amp;&amp;index&lt;=<span class="variable language_">this</span>.<span class="property">count</span>) &#123;</span><br><span class="line">      <span class="keyword">let</span> currentNode=<span class="variable language_">this</span>.<span class="property">head</span>;</span><br><span class="line">      <span class="keyword">for</span>(<span class="keyword">let</span> i = <span class="number">0</span>;i&lt;index&amp;&amp;currentNode!==<span class="literal">undefined</span>;i++) &#123;</span><br><span class="line">        currentNode=currentNode.<span class="property">next</span>;</span><br><span class="line">      &#125;</span><br><span class="line">      <span class="keyword">return</span> currentNode;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="literal">undefined</span>;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="title function_">insert</span>(<span class="params">index,element</span>) &#123;<span class="comment">//在指定位置插入元素</span></span><br><span class="line">    <span class="keyword">if</span>(index &gt;= <span class="number">0</span> &amp;&amp; index &lt;= <span class="variable language_">this</span>.<span class="property">count</span>) &#123;</span><br><span class="line">      <span class="keyword">const</span> node=<span class="keyword">new</span> <span class="title class_">Node</span>(element);</span><br><span class="line">      <span class="keyword">let</span> currentNode=<span class="variable language_">this</span>.<span class="property">head</span>;</span><br><span class="line">      <span class="keyword">if</span>(index===<span class="number">0</span>) &#123;</span><br><span class="line">        <span class="variable language_">this</span>.<span class="property">head</span>=node;</span><br><span class="line">        node.<span class="property">next</span>=currentNode;</span><br><span class="line">      &#125;</span><br><span class="line">      <span class="keyword">else</span> &#123;</span><br><span class="line">        <span class="keyword">let</span> previousNode=<span class="variable language_">this</span>.<span class="title function_">getElementAt</span>(index-<span class="number">1</span>);</span><br><span class="line">        currentNode=previousNode.<span class="property">next</span>;</span><br><span class="line">        previousNode.<span class="property">next</span>=node;</span><br><span class="line">        node.<span class="property">next</span>=currentNode;</span><br><span class="line">      &#125;</span><br><span class="line">      <span class="variable language_">this</span>.<span class="property">count</span>++;</span><br><span class="line">      <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="literal">false</span></span><br><span class="line">  &#125;</span><br><span class="line">  <span class="title function_">indexOf</span>(<span class="params">element</span>) &#123;<span class="comment">//根据值返回某个元素的位置</span></span><br><span class="line">    <span class="keyword">let</span> currentNode=<span class="variable language_">this</span>.<span class="property">head</span>;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">let</span> i = <span class="number">0</span>;i&lt;<span class="variable language_">this</span>.<span class="property">count</span>&amp;&amp;currentNode!==<span class="literal">undefined</span>;i++) &#123;</span><br><span class="line">      <span class="keyword">if</span>(<span class="variable language_">this</span>.<span class="title function_">equalsFn</span>(currentNode.<span class="property">element</span>,element)) &#123;</span><br><span class="line">        <span class="keyword">return</span> i;</span><br><span class="line">      &#125;</span><br><span class="line">      currentNode=currentNode.<span class="property">next</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> -<span class="number">1</span>;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="title function_">remove</span>(<span class="params">element</span>)&#123;<span class="comment">//根据值删除节点</span></span><br><span class="line">    <span class="keyword">const</span> index=<span class="variable language_">this</span>.<span class="title function_">indexOf</span>(element);</span><br><span class="line">    <span class="keyword">return</span> <span class="variable language_">this</span>.<span class="title function_">removeAt</span>(index);</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="title function_">size</span>(<span class="params"></span>) &#123;<span class="comment">//返回链表长度</span></span><br><span class="line">    <span class="keyword">return</span> <span class="variable language_">this</span>.<span class="property">count</span>;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="title function_">isEmpty</span>(<span class="params"></span>) &#123;<span class="comment">//判断链表是否为空</span></span><br><span class="line">    <span class="keyword">return</span> <span class="variable language_">this</span>.<span class="property">count</span>===<span class="number">0</span>;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="title function_">getHead</span>(<span class="params"></span>) &#123;<span class="comment">//返回头节点</span></span><br><span class="line">    <span class="keyword">return</span> <span class="variable language_">this</span>.<span class="property">head</span>;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="title function_">toString</span>(<span class="params"></span>) &#123;</span><br><span class="line">    <span class="keyword">if</span>(<span class="variable language_">this</span>.<span class="title function_">isEmpty</span>()) &#123;</span><br><span class="line">      <span class="keyword">return</span> <span class="string">&#x27;&#x27;</span>;</span><br><span class="line">    &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">      <span class="keyword">let</span> objString=<span class="string">`<span class="subst">$&#123;<span class="variable language_">this</span>.head.element&#125;</span>`</span>;</span><br><span class="line">      <span class="keyword">let</span> currentNode=<span class="variable language_">this</span>.<span class="property">head</span>.<span class="property">next</span>;</span><br><span class="line">      <span class="keyword">for</span>(<span class="keyword">let</span> i = <span class="number">0</span>;i&lt;<span class="variable language_">this</span>.<span class="title function_">size</span>()&amp;&amp;currentNode!==<span class="literal">undefined</span>;i++) &#123;</span><br><span class="line">        objString=<span class="string">`<span class="subst">$&#123;objString&#125;</span>,<span class="subst">$&#123;currentNode.element&#125;</span>`</span>;</span><br><span class="line">        currentNode=currentNode.<span class="property">next</span>;</span><br><span class="line">      &#125;</span><br><span class="line">      <span class="keyword">return</span> objString;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h4 id="双向链表"><a href="#双向链表" class="headerlink" title="双向链表"></a>双向链表</h4><p>双向链表和普通链表的区别在于，在链表中， 一个节点只有链向下一个节点的链接；而在双向链表中，链接是双向的：一个链向下一个元素， 另一个链向前一个元素</p>
+<p>那么首先要更新Node类，它应该包含一个属性指向前一个节点</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">DoubleNode</span> <span class="keyword">extends</span> <span class="title class_ inherited__">Node</span> &#123;</span><br><span class="line">  <span class="title function_">constructor</span>(<span class="params">element,next,prev</span>) &#123;</span><br><span class="line">    <span class="variable language_">super</span>(element,next);</span><br><span class="line">    <span class="variable language_">this</span>.<span class="property">prev</span>=prev;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p><code>super</code>方法可以继承对element和next的声明</p>
+<p>然后需要对原有的链表类拓展</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="title function_">constructor</span>(<span class="params">equalsFn=defaultEquals</span>) &#123;</span><br><span class="line">  <span class="variable language_">super</span>(equalsFn);</span><br><span class="line">  <span class="variable language_">this</span>.<span class="property">tail</span>=<span class="literal">undefined</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>增加一个尾部节点，让链表可以从尾部遍历</p>
+<ul>
+<li><p>重写insert方法</p>
+<p>重写从指定位置插入，除了要增加对prev属性的处理外还要增加一种情况，即在链表尾部插入，要改变链表的tail属性</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="title function_">insert</span>(<span class="params">index, element</span>) &#123;</span><br><span class="line">  <span class="keyword">if</span>(index&gt;=<span class="number">0</span>&amp;&amp;index&lt;=<span class="variable language_">this</span>.<span class="property">count</span>) &#123;</span><br><span class="line">    <span class="keyword">const</span> node=<span class="keyword">new</span> <span class="title class_">DoubleNode</span>(element);</span><br><span class="line">    <span class="keyword">let</span> currentNode=<span class="variable language_">this</span>.<span class="property">head</span>;</span><br><span class="line">    <span class="keyword">if</span>(index===<span class="number">0</span>) &#123;<span class="comment">//头部插入</span></span><br><span class="line">      <span class="keyword">if</span>(<span class="variable language_">this</span>.<span class="property">head</span>===<span class="literal">undefined</span>) &#123;</span><br><span class="line">        <span class="variable language_">this</span>.<span class="property">head</span>=node;</span><br><span class="line">        <span class="variable language_">this</span>.<span class="property">tail</span>=node;</span><br><span class="line">      &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">        node.<span class="property">next</span>=<span class="variable language_">this</span>.<span class="property">head</span>;</span><br><span class="line">        <span class="variable language_">this</span>.<span class="property">head</span>.<span class="property">prev</span>=node;</span><br><span class="line">        <span class="variable language_">this</span>.<span class="property">head</span>=node;</span><br><span class="line">      &#125;</span><br><span class="line">    &#125; <span class="keyword">else</span> <span class="keyword">if</span>(index===<span class="variable language_">this</span>.<span class="property">count</span>) &#123;<span class="comment">//尾部插入</span></span><br><span class="line">      currentNode=<span class="variable language_">this</span>.<span class="property">tail</span>;</span><br><span class="line">      currentNode.<span class="property">next</span>=node;</span><br><span class="line">      node.<span class="property">prev</span>=currentNode;</span><br><span class="line">      <span class="variable language_">this</span>.<span class="property">tail</span>=node;</span><br><span class="line">    &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">      <span class="keyword">const</span> previousNode=<span class="variable language_">this</span>.<span class="title function_">getElementAt</span>(index-<span class="number">1</span>);</span><br><span class="line">      <span class="keyword">let</span> currentNode=previousNode.<span class="property">next</span>;</span><br><span class="line">      previousNode.<span class="property">next</span>=node;</span><br><span class="line">      node.<span class="property">prev</span>=previousNode;</span><br><span class="line">      node.<span class="property">next</span>=currentNode;</span><br><span class="line">      currentNode.<span class="property">prev</span>=node;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="variable language_">this</span>.<span class="property">count</span>++;</span><br><span class="line">    <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>重写removeAt方法</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="title function_">removeAt</span>(<span class="params">index</span>) &#123;<span class="comment">//从指定位置删除</span></span><br><span class="line">  <span class="keyword">if</span>(index&gt;=<span class="number">0</span>&amp;&amp;index&lt;<span class="variable language_">this</span>.<span class="property">count</span>) &#123;</span><br><span class="line">    <span class="keyword">let</span> currentNode=<span class="variable language_">this</span>.<span class="property">head</span>;</span><br><span class="line">    <span class="keyword">if</span>(index===<span class="number">0</span>) &#123;<span class="comment">//在头部删除</span></span><br><span class="line">      <span class="variable language_">this</span>.<span class="property">head</span>=currentNode.<span class="property">next</span>;</span><br><span class="line">      <span class="keyword">if</span>(<span class="variable language_">this</span>.<span class="property">count</span>===<span class="number">1</span>) &#123;</span><br><span class="line">        <span class="variable language_">this</span>.<span class="property">tail</span>=<span class="literal">undefined</span>;</span><br><span class="line">      &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">        <span class="variable language_">this</span>.<span class="property">head</span>.<span class="property">prev</span>=<span class="literal">undefined</span>;</span><br><span class="line">      &#125;</span><br><span class="line">    &#125; <span class="keyword">else</span> <span class="keyword">if</span>(index===<span class="variable language_">this</span>.<span class="property">count</span>-<span class="number">1</span>) &#123;<span class="comment">//在尾部删除</span></span><br><span class="line">      currentNode=<span class="variable language_">this</span>.<span class="property">tail</span>;</span><br><span class="line">      <span class="variable language_">this</span>.<span class="property">tail</span>=currentNode.<span class="property">prev</span>;</span><br><span class="line">      <span class="variable language_">this</span>.<span class="property">tail</span>.<span class="property">next</span>=<span class="literal">undefined</span>;</span><br><span class="line">    &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">      <span class="keyword">let</span> previousNode=<span class="variable language_">this</span>.<span class="title function_">getElementAt</span>(index-<span class="number">1</span>);</span><br><span class="line">      currentNode=previousNode.<span class="property">next</span>;</span><br><span class="line">      previousNode.<span class="property">next</span>=currentNode.<span class="property">next</span>;</span><br><span class="line">      currentNode.<span class="property">next</span>.<span class="property">prev</span>=previousNode;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="variable language_">this</span>.<span class="property">count</span>--;</span><br><span class="line">    <span class="keyword">return</span> currentNode.<span class="property">element</span>;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">return</span> <span class="literal">undefined</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
+</ul>
+<p>双向链表的其他部分也要重写，这里不展开</p>
+<h4 id="循环链表"><a href="#循环链表" class="headerlink" title="循环链表"></a>循环链表</h4><p>循环链表就是首尾相连的链表</p>
+<p>无需对节点类和链表类拓展，直接继承即可</p>
+<ul>
+<li><p>重写insert方法</p>
+<p>需要注意在头节点和尾节点插入时需要改变首尾相连</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="title function_">insert</span>(<span class="params">index, element</span>) &#123;</span><br><span class="line">  <span class="keyword">const</span> node=<span class="keyword">new</span> <span class="title class_">Node</span>(element);</span><br><span class="line">  <span class="keyword">let</span> currentNode=<span class="variable language_">this</span>.<span class="property">head</span>;</span><br><span class="line">  <span class="keyword">if</span>(index&gt;=<span class="number">0</span>&amp;&amp;index&lt;=<span class="variable language_">this</span>.<span class="property">count</span>) &#123;</span><br><span class="line">    <span class="keyword">if</span>(index===<span class="number">0</span>) &#123;</span><br><span class="line">      <span class="keyword">if</span>(currentNode===<span class="literal">undefined</span>) &#123;</span><br><span class="line">        <span class="variable language_">this</span>.<span class="property">head</span>=node;</span><br><span class="line">        node.<span class="property">next</span>=<span class="variable language_">this</span>.<span class="property">head</span>;<span class="comment">//首尾相连</span></span><br><span class="line">      &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">        <span class="variable language_">this</span>.<span class="property">head</span>=node;</span><br><span class="line">        node.<span class="property">next</span>=currentNode;</span><br><span class="line">        currentNode=<span class="variable language_">this</span>.<span class="title function_">getElementAt</span>(<span class="variable language_">this</span>.<span class="title function_">size</span>()-<span class="number">1</span>);</span><br><span class="line">        currentNode.<span class="property">next</span>=node;<span class="comment">//首尾相连</span></span><br><span class="line">      &#125;</span><br><span class="line">    &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">      <span class="keyword">let</span> previousNode=<span class="variable language_">this</span>.<span class="title function_">getElementAt</span>(index-<span class="number">1</span>);</span><br><span class="line">      currentNode=previousNode.<span class="property">next</span>;</span><br><span class="line">      previousNode.<span class="property">next</span>=node;</span><br><span class="line">      node.<span class="property">next</span>=currentNode;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="variable language_">this</span>.<span class="property">count</span>++;</span><br><span class="line">    <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>重写removeAt方法</p>
+<p>同样注意首尾相连</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="title function_">removeAt</span>(<span class="params">index</span>) &#123;</span><br><span class="line">  <span class="keyword">let</span> currentNode;</span><br><span class="line">  <span class="keyword">if</span>(index&gt;=<span class="number">0</span>&amp;&amp;index&lt;<span class="variable language_">this</span>.<span class="property">count</span>) &#123;</span><br><span class="line">    <span class="keyword">if</span>(index===<span class="number">0</span>) &#123;<span class="comment">//删除头部</span></span><br><span class="line">      <span class="keyword">if</span>(<span class="variable language_">this</span>.<span class="title function_">size</span>()===<span class="number">1</span>) &#123;</span><br><span class="line">        <span class="variable language_">this</span>.<span class="property">head</span>=<span class="literal">undefined</span>;</span><br><span class="line">      &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">        <span class="keyword">const</span> removed=<span class="variable language_">this</span>.<span class="property">head</span>;</span><br><span class="line">        currentNode=<span class="variable language_">this</span>.<span class="title function_">getElementAt</span>(<span class="variable language_">this</span>.<span class="title function_">size</span>()-<span class="number">1</span>);</span><br><span class="line">        currentNode.<span class="property">next</span>=removed.<span class="property">next</span>;<span class="comment">//首尾相连</span></span><br><span class="line">        <span class="variable language_">this</span>.<span class="property">head</span>=removed.<span class="property">next</span>;</span><br><span class="line">      &#125;</span><br><span class="line">    &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">      <span class="keyword">let</span> previousNode=<span class="variable language_">this</span>.<span class="title function_">getElementAt</span>(index-<span class="number">1</span>);</span><br><span class="line">      currentNode=previousNode.<span class="property">next</span>;</span><br><span class="line">      previousNode.<span class="property">next</span>=currentNode.<span class="property">next</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="variable language_">this</span>.<span class="property">count</span>--;</span><br><span class="line">    <span class="keyword">return</span> currentNode.<span class="property">element</span>;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">return</span> <span class="literal">undefined</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
+</ul>
+<p>其他方法也要重写，这里不展开</p>
+<h4 id="有序链表"><a href="#有序链表" class="headerlink" title="有序链表"></a>有序链表</h4><p>有序链表要求所有节点根据element保持有序性</p>
+<p>为使代码更为优雅，先定义Compare对象表示比较结果</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">const</span> <span class="title class_">Compare</span> = &#123;</span><br><span class="line">  <span class="attr">LESS_THAN</span>: -<span class="number">1</span>,</span><br><span class="line">  <span class="attr">BIGGER_THAN</span>: <span class="number">1</span></span><br><span class="line">&#125;;<span class="comment">//一个比较对象</span></span><br></pre></td></tr></table></figure>
+
+<p>然后定义默认比较方法</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">function</span> <span class="title function_">defaultCompare</span>(<span class="params">a, b</span>) &#123;</span><br><span class="line">  <span class="keyword">if</span> (a === b) &#123; <span class="comment">// &#123;1&#125;</span></span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">return</span> a &lt; b ? <span class="title class_">Compare</span>.<span class="property">LESS_THAN</span> : <span class="title class_">Compare</span>.<span class="property">BIGGER_THAN</span>;</span><br><span class="line">&#125;<span class="comment">//默认比较方法</span></span><br></pre></td></tr></table></figure>
+
+<p>然后声明有序链表，它与单向链表相比需要拓展比较方法</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="title function_">constructor</span>(<span class="params">equalsFn = defaultEquals, compareFn = defaultCompare</span>) &#123;</span><br><span class="line">  <span class="variable language_">super</span>(equalsFn);</span><br><span class="line">  <span class="variable language_">this</span>.<span class="property">compareFn</span> = compareFn;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li><p>有序插入元素</p>
+<p>逻辑是依次遍历链表直至找到比要插入元素大的节点，需要考虑没有节点和所有元素都比待插入元素小两种情况</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="title function_">insert</span>(<span class="params">element,index=<span class="number">0</span></span>) &#123;</span><br><span class="line">  <span class="keyword">if</span>(<span class="variable language_">this</span>.<span class="title function_">isEmpty</span>()) &#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="variable language_">super</span>.<span class="title function_">insert</span>(<span class="number">0</span>,element);</span><br><span class="line">  &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">    <span class="keyword">let</span> position=<span class="variable language_">this</span>.<span class="title function_">getIndexNextSortedElement</span>(element);</span><br><span class="line">    <span class="keyword">return</span> <span class="variable language_">super</span>.<span class="title function_">insert</span>(position,element)</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="title function_">getIndexNextSortedElement</span>(<span class="params">element</span>) &#123;</span><br><span class="line">  <span class="keyword">let</span> currentNode=<span class="variable language_">this</span>.<span class="property">head</span>;</span><br><span class="line">  <span class="keyword">let</span> i=<span class="number">0</span>;</span><br><span class="line">  <span class="keyword">for</span>(;i&lt;<span class="variable language_">this</span>.<span class="title function_">size</span>()&amp;&amp;currentNode;i++) &#123;</span><br><span class="line">    <span class="keyword">const</span> comp=<span class="variable language_">this</span>.<span class="title function_">compareFn</span>(element,currentNode.<span class="property">element</span>);</span><br><span class="line">    <span class="keyword">if</span>(comp===<span class="title class_">Compare</span>.<span class="property">LESS_THAN</span>) &#123;</span><br><span class="line">      <span class="keyword">return</span> i;<span class="comment">//如果发现比后一个元素小就返回</span></span><br><span class="line">    &#125;</span><br><span class="line">    currentNode=currentNode.<span class="property">next</span>;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">return</span> i;<span class="comment">//比所有元素都大就放在最后</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
+</ul>
+<p>还需要重写其他方法，这里不展开</p>
+<h4 id="使用链表创建栈"><a href="#使用链表创建栈" class="headerlink" title="使用链表创建栈"></a>使用链表创建栈</h4><p>在栈的实现内部使用链表 数据结构会更加简单，因为不需要重新创建这些代码，也使代码的可读性更好。</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">StackLinkedList</span> &#123;</span><br><span class="line">  <span class="title function_">constructor</span>(<span class="params"></span>) &#123;</span><br><span class="line">    <span class="variable language_">this</span>.<span class="property">items</span>=<span class="keyword">new</span> <span class="title class_">DoubleLinkedList</span>();</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="title function_">push</span>(<span class="params">element</span>) &#123;</span><br><span class="line">    <span class="variable language_">this</span>.<span class="property">items</span>.<span class="title function_">push</span>(element);</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="title function_">pop</span>(<span class="params"></span>) &#123;</span><br><span class="line">    <span class="keyword">if</span>(<span class="variable language_">this</span>.<span class="title function_">isEmpty</span>()) &#123;</span><br><span class="line">      <span class="keyword">return</span> <span class="literal">undefined</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="variable language_">this</span>.<span class="property">items</span>.<span class="title function_">removeAt</span>(<span class="variable language_">this</span>.<span class="title function_">size</span>()-<span class="number">1</span>);</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="title function_">isEmpty</span>(<span class="params"></span>) &#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="variable language_">this</span>.<span class="property">items</span>.<span class="title function_">isEmpty</span>();</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="title function_">size</span>(<span class="params"></span>) &#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="variable language_">this</span>.<span class="property">items</span>.<span class="property">count</span>;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="title function_">peek</span>(<span class="params"></span>) &#123;</span><br><span class="line">    <span class="keyword">if</span>(<span class="variable language_">this</span>.<span class="title function_">isEmpty</span>()) &#123;</span><br><span class="line">      <span class="keyword">return</span> <span class="literal">undefined</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="variable language_">this</span>.<span class="property">items</span>.<span class="property">tail</span>.<span class="property">element</span>;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="title function_">clear</span>(<span class="params"></span>) &#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="variable language_">this</span>.<span class="property">items</span>.<span class="title function_">clear</span>();</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="title function_">toString</span>(<span class="params"></span>) &#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="variable language_">this</span>.<span class="property">items</span>.<span class="title function_">toString</span>();</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
+      <categories>
+        <category>技术</category>
+      </categories>
+      <tags>
+        <tag>JavaScript</tag>
+        <tag>数据结构</tag>
+        <tag>栈</tag>
+        <tag>链表</tag>
+        <tag>双向链表</tag>
+        <tag>单向链表</tag>
+        <tag>循环链表</tag>
+        <tag>有序链表</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>js数据结构：队列</title>
+    <url>/2022/08/30/%E9%98%9F%E5%88%97/</url>
+    <content><![CDATA[<h3 id="队列"><a href="#队列" class="headerlink" title="队列"></a>队列</h3><p>队列是一种先进先出的数据结构</p>
+<p>用JavaScript实现队列的下列功能：</p>
+<p><code>enqueue</code>:入队</p>
+<p><code>dequeue</code>:出队</p>
+<p><code>peek</code>:返回队首元素</p>
+<p><code>isEmpty</code>:判断队列是否为空</p>
+<p><code>size</code>:返回队列长度</p>
+<p><code>toString</code>:队列字符串化</p>
+<p><code>clear</code>:清空队列</p>
+<p>代码：</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Queue</span> &#123;</span><br><span class="line">  <span class="title function_">constructor</span>(<span class="params"></span>) &#123;</span><br><span class="line">    <span class="variable language_">this</span>.<span class="property">count</span>=<span class="number">0</span>;</span><br><span class="line">    <span class="variable language_">this</span>.<span class="property">lowestCount</span>=<span class="number">0</span>;</span><br><span class="line">    <span class="variable language_">this</span>.<span class="property">items</span>=&#123;&#125;;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="title function_">enqueue</span>(<span class="params">element</span>) &#123;<span class="comment">//入队</span></span><br><span class="line">    <span class="variable language_">this</span>.<span class="property">items</span>[<span class="variable language_">this</span>.<span class="property">count</span>]=element;</span><br><span class="line">    <span class="variable language_">this</span>.<span class="property">count</span>++;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="title function_">dequeue</span>(<span class="params"></span>) &#123;<span class="comment">//出队</span></span><br><span class="line">    <span class="keyword">if</span> (<span class="variable language_">this</span>.<span class="title function_">isEmpty</span>()) &#123;</span><br><span class="line">      <span class="keyword">return</span> <span class="literal">undefined</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">const</span> result=<span class="variable language_">this</span>.<span class="property">items</span>[<span class="variable language_">this</span>.<span class="property">lowestCount</span>];</span><br><span class="line">    <span class="keyword">delete</span> <span class="variable language_">this</span>.<span class="property">items</span>[<span class="variable language_">this</span>.<span class="property">lowestCount</span>];</span><br><span class="line">    <span class="variable language_">this</span>.<span class="property">lowestCount</span>++;</span><br><span class="line">    <span class="keyword">return</span> result</span><br><span class="line"></span><br><span class="line">  &#125;</span><br><span class="line">  <span class="title function_">isEmpty</span>(<span class="params"></span>) &#123;<span class="comment">//是否为空</span></span><br><span class="line">    <span class="keyword">return</span> <span class="variable language_">this</span>.<span class="property">count</span>===<span class="number">0</span>;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="title function_">peek</span>(<span class="params"></span>) &#123;<span class="comment">//返回队首元素</span></span><br><span class="line">    <span class="keyword">if</span>(<span class="variable language_">this</span>.<span class="title function_">isEmpty</span>()) &#123;</span><br><span class="line">      <span class="keyword">return</span> <span class="literal">undefined</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="variable language_">this</span>.<span class="property">items</span>[<span class="variable language_">this</span>.<span class="property">lowestCount</span>];</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="title function_">size</span>(<span class="params"></span>) &#123;<span class="comment">//返回队列长度</span></span><br><span class="line">    <span class="keyword">return</span> <span class="variable language_">this</span>.<span class="property">count</span>-<span class="variable language_">this</span>.<span class="property">lowestCount</span>;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="title function_">clear</span>(<span class="params"></span>) &#123;<span class="comment">//清空队列</span></span><br><span class="line">    <span class="variable language_">this</span>.<span class="property">items</span>=&#123;&#125;;</span><br><span class="line">    <span class="variable language_">this</span>.<span class="property">count</span>=<span class="number">0</span>;</span><br><span class="line">    <span class="variable language_">this</span>.<span class="property">lowestCount</span>=<span class="number">0</span>;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="title function_">toString</span>(<span class="params"></span>) &#123;<span class="comment">//转换成字符串</span></span><br><span class="line">    <span class="keyword">if</span>(<span class="variable language_">this</span>.<span class="title function_">isEmpty</span>()) &#123;</span><br><span class="line">      <span class="keyword">return</span> <span class="string">&quot;&quot;</span></span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">let</span> objString=<span class="string">`<span class="subst">$&#123;<span class="variable language_">this</span>.items[<span class="variable language_">this</span>.lowestCount]&#125;</span>`</span>;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">let</span> i = <span class="variable language_">this</span>.<span class="property">lowestCount</span>+<span class="number">1</span>;i &lt; <span class="variable language_">this</span>.<span class="property">count</span>;i++) &#123;</span><br><span class="line">      objString=<span class="string">`<span class="subst">$&#123;objString&#125;</span>,<span class="subst">$&#123;<span class="variable language_">this</span>.items[i]&#125;</span>`</span></span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> objString;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>使用队列的例子：击鼓传花</p>
+<p>传入一个成员数组，和一个数字，在传到指定数字时淘汰对应的成员</p>
+<p>思路：创建一个队列，每传一次就将队首元素出队并从队尾入队，这样使得拿着花圈的成员永远对应队首元素。到达指定次数之后，将队首元素出队，不再添加至队尾，添加至淘汰者名单中。当队列中只有一个元素时，结束循环，得到胜者</p>
+<p>代码：</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">function</span> <span class="title function_">hotPotato</span>(<span class="params">elementsList,num</span>) &#123;</span><br><span class="line">  <span class="keyword">const</span> queue=<span class="keyword">new</span> <span class="title class_">Queue</span>();</span><br><span class="line">  <span class="keyword">let</span> out=[];</span><br><span class="line">  <span class="keyword">for</span>(<span class="keyword">let</span> i <span class="keyword">in</span> elementsList) &#123;</span><br><span class="line">    queue.<span class="title function_">enqueue</span>(elementsList[i]);</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">while</span>(queue.<span class="title function_">size</span>()&gt;<span class="number">1</span>) &#123;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">let</span> i = <span class="number">0</span>;i&lt;num;i++) &#123;</span><br><span class="line">      queue.<span class="title function_">enqueue</span>(queue.<span class="title function_">dequeue</span>());</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">`<span class="subst">$&#123;queue.peek()&#125;</span>被淘汰了！`</span>)</span><br><span class="line">    out.<span class="title function_">push</span>(queue.<span class="title function_">dequeue</span>())</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">return</span> &#123;</span><br><span class="line">    <span class="attr">winner</span>: queue.<span class="title function_">dequeue</span>(),</span><br><span class="line">    <span class="attr">outList</span>: out</span><br><span class="line"></span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="双端队列"><a href="#双端队列" class="headerlink" title="双端队列"></a>双端队列</h3><p>双端队列与队列的区别是双端队列可以任意在队首或队尾增加，删除元素</p>
+<p>用JavaScript实现队列的下列功能：</p>
+<p><code>addFront</code>:从队首添加元素</p>
+<p><code>addBack</code>:从队尾添加元素（与队列中的enqueue类似）</p>
+<p><code>removeFront</code>:从队首删除元素（与队列中dequeue类似）</p>
+<p><code>removeBack</code>:从队尾删除元素（与栈中pop类似）</p>
+<p><code>peekFront</code>:返回队首元素</p>
+<p><code>peekBack</code>:返回队尾元素</p>
+<p><code>isEmpty</code>:判断队列是否为空</p>
+<p><code>size</code>:返回队列长度</p>
+<p><code>clear</code>:清空队列</p>
+<p><code>toString</code>:队列字符串化</p>
+<p>代码实现：</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Deque</span> &#123;</span><br><span class="line">  <span class="title function_">constructor</span>(<span class="params"></span>) &#123;</span><br><span class="line">    <span class="variable language_">this</span>.<span class="property">count</span>=<span class="number">0</span>;</span><br><span class="line">    <span class="variable language_">this</span>.<span class="property">lowestCount</span>=<span class="number">0</span>;</span><br><span class="line">    <span class="variable language_">this</span>.<span class="property">items</span>=&#123;&#125;;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="title function_">addBack</span>(<span class="params">element</span>) &#123;<span class="comment">//后端入队</span></span><br><span class="line">    <span class="variable language_">this</span>.<span class="property">items</span>[<span class="variable language_">this</span>.<span class="property">count</span>]=element;</span><br><span class="line">    <span class="variable language_">this</span>.<span class="property">count</span>++;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="title function_">addFront</span>(<span class="params">element</span>) &#123;<span class="comment">//前端入队</span></span><br><span class="line">    <span class="keyword">if</span>(<span class="variable language_">this</span>.<span class="title function_">isEmpty</span>()) &#123;</span><br><span class="line">      <span class="variable language_">this</span>.<span class="title function_">addBack</span>(element);</span><br><span class="line">    &#125; <span class="keyword">else</span> <span class="keyword">if</span>(<span class="variable language_">this</span>.<span class="property">lowestCount</span>&gt;<span class="number">0</span>) &#123;</span><br><span class="line">      <span class="variable language_">this</span>.<span class="property">lowestCount</span>--;</span><br><span class="line">      <span class="variable language_">this</span>.<span class="property">items</span>[<span class="variable language_">this</span>.<span class="property">lowestCount</span>]=element;</span><br><span class="line">    &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">      <span class="keyword">for</span>(<span class="keyword">let</span> i = <span class="variable language_">this</span>.<span class="property">count</span>;i&gt;<span class="number">0</span>;i--) &#123;</span><br><span class="line">        <span class="variable language_">this</span>.<span class="property">items</span>[i]=<span class="variable language_">this</span>.<span class="property">items</span>[i-<span class="number">1</span>];</span><br><span class="line">      &#125;</span><br><span class="line">      <span class="variable language_">this</span>.<span class="property">count</span>++;</span><br><span class="line">      <span class="variable language_">this</span>.<span class="property">lowestCount</span>=<span class="number">0</span>;</span><br><span class="line">      <span class="variable language_">this</span>.<span class="property">items</span>[<span class="number">0</span>]=element;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">  &#125;</span><br><span class="line">  <span class="title function_">removeFront</span>(<span class="params"></span>) &#123;<span class="comment">//前端出队</span></span><br><span class="line">    <span class="keyword">if</span> (<span class="variable language_">this</span>.<span class="title function_">isEmpty</span>()) &#123;</span><br><span class="line">      <span class="keyword">return</span> <span class="literal">undefined</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">const</span> result=<span class="variable language_">this</span>.<span class="property">items</span>[<span class="variable language_">this</span>.<span class="property">lowestCount</span>];</span><br><span class="line">    <span class="keyword">delete</span> <span class="variable language_">this</span>.<span class="property">items</span>[<span class="variable language_">this</span>.<span class="property">lowestCount</span>];</span><br><span class="line">    <span class="variable language_">this</span>.<span class="property">lowestCount</span>++;</span><br><span class="line">    <span class="keyword">return</span> result</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="title function_">removeBack</span>(<span class="params"></span>) &#123;<span class="comment">//后端出队</span></span><br><span class="line">    <span class="keyword">if</span>(<span class="variable language_">this</span>.<span class="title function_">isEmpty</span>()) &#123;</span><br><span class="line">      <span class="keyword">return</span> <span class="literal">undefined</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">let</span> result=<span class="variable language_">this</span>.<span class="property">items</span>[<span class="variable language_">this</span>.<span class="property">count</span>-<span class="number">1</span>];</span><br><span class="line">    <span class="keyword">delete</span> <span class="variable language_">this</span>.<span class="property">items</span>[<span class="variable language_">this</span>.<span class="property">count</span>-<span class="number">1</span>];</span><br><span class="line">    <span class="variable language_">this</span>.<span class="property">count</span>--;</span><br><span class="line">    <span class="keyword">return</span> result;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="title function_">isEmpty</span>(<span class="params"></span>) &#123;<span class="comment">//是否为空</span></span><br><span class="line">    <span class="keyword">return</span> <span class="variable language_">this</span>.<span class="property">count</span>===<span class="number">0</span>;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="title function_">peekFront</span>(<span class="params"></span>) &#123;<span class="comment">//返回队首元素</span></span><br><span class="line">    <span class="keyword">return</span> <span class="variable language_">this</span>.<span class="property">items</span>[<span class="variable language_">this</span>.<span class="property">lowestCount</span>];</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="title function_">peekBack</span>(<span class="params"></span>) &#123;<span class="comment">//返回队尾元素</span></span><br><span class="line">    <span class="keyword">return</span> <span class="variable language_">this</span>.<span class="property">items</span>[<span class="variable language_">this</span>.<span class="property">count</span>-<span class="number">1</span>];</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="title function_">size</span>(<span class="params"></span>) &#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="variable language_">this</span>.<span class="property">count</span>-<span class="variable language_">this</span>.<span class="property">lowestCount</span>;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="title function_">clear</span>(<span class="params"></span>) &#123;</span><br><span class="line">    <span class="variable language_">this</span>.<span class="property">items</span>=&#123;&#125;;</span><br><span class="line">    <span class="variable language_">this</span>.<span class="property">count</span>=<span class="number">0</span>;</span><br><span class="line">    <span class="variable language_">this</span>.<span class="property">lowestCount</span>=<span class="number">0</span>;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="title function_">toString</span>(<span class="params"></span>) &#123;</span><br><span class="line">    <span class="keyword">if</span>(<span class="variable language_">this</span>.<span class="title function_">isEmpty</span>()) &#123;</span><br><span class="line">      <span class="keyword">return</span> <span class="string">&quot;&quot;</span></span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">let</span> objString=<span class="string">`<span class="subst">$&#123;<span class="variable language_">this</span>.items[<span class="variable language_">this</span>.lowestCount]&#125;</span>`</span>;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">let</span> i = <span class="variable language_">this</span>.<span class="property">lowestCount</span>+<span class="number">1</span>;i &lt; <span class="variable language_">this</span>.<span class="property">count</span>;i++) &#123;</span><br><span class="line">      objString=<span class="string">`<span class="subst">$&#123;objString&#125;</span>,<span class="subst">$&#123;<span class="variable language_">this</span>.items[i]&#125;</span>`</span></span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> objString;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>使用双端队列的例子：检测回文串</p>
+<p>回文串就是从前向后和从后向前读起来一样的字符串</p>
+<p>思路：首先检测是否传入以及将字符串字母大写转为小写，然后创建双端队列，不断将队首队尾元素出队比较直至双端队列长度小于等于1即可</p>
+<p>代码：</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">function</span> <span class="title function_">palindromeChecker</span>(<span class="params">aString</span>) &#123;</span><br><span class="line">  <span class="keyword">if</span> (aString === <span class="literal">undefined</span> || aString === <span class="literal">null</span> ||</span><br><span class="line">      (aString !== <span class="literal">null</span> &amp;&amp; aString.<span class="property">length</span> === <span class="number">0</span>)) &#123; <span class="comment">// 先判断是否传入字符串</span></span><br><span class="line">    <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">const</span> deque = <span class="keyword">new</span> <span class="title class_">Deque</span>(); <span class="comment">// 创建一个双端对列</span></span><br><span class="line">  <span class="keyword">const</span> lowerString = aString.<span class="title function_">toLocaleLowerCase</span>().<span class="title function_">split</span>(<span class="string">&#x27; &#x27;</span>).<span class="title function_">join</span>(<span class="string">&#x27;&#x27;</span>); <span class="comment">// 将大写全部转换成小写</span></span><br><span class="line">  <span class="keyword">let</span> isEqual = <span class="literal">true</span>;</span><br><span class="line">  <span class="keyword">let</span> firstChar, lastChar;</span><br><span class="line">  <span class="keyword">for</span> (<span class="keyword">let</span> i = <span class="number">0</span>; i &lt; lowerString.<span class="property">length</span>; i++) &#123; <span class="comment">// 向队列中添加字母</span></span><br><span class="line">    deque.<span class="title function_">addBack</span>(lowerString.<span class="title function_">charAt</span>(i));</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">while</span> (deque.<span class="title function_">size</span>() &gt; <span class="number">1</span> &amp;&amp; isEqual) &#123; <span class="comment">// 随时跳出</span></span><br><span class="line">    firstChar = deque.<span class="title function_">removeFront</span>(); <span class="comment">// 首字母</span></span><br><span class="line">    lastChar = deque.<span class="title function_">removeBack</span>(); <span class="comment">// 末尾字母</span></span><br><span class="line">    <span class="keyword">if</span> (firstChar !== lastChar) &#123;</span><br><span class="line">      isEqual = <span class="literal">false</span>;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">return</span> isEqual;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+]]></content>
+      <categories>
+        <category>技术</category>
+      </categories>
+      <tags>
+        <tag>JavaScript</tag>
+        <tag>数据结构</tag>
+        <tag>队列</tag>
       </tags>
   </entry>
   <entry>
@@ -1871,72 +2065,6 @@
       </categories>
       <tags>
         <tag>css</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>css中表格样式</title>
-    <url>/2022/08/03/%E8%A1%A8%E6%A0%BC%E5%B8%83%E5%B1%80/</url>
-    <content><![CDATA[<h1 id="表格布局"><a href="#表格布局" class="headerlink" title="表格布局"></a>表格布局</h1><h3 id="表格格式化"><a href="#表格格式化" class="headerlink" title="表格格式化"></a>表格格式化</h3>]]></content>
-      <categories>
-        <category>技术</category>
-      </categories>
-      <tags>
-        <tag>css</tag>
-        <tag>未完成（鸽）</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>js数据结构：队列</title>
-    <url>/2022/08/30/%E9%98%9F%E5%88%97/</url>
-    <content><![CDATA[<h3 id="队列"><a href="#队列" class="headerlink" title="队列"></a>队列</h3><p>队列是一种先进先出的数据结构</p>
-<p>用JavaScript实现队列的下列功能：</p>
-<p><code>enqueue</code>:入队</p>
-<p><code>dequeue</code>:出队</p>
-<p><code>peek</code>:返回队首元素</p>
-<p><code>isEmpty</code>:判断队列是否为空</p>
-<p><code>size</code>:返回队列长度</p>
-<p><code>toString</code>:队列字符串化</p>
-<p><code>clear</code>:清空队列</p>
-<p>代码：</p>
-<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Queue</span> &#123;</span><br><span class="line">  <span class="title function_">constructor</span>(<span class="params"></span>) &#123;</span><br><span class="line">    <span class="variable language_">this</span>.<span class="property">count</span>=<span class="number">0</span>;</span><br><span class="line">    <span class="variable language_">this</span>.<span class="property">lowestCount</span>=<span class="number">0</span>;</span><br><span class="line">    <span class="variable language_">this</span>.<span class="property">items</span>=&#123;&#125;;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="title function_">enqueue</span>(<span class="params">element</span>) &#123;<span class="comment">//入队</span></span><br><span class="line">    <span class="variable language_">this</span>.<span class="property">items</span>[<span class="variable language_">this</span>.<span class="property">count</span>]=element;</span><br><span class="line">    <span class="variable language_">this</span>.<span class="property">count</span>++;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="title function_">dequeue</span>(<span class="params"></span>) &#123;<span class="comment">//出队</span></span><br><span class="line">    <span class="keyword">if</span> (<span class="variable language_">this</span>.<span class="title function_">isEmpty</span>()) &#123;</span><br><span class="line">      <span class="keyword">return</span> <span class="literal">undefined</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">const</span> result=<span class="variable language_">this</span>.<span class="property">items</span>[<span class="variable language_">this</span>.<span class="property">lowestCount</span>];</span><br><span class="line">    <span class="keyword">delete</span> <span class="variable language_">this</span>.<span class="property">items</span>[<span class="variable language_">this</span>.<span class="property">lowestCount</span>];</span><br><span class="line">    <span class="variable language_">this</span>.<span class="property">lowestCount</span>++;</span><br><span class="line">    <span class="keyword">return</span> result</span><br><span class="line"></span><br><span class="line">  &#125;</span><br><span class="line">  <span class="title function_">isEmpty</span>(<span class="params"></span>) &#123;<span class="comment">//是否为空</span></span><br><span class="line">    <span class="keyword">return</span> <span class="variable language_">this</span>.<span class="property">count</span>===<span class="number">0</span>;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="title function_">peek</span>(<span class="params"></span>) &#123;<span class="comment">//返回队首元素</span></span><br><span class="line">    <span class="keyword">if</span>(<span class="variable language_">this</span>.<span class="title function_">isEmpty</span>()) &#123;</span><br><span class="line">      <span class="keyword">return</span> <span class="literal">undefined</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="variable language_">this</span>.<span class="property">items</span>[<span class="variable language_">this</span>.<span class="property">lowestCount</span>];</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="title function_">size</span>(<span class="params"></span>) &#123;<span class="comment">//返回队列长度</span></span><br><span class="line">    <span class="keyword">return</span> <span class="variable language_">this</span>.<span class="property">count</span>-<span class="variable language_">this</span>.<span class="property">lowestCount</span>;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="title function_">clear</span>(<span class="params"></span>) &#123;<span class="comment">//清空队列</span></span><br><span class="line">    <span class="variable language_">this</span>.<span class="property">items</span>=&#123;&#125;;</span><br><span class="line">    <span class="variable language_">this</span>.<span class="property">count</span>=<span class="number">0</span>;</span><br><span class="line">    <span class="variable language_">this</span>.<span class="property">lowestCount</span>=<span class="number">0</span>;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="title function_">toString</span>(<span class="params"></span>) &#123;<span class="comment">//转换成字符串</span></span><br><span class="line">    <span class="keyword">if</span>(<span class="variable language_">this</span>.<span class="title function_">isEmpty</span>()) &#123;</span><br><span class="line">      <span class="keyword">return</span> <span class="string">&quot;&quot;</span></span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">let</span> objString=<span class="string">`<span class="subst">$&#123;<span class="variable language_">this</span>.items[<span class="variable language_">this</span>.lowestCount]&#125;</span>`</span>;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">let</span> i = <span class="variable language_">this</span>.<span class="property">lowestCount</span>+<span class="number">1</span>;i &lt; <span class="variable language_">this</span>.<span class="property">count</span>;i++) &#123;</span><br><span class="line">      objString=<span class="string">`<span class="subst">$&#123;objString&#125;</span>,<span class="subst">$&#123;<span class="variable language_">this</span>.items[i]&#125;</span>`</span></span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> objString;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>使用队列的例子：击鼓传花</p>
-<p>传入一个成员数组，和一个数字，在传到指定数字时淘汰对应的成员</p>
-<p>思路：创建一个队列，每传一次就将队首元素出队并从队尾入队，这样使得拿着花圈的成员永远对应队首元素。到达指定次数之后，将队首元素出队，不再添加至队尾，添加至淘汰者名单中。当队列中只有一个元素时，结束循环，得到胜者</p>
-<p>代码：</p>
-<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">function</span> <span class="title function_">hotPotato</span>(<span class="params">elementsList,num</span>) &#123;</span><br><span class="line">  <span class="keyword">const</span> queue=<span class="keyword">new</span> <span class="title class_">Queue</span>();</span><br><span class="line">  <span class="keyword">let</span> out=[];</span><br><span class="line">  <span class="keyword">for</span>(<span class="keyword">let</span> i <span class="keyword">in</span> elementsList) &#123;</span><br><span class="line">    queue.<span class="title function_">enqueue</span>(elementsList[i]);</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">while</span>(queue.<span class="title function_">size</span>()&gt;<span class="number">1</span>) &#123;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">let</span> i = <span class="number">0</span>;i&lt;num;i++) &#123;</span><br><span class="line">      queue.<span class="title function_">enqueue</span>(queue.<span class="title function_">dequeue</span>());</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">`<span class="subst">$&#123;queue.peek()&#125;</span>被淘汰了！`</span>)</span><br><span class="line">    out.<span class="title function_">push</span>(queue.<span class="title function_">dequeue</span>())</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">return</span> &#123;</span><br><span class="line">    <span class="attr">winner</span>: queue.<span class="title function_">dequeue</span>(),</span><br><span class="line">    <span class="attr">outList</span>: out</span><br><span class="line"></span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h3 id="双端队列"><a href="#双端队列" class="headerlink" title="双端队列"></a>双端队列</h3><p>双端队列与队列的区别是双端队列可以任意在队首或队尾增加，删除元素</p>
-<p>用JavaScript实现队列的下列功能：</p>
-<p><code>addFront</code>:从队首添加元素</p>
-<p><code>addBack</code>:从队尾添加元素（与队列中的enqueue类似）</p>
-<p><code>removeFront</code>:从队首删除元素（与队列中dequeue类似）</p>
-<p><code>removeBack</code>:从队尾删除元素（与栈中pop类似）</p>
-<p><code>peekFront</code>:返回队首元素</p>
-<p><code>peekBack</code>:返回队尾元素</p>
-<p><code>isEmpty</code>:判断队列是否为空</p>
-<p><code>size</code>:返回队列长度</p>
-<p><code>clear</code>:清空队列</p>
-<p><code>toString</code>:队列字符串化</p>
-<p>代码实现：</p>
-<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Deque</span> &#123;</span><br><span class="line">  <span class="title function_">constructor</span>(<span class="params"></span>) &#123;</span><br><span class="line">    <span class="variable language_">this</span>.<span class="property">count</span>=<span class="number">0</span>;</span><br><span class="line">    <span class="variable language_">this</span>.<span class="property">lowestCount</span>=<span class="number">0</span>;</span><br><span class="line">    <span class="variable language_">this</span>.<span class="property">items</span>=&#123;&#125;;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="title function_">addBack</span>(<span class="params">element</span>) &#123;<span class="comment">//后端入队</span></span><br><span class="line">    <span class="variable language_">this</span>.<span class="property">items</span>[<span class="variable language_">this</span>.<span class="property">count</span>]=element;</span><br><span class="line">    <span class="variable language_">this</span>.<span class="property">count</span>++;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="title function_">addFront</span>(<span class="params">element</span>) &#123;<span class="comment">//前端入队</span></span><br><span class="line">    <span class="keyword">if</span>(<span class="variable language_">this</span>.<span class="title function_">isEmpty</span>()) &#123;</span><br><span class="line">      <span class="variable language_">this</span>.<span class="title function_">addBack</span>(element);</span><br><span class="line">    &#125; <span class="keyword">else</span> <span class="keyword">if</span>(<span class="variable language_">this</span>.<span class="property">lowestCount</span>&gt;<span class="number">0</span>) &#123;</span><br><span class="line">      <span class="variable language_">this</span>.<span class="property">lowestCount</span>--;</span><br><span class="line">      <span class="variable language_">this</span>.<span class="property">items</span>[<span class="variable language_">this</span>.<span class="property">lowestCount</span>]=element;</span><br><span class="line">    &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">      <span class="keyword">for</span>(<span class="keyword">let</span> i = <span class="variable language_">this</span>.<span class="property">count</span>;i&gt;<span class="number">0</span>;i--) &#123;</span><br><span class="line">        <span class="variable language_">this</span>.<span class="property">items</span>[i]=<span class="variable language_">this</span>.<span class="property">items</span>[i-<span class="number">1</span>];</span><br><span class="line">      &#125;</span><br><span class="line">      <span class="variable language_">this</span>.<span class="property">count</span>++;</span><br><span class="line">      <span class="variable language_">this</span>.<span class="property">lowestCount</span>=<span class="number">0</span>;</span><br><span class="line">      <span class="variable language_">this</span>.<span class="property">items</span>[<span class="number">0</span>]=element;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">  &#125;</span><br><span class="line">  <span class="title function_">removeFront</span>(<span class="params"></span>) &#123;<span class="comment">//前端出队</span></span><br><span class="line">    <span class="keyword">if</span> (<span class="variable language_">this</span>.<span class="title function_">isEmpty</span>()) &#123;</span><br><span class="line">      <span class="keyword">return</span> <span class="literal">undefined</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">const</span> result=<span class="variable language_">this</span>.<span class="property">items</span>[<span class="variable language_">this</span>.<span class="property">lowestCount</span>];</span><br><span class="line">    <span class="keyword">delete</span> <span class="variable language_">this</span>.<span class="property">items</span>[<span class="variable language_">this</span>.<span class="property">lowestCount</span>];</span><br><span class="line">    <span class="variable language_">this</span>.<span class="property">lowestCount</span>++;</span><br><span class="line">    <span class="keyword">return</span> result</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="title function_">removeBack</span>(<span class="params"></span>) &#123;<span class="comment">//后端出队</span></span><br><span class="line">    <span class="keyword">if</span>(<span class="variable language_">this</span>.<span class="title function_">isEmpty</span>()) &#123;</span><br><span class="line">      <span class="keyword">return</span> <span class="literal">undefined</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">let</span> result=<span class="variable language_">this</span>.<span class="property">items</span>[<span class="variable language_">this</span>.<span class="property">count</span>-<span class="number">1</span>];</span><br><span class="line">    <span class="keyword">delete</span> <span class="variable language_">this</span>.<span class="property">items</span>[<span class="variable language_">this</span>.<span class="property">count</span>-<span class="number">1</span>];</span><br><span class="line">    <span class="variable language_">this</span>.<span class="property">count</span>--;</span><br><span class="line">    <span class="keyword">return</span> result;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="title function_">isEmpty</span>(<span class="params"></span>) &#123;<span class="comment">//是否为空</span></span><br><span class="line">    <span class="keyword">return</span> <span class="variable language_">this</span>.<span class="property">count</span>===<span class="number">0</span>;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="title function_">peekFront</span>(<span class="params"></span>) &#123;<span class="comment">//返回队首元素</span></span><br><span class="line">    <span class="keyword">return</span> <span class="variable language_">this</span>.<span class="property">items</span>[<span class="variable language_">this</span>.<span class="property">lowestCount</span>];</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="title function_">peekBack</span>(<span class="params"></span>) &#123;<span class="comment">//返回队尾元素</span></span><br><span class="line">    <span class="keyword">return</span> <span class="variable language_">this</span>.<span class="property">items</span>[<span class="variable language_">this</span>.<span class="property">count</span>-<span class="number">1</span>];</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="title function_">size</span>(<span class="params"></span>) &#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="variable language_">this</span>.<span class="property">count</span>-<span class="variable language_">this</span>.<span class="property">lowestCount</span>;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="title function_">clear</span>(<span class="params"></span>) &#123;</span><br><span class="line">    <span class="variable language_">this</span>.<span class="property">items</span>=&#123;&#125;;</span><br><span class="line">    <span class="variable language_">this</span>.<span class="property">count</span>=<span class="number">0</span>;</span><br><span class="line">    <span class="variable language_">this</span>.<span class="property">lowestCount</span>=<span class="number">0</span>;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="title function_">toString</span>(<span class="params"></span>) &#123;</span><br><span class="line">    <span class="keyword">if</span>(<span class="variable language_">this</span>.<span class="title function_">isEmpty</span>()) &#123;</span><br><span class="line">      <span class="keyword">return</span> <span class="string">&quot;&quot;</span></span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">let</span> objString=<span class="string">`<span class="subst">$&#123;<span class="variable language_">this</span>.items[<span class="variable language_">this</span>.lowestCount]&#125;</span>`</span>;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">let</span> i = <span class="variable language_">this</span>.<span class="property">lowestCount</span>+<span class="number">1</span>;i &lt; <span class="variable language_">this</span>.<span class="property">count</span>;i++) &#123;</span><br><span class="line">      objString=<span class="string">`<span class="subst">$&#123;objString&#125;</span>,<span class="subst">$&#123;<span class="variable language_">this</span>.items[i]&#125;</span>`</span></span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> objString;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>使用双端队列的例子：检测回文串</p>
-<p>回文串就是从前向后和从后向前读起来一样的字符串</p>
-<p>思路：首先检测是否传入以及将字符串字母大写转为小写，然后创建双端队列，不断将队首队尾元素出队比较直至双端队列长度小于等于1即可</p>
-<p>代码：</p>
-<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">function</span> <span class="title function_">palindromeChecker</span>(<span class="params">aString</span>) &#123;</span><br><span class="line">  <span class="keyword">if</span> (aString === <span class="literal">undefined</span> || aString === <span class="literal">null</span> ||</span><br><span class="line">      (aString !== <span class="literal">null</span> &amp;&amp; aString.<span class="property">length</span> === <span class="number">0</span>)) &#123; <span class="comment">// 先判断是否传入字符串</span></span><br><span class="line">    <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">const</span> deque = <span class="keyword">new</span> <span class="title class_">Deque</span>(); <span class="comment">// 创建一个双端对列</span></span><br><span class="line">  <span class="keyword">const</span> lowerString = aString.<span class="title function_">toLocaleLowerCase</span>().<span class="title function_">split</span>(<span class="string">&#x27; &#x27;</span>).<span class="title function_">join</span>(<span class="string">&#x27;&#x27;</span>); <span class="comment">// 将大写全部转换成小写</span></span><br><span class="line">  <span class="keyword">let</span> isEqual = <span class="literal">true</span>;</span><br><span class="line">  <span class="keyword">let</span> firstChar, lastChar;</span><br><span class="line">  <span class="keyword">for</span> (<span class="keyword">let</span> i = <span class="number">0</span>; i &lt; lowerString.<span class="property">length</span>; i++) &#123; <span class="comment">// 向队列中添加字母</span></span><br><span class="line">    deque.<span class="title function_">addBack</span>(lowerString.<span class="title function_">charAt</span>(i));</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">while</span> (deque.<span class="title function_">size</span>() &gt; <span class="number">1</span> &amp;&amp; isEqual) &#123; <span class="comment">// 随时跳出</span></span><br><span class="line">    firstChar = deque.<span class="title function_">removeFront</span>(); <span class="comment">// 首字母</span></span><br><span class="line">    lastChar = deque.<span class="title function_">removeBack</span>(); <span class="comment">// 末尾字母</span></span><br><span class="line">    <span class="keyword">if</span> (firstChar !== lastChar) &#123;</span><br><span class="line">      isEqual = <span class="literal">false</span>;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">return</span> isEqual;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-
-
-]]></content>
-      <categories>
-        <category>技术</category>
-      </categories>
-      <tags>
-        <tag>JavaScript</tag>
-        <tag>数据结构</tag>
-        <tag>队列</tag>
       </tags>
   </entry>
 </search>
