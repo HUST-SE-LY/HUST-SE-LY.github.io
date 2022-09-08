@@ -936,18 +936,6 @@
       </tags>
   </entry>
   <entry>
-    <title>Welcome to my BLOG!</title>
-    <url>/2022/08/03/hello-world/</url>
-    <content><![CDATA[<p>欢迎来到我的博客<br>我会在这里记录自己的学习，生活<br>谢谢你的到来！！</p>
-]]></content>
-      <categories>
-        <category>欢迎</category>
-      </categories>
-      <tags>
-        <tag>日常</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>js进阶：call，apply，bind</title>
     <url>/2022/09/08/call%EF%BC%8Capply%EF%BC%8Cbind/</url>
     <content><![CDATA[<h3 id="call，apply，bind"><a href="#call，apply，bind" class="headerlink" title="call，apply，bind"></a>call，apply，bind</h3><p>​	call，apply，bind的作用是改变函数执行时的上下文，简单来说就是改变this的指向</p>
@@ -985,6 +973,120 @@
         <tag>call</tag>
         <tag>apply</tag>
         <tag>bind</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Welcome to my BLOG!</title>
+    <url>/2022/08/03/hello-world/</url>
+    <content><![CDATA[<p>欢迎来到我的博客<br>我会在这里记录自己的学习，生活<br>谢谢你的到来！！</p>
+]]></content>
+      <categories>
+        <category>欢迎</category>
+      </categories>
+      <tags>
+        <tag>日常</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>css中list列表相关</title>
+    <url>/2022/08/03/%E5%88%97%E8%A1%A8%E5%92%8C%E7%94%9F%E6%88%90%E7%9A%84%E5%86%85%E5%AE%B9/</url>
+    <content><![CDATA[<h1 id="列表和生成的内容"><a href="#列表和生成的内容" class="headerlink" title="列表和生成的内容"></a>列表和生成的内容</h1><h3 id="改变记号类型"><a href="#改变记号类型" class="headerlink" title="改变记号类型"></a>改变记号类型</h3><p>使用<code>list-style-type</code>属性</p>
+<p>与列表相关的属性只能应用到display属性为list-item的元素上，css并不区分有序列表和无序列表的项目。可以让有序列表使用圆点</p>
+<p>如果不想要记号，可以设置none值，但none值只是让记号不显示，并没有阻断计数</p>
+<p><code>list-style-type</code>的值是继承的，因此如果嵌套的列表需要使用不同的记号需要分别定义</p>
+<p>除了默认提供的<code>list-style-type</code>值外，还可以使用字符串值作为记号</p>
+<p>使用<code>list-style-image</code>属性</p>
+<p>使用该属性可以将列表记号设置为图片</p>
+<p>可以在声明图片记号之后再声明一个<code>list-style-type</code>作为后备记号类型</p>
+<p>嵌套的列表同样会继承image属性</p>
+<p>为嵌套的列表的image设置none阻止继承</p>
+<p>但实际情况中用户代理可能会为列表设置一个list-style-type值，因此继承的list-style-type值可能不能生效</p>
+<p>使用<code>list-style-position</code></p>
+<p>该属性会改变列表记号的位置，设置为outside（默认值）时，记号显示在外部，设置为inside时，显示在内容内部</p>
+<p>使用<code>list-style</code>简写属性</p>
+<p><code>list-style:list-style-type list-style-image list-style-position</code></p>
+<p>可以按任意顺序列出</p>
+<p>列表项目本身是类似块级的元素，放在列表内容外部的记号对其他元素的布局没有影响，记号相对于列表内容类似于绝对定位</p>
+<h3 id="生成的内容"><a href="#生成的内容" class="headerlink" title="生成的内容"></a>生成的内容</h3><p>生成的内容使用::before和::after伪元素插入文档。通过设置伪元素的content属性将指定的内容插入文档内容之前或之后</p>
+<p>如果::before或::after选择符的目标是块级元素，那么display的值只能为none，inline，block，和marker，其他值都为block</p>
+<p>如果是行内元素，那么display的值只能为none或inline，其他值都为inline</p>
+<h5 id="content"><a href="#content" class="headerlink" title="content"></a>content</h5><p>content的值为字符串时，显示为字面当量，即使有特殊标签也直接显示出来</p>
+<p>如果需要换行需要添加\A,如果需要将较长的字符串分多行书写需要\</p>
+<p>content值为URI时，会将引入的资源插入合适的位置，如果是用户代理不支持的资源会完全忽略</p>
+<p>如果想把属性值显示出来，可以使用<code>attr()</code>,如<code>content:attr(href)</code></p>
+<p>如果属性不存在，将显示空字符串</p>
+<h5 id="生成引号"><a href="#生成引号" class="headerlink" title="生成引号"></a>生成引号</h5><p>引号使用quote或open-quote等值生成</p>
+<p><code>quote:&lt;string&gt; &lt;string&gt;</code></p>
+<p>第一个字符定义开始引号，第二个字符定义结束引号</p>
+]]></content>
+      <categories>
+        <category>技术</category>
+      </categories>
+      <tags>
+        <tag>css</tag>
+        <tag>不常用</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>css动画</title>
+    <url>/2022/08/03/%E5%8A%A8%E7%94%BB/</url>
+    <content><![CDATA[<h1 id="动画"><a href="#动画" class="headerlink" title="动画"></a>动画</h1><h2 id="定义关键帧"><a href="#定义关键帧" class="headerlink" title="定义关键帧"></a>定义关键帧</h2><p>一个<code>@keyframes</code>规则有一个动画标识符（动画名称），以及一到多个关键帧块。</p>
+<p>每个关键帧块有一到多个关键帧选择符（百分数或from&#x2F;to），声明属性及其值</p>
+<p>关键帧没有指明动画的持续时间，在选择符中使用时间会使动画失效</p>
+<p>0必须写成0%</p>
+<p>选择符无需按照升序排序，但为了方便辨识建议从0%到100%</p>
+<p>如果没有定义0%和100%的状态，默认到初始状态</p>
+<p>如果定义了重复的关键帧选择符，那么会进行层叠（覆盖）</p>
+<h2 id="把动画应用到元素上"><a href="#把动画应用到元素上" class="headerlink" title="把动画应用到元素上"></a>把动画应用到元素上</h2><p><code>animation-name</code>属性的值为一个逗号分隔的列表，指定想应用的关键帧动画的名称</p>
+<p>如果列表中有标识符不存在，则会单个失效而不会全体失效</p>
+<h3 id="定义时长"><a href="#定义时长" class="headerlink" title="定义时长"></a>定义时长</h3><p><code>animation-duration</code>用于定义动画时长，单位为秒或毫秒</p>
+<p>必须带单位，且可以用逗号分隔来定义不同动画</p>
+<p>如果时间比动画数少，那么缺少的值将成组复制</p>
+<p>如果时间比动画数多或定义不存在的动画，动画和对应的时间都会被忽略</p>
+<h3 id="声明迭代次数"><a href="#声明迭代次数" class="headerlink" title="声明迭代次数"></a>声明迭代次数</h3><p><code>animation-iteration-count</code>声明迭代次数</p>
+<p>初始值为1，即动画只播放一次</p>
+<p>如果值不是整数，动画会在最后一次迭代的中途停止</p>
+<p>不允许设置负值，无效值会变成1</p>
+<p>0是有效值，但动画迭代0次，仍会触发开始和结束事件</p>
+<p>多出的值忽略，缺少的值根据现有的值重复</p>
+<p>无效的值会使整个声明失效，受影响的动画只会播放一次</p>
+<p>值为infinite无限次迭代播放</p>
+<h3 id="设置播放方向"><a href="#设置播放方向" class="headerlink" title="设置播放方向"></a>设置播放方向</h3><p><code>animation-direction</code>属性可以控制动画播放的方向（从0%到100%还是从100%到0%）</p>
+<p><code>animation-direction:normal/reverse/alternate/alternate-reverse</code></p>
+<p>初始值：normal:动画每次都从0%到100%播放</p>
+<p><code>reverse</code>:每次迭代都从100%到0%播放</p>
+<p><code>alternate</code>:奇数次迭代从0%到100%，偶数次迭代从100%到0%</p>
+<p><code>alternate-reverse</code>:奇数次迭代从100%到0%，偶数次迭代从0%到100%</p>
+<h3 id="延迟播放"><a href="#延迟播放" class="headerlink" title="延迟播放"></a>延迟播放</h3><p><code>animation-delay</code>属性定义元素等待多久开始第一次迭代</p>
+<p>单位为秒或毫秒</p>
+<p>如果设置为负值，元素将立即开始播放，但是是从动画中途开始的</p>
+<h3 id="动画事件"><a href="#动画事件" class="headerlink" title="动画事件"></a>动画事件</h3><p>与动画有关的事件有三个：<code>animationstart  animationiteration  animationend</code></p>
+<p>每个事件都有三个只读属性：<code>animationName elapsedTime pseudoElement</code></p>
+<p><code>animation-start</code>事件在动画开始时触发，如果delay为负值，则立即触发</p>
+<p><code>animation-end</code>事件在动画结束时出啊发，如果迭代次数为infinite且duration值为正数，将永远不会触发animation-end事件，如果duration为0，<code>animationstart</code>和<code>animationend</code>将同时触发，而且按此顺序</p>
+<p><code>animationiteration</code>事件在两次迭代之间触发，只要一次迭代后又发生迭代（不管是否完整），该事件都会触发</p>
+<h3 id="改变动画的内部时序"><a href="#改变动画的内部时序" class="headerlink" title="改变动画的内部时序"></a>改变动画的内部时序</h3><p><code>animation-timing-function</code>指明动画在一次循环（或迭代）中如何演进</p>
+<p>内容与<code>transition-timing-function</code>相同</p>
+<p>如果将其应用到关键帧上，只对当前关键帧块上的元素有影响，且只有播放到包含那些属性的关键帧时时序函数才会生效</p>
+<h3 id="设置动画的播放状态"><a href="#设置动画的播放状态" class="headerlink" title="设置动画的播放状态"></a>设置动画的播放状态</h3><p>使用<code>animation-play-state</code>属性定义动画的播放状态</p>
+<p>值为running时动画播放，值为pause时动画暂停，在delay时pause也会使delay时钟暂停</p>
+<h3 id="动画的填充模式"><a href="#动画的填充模式" class="headerlink" title="动画的填充模式"></a>动画的填充模式</h3><p><code>animation-fill-mode</code>属性定义动画播放结束后是否应用原来的属性值</p>
+<p><code>animation-fill-mode:none/forwards/backwards/both</code></p>
+<p><code>none</code>:动画不播放就没有效果，在delay结束前0%的效果不会应用到元素上</p>
+<p><code>backwards</code>:0%定义的属性立即生效，而不用等待animation-delay属性结束</p>
+<p><code>forwards</code>:动画触发<code>animationend</code>时的属性继续应用到元素上</p>
+<p><code>both</code>:同时包含<code>backwards</code>和<code>forwards</code>两个值的作用</p>
+<h2 id="写为一个属性"><a href="#写为一个属性" class="headerlink" title="写为一个属性"></a>写为一个属性</h2><p><code>animation</code></p>
+<p>前面的时间是duration,后面的是delay</p>
+<p>如果动画标识符的值和某个动画属性的值相同，<code>animation-name</code>应该放在最后</p>
+<p>如果有多个动画为同一个属性指定了不同的值，最后一个应用的动画覆盖之前动画中声明的值</p>
+<p>先把后声明的先走完，如果有多余时间再播放前面声明的动画</p>
+]]></content>
+      <categories>
+        <category>技术</category>
+      </categories>
+      <tags>
+        <tag>css</tag>
       </tags>
   </entry>
   <entry>
@@ -1080,62 +1182,6 @@
       </tags>
   </entry>
   <entry>
-    <title>css中list列表相关</title>
-    <url>/2022/08/03/%E5%88%97%E8%A1%A8%E5%92%8C%E7%94%9F%E6%88%90%E7%9A%84%E5%86%85%E5%AE%B9/</url>
-    <content><![CDATA[<h1 id="列表和生成的内容"><a href="#列表和生成的内容" class="headerlink" title="列表和生成的内容"></a>列表和生成的内容</h1><h3 id="改变记号类型"><a href="#改变记号类型" class="headerlink" title="改变记号类型"></a>改变记号类型</h3><p>使用<code>list-style-type</code>属性</p>
-<p>与列表相关的属性只能应用到display属性为list-item的元素上，css并不区分有序列表和无序列表的项目。可以让有序列表使用圆点</p>
-<p>如果不想要记号，可以设置none值，但none值只是让记号不显示，并没有阻断计数</p>
-<p><code>list-style-type</code>的值是继承的，因此如果嵌套的列表需要使用不同的记号需要分别定义</p>
-<p>除了默认提供的<code>list-style-type</code>值外，还可以使用字符串值作为记号</p>
-<p>使用<code>list-style-image</code>属性</p>
-<p>使用该属性可以将列表记号设置为图片</p>
-<p>可以在声明图片记号之后再声明一个<code>list-style-type</code>作为后备记号类型</p>
-<p>嵌套的列表同样会继承image属性</p>
-<p>为嵌套的列表的image设置none阻止继承</p>
-<p>但实际情况中用户代理可能会为列表设置一个list-style-type值，因此继承的list-style-type值可能不能生效</p>
-<p>使用<code>list-style-position</code></p>
-<p>该属性会改变列表记号的位置，设置为outside（默认值）时，记号显示在外部，设置为inside时，显示在内容内部</p>
-<p>使用<code>list-style</code>简写属性</p>
-<p><code>list-style:list-style-type list-style-image list-style-position</code></p>
-<p>可以按任意顺序列出</p>
-<p>列表项目本身是类似块级的元素，放在列表内容外部的记号对其他元素的布局没有影响，记号相对于列表内容类似于绝对定位</p>
-<h3 id="生成的内容"><a href="#生成的内容" class="headerlink" title="生成的内容"></a>生成的内容</h3><p>生成的内容使用::before和::after伪元素插入文档。通过设置伪元素的content属性将指定的内容插入文档内容之前或之后</p>
-<p>如果::before或::after选择符的目标是块级元素，那么display的值只能为none，inline，block，和marker，其他值都为block</p>
-<p>如果是行内元素，那么display的值只能为none或inline，其他值都为inline</p>
-<h5 id="content"><a href="#content" class="headerlink" title="content"></a>content</h5><p>content的值为字符串时，显示为字面当量，即使有特殊标签也直接显示出来</p>
-<p>如果需要换行需要添加\A,如果需要将较长的字符串分多行书写需要\</p>
-<p>content值为URI时，会将引入的资源插入合适的位置，如果是用户代理不支持的资源会完全忽略</p>
-<p>如果想把属性值显示出来，可以使用<code>attr()</code>,如<code>content:attr(href)</code></p>
-<p>如果属性不存在，将显示空字符串</p>
-<h5 id="生成引号"><a href="#生成引号" class="headerlink" title="生成引号"></a>生成引号</h5><p>引号使用quote或open-quote等值生成</p>
-<p><code>quote:&lt;string&gt; &lt;string&gt;</code></p>
-<p>第一个字符定义开始引号，第二个字符定义结束引号</p>
-]]></content>
-      <categories>
-        <category>技术</category>
-      </categories>
-      <tags>
-        <tag>css</tag>
-        <tag>不常用</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>关于内向和外向</title>
-    <url>/2022/08/08/%E5%86%85%E5%90%91%E4%B8%8E%E5%A4%96%E5%90%91/</url>
-    <content><![CDATA[<h3 id="内向与外向"><a href="#内向与外向" class="headerlink" title="内向与外向"></a>内向与外向</h3><p>​	内向的人可能表现出来是外向的，因为这里的内向是人内心深处的东西，更贴近于本质，而表现出来的外向是社会学上的宏观表现。一个内向的人甚至可能觉得自己非常非常外向，因为他们自己在社交上不怎么怯场，与很多人都能有话可说，但他们内心里是内向的，因为外在的表现可以认为是一种技能的习得，虽然能表现的外向，但背后可能是抗拒，疲惫的。一个外向的人用内向者的放松方式要求自己（如把自己关在房间里读书），或是一个内向的人用外向者的放松方式要求自己（如出门旅游），都会使自己的生活更加疲惫</p>
-<p>​	区分内向者与外向者，要看他们与世界的联系。内向的人能接受世界的能力更弱，面对不断变化的世界，他们往往需要与世界保持一定的距离。而外向者正好相反，外向者擅长与世界融为一体，能积极接纳新事物。内向的人会在内心中建立一个世界，从而做到与真实的世界保持一定距离。理论上讲内心世界应该与真实世界是1：1的但事实并非如此，因此内向的人会在观察自己内心世界的基础上尽可能少的从外部世界获取新东西扩充自己。所以内向的人在心里为了获得安全感会更想去认识认识这个世界，而事实上他却尽可能少的认识，因此内向的人更需要安全感。外向的人则需要不断地从世界获取新事物，因为他总觉得自己还不够，他会认为世界与自己是一体的。</p>
-<p>​	在此基础上，通过审查自己看待世界的方式，就可以知道自己是内向还是外向。比如内向者被亲密的人伤害之后，会因为这件事影响自己内心的世界，很可能会认为这个世界对自己太残忍了，既然亲密者对我都这样那么世界也不会对我温柔了等等想法。而外向者不同，外向者往往表现出我讨厌这个世界，我厌恶这个人。这两者有什么区别呢，区别在于内向者把自己与世界做了一个割舍，认为世界是危险的，完全融入进去就会被吞噬。而外向者则在最开始就是和世界站在一起的，他思考的前提就是自己处在世界之中。</p>
-<p>​	内向者放松的方式，是要更加切断自己与世界探索性的联系，要做的是修补自己的内心世界。因此，他们更需要独处。</p>
-]]></content>
-      <categories>
-        <category>生活</category>
-        <category>未完成</category>
-      </categories>
-      <tags>
-        <tag>心理</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>js数据结构：前置知识</title>
     <url>/2022/08/29/%E5%89%8D%E7%BD%AE%E7%9F%A5%E8%AF%86/</url>
     <content><![CDATA[<h2 id="学习数据结构与算法JS版本的前置知识（JS基础）"><a href="#学习数据结构与算法JS版本的前置知识（JS基础）" class="headerlink" title="学习数据结构与算法JS版本的前置知识（JS基础）"></a>学习数据结构与算法JS版本的前置知识（JS基础）</h2><h3 id="数组解析"><a href="#数组解析" class="headerlink" title="数组解析"></a>数组解析</h3><p><code>let [x,y]=[&quot;a&quot;,&quot;b&quot;]</code>,直接对x，y两个变量声明</p>
@@ -1221,127 +1267,6 @@
       </tags>
   </entry>
   <entry>
-    <title>css动画</title>
-    <url>/2022/08/03/%E5%8A%A8%E7%94%BB/</url>
-    <content><![CDATA[<h1 id="动画"><a href="#动画" class="headerlink" title="动画"></a>动画</h1><h2 id="定义关键帧"><a href="#定义关键帧" class="headerlink" title="定义关键帧"></a>定义关键帧</h2><p>一个<code>@keyframes</code>规则有一个动画标识符（动画名称），以及一到多个关键帧块。</p>
-<p>每个关键帧块有一到多个关键帧选择符（百分数或from&#x2F;to），声明属性及其值</p>
-<p>关键帧没有指明动画的持续时间，在选择符中使用时间会使动画失效</p>
-<p>0必须写成0%</p>
-<p>选择符无需按照升序排序，但为了方便辨识建议从0%到100%</p>
-<p>如果没有定义0%和100%的状态，默认到初始状态</p>
-<p>如果定义了重复的关键帧选择符，那么会进行层叠（覆盖）</p>
-<h2 id="把动画应用到元素上"><a href="#把动画应用到元素上" class="headerlink" title="把动画应用到元素上"></a>把动画应用到元素上</h2><p><code>animation-name</code>属性的值为一个逗号分隔的列表，指定想应用的关键帧动画的名称</p>
-<p>如果列表中有标识符不存在，则会单个失效而不会全体失效</p>
-<h3 id="定义时长"><a href="#定义时长" class="headerlink" title="定义时长"></a>定义时长</h3><p><code>animation-duration</code>用于定义动画时长，单位为秒或毫秒</p>
-<p>必须带单位，且可以用逗号分隔来定义不同动画</p>
-<p>如果时间比动画数少，那么缺少的值将成组复制</p>
-<p>如果时间比动画数多或定义不存在的动画，动画和对应的时间都会被忽略</p>
-<h3 id="声明迭代次数"><a href="#声明迭代次数" class="headerlink" title="声明迭代次数"></a>声明迭代次数</h3><p><code>animation-iteration-count</code>声明迭代次数</p>
-<p>初始值为1，即动画只播放一次</p>
-<p>如果值不是整数，动画会在最后一次迭代的中途停止</p>
-<p>不允许设置负值，无效值会变成1</p>
-<p>0是有效值，但动画迭代0次，仍会触发开始和结束事件</p>
-<p>多出的值忽略，缺少的值根据现有的值重复</p>
-<p>无效的值会使整个声明失效，受影响的动画只会播放一次</p>
-<p>值为infinite无限次迭代播放</p>
-<h3 id="设置播放方向"><a href="#设置播放方向" class="headerlink" title="设置播放方向"></a>设置播放方向</h3><p><code>animation-direction</code>属性可以控制动画播放的方向（从0%到100%还是从100%到0%）</p>
-<p><code>animation-direction:normal/reverse/alternate/alternate-reverse</code></p>
-<p>初始值：normal:动画每次都从0%到100%播放</p>
-<p><code>reverse</code>:每次迭代都从100%到0%播放</p>
-<p><code>alternate</code>:奇数次迭代从0%到100%，偶数次迭代从100%到0%</p>
-<p><code>alternate-reverse</code>:奇数次迭代从100%到0%，偶数次迭代从0%到100%</p>
-<h3 id="延迟播放"><a href="#延迟播放" class="headerlink" title="延迟播放"></a>延迟播放</h3><p><code>animation-delay</code>属性定义元素等待多久开始第一次迭代</p>
-<p>单位为秒或毫秒</p>
-<p>如果设置为负值，元素将立即开始播放，但是是从动画中途开始的</p>
-<h3 id="动画事件"><a href="#动画事件" class="headerlink" title="动画事件"></a>动画事件</h3><p>与动画有关的事件有三个：<code>animationstart  animationiteration  animationend</code></p>
-<p>每个事件都有三个只读属性：<code>animationName elapsedTime pseudoElement</code></p>
-<p><code>animation-start</code>事件在动画开始时触发，如果delay为负值，则立即触发</p>
-<p><code>animation-end</code>事件在动画结束时出啊发，如果迭代次数为infinite且duration值为正数，将永远不会触发animation-end事件，如果duration为0，<code>animationstart</code>和<code>animationend</code>将同时触发，而且按此顺序</p>
-<p><code>animationiteration</code>事件在两次迭代之间触发，只要一次迭代后又发生迭代（不管是否完整），该事件都会触发</p>
-<h3 id="改变动画的内部时序"><a href="#改变动画的内部时序" class="headerlink" title="改变动画的内部时序"></a>改变动画的内部时序</h3><p><code>animation-timing-function</code>指明动画在一次循环（或迭代）中如何演进</p>
-<p>内容与<code>transition-timing-function</code>相同</p>
-<p>如果将其应用到关键帧上，只对当前关键帧块上的元素有影响，且只有播放到包含那些属性的关键帧时时序函数才会生效</p>
-<h3 id="设置动画的播放状态"><a href="#设置动画的播放状态" class="headerlink" title="设置动画的播放状态"></a>设置动画的播放状态</h3><p>使用<code>animation-play-state</code>属性定义动画的播放状态</p>
-<p>值为running时动画播放，值为pause时动画暂停，在delay时pause也会使delay时钟暂停</p>
-<h3 id="动画的填充模式"><a href="#动画的填充模式" class="headerlink" title="动画的填充模式"></a>动画的填充模式</h3><p><code>animation-fill-mode</code>属性定义动画播放结束后是否应用原来的属性值</p>
-<p><code>animation-fill-mode:none/forwards/backwards/both</code></p>
-<p><code>none</code>:动画不播放就没有效果，在delay结束前0%的效果不会应用到元素上</p>
-<p><code>backwards</code>:0%定义的属性立即生效，而不用等待animation-delay属性结束</p>
-<p><code>forwards</code>:动画触发<code>animationend</code>时的属性继续应用到元素上</p>
-<p><code>both</code>:同时包含<code>backwards</code>和<code>forwards</code>两个值的作用</p>
-<h2 id="写为一个属性"><a href="#写为一个属性" class="headerlink" title="写为一个属性"></a>写为一个属性</h2><p><code>animation</code></p>
-<p>前面的时间是duration,后面的是delay</p>
-<p>如果动画标识符的值和某个动画属性的值相同，<code>animation-name</code>应该放在最后</p>
-<p>如果有多个动画为同一个属性指定了不同的值，最后一个应用的动画覆盖之前动画中声明的值</p>
-<p>先把后声明的先走完，如果有多余时间再播放前面声明的动画</p>
-]]></content>
-      <categories>
-        <category>技术</category>
-      </categories>
-      <tags>
-        <tag>css</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>css中position</title>
-    <url>/2022/08/03/%E5%AE%9A%E4%BD%8D/</url>
-    <content><![CDATA[<h1 id="定位"><a href="#定位" class="headerlink" title="定位"></a>定位</h1><h3 id="类型"><a href="#类型" class="headerlink" title="类型"></a>类型</h3><p>static:正常生成元素框</p>
-<p>relative：元素框偏移一定距离，所占空间不变</p>
-<p>absolute：元素框完全从文档流中移除，相对容纳块定位</p>
-<p>fixed：行为类似absolute，容纳块是视区自身</p>
-<p>sticky：触发粘滞条件时，相当于相对容纳块绝对定位；触发粘滞的条件失效后，回到最初位置</p>
-<h3 id="容纳块"><a href="#容纳块" class="headerlink" title="容纳块"></a>容纳块</h3><p>一般来说，容纳块指包含另一个元素的框体</p>
-<p>对定位元素：</p>
-<p>relative或static：容纳块由最近的祖辈元素框体的内容边界划定</p>
-<p>absolute：容纳块是最近的不是static的祖辈元素</p>
-<ul>
-<li>块级元素：内边距边界</li>
-<li>行内元素：内容边界</li>
-<li>没有：初始容纳块</li>
-</ul>
-<p>定位元素可能位于容纳块之外</p>
-<h3 id="偏移属性"><a href="#偏移属性" class="headerlink" title="偏移属性"></a>偏移属性</h3><p>top</p>
-<p>bottom</p>
-<p>left</p>
-<p>right</p>
-<h3 id="限制宽高"><a href="#限制宽高" class="headerlink" title="限制宽高"></a>限制宽高</h3><p>min-height,min-width:限制最小</p>
-<p>max-width,max-height:限制最大</p>
-<h3 id="内容溢出"><a href="#内容溢出" class="headerlink" title="内容溢出"></a>内容溢出</h3><p>某个元素在内容里放不下：设置overflow属性</p>
-<p>visible：超出内容的部分可见</p>
-<p>hidden：超出部分不可见</p>
-<p>scroll：超出部分会隐藏，但可以通过滚动条查看</p>
-<p>auto：让用户代理自己决定使用哪种方式，在必要时使用滚动条</p>
-<h3 id="可见性"><a href="#可见性" class="headerlink" title="可见性"></a>可见性</h3><p><code>visibility:visible/hidden/collapse</code></p>
-<p><code>visible</code>:可见</p>
-<p><code>hidden</code>:隐藏（仍会占据空间，但不显示，相当于完全透明）</p>
-<p><code>collapse</code>:用于渲染表格，在渲染非表格元素时和hidden一致</p>
-<h3 id="绝对定位"><a href="#绝对定位" class="headerlink" title="绝对定位"></a>绝对定位</h3><p>如果文档能滚动，绝对定位元素也会随之滚动</p>
-<h5 id="自动确定边界"><a href="#自动确定边界" class="headerlink" title="自动确定边界"></a>自动确定边界</h5><p>将绝对定位元素除bottom外的某个偏移属性值设置为auto将得到一种特殊的行为</p>
-<p>即元素的位置会成为静态状态时的位置（即在常规文档流中的位置）</p>
-<p>将left和right同时设成auto会让绝对定位元素水平居中</p>
-<p>当元素各种属性值加起来不足容纳块的长度时（过约束），会对auto的值重新计算，当无auto时，会重新计算left或right的值</p>
-<p>如果属性的值导致过约束，top将永远<strong>不被</strong>忽略</p>
-<h3 id="Z-index"><a href="#Z-index" class="headerlink" title="Z-index"></a>Z-index</h3><p>z-index值越大，元素离读者越近</p>
-<p>设立z-index的父元素的子元素的位置是相对于父元素的，无论子元素设置多小的z-index值都会显示在父元素上方</p>
-<p>z-index：auto可视为z-index：0</p>
-<h3 id="固定定位"><a href="#固定定位" class="headerlink" title="固定定位"></a>固定定位</h3><p>与绝对定位类似，但容纳块是整个视区</p>
-<h3 id="相对定位"><a href="#相对定位" class="headerlink" title="相对定位"></a>相对定位</h3><p>相对定位使用偏移属性移动元素</p>
-<p>如<code>bottom:20px</code>将把元素向上平移20px</p>
-<p>在相对定位中，元素从常规的位置移开了，但其占据的空间没有消失</p>
-<p>相对定位的元素同样可能会重叠</p>
-<h3 id="粘滞定位"><a href="#粘滞定位" class="headerlink" title="粘滞定位"></a>粘滞定位</h3><p>粘滞定位元素通过设置偏移属性确定相对容纳块的粘滞定位矩形</p>
-<p>如<code>.h2 &#123;position:stick;top:2em;bottom:auto;left:auto;right:auto&#125;</code></p>
-<p>就设置了一个到达顶部就被粘滞的举行，想要让矩形在某个方向被粘滞，只需要将那个方向不设成auto即可</p>
-<h3 id="小结"><a href="#小结" class="headerlink" title="小结"></a>小结</h3><p>借助定位可以随意移动元素，这是常规文档流难以企及的。通过z轴确定叠放次序，加上各种溢出模式，定位依旧有用武之力</p>
-]]></content>
-      <categories>
-        <category>技术</category>
-      </categories>
-      <tags>
-        <tag>css</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>css中transform</title>
     <url>/2022/08/03/%E5%8F%98%E5%BD%A2/</url>
     <content><![CDATA[<h1 id="变形"><a href="#变形" class="headerlink" title="变形"></a>变形</h1><h2 id="坐标系"><a href="#坐标系" class="headerlink" title="坐标系"></a>坐标系</h2><p>笛卡尔坐标系：即xyz坐标系，x向右，y向下，z和z-index相同</p>
@@ -1410,6 +1335,81 @@
 <p>值：visible&#x2F;hidden</p>
 <p>该属性仅仅决定当背面朝向我们时是否渲染背面</p>
 <h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>变形在二维和三维空间中改变元素形态，可以制作出很多引人注目的效果，利用3d变形还可以创造出交互界面，为设计开辟了新天地</p>
+]]></content>
+      <categories>
+        <category>技术</category>
+      </categories>
+      <tags>
+        <tag>css</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>关于内向和外向</title>
+    <url>/2022/08/08/%E5%86%85%E5%90%91%E4%B8%8E%E5%A4%96%E5%90%91/</url>
+    <content><![CDATA[<h3 id="内向与外向"><a href="#内向与外向" class="headerlink" title="内向与外向"></a>内向与外向</h3><p>​	内向的人可能表现出来是外向的，因为这里的内向是人内心深处的东西，更贴近于本质，而表现出来的外向是社会学上的宏观表现。一个内向的人甚至可能觉得自己非常非常外向，因为他们自己在社交上不怎么怯场，与很多人都能有话可说，但他们内心里是内向的，因为外在的表现可以认为是一种技能的习得，虽然能表现的外向，但背后可能是抗拒，疲惫的。一个外向的人用内向者的放松方式要求自己（如把自己关在房间里读书），或是一个内向的人用外向者的放松方式要求自己（如出门旅游），都会使自己的生活更加疲惫</p>
+<p>​	区分内向者与外向者，要看他们与世界的联系。内向的人能接受世界的能力更弱，面对不断变化的世界，他们往往需要与世界保持一定的距离。而外向者正好相反，外向者擅长与世界融为一体，能积极接纳新事物。内向的人会在内心中建立一个世界，从而做到与真实的世界保持一定距离。理论上讲内心世界应该与真实世界是1：1的但事实并非如此，因此内向的人会在观察自己内心世界的基础上尽可能少的从外部世界获取新东西扩充自己。所以内向的人在心里为了获得安全感会更想去认识认识这个世界，而事实上他却尽可能少的认识，因此内向的人更需要安全感。外向的人则需要不断地从世界获取新事物，因为他总觉得自己还不够，他会认为世界与自己是一体的。</p>
+<p>​	在此基础上，通过审查自己看待世界的方式，就可以知道自己是内向还是外向。比如内向者被亲密的人伤害之后，会因为这件事影响自己内心的世界，很可能会认为这个世界对自己太残忍了，既然亲密者对我都这样那么世界也不会对我温柔了等等想法。而外向者不同，外向者往往表现出我讨厌这个世界，我厌恶这个人。这两者有什么区别呢，区别在于内向者把自己与世界做了一个割舍，认为世界是危险的，完全融入进去就会被吞噬。而外向者则在最开始就是和世界站在一起的，他思考的前提就是自己处在世界之中。</p>
+<p>​	内向者放松的方式，是要更加切断自己与世界探索性的联系，要做的是修补自己的内心世界。因此，他们更需要独处。</p>
+]]></content>
+      <categories>
+        <category>生活</category>
+        <category>未完成</category>
+      </categories>
+      <tags>
+        <tag>心理</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>css中position</title>
+    <url>/2022/08/03/%E5%AE%9A%E4%BD%8D/</url>
+    <content><![CDATA[<h1 id="定位"><a href="#定位" class="headerlink" title="定位"></a>定位</h1><h3 id="类型"><a href="#类型" class="headerlink" title="类型"></a>类型</h3><p>static:正常生成元素框</p>
+<p>relative：元素框偏移一定距离，所占空间不变</p>
+<p>absolute：元素框完全从文档流中移除，相对容纳块定位</p>
+<p>fixed：行为类似absolute，容纳块是视区自身</p>
+<p>sticky：触发粘滞条件时，相当于相对容纳块绝对定位；触发粘滞的条件失效后，回到最初位置</p>
+<h3 id="容纳块"><a href="#容纳块" class="headerlink" title="容纳块"></a>容纳块</h3><p>一般来说，容纳块指包含另一个元素的框体</p>
+<p>对定位元素：</p>
+<p>relative或static：容纳块由最近的祖辈元素框体的内容边界划定</p>
+<p>absolute：容纳块是最近的不是static的祖辈元素</p>
+<ul>
+<li>块级元素：内边距边界</li>
+<li>行内元素：内容边界</li>
+<li>没有：初始容纳块</li>
+</ul>
+<p>定位元素可能位于容纳块之外</p>
+<h3 id="偏移属性"><a href="#偏移属性" class="headerlink" title="偏移属性"></a>偏移属性</h3><p>top</p>
+<p>bottom</p>
+<p>left</p>
+<p>right</p>
+<h3 id="限制宽高"><a href="#限制宽高" class="headerlink" title="限制宽高"></a>限制宽高</h3><p>min-height,min-width:限制最小</p>
+<p>max-width,max-height:限制最大</p>
+<h3 id="内容溢出"><a href="#内容溢出" class="headerlink" title="内容溢出"></a>内容溢出</h3><p>某个元素在内容里放不下：设置overflow属性</p>
+<p>visible：超出内容的部分可见</p>
+<p>hidden：超出部分不可见</p>
+<p>scroll：超出部分会隐藏，但可以通过滚动条查看</p>
+<p>auto：让用户代理自己决定使用哪种方式，在必要时使用滚动条</p>
+<h3 id="可见性"><a href="#可见性" class="headerlink" title="可见性"></a>可见性</h3><p><code>visibility:visible/hidden/collapse</code></p>
+<p><code>visible</code>:可见</p>
+<p><code>hidden</code>:隐藏（仍会占据空间，但不显示，相当于完全透明）</p>
+<p><code>collapse</code>:用于渲染表格，在渲染非表格元素时和hidden一致</p>
+<h3 id="绝对定位"><a href="#绝对定位" class="headerlink" title="绝对定位"></a>绝对定位</h3><p>如果文档能滚动，绝对定位元素也会随之滚动</p>
+<h5 id="自动确定边界"><a href="#自动确定边界" class="headerlink" title="自动确定边界"></a>自动确定边界</h5><p>将绝对定位元素除bottom外的某个偏移属性值设置为auto将得到一种特殊的行为</p>
+<p>即元素的位置会成为静态状态时的位置（即在常规文档流中的位置）</p>
+<p>将left和right同时设成auto会让绝对定位元素水平居中</p>
+<p>当元素各种属性值加起来不足容纳块的长度时（过约束），会对auto的值重新计算，当无auto时，会重新计算left或right的值</p>
+<p>如果属性的值导致过约束，top将永远<strong>不被</strong>忽略</p>
+<h3 id="Z-index"><a href="#Z-index" class="headerlink" title="Z-index"></a>Z-index</h3><p>z-index值越大，元素离读者越近</p>
+<p>设立z-index的父元素的子元素的位置是相对于父元素的，无论子元素设置多小的z-index值都会显示在父元素上方</p>
+<p>z-index：auto可视为z-index：0</p>
+<h3 id="固定定位"><a href="#固定定位" class="headerlink" title="固定定位"></a>固定定位</h3><p>与绝对定位类似，但容纳块是整个视区</p>
+<h3 id="相对定位"><a href="#相对定位" class="headerlink" title="相对定位"></a>相对定位</h3><p>相对定位使用偏移属性移动元素</p>
+<p>如<code>bottom:20px</code>将把元素向上平移20px</p>
+<p>在相对定位中，元素从常规的位置移开了，但其占据的空间没有消失</p>
+<p>相对定位的元素同样可能会重叠</p>
+<h3 id="粘滞定位"><a href="#粘滞定位" class="headerlink" title="粘滞定位"></a>粘滞定位</h3><p>粘滞定位元素通过设置偏移属性确定相对容纳块的粘滞定位矩形</p>
+<p>如<code>.h2 &#123;position:stick;top:2em;bottom:auto;left:auto;right:auto&#125;</code></p>
+<p>就设置了一个到达顶部就被粘滞的举行，想要让矩形在某个方向被粘滞，只需要将那个方向不设成auto即可</p>
+<h3 id="小结"><a href="#小结" class="headerlink" title="小结"></a>小结</h3><p>借助定位可以随意移动元素，这是常规文档流难以企及的。通过z轴确定叠放次序，加上各种溢出模式，定位依旧有用武之力</p>
 ]]></content>
       <categories>
         <category>技术</category>
@@ -1670,6 +1670,34 @@
       </tags>
   </entry>
   <entry>
+    <title>js数据结构：栈</title>
+    <url>/2022/08/29/%E6%A0%88/</url>
+    <content><![CDATA[<h3 id="栈"><a href="#栈" class="headerlink" title="栈"></a>栈</h3><p>栈是一种后入先出的数据结构</p>
+<h4 id="用JavaScript对象来创建栈"><a href="#用JavaScript对象来创建栈" class="headerlink" title="用JavaScript对象来创建栈"></a>用JavaScript对象来创建栈</h4><figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Stack</span> &#123;</span><br><span class="line">  <span class="title function_">constructor</span>(<span class="params"></span>) &#123;</span><br><span class="line">    <span class="variable language_">this</span>.<span class="property">count</span>=<span class="number">0</span>;</span><br><span class="line">    <span class="variable language_">this</span>.<span class="property">items</span>=&#123;&#125;;</span><br><span class="line">  &#125;;</span><br><span class="line">  <span class="title function_">push</span>(<span class="params">element</span>) &#123;<span class="comment">//向栈中添加元素</span></span><br><span class="line">    <span class="variable language_">this</span>.<span class="property">items</span>[<span class="variable language_">this</span>.<span class="property">count</span>]=element;</span><br><span class="line">    <span class="variable language_">this</span>.<span class="property">count</span>++;</span><br><span class="line">  &#125;;</span><br><span class="line">  <span class="title function_">pop</span>(<span class="params"></span>) &#123;<span class="comment">//从栈中弹出元素</span></span><br><span class="line">    <span class="keyword">if</span>(<span class="variable language_">this</span>.<span class="property">count</span>===<span class="number">0</span>) &#123;</span><br><span class="line">      <span class="keyword">return</span> <span class="literal">undefined</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="variable language_">this</span>.<span class="property">count</span>--;</span><br><span class="line">    <span class="keyword">const</span> result=<span class="variable language_">this</span>.<span class="property">items</span>[<span class="variable language_">this</span>.<span class="property">count</span>];</span><br><span class="line">    <span class="keyword">delete</span> <span class="variable language_">this</span>.<span class="property">items</span>[<span class="variable language_">this</span>.<span class="property">count</span>];</span><br><span class="line">    <span class="keyword">return</span> result;<span class="comment">//返回被删除的元素</span></span><br><span class="line">  &#125;;</span><br><span class="line">  <span class="title function_">peek</span>(<span class="params"></span>) &#123;<span class="comment">//返回栈顶元素</span></span><br><span class="line">    <span class="keyword">if</span>(<span class="variable language_">this</span>.<span class="property">count</span>===<span class="number">0</span>) &#123;</span><br><span class="line">      <span class="keyword">return</span> <span class="literal">undefined</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="variable language_">this</span>.<span class="property">items</span>[<span class="variable language_">this</span>.<span class="property">count</span>-<span class="number">1</span>]</span><br><span class="line">  &#125;;</span><br><span class="line">  <span class="title function_">clear</span>(<span class="params"></span>) &#123;<span class="comment">//清空栈</span></span><br><span class="line">    <span class="variable language_">this</span>.<span class="property">items</span>=&#123;&#125;;</span><br><span class="line">    <span class="variable language_">this</span>.<span class="property">count</span>=<span class="number">0</span>;</span><br><span class="line">  &#125;;</span><br><span class="line">  <span class="title function_">isEmpty</span>(<span class="params"></span>) &#123;<span class="comment">//判断栈是否清空</span></span><br><span class="line">    <span class="keyword">return</span> <span class="variable language_">this</span>.<span class="property">count</span>===<span class="number">0</span>;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="title function_">toString</span>(<span class="params"></span>) &#123;<span class="comment">//字符串化</span></span><br><span class="line">    <span class="keyword">if</span>(<span class="variable language_">this</span>.<span class="title function_">isEmpty</span>()) &#123;</span><br><span class="line">      <span class="keyword">return</span> <span class="string">&#x27;&#x27;</span></span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">let</span> objString=<span class="string">`<span class="subst">$&#123;<span class="variable language_">this</span>.items[<span class="number">0</span>]&#125;</span>`</span>;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">let</span> i = <span class="number">1</span>;i &lt; <span class="variable language_">this</span>.<span class="property">count</span>;i++) &#123;</span><br><span class="line">      objString=<span class="string">`<span class="subst">$&#123;objString&#125;</span>,<span class="subst">$&#123;<span class="variable language_">this</span>.items[i]&#125;</span>`</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> objString;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h4 id="栈的安全性"><a href="#栈的安全性" class="headerlink" title="栈的安全性"></a>栈的安全性</h4><p>我们使用栈只希望元素添加到栈顶而不是其他位置，因此要保护栈的内部元素，然而我们创建的Stack类并没有这样的功能</p>
+<ul>
+<li><p>用 ES2015 的 WeakMap 实现类</p>
+<p>如果用 WeakMap 来存储 items 属性（数组版本），Stack 类就是这样的</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">const</span> items = <span class="keyword">new</span> <span class="title class_">WeakMap</span>(); <span class="comment">// &#123;1&#125; </span></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">Stack</span> &#123; </span><br><span class="line"> <span class="title function_">constructor</span> () &#123; </span><br><span class="line"> items.<span class="title function_">set</span>(<span class="variable language_">this</span>, []); <span class="comment">// &#123;2&#125; </span></span><br><span class="line"> &#125; </span><br><span class="line"> <span class="title function_">push</span>(<span class="params">element</span>)&#123; </span><br><span class="line"> <span class="keyword">const</span> s = items.<span class="title function_">get</span>(<span class="variable language_">this</span>); <span class="comment">// &#123;3&#125; </span></span><br><span class="line"> s.<span class="title function_">push</span>(element); </span><br><span class="line"> &#125; </span><br><span class="line"> <span class="title function_">pop</span>(<span class="params"></span>)&#123; </span><br><span class="line"> <span class="keyword">const</span> s = items.<span class="title function_">get</span>(<span class="variable language_">this</span>); </span><br><span class="line"> <span class="keyword">const</span> r = s.<span class="title function_">pop</span>(); </span><br><span class="line"> <span class="keyword">return</span> r; </span><br><span class="line"> &#125; </span><br><span class="line"> <span class="comment">// 其他方法</span></span><br><span class="line">&#125; </span><br></pre></td></tr></table></figure>
+
+<p>行{1}，声明一个 WeakMap 类型的变量 items。</p>
+<p>行{2}，在 constructor 中，以 this（Stack 类自己的引用）为键，把代表栈的数组 存入 items。</p>
+<p>行{3}，从 WeakMap 中取出值，即以 this 为键（行{2}设置的）从 items 中取值。</p>
+<p>采用这种方法，代码的可读性 不强，而且在扩展该类时无法继承私有属性。</p>
+</li>
+</ul>
+]]></content>
+      <categories>
+        <category>技术</category>
+      </categories>
+      <tags>
+        <tag>JavaScript</tag>
+        <tag>数据结构</tag>
+        <tag>栈</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>浏览器的工作原理</title>
     <url>/2022/08/03/%E6%B5%8F%E8%A7%88%E5%99%A8%E7%9A%84%E5%B7%A5%E4%BD%9C%E5%8E%9F%E7%90%86%EF%BC%88%E7%AE%80%E6%98%93%E7%89%88%EF%BC%89/</url>
     <content><![CDATA[<h3 id="浏览器的工作原理（简易版）"><a href="#浏览器的工作原理（简易版）" class="headerlink" title="浏览器的工作原理（简易版）"></a>浏览器的工作原理（简易版）</h3><p>输入url后</p>
@@ -1711,62 +1739,6 @@
       </categories>
       <tags>
         <tag>计算机网络</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>js数据结构：栈</title>
-    <url>/2022/08/29/%E6%A0%88/</url>
-    <content><![CDATA[<h3 id="栈"><a href="#栈" class="headerlink" title="栈"></a>栈</h3><p>栈是一种后入先出的数据结构</p>
-<h4 id="用JavaScript对象来创建栈"><a href="#用JavaScript对象来创建栈" class="headerlink" title="用JavaScript对象来创建栈"></a>用JavaScript对象来创建栈</h4><figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Stack</span> &#123;</span><br><span class="line">  <span class="title function_">constructor</span>(<span class="params"></span>) &#123;</span><br><span class="line">    <span class="variable language_">this</span>.<span class="property">count</span>=<span class="number">0</span>;</span><br><span class="line">    <span class="variable language_">this</span>.<span class="property">items</span>=&#123;&#125;;</span><br><span class="line">  &#125;;</span><br><span class="line">  <span class="title function_">push</span>(<span class="params">element</span>) &#123;<span class="comment">//向栈中添加元素</span></span><br><span class="line">    <span class="variable language_">this</span>.<span class="property">items</span>[<span class="variable language_">this</span>.<span class="property">count</span>]=element;</span><br><span class="line">    <span class="variable language_">this</span>.<span class="property">count</span>++;</span><br><span class="line">  &#125;;</span><br><span class="line">  <span class="title function_">pop</span>(<span class="params"></span>) &#123;<span class="comment">//从栈中弹出元素</span></span><br><span class="line">    <span class="keyword">if</span>(<span class="variable language_">this</span>.<span class="property">count</span>===<span class="number">0</span>) &#123;</span><br><span class="line">      <span class="keyword">return</span> <span class="literal">undefined</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="variable language_">this</span>.<span class="property">count</span>--;</span><br><span class="line">    <span class="keyword">const</span> result=<span class="variable language_">this</span>.<span class="property">items</span>[<span class="variable language_">this</span>.<span class="property">count</span>];</span><br><span class="line">    <span class="keyword">delete</span> <span class="variable language_">this</span>.<span class="property">items</span>[<span class="variable language_">this</span>.<span class="property">count</span>];</span><br><span class="line">    <span class="keyword">return</span> result;<span class="comment">//返回被删除的元素</span></span><br><span class="line">  &#125;;</span><br><span class="line">  <span class="title function_">peek</span>(<span class="params"></span>) &#123;<span class="comment">//返回栈顶元素</span></span><br><span class="line">    <span class="keyword">if</span>(<span class="variable language_">this</span>.<span class="property">count</span>===<span class="number">0</span>) &#123;</span><br><span class="line">      <span class="keyword">return</span> <span class="literal">undefined</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="variable language_">this</span>.<span class="property">items</span>[<span class="variable language_">this</span>.<span class="property">count</span>-<span class="number">1</span>]</span><br><span class="line">  &#125;;</span><br><span class="line">  <span class="title function_">clear</span>(<span class="params"></span>) &#123;<span class="comment">//清空栈</span></span><br><span class="line">    <span class="variable language_">this</span>.<span class="property">items</span>=&#123;&#125;;</span><br><span class="line">    <span class="variable language_">this</span>.<span class="property">count</span>=<span class="number">0</span>;</span><br><span class="line">  &#125;;</span><br><span class="line">  <span class="title function_">isEmpty</span>(<span class="params"></span>) &#123;<span class="comment">//判断栈是否清空</span></span><br><span class="line">    <span class="keyword">return</span> <span class="variable language_">this</span>.<span class="property">count</span>===<span class="number">0</span>;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="title function_">toString</span>(<span class="params"></span>) &#123;<span class="comment">//字符串化</span></span><br><span class="line">    <span class="keyword">if</span>(<span class="variable language_">this</span>.<span class="title function_">isEmpty</span>()) &#123;</span><br><span class="line">      <span class="keyword">return</span> <span class="string">&#x27;&#x27;</span></span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">let</span> objString=<span class="string">`<span class="subst">$&#123;<span class="variable language_">this</span>.items[<span class="number">0</span>]&#125;</span>`</span>;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">let</span> i = <span class="number">1</span>;i &lt; <span class="variable language_">this</span>.<span class="property">count</span>;i++) &#123;</span><br><span class="line">      objString=<span class="string">`<span class="subst">$&#123;objString&#125;</span>,<span class="subst">$&#123;<span class="variable language_">this</span>.items[i]&#125;</span>`</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> objString;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h4 id="栈的安全性"><a href="#栈的安全性" class="headerlink" title="栈的安全性"></a>栈的安全性</h4><p>我们使用栈只希望元素添加到栈顶而不是其他位置，因此要保护栈的内部元素，然而我们创建的Stack类并没有这样的功能</p>
-<ul>
-<li><p>用 ES2015 的 WeakMap 实现类</p>
-<p>如果用 WeakMap 来存储 items 属性（数组版本），Stack 类就是这样的</p>
-<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">const</span> items = <span class="keyword">new</span> <span class="title class_">WeakMap</span>(); <span class="comment">// &#123;1&#125; </span></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">Stack</span> &#123; </span><br><span class="line"> <span class="title function_">constructor</span> () &#123; </span><br><span class="line"> items.<span class="title function_">set</span>(<span class="variable language_">this</span>, []); <span class="comment">// &#123;2&#125; </span></span><br><span class="line"> &#125; </span><br><span class="line"> <span class="title function_">push</span>(<span class="params">element</span>)&#123; </span><br><span class="line"> <span class="keyword">const</span> s = items.<span class="title function_">get</span>(<span class="variable language_">this</span>); <span class="comment">// &#123;3&#125; </span></span><br><span class="line"> s.<span class="title function_">push</span>(element); </span><br><span class="line"> &#125; </span><br><span class="line"> <span class="title function_">pop</span>(<span class="params"></span>)&#123; </span><br><span class="line"> <span class="keyword">const</span> s = items.<span class="title function_">get</span>(<span class="variable language_">this</span>); </span><br><span class="line"> <span class="keyword">const</span> r = s.<span class="title function_">pop</span>(); </span><br><span class="line"> <span class="keyword">return</span> r; </span><br><span class="line"> &#125; </span><br><span class="line"> <span class="comment">// 其他方法</span></span><br><span class="line">&#125; </span><br></pre></td></tr></table></figure>
-
-<p>行{1}，声明一个 WeakMap 类型的变量 items。</p>
-<p>行{2}，在 constructor 中，以 this（Stack 类自己的引用）为键，把代表栈的数组 存入 items。</p>
-<p>行{3}，从 WeakMap 中取出值，即以 this 为键（行{2}设置的）从 items 中取值。</p>
-<p>采用这种方法，代码的可读性 不强，而且在扩展该类时无法继承私有属性。</p>
-</li>
-</ul>
-]]></content>
-      <categories>
-        <category>技术</category>
-      </categories>
-      <tags>
-        <tag>JavaScript</tag>
-        <tag>数据结构</tag>
-        <tag>栈</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>关于爱情</title>
-    <url>/2022/08/06/%E7%88%B1%E6%83%85/</url>
-    <content><![CDATA[<h3 id="爱情"><a href="#爱情" class="headerlink" title="爱情"></a>爱情</h3><p>看了b站一个视频，对其中的内容做一个笔记，结合一下自身</p>
-<h3 id="爱与情"><a href="#爱与情" class="headerlink" title="爱与情"></a>爱与情</h3><p><strong>爱是能发自内心的替ta而死，情是能彼此同时能有一种感觉</strong></p>
-<p>​	爱是能发自内心的替ta而死，替ta而死不是为ta而死。为ta而死总有种自我感动的成分在其中，替ta而死更接近于你可以在ta不知道你死的情况下去死。父母的爱是真正的爱，他们往往能做到替孩子而死，即使孩子很叛逆很无知。为ta而死的情感最多可以称为恋，不是爱。</p>
-<p>​	情是彼此同时有一种感觉。情强调双向，如亲情，如果只是父母对孩子很好，而孩子不知感恩，对父母很差的话，我们只能评价他爸他妈对他很好，他爸他妈很惯他，而不能说他们家庭里亲情很浓厚</p>
-<p>​	那么爱情就是双方都能感觉到让对方活比自己活更为快乐</p>
-<h3 id="男性：真理"><a href="#男性：真理" class="headerlink" title="男性：真理"></a>男性：真理</h3><p>​	在谈如何选择爱时，先解释一下男性和女性对待事物的原型。男性的原型是真理，女性的原型是爱。真理和爱是生命的一部分，真理是生命的形式，爱是生命的力量。当谈到爱情的时候，要有爱的感觉，然后也要有途径</p>
-<p>​	真理是强调过程，行为的。当男性谈到一件事的时候，一件不能十分轻松做到的事的时候，相比于判断自己是否真的要做，会花更多的精力研究怎么去做，完成的途径。</p>
-<p>​	男性在对待伴侣的选择问题是，会更想寻找一个对自己有所爱慕，敬仰的。因为真理本身的特点就是渴望被认可，敬佩的，兄弟彼此之间的敬佩也是这个原因。我们谈到智者也会先联想到男性老者而不是女性老者，也是因为男性会更强调认可。</p>
-<h3 id="女性：爱"><a href="#女性：爱" class="headerlink" title="女性：爱"></a>女性：爱</h3><p>​	相比于男性的真理，女性的原型就是爱。<strong>真理强调行为，爱强调选择</strong>。女性会更需要<strong>承认</strong>，承认是指自己不用变，做自己就行了。而男性在这方面是相反的，男性更倾向于改变。男性的真理需要扩充，不断更新，女性的爱则更倾向于自己的内心不被污染，更倾向保护，保护自己的纯真</p>
-<h3 id="判断"><a href="#判断" class="headerlink" title="判断"></a>判断</h3><p>​	通过男性和女性的原型，可以有：<strong>男性看行动，女性看选择</strong>。女性选择男性，要看这个男性做了什么而不是说了什么，因为男性在语言上是可以学习的，可以学习各种话术。他可以让女性认为自己可能是怎样的，通过话术包装自己。男性的行为往往可以反应出他的真理，因此在选择男性时更应该看行为。</p>
-<p>​	而男性选择女性，要看女性在关键时刻做出的选择。我们经常可以发现，一对男女在经历过一件事之后，男性会说自己突然发现她不爱我了，因为他看到了女性的选择。男性选择女性，不必纠结于女性过去做了什么，这是真理层面的内容，而是要看她在人生关键时刻做出的选择。她对这些事情的选择体现了她的爱。例如一个女性，当她的生活安然无恙时她体现的很纯良，但当压力很大，面临危机时，这时候应该看她选择宽恕还是憎恶，戾气还是温柔，这样就知道她的爱了</p>
-<p>最后贴一下视频链接<a href="https://www.bilibili.com/video/BV15a411f7Xt/?spm_id_from=333.788&vd_source=ea0b821b0c66dd7f6257ac303626c797">18分钟解密爱情的核心，男生看行动，女生看选择_哔哩哔哩_bilibili</a>单纯是比较赞同观点而记录下</p>
-]]></content>
-      <categories>
-        <category>爱情</category>
-        <category>生活</category>
-      </categories>
-      <tags>
-        <tag>生活</tag>
-        <tag>爱情</tag>
-        <tag>真理</tag>
-        <tag>爱</tag>
-        <tag>记录</tag>
       </tags>
   </entry>
   <entry>
@@ -1833,6 +1805,34 @@
       </tags>
   </entry>
   <entry>
+    <title>关于爱情</title>
+    <url>/2022/08/06/%E7%88%B1%E6%83%85/</url>
+    <content><![CDATA[<h3 id="爱情"><a href="#爱情" class="headerlink" title="爱情"></a>爱情</h3><p>看了b站一个视频，对其中的内容做一个笔记，结合一下自身</p>
+<h3 id="爱与情"><a href="#爱与情" class="headerlink" title="爱与情"></a>爱与情</h3><p><strong>爱是能发自内心的替ta而死，情是能彼此同时能有一种感觉</strong></p>
+<p>​	爱是能发自内心的替ta而死，替ta而死不是为ta而死。为ta而死总有种自我感动的成分在其中，替ta而死更接近于你可以在ta不知道你死的情况下去死。父母的爱是真正的爱，他们往往能做到替孩子而死，即使孩子很叛逆很无知。为ta而死的情感最多可以称为恋，不是爱。</p>
+<p>​	情是彼此同时有一种感觉。情强调双向，如亲情，如果只是父母对孩子很好，而孩子不知感恩，对父母很差的话，我们只能评价他爸他妈对他很好，他爸他妈很惯他，而不能说他们家庭里亲情很浓厚</p>
+<p>​	那么爱情就是双方都能感觉到让对方活比自己活更为快乐</p>
+<h3 id="男性：真理"><a href="#男性：真理" class="headerlink" title="男性：真理"></a>男性：真理</h3><p>​	在谈如何选择爱时，先解释一下男性和女性对待事物的原型。男性的原型是真理，女性的原型是爱。真理和爱是生命的一部分，真理是生命的形式，爱是生命的力量。当谈到爱情的时候，要有爱的感觉，然后也要有途径</p>
+<p>​	真理是强调过程，行为的。当男性谈到一件事的时候，一件不能十分轻松做到的事的时候，相比于判断自己是否真的要做，会花更多的精力研究怎么去做，完成的途径。</p>
+<p>​	男性在对待伴侣的选择问题是，会更想寻找一个对自己有所爱慕，敬仰的。因为真理本身的特点就是渴望被认可，敬佩的，兄弟彼此之间的敬佩也是这个原因。我们谈到智者也会先联想到男性老者而不是女性老者，也是因为男性会更强调认可。</p>
+<h3 id="女性：爱"><a href="#女性：爱" class="headerlink" title="女性：爱"></a>女性：爱</h3><p>​	相比于男性的真理，女性的原型就是爱。<strong>真理强调行为，爱强调选择</strong>。女性会更需要<strong>承认</strong>，承认是指自己不用变，做自己就行了。而男性在这方面是相反的，男性更倾向于改变。男性的真理需要扩充，不断更新，女性的爱则更倾向于自己的内心不被污染，更倾向保护，保护自己的纯真</p>
+<h3 id="判断"><a href="#判断" class="headerlink" title="判断"></a>判断</h3><p>​	通过男性和女性的原型，可以有：<strong>男性看行动，女性看选择</strong>。女性选择男性，要看这个男性做了什么而不是说了什么，因为男性在语言上是可以学习的，可以学习各种话术。他可以让女性认为自己可能是怎样的，通过话术包装自己。男性的行为往往可以反应出他的真理，因此在选择男性时更应该看行为。</p>
+<p>​	而男性选择女性，要看女性在关键时刻做出的选择。我们经常可以发现，一对男女在经历过一件事之后，男性会说自己突然发现她不爱我了，因为他看到了女性的选择。男性选择女性，不必纠结于女性过去做了什么，这是真理层面的内容，而是要看她在人生关键时刻做出的选择。她对这些事情的选择体现了她的爱。例如一个女性，当她的生活安然无恙时她体现的很纯良，但当压力很大，面临危机时，这时候应该看她选择宽恕还是憎恶，戾气还是温柔，这样就知道她的爱了</p>
+<p>最后贴一下视频链接<a href="https://www.bilibili.com/video/BV15a411f7Xt/?spm_id_from=333.788&vd_source=ea0b821b0c66dd7f6257ac303626c797">18分钟解密爱情的核心，男生看行动，女生看选择_哔哩哔哩_bilibili</a>单纯是比较赞同观点而记录下</p>
+]]></content>
+      <categories>
+        <category>爱情</category>
+        <category>生活</category>
+      </categories>
+      <tags>
+        <tag>生活</tag>
+        <tag>爱情</tag>
+        <tag>真理</tag>
+        <tag>爱</tag>
+        <tag>记录</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>HUSTSE李院长数据结构课程初评</title>
     <url>/2022/08/31/%E7%AE%80%E8%AF%84%E8%BD%AF%E9%99%A2%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E8%AF%BE/</url>
     <content><![CDATA[<h3 id="HUSTSE数据结构李院长课程听后感"><a href="#HUSTSE数据结构李院长课程听后感" class="headerlink" title="HUSTSE数据结构李院长课程听后感"></a>HUSTSE数据结构李院长课程听后感</h3><p>​	首先，我很少听课，或者很少上课，因为李院长特有的随时提问机制，不得不选择听课，听了两节课之后，简要写一下听后感</p>
@@ -1853,6 +1853,18 @@
       <tags>
         <tag>感悟</tag>
         <tag>课程评价</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>css中表格样式</title>
+    <url>/2022/08/03/%E8%A1%A8%E6%A0%BC%E5%B8%83%E5%B1%80/</url>
+    <content><![CDATA[<h1 id="表格布局"><a href="#表格布局" class="headerlink" title="表格布局"></a>表格布局</h1><h3 id="表格格式化"><a href="#表格格式化" class="headerlink" title="表格格式化"></a>表格格式化</h3>]]></content>
+      <categories>
+        <category>技术</category>
+      </categories>
+      <tags>
+        <tag>css</tag>
+        <tag>未完成（鸽）</tag>
       </tags>
   </entry>
   <entry>
@@ -1911,18 +1923,6 @@
       </categories>
       <tags>
         <tag>css</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>css中表格样式</title>
-    <url>/2022/08/03/%E8%A1%A8%E6%A0%BC%E5%B8%83%E5%B1%80/</url>
-    <content><![CDATA[<h1 id="表格布局"><a href="#表格布局" class="headerlink" title="表格布局"></a>表格布局</h1><h3 id="表格格式化"><a href="#表格格式化" class="headerlink" title="表格格式化"></a>表格格式化</h3>]]></content>
-      <categories>
-        <category>技术</category>
-      </categories>
-      <tags>
-        <tag>css</tag>
-        <tag>未完成（鸽）</tag>
       </tags>
   </entry>
   <entry>
@@ -2054,72 +2054,9 @@
       </tags>
   </entry>
   <entry>
-    <title>js数据结构：队列</title>
-    <url>/2022/08/30/%E9%98%9F%E5%88%97/</url>
-    <content><![CDATA[<h3 id="队列"><a href="#队列" class="headerlink" title="队列"></a>队列</h3><p>队列是一种先进先出的数据结构</p>
-<p>用JavaScript实现队列的下列功能：</p>
-<p><code>enqueue</code>:入队</p>
-<p><code>dequeue</code>:出队</p>
-<p><code>peek</code>:返回队首元素</p>
-<p><code>isEmpty</code>:判断队列是否为空</p>
-<p><code>size</code>:返回队列长度</p>
-<p><code>toString</code>:队列字符串化</p>
-<p><code>clear</code>:清空队列</p>
-<p>代码：</p>
-<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Queue</span> &#123;</span><br><span class="line">  <span class="title function_">constructor</span>(<span class="params"></span>) &#123;</span><br><span class="line">    <span class="variable language_">this</span>.<span class="property">count</span>=<span class="number">0</span>;</span><br><span class="line">    <span class="variable language_">this</span>.<span class="property">lowestCount</span>=<span class="number">0</span>;</span><br><span class="line">    <span class="variable language_">this</span>.<span class="property">items</span>=&#123;&#125;;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="title function_">enqueue</span>(<span class="params">element</span>) &#123;<span class="comment">//入队</span></span><br><span class="line">    <span class="variable language_">this</span>.<span class="property">items</span>[<span class="variable language_">this</span>.<span class="property">count</span>]=element;</span><br><span class="line">    <span class="variable language_">this</span>.<span class="property">count</span>++;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="title function_">dequeue</span>(<span class="params"></span>) &#123;<span class="comment">//出队</span></span><br><span class="line">    <span class="keyword">if</span> (<span class="variable language_">this</span>.<span class="title function_">isEmpty</span>()) &#123;</span><br><span class="line">      <span class="keyword">return</span> <span class="literal">undefined</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">const</span> result=<span class="variable language_">this</span>.<span class="property">items</span>[<span class="variable language_">this</span>.<span class="property">lowestCount</span>];</span><br><span class="line">    <span class="keyword">delete</span> <span class="variable language_">this</span>.<span class="property">items</span>[<span class="variable language_">this</span>.<span class="property">lowestCount</span>];</span><br><span class="line">    <span class="variable language_">this</span>.<span class="property">lowestCount</span>++;</span><br><span class="line">    <span class="keyword">return</span> result</span><br><span class="line"></span><br><span class="line">  &#125;</span><br><span class="line">  <span class="title function_">isEmpty</span>(<span class="params"></span>) &#123;<span class="comment">//是否为空</span></span><br><span class="line">    <span class="keyword">return</span> <span class="variable language_">this</span>.<span class="property">count</span>===<span class="number">0</span>;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="title function_">peek</span>(<span class="params"></span>) &#123;<span class="comment">//返回队首元素</span></span><br><span class="line">    <span class="keyword">if</span>(<span class="variable language_">this</span>.<span class="title function_">isEmpty</span>()) &#123;</span><br><span class="line">      <span class="keyword">return</span> <span class="literal">undefined</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="variable language_">this</span>.<span class="property">items</span>[<span class="variable language_">this</span>.<span class="property">lowestCount</span>];</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="title function_">size</span>(<span class="params"></span>) &#123;<span class="comment">//返回队列长度</span></span><br><span class="line">    <span class="keyword">return</span> <span class="variable language_">this</span>.<span class="property">count</span>-<span class="variable language_">this</span>.<span class="property">lowestCount</span>;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="title function_">clear</span>(<span class="params"></span>) &#123;<span class="comment">//清空队列</span></span><br><span class="line">    <span class="variable language_">this</span>.<span class="property">items</span>=&#123;&#125;;</span><br><span class="line">    <span class="variable language_">this</span>.<span class="property">count</span>=<span class="number">0</span>;</span><br><span class="line">    <span class="variable language_">this</span>.<span class="property">lowestCount</span>=<span class="number">0</span>;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="title function_">toString</span>(<span class="params"></span>) &#123;<span class="comment">//转换成字符串</span></span><br><span class="line">    <span class="keyword">if</span>(<span class="variable language_">this</span>.<span class="title function_">isEmpty</span>()) &#123;</span><br><span class="line">      <span class="keyword">return</span> <span class="string">&quot;&quot;</span></span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">let</span> objString=<span class="string">`<span class="subst">$&#123;<span class="variable language_">this</span>.items[<span class="variable language_">this</span>.lowestCount]&#125;</span>`</span>;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">let</span> i = <span class="variable language_">this</span>.<span class="property">lowestCount</span>+<span class="number">1</span>;i &lt; <span class="variable language_">this</span>.<span class="property">count</span>;i++) &#123;</span><br><span class="line">      objString=<span class="string">`<span class="subst">$&#123;objString&#125;</span>,<span class="subst">$&#123;<span class="variable language_">this</span>.items[i]&#125;</span>`</span></span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> objString;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>使用队列的例子：击鼓传花</p>
-<p>传入一个成员数组，和一个数字，在传到指定数字时淘汰对应的成员</p>
-<p>思路：创建一个队列，每传一次就将队首元素出队并从队尾入队，这样使得拿着花圈的成员永远对应队首元素。到达指定次数之后，将队首元素出队，不再添加至队尾，添加至淘汰者名单中。当队列中只有一个元素时，结束循环，得到胜者</p>
-<p>代码：</p>
-<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">function</span> <span class="title function_">hotPotato</span>(<span class="params">elementsList,num</span>) &#123;</span><br><span class="line">  <span class="keyword">const</span> queue=<span class="keyword">new</span> <span class="title class_">Queue</span>();</span><br><span class="line">  <span class="keyword">let</span> out=[];</span><br><span class="line">  <span class="keyword">for</span>(<span class="keyword">let</span> i <span class="keyword">in</span> elementsList) &#123;</span><br><span class="line">    queue.<span class="title function_">enqueue</span>(elementsList[i]);</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">while</span>(queue.<span class="title function_">size</span>()&gt;<span class="number">1</span>) &#123;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">let</span> i = <span class="number">0</span>;i&lt;num;i++) &#123;</span><br><span class="line">      queue.<span class="title function_">enqueue</span>(queue.<span class="title function_">dequeue</span>());</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">`<span class="subst">$&#123;queue.peek()&#125;</span>被淘汰了！`</span>)</span><br><span class="line">    out.<span class="title function_">push</span>(queue.<span class="title function_">dequeue</span>())</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">return</span> &#123;</span><br><span class="line">    <span class="attr">winner</span>: queue.<span class="title function_">dequeue</span>(),</span><br><span class="line">    <span class="attr">outList</span>: out</span><br><span class="line"></span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h3 id="双端队列"><a href="#双端队列" class="headerlink" title="双端队列"></a>双端队列</h3><p>双端队列与队列的区别是双端队列可以任意在队首或队尾增加，删除元素</p>
-<p>用JavaScript实现队列的下列功能：</p>
-<p><code>addFront</code>:从队首添加元素</p>
-<p><code>addBack</code>:从队尾添加元素（与队列中的enqueue类似）</p>
-<p><code>removeFront</code>:从队首删除元素（与队列中dequeue类似）</p>
-<p><code>removeBack</code>:从队尾删除元素（与栈中pop类似）</p>
-<p><code>peekFront</code>:返回队首元素</p>
-<p><code>peekBack</code>:返回队尾元素</p>
-<p><code>isEmpty</code>:判断队列是否为空</p>
-<p><code>size</code>:返回队列长度</p>
-<p><code>clear</code>:清空队列</p>
-<p><code>toString</code>:队列字符串化</p>
-<p>代码实现：</p>
-<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Deque</span> &#123;</span><br><span class="line">  <span class="title function_">constructor</span>(<span class="params"></span>) &#123;</span><br><span class="line">    <span class="variable language_">this</span>.<span class="property">count</span>=<span class="number">0</span>;</span><br><span class="line">    <span class="variable language_">this</span>.<span class="property">lowestCount</span>=<span class="number">0</span>;</span><br><span class="line">    <span class="variable language_">this</span>.<span class="property">items</span>=&#123;&#125;;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="title function_">addBack</span>(<span class="params">element</span>) &#123;<span class="comment">//后端入队</span></span><br><span class="line">    <span class="variable language_">this</span>.<span class="property">items</span>[<span class="variable language_">this</span>.<span class="property">count</span>]=element;</span><br><span class="line">    <span class="variable language_">this</span>.<span class="property">count</span>++;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="title function_">addFront</span>(<span class="params">element</span>) &#123;<span class="comment">//前端入队</span></span><br><span class="line">    <span class="keyword">if</span>(<span class="variable language_">this</span>.<span class="title function_">isEmpty</span>()) &#123;</span><br><span class="line">      <span class="variable language_">this</span>.<span class="title function_">addBack</span>(element);</span><br><span class="line">    &#125; <span class="keyword">else</span> <span class="keyword">if</span>(<span class="variable language_">this</span>.<span class="property">lowestCount</span>&gt;<span class="number">0</span>) &#123;</span><br><span class="line">      <span class="variable language_">this</span>.<span class="property">lowestCount</span>--;</span><br><span class="line">      <span class="variable language_">this</span>.<span class="property">items</span>[<span class="variable language_">this</span>.<span class="property">lowestCount</span>]=element;</span><br><span class="line">    &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">      <span class="keyword">for</span>(<span class="keyword">let</span> i = <span class="variable language_">this</span>.<span class="property">count</span>;i&gt;<span class="number">0</span>;i--) &#123;</span><br><span class="line">        <span class="variable language_">this</span>.<span class="property">items</span>[i]=<span class="variable language_">this</span>.<span class="property">items</span>[i-<span class="number">1</span>];</span><br><span class="line">      &#125;</span><br><span class="line">      <span class="variable language_">this</span>.<span class="property">count</span>++;</span><br><span class="line">      <span class="variable language_">this</span>.<span class="property">lowestCount</span>=<span class="number">0</span>;</span><br><span class="line">      <span class="variable language_">this</span>.<span class="property">items</span>[<span class="number">0</span>]=element;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">  &#125;</span><br><span class="line">  <span class="title function_">removeFront</span>(<span class="params"></span>) &#123;<span class="comment">//前端出队</span></span><br><span class="line">    <span class="keyword">if</span> (<span class="variable language_">this</span>.<span class="title function_">isEmpty</span>()) &#123;</span><br><span class="line">      <span class="keyword">return</span> <span class="literal">undefined</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">const</span> result=<span class="variable language_">this</span>.<span class="property">items</span>[<span class="variable language_">this</span>.<span class="property">lowestCount</span>];</span><br><span class="line">    <span class="keyword">delete</span> <span class="variable language_">this</span>.<span class="property">items</span>[<span class="variable language_">this</span>.<span class="property">lowestCount</span>];</span><br><span class="line">    <span class="variable language_">this</span>.<span class="property">lowestCount</span>++;</span><br><span class="line">    <span class="keyword">return</span> result</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="title function_">removeBack</span>(<span class="params"></span>) &#123;<span class="comment">//后端出队</span></span><br><span class="line">    <span class="keyword">if</span>(<span class="variable language_">this</span>.<span class="title function_">isEmpty</span>()) &#123;</span><br><span class="line">      <span class="keyword">return</span> <span class="literal">undefined</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">let</span> result=<span class="variable language_">this</span>.<span class="property">items</span>[<span class="variable language_">this</span>.<span class="property">count</span>-<span class="number">1</span>];</span><br><span class="line">    <span class="keyword">delete</span> <span class="variable language_">this</span>.<span class="property">items</span>[<span class="variable language_">this</span>.<span class="property">count</span>-<span class="number">1</span>];</span><br><span class="line">    <span class="variable language_">this</span>.<span class="property">count</span>--;</span><br><span class="line">    <span class="keyword">return</span> result;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="title function_">isEmpty</span>(<span class="params"></span>) &#123;<span class="comment">//是否为空</span></span><br><span class="line">    <span class="keyword">return</span> <span class="variable language_">this</span>.<span class="property">count</span>===<span class="number">0</span>;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="title function_">peekFront</span>(<span class="params"></span>) &#123;<span class="comment">//返回队首元素</span></span><br><span class="line">    <span class="keyword">return</span> <span class="variable language_">this</span>.<span class="property">items</span>[<span class="variable language_">this</span>.<span class="property">lowestCount</span>];</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="title function_">peekBack</span>(<span class="params"></span>) &#123;<span class="comment">//返回队尾元素</span></span><br><span class="line">    <span class="keyword">return</span> <span class="variable language_">this</span>.<span class="property">items</span>[<span class="variable language_">this</span>.<span class="property">count</span>-<span class="number">1</span>];</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="title function_">size</span>(<span class="params"></span>) &#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="variable language_">this</span>.<span class="property">count</span>-<span class="variable language_">this</span>.<span class="property">lowestCount</span>;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="title function_">clear</span>(<span class="params"></span>) &#123;</span><br><span class="line">    <span class="variable language_">this</span>.<span class="property">items</span>=&#123;&#125;;</span><br><span class="line">    <span class="variable language_">this</span>.<span class="property">count</span>=<span class="number">0</span>;</span><br><span class="line">    <span class="variable language_">this</span>.<span class="property">lowestCount</span>=<span class="number">0</span>;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="title function_">toString</span>(<span class="params"></span>) &#123;</span><br><span class="line">    <span class="keyword">if</span>(<span class="variable language_">this</span>.<span class="title function_">isEmpty</span>()) &#123;</span><br><span class="line">      <span class="keyword">return</span> <span class="string">&quot;&quot;</span></span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">let</span> objString=<span class="string">`<span class="subst">$&#123;<span class="variable language_">this</span>.items[<span class="variable language_">this</span>.lowestCount]&#125;</span>`</span>;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">let</span> i = <span class="variable language_">this</span>.<span class="property">lowestCount</span>+<span class="number">1</span>;i &lt; <span class="variable language_">this</span>.<span class="property">count</span>;i++) &#123;</span><br><span class="line">      objString=<span class="string">`<span class="subst">$&#123;objString&#125;</span>,<span class="subst">$&#123;<span class="variable language_">this</span>.items[i]&#125;</span>`</span></span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> objString;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>使用双端队列的例子：检测回文串</p>
-<p>回文串就是从前向后和从后向前读起来一样的字符串</p>
-<p>思路：首先检测是否传入以及将字符串字母大写转为小写，然后创建双端队列，不断将队首队尾元素出队比较直至双端队列长度小于等于1即可</p>
-<p>代码：</p>
-<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">function</span> <span class="title function_">palindromeChecker</span>(<span class="params">aString</span>) &#123;</span><br><span class="line">  <span class="keyword">if</span> (aString === <span class="literal">undefined</span> || aString === <span class="literal">null</span> ||</span><br><span class="line">      (aString !== <span class="literal">null</span> &amp;&amp; aString.<span class="property">length</span> === <span class="number">0</span>)) &#123; <span class="comment">// 先判断是否传入字符串</span></span><br><span class="line">    <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">const</span> deque = <span class="keyword">new</span> <span class="title class_">Deque</span>(); <span class="comment">// 创建一个双端对列</span></span><br><span class="line">  <span class="keyword">const</span> lowerString = aString.<span class="title function_">toLocaleLowerCase</span>().<span class="title function_">split</span>(<span class="string">&#x27; &#x27;</span>).<span class="title function_">join</span>(<span class="string">&#x27;&#x27;</span>); <span class="comment">// 将大写全部转换成小写</span></span><br><span class="line">  <span class="keyword">let</span> isEqual = <span class="literal">true</span>;</span><br><span class="line">  <span class="keyword">let</span> firstChar, lastChar;</span><br><span class="line">  <span class="keyword">for</span> (<span class="keyword">let</span> i = <span class="number">0</span>; i &lt; lowerString.<span class="property">length</span>; i++) &#123; <span class="comment">// 向队列中添加字母</span></span><br><span class="line">    deque.<span class="title function_">addBack</span>(lowerString.<span class="title function_">charAt</span>(i));</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">while</span> (deque.<span class="title function_">size</span>() &gt; <span class="number">1</span> &amp;&amp; isEqual) &#123; <span class="comment">// 随时跳出</span></span><br><span class="line">    firstChar = deque.<span class="title function_">removeFront</span>(); <span class="comment">// 首字母</span></span><br><span class="line">    lastChar = deque.<span class="title function_">removeBack</span>(); <span class="comment">// 末尾字母</span></span><br><span class="line">    <span class="keyword">if</span> (firstChar !== lastChar) &#123;</span><br><span class="line">      isEqual = <span class="literal">false</span>;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">return</span> isEqual;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-
-
-]]></content>
-      <categories>
-        <category>技术</category>
-      </categories>
-      <tags>
-        <tag>JavaScript</tag>
-        <tag>数据结构</tag>
-        <tag>队列</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>js数据结构：集合</title>
     <url>/2022/09/08/%E9%9B%86%E5%90%88/</url>
-    <content><![CDATA[<hr>
-<p>title: js数据结构：栈<br>categories:</p>
-<ul>
-<li>技术<br>tags:</li>
-<li>JavaScript</li>
-<li>栈</li>
-<li>数据结构</li>
-</ul>
-<hr>
-<h3 id="集合"><a href="#集合" class="headerlink" title="集合"></a>集合</h3><p>集合是由一组无序且唯一（即不能重复）的项组成的。</p>
+    <content><![CDATA[<h3 id="集合"><a href="#集合" class="headerlink" title="集合"></a>集合</h3><p>集合是由一组无序且唯一（即不能重复）的项组成的。</p>
 <p>我们先创建一个集合类</p>
 <figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="title function_">constructor</span>(<span class="params"></span>) &#123;</span><br><span class="line">  <span class="variable language_">this</span>.<span class="property">items</span>=&#123;&#125;;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
@@ -2184,6 +2121,60 @@
         <tag>JavaScript</tag>
         <tag>数据结构</tag>
         <tag>集合</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>js数据结构：队列</title>
+    <url>/2022/08/30/%E9%98%9F%E5%88%97/</url>
+    <content><![CDATA[<h3 id="队列"><a href="#队列" class="headerlink" title="队列"></a>队列</h3><p>队列是一种先进先出的数据结构</p>
+<p>用JavaScript实现队列的下列功能：</p>
+<p><code>enqueue</code>:入队</p>
+<p><code>dequeue</code>:出队</p>
+<p><code>peek</code>:返回队首元素</p>
+<p><code>isEmpty</code>:判断队列是否为空</p>
+<p><code>size</code>:返回队列长度</p>
+<p><code>toString</code>:队列字符串化</p>
+<p><code>clear</code>:清空队列</p>
+<p>代码：</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Queue</span> &#123;</span><br><span class="line">  <span class="title function_">constructor</span>(<span class="params"></span>) &#123;</span><br><span class="line">    <span class="variable language_">this</span>.<span class="property">count</span>=<span class="number">0</span>;</span><br><span class="line">    <span class="variable language_">this</span>.<span class="property">lowestCount</span>=<span class="number">0</span>;</span><br><span class="line">    <span class="variable language_">this</span>.<span class="property">items</span>=&#123;&#125;;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="title function_">enqueue</span>(<span class="params">element</span>) &#123;<span class="comment">//入队</span></span><br><span class="line">    <span class="variable language_">this</span>.<span class="property">items</span>[<span class="variable language_">this</span>.<span class="property">count</span>]=element;</span><br><span class="line">    <span class="variable language_">this</span>.<span class="property">count</span>++;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="title function_">dequeue</span>(<span class="params"></span>) &#123;<span class="comment">//出队</span></span><br><span class="line">    <span class="keyword">if</span> (<span class="variable language_">this</span>.<span class="title function_">isEmpty</span>()) &#123;</span><br><span class="line">      <span class="keyword">return</span> <span class="literal">undefined</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">const</span> result=<span class="variable language_">this</span>.<span class="property">items</span>[<span class="variable language_">this</span>.<span class="property">lowestCount</span>];</span><br><span class="line">    <span class="keyword">delete</span> <span class="variable language_">this</span>.<span class="property">items</span>[<span class="variable language_">this</span>.<span class="property">lowestCount</span>];</span><br><span class="line">    <span class="variable language_">this</span>.<span class="property">lowestCount</span>++;</span><br><span class="line">    <span class="keyword">return</span> result</span><br><span class="line"></span><br><span class="line">  &#125;</span><br><span class="line">  <span class="title function_">isEmpty</span>(<span class="params"></span>) &#123;<span class="comment">//是否为空</span></span><br><span class="line">    <span class="keyword">return</span> <span class="variable language_">this</span>.<span class="property">count</span>===<span class="number">0</span>;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="title function_">peek</span>(<span class="params"></span>) &#123;<span class="comment">//返回队首元素</span></span><br><span class="line">    <span class="keyword">if</span>(<span class="variable language_">this</span>.<span class="title function_">isEmpty</span>()) &#123;</span><br><span class="line">      <span class="keyword">return</span> <span class="literal">undefined</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="variable language_">this</span>.<span class="property">items</span>[<span class="variable language_">this</span>.<span class="property">lowestCount</span>];</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="title function_">size</span>(<span class="params"></span>) &#123;<span class="comment">//返回队列长度</span></span><br><span class="line">    <span class="keyword">return</span> <span class="variable language_">this</span>.<span class="property">count</span>-<span class="variable language_">this</span>.<span class="property">lowestCount</span>;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="title function_">clear</span>(<span class="params"></span>) &#123;<span class="comment">//清空队列</span></span><br><span class="line">    <span class="variable language_">this</span>.<span class="property">items</span>=&#123;&#125;;</span><br><span class="line">    <span class="variable language_">this</span>.<span class="property">count</span>=<span class="number">0</span>;</span><br><span class="line">    <span class="variable language_">this</span>.<span class="property">lowestCount</span>=<span class="number">0</span>;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="title function_">toString</span>(<span class="params"></span>) &#123;<span class="comment">//转换成字符串</span></span><br><span class="line">    <span class="keyword">if</span>(<span class="variable language_">this</span>.<span class="title function_">isEmpty</span>()) &#123;</span><br><span class="line">      <span class="keyword">return</span> <span class="string">&quot;&quot;</span></span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">let</span> objString=<span class="string">`<span class="subst">$&#123;<span class="variable language_">this</span>.items[<span class="variable language_">this</span>.lowestCount]&#125;</span>`</span>;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">let</span> i = <span class="variable language_">this</span>.<span class="property">lowestCount</span>+<span class="number">1</span>;i &lt; <span class="variable language_">this</span>.<span class="property">count</span>;i++) &#123;</span><br><span class="line">      objString=<span class="string">`<span class="subst">$&#123;objString&#125;</span>,<span class="subst">$&#123;<span class="variable language_">this</span>.items[i]&#125;</span>`</span></span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> objString;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>使用队列的例子：击鼓传花</p>
+<p>传入一个成员数组，和一个数字，在传到指定数字时淘汰对应的成员</p>
+<p>思路：创建一个队列，每传一次就将队首元素出队并从队尾入队，这样使得拿着花圈的成员永远对应队首元素。到达指定次数之后，将队首元素出队，不再添加至队尾，添加至淘汰者名单中。当队列中只有一个元素时，结束循环，得到胜者</p>
+<p>代码：</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">function</span> <span class="title function_">hotPotato</span>(<span class="params">elementsList,num</span>) &#123;</span><br><span class="line">  <span class="keyword">const</span> queue=<span class="keyword">new</span> <span class="title class_">Queue</span>();</span><br><span class="line">  <span class="keyword">let</span> out=[];</span><br><span class="line">  <span class="keyword">for</span>(<span class="keyword">let</span> i <span class="keyword">in</span> elementsList) &#123;</span><br><span class="line">    queue.<span class="title function_">enqueue</span>(elementsList[i]);</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">while</span>(queue.<span class="title function_">size</span>()&gt;<span class="number">1</span>) &#123;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">let</span> i = <span class="number">0</span>;i&lt;num;i++) &#123;</span><br><span class="line">      queue.<span class="title function_">enqueue</span>(queue.<span class="title function_">dequeue</span>());</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">`<span class="subst">$&#123;queue.peek()&#125;</span>被淘汰了！`</span>)</span><br><span class="line">    out.<span class="title function_">push</span>(queue.<span class="title function_">dequeue</span>())</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">return</span> &#123;</span><br><span class="line">    <span class="attr">winner</span>: queue.<span class="title function_">dequeue</span>(),</span><br><span class="line">    <span class="attr">outList</span>: out</span><br><span class="line"></span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="双端队列"><a href="#双端队列" class="headerlink" title="双端队列"></a>双端队列</h3><p>双端队列与队列的区别是双端队列可以任意在队首或队尾增加，删除元素</p>
+<p>用JavaScript实现队列的下列功能：</p>
+<p><code>addFront</code>:从队首添加元素</p>
+<p><code>addBack</code>:从队尾添加元素（与队列中的enqueue类似）</p>
+<p><code>removeFront</code>:从队首删除元素（与队列中dequeue类似）</p>
+<p><code>removeBack</code>:从队尾删除元素（与栈中pop类似）</p>
+<p><code>peekFront</code>:返回队首元素</p>
+<p><code>peekBack</code>:返回队尾元素</p>
+<p><code>isEmpty</code>:判断队列是否为空</p>
+<p><code>size</code>:返回队列长度</p>
+<p><code>clear</code>:清空队列</p>
+<p><code>toString</code>:队列字符串化</p>
+<p>代码实现：</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Deque</span> &#123;</span><br><span class="line">  <span class="title function_">constructor</span>(<span class="params"></span>) &#123;</span><br><span class="line">    <span class="variable language_">this</span>.<span class="property">count</span>=<span class="number">0</span>;</span><br><span class="line">    <span class="variable language_">this</span>.<span class="property">lowestCount</span>=<span class="number">0</span>;</span><br><span class="line">    <span class="variable language_">this</span>.<span class="property">items</span>=&#123;&#125;;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="title function_">addBack</span>(<span class="params">element</span>) &#123;<span class="comment">//后端入队</span></span><br><span class="line">    <span class="variable language_">this</span>.<span class="property">items</span>[<span class="variable language_">this</span>.<span class="property">count</span>]=element;</span><br><span class="line">    <span class="variable language_">this</span>.<span class="property">count</span>++;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="title function_">addFront</span>(<span class="params">element</span>) &#123;<span class="comment">//前端入队</span></span><br><span class="line">    <span class="keyword">if</span>(<span class="variable language_">this</span>.<span class="title function_">isEmpty</span>()) &#123;</span><br><span class="line">      <span class="variable language_">this</span>.<span class="title function_">addBack</span>(element);</span><br><span class="line">    &#125; <span class="keyword">else</span> <span class="keyword">if</span>(<span class="variable language_">this</span>.<span class="property">lowestCount</span>&gt;<span class="number">0</span>) &#123;</span><br><span class="line">      <span class="variable language_">this</span>.<span class="property">lowestCount</span>--;</span><br><span class="line">      <span class="variable language_">this</span>.<span class="property">items</span>[<span class="variable language_">this</span>.<span class="property">lowestCount</span>]=element;</span><br><span class="line">    &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">      <span class="keyword">for</span>(<span class="keyword">let</span> i = <span class="variable language_">this</span>.<span class="property">count</span>;i&gt;<span class="number">0</span>;i--) &#123;</span><br><span class="line">        <span class="variable language_">this</span>.<span class="property">items</span>[i]=<span class="variable language_">this</span>.<span class="property">items</span>[i-<span class="number">1</span>];</span><br><span class="line">      &#125;</span><br><span class="line">      <span class="variable language_">this</span>.<span class="property">count</span>++;</span><br><span class="line">      <span class="variable language_">this</span>.<span class="property">lowestCount</span>=<span class="number">0</span>;</span><br><span class="line">      <span class="variable language_">this</span>.<span class="property">items</span>[<span class="number">0</span>]=element;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">  &#125;</span><br><span class="line">  <span class="title function_">removeFront</span>(<span class="params"></span>) &#123;<span class="comment">//前端出队</span></span><br><span class="line">    <span class="keyword">if</span> (<span class="variable language_">this</span>.<span class="title function_">isEmpty</span>()) &#123;</span><br><span class="line">      <span class="keyword">return</span> <span class="literal">undefined</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">const</span> result=<span class="variable language_">this</span>.<span class="property">items</span>[<span class="variable language_">this</span>.<span class="property">lowestCount</span>];</span><br><span class="line">    <span class="keyword">delete</span> <span class="variable language_">this</span>.<span class="property">items</span>[<span class="variable language_">this</span>.<span class="property">lowestCount</span>];</span><br><span class="line">    <span class="variable language_">this</span>.<span class="property">lowestCount</span>++;</span><br><span class="line">    <span class="keyword">return</span> result</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="title function_">removeBack</span>(<span class="params"></span>) &#123;<span class="comment">//后端出队</span></span><br><span class="line">    <span class="keyword">if</span>(<span class="variable language_">this</span>.<span class="title function_">isEmpty</span>()) &#123;</span><br><span class="line">      <span class="keyword">return</span> <span class="literal">undefined</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">let</span> result=<span class="variable language_">this</span>.<span class="property">items</span>[<span class="variable language_">this</span>.<span class="property">count</span>-<span class="number">1</span>];</span><br><span class="line">    <span class="keyword">delete</span> <span class="variable language_">this</span>.<span class="property">items</span>[<span class="variable language_">this</span>.<span class="property">count</span>-<span class="number">1</span>];</span><br><span class="line">    <span class="variable language_">this</span>.<span class="property">count</span>--;</span><br><span class="line">    <span class="keyword">return</span> result;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="title function_">isEmpty</span>(<span class="params"></span>) &#123;<span class="comment">//是否为空</span></span><br><span class="line">    <span class="keyword">return</span> <span class="variable language_">this</span>.<span class="property">count</span>===<span class="number">0</span>;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="title function_">peekFront</span>(<span class="params"></span>) &#123;<span class="comment">//返回队首元素</span></span><br><span class="line">    <span class="keyword">return</span> <span class="variable language_">this</span>.<span class="property">items</span>[<span class="variable language_">this</span>.<span class="property">lowestCount</span>];</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="title function_">peekBack</span>(<span class="params"></span>) &#123;<span class="comment">//返回队尾元素</span></span><br><span class="line">    <span class="keyword">return</span> <span class="variable language_">this</span>.<span class="property">items</span>[<span class="variable language_">this</span>.<span class="property">count</span>-<span class="number">1</span>];</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="title function_">size</span>(<span class="params"></span>) &#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="variable language_">this</span>.<span class="property">count</span>-<span class="variable language_">this</span>.<span class="property">lowestCount</span>;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="title function_">clear</span>(<span class="params"></span>) &#123;</span><br><span class="line">    <span class="variable language_">this</span>.<span class="property">items</span>=&#123;&#125;;</span><br><span class="line">    <span class="variable language_">this</span>.<span class="property">count</span>=<span class="number">0</span>;</span><br><span class="line">    <span class="variable language_">this</span>.<span class="property">lowestCount</span>=<span class="number">0</span>;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="title function_">toString</span>(<span class="params"></span>) &#123;</span><br><span class="line">    <span class="keyword">if</span>(<span class="variable language_">this</span>.<span class="title function_">isEmpty</span>()) &#123;</span><br><span class="line">      <span class="keyword">return</span> <span class="string">&quot;&quot;</span></span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">let</span> objString=<span class="string">`<span class="subst">$&#123;<span class="variable language_">this</span>.items[<span class="variable language_">this</span>.lowestCount]&#125;</span>`</span>;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">let</span> i = <span class="variable language_">this</span>.<span class="property">lowestCount</span>+<span class="number">1</span>;i &lt; <span class="variable language_">this</span>.<span class="property">count</span>;i++) &#123;</span><br><span class="line">      objString=<span class="string">`<span class="subst">$&#123;objString&#125;</span>,<span class="subst">$&#123;<span class="variable language_">this</span>.items[i]&#125;</span>`</span></span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> objString;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>使用双端队列的例子：检测回文串</p>
+<p>回文串就是从前向后和从后向前读起来一样的字符串</p>
+<p>思路：首先检测是否传入以及将字符串字母大写转为小写，然后创建双端队列，不断将队首队尾元素出队比较直至双端队列长度小于等于1即可</p>
+<p>代码：</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">function</span> <span class="title function_">palindromeChecker</span>(<span class="params">aString</span>) &#123;</span><br><span class="line">  <span class="keyword">if</span> (aString === <span class="literal">undefined</span> || aString === <span class="literal">null</span> ||</span><br><span class="line">      (aString !== <span class="literal">null</span> &amp;&amp; aString.<span class="property">length</span> === <span class="number">0</span>)) &#123; <span class="comment">// 先判断是否传入字符串</span></span><br><span class="line">    <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">const</span> deque = <span class="keyword">new</span> <span class="title class_">Deque</span>(); <span class="comment">// 创建一个双端对列</span></span><br><span class="line">  <span class="keyword">const</span> lowerString = aString.<span class="title function_">toLocaleLowerCase</span>().<span class="title function_">split</span>(<span class="string">&#x27; &#x27;</span>).<span class="title function_">join</span>(<span class="string">&#x27;&#x27;</span>); <span class="comment">// 将大写全部转换成小写</span></span><br><span class="line">  <span class="keyword">let</span> isEqual = <span class="literal">true</span>;</span><br><span class="line">  <span class="keyword">let</span> firstChar, lastChar;</span><br><span class="line">  <span class="keyword">for</span> (<span class="keyword">let</span> i = <span class="number">0</span>; i &lt; lowerString.<span class="property">length</span>; i++) &#123; <span class="comment">// 向队列中添加字母</span></span><br><span class="line">    deque.<span class="title function_">addBack</span>(lowerString.<span class="title function_">charAt</span>(i));</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">while</span> (deque.<span class="title function_">size</span>() &gt; <span class="number">1</span> &amp;&amp; isEqual) &#123; <span class="comment">// 随时跳出</span></span><br><span class="line">    firstChar = deque.<span class="title function_">removeFront</span>(); <span class="comment">// 首字母</span></span><br><span class="line">    lastChar = deque.<span class="title function_">removeBack</span>(); <span class="comment">// 末尾字母</span></span><br><span class="line">    <span class="keyword">if</span> (firstChar !== lastChar) &#123;</span><br><span class="line">      isEqual = <span class="literal">false</span>;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">return</span> isEqual;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+]]></content>
+      <categories>
+        <category>技术</category>
+      </categories>
+      <tags>
+        <tag>JavaScript</tag>
+        <tag>数据结构</tag>
+        <tag>队列</tag>
       </tags>
   </entry>
 </search>
