@@ -1,0 +1,249 @@
+
+<!DOCTYPE html>
+<html lang="zh-CN" class="loading">
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title> - ly-blog</title>
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="google" content="notranslate" />
+    <meta name="keywords" content="Fechin,"> 
+    <meta name="description" content="一个超级懒虫的博客,集合集合是由一组无序且唯一（即不能重复）的项组成的。
+我们先创建一个集合类
+123constructor() &amp;#123;  this.items=&amp;#123;&amp;#125;;&amp;#125;
+
+使用对象,"> 
+    <meta name="author" content="Lazy-ly"> 
+    <link rel="alternative" href="atom.xml" title="ly-blog" type="application/atom+xml"> 
+    <link rel="icon" href="/img/favicon.jpg"> 
+    
+    
+    
+    <meta name="twitter:card" content="summary"/>
+    <meta name="twitter:title" content=" - ly-blog"/>
+    <meta name="twitter:description" content="一个超级懒虫的博客,集合集合是由一组无序且唯一（即不能重复）的项组成的。
+我们先创建一个集合类
+123constructor() &amp;#123;  this.items=&amp;#123;&amp;#125;;&amp;#125;
+
+使用对象,"/>
+    
+    
+    
+    
+    <meta property="og:site_name" content="ly-blog"/>
+    <meta property="og:type" content="object"/>
+    <meta property="og:title" content=" - ly-blog"/>
+    <meta property="og:description" content="一个超级懒虫的博客,集合集合是由一组无序且唯一（即不能重复）的项组成的。
+我们先创建一个集合类
+123constructor() &amp;#123;  this.items=&amp;#123;&amp;#125;;&amp;#125;
+
+使用对象,"/>
+    
+<link rel="stylesheet" href="/css/diaspora.css">
+
+    <script>window.searchDbPath = "/search.xml";</script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Source+Code+Pro&display=swap" rel="stylesheet">
+<meta name="generator" content="Hexo 6.2.0"></head>
+
+<body class="loading">
+    <span id="config-title" style="display:none">ly-blog</span>
+    <div id="loader"></div>
+    <div id="single">
+    <div id="top" style="display: block;">
+    <div class="bar" style="width: 0;"></div>
+    <a class="iconfont icon-home image-icon" href="javascript:;" data-url="http://example.com"></a>
+    <div title="播放/暂停" class="iconfont icon-play"></div>
+    <h3 class="subtitle"></h3>
+    <div class="social">
+        <div>
+            <div class="share">
+                <a title="获取二维码" class="iconfont icon-scan" href="javascript:;"></a>
+            </div>
+            <div id="qr"></div>
+        </div>
+    </div>
+    <div class="scrollbar"></div>
+</div>
+
+    <div class="section">
+        <div class="article">
+    <div class='main'>
+        <h1 class="title"></h1>
+        <div class="stuff">
+            <span>九月 08, 2022</span>
+            
+
+        </div>
+        <div class="content markdown">
+            <h3 id="集合"><a href="#集合" class="headerlink" title="集合"></a>集合</h3><p>集合是由一组无序且唯一（即不能重复）的项组成的。</p>
+<p>我们先创建一个集合类</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="title function_">constructor</span>(<span class="params"></span>) &#123;</span><br><span class="line">  <span class="variable language_">this</span>.<span class="property">items</span>=&#123;&#125;;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>使用对象形式存储，且键值保持相同便于查找</p>
+<ul>
+<li><p>判断集合中是否拥有某元素</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="title function_">has</span>(<span class="params">element</span>) &#123;</span><br><span class="line">  <span class="keyword">return</span> <span class="title class_">Object</span>.<span class="property"><span class="keyword">prototype</span></span>.<span class="property">hasOwnProperty</span>.<span class="title function_">call</span>(<span class="variable language_">this</span>.<span class="property">items</span>,element);<span class="comment">//判断element是否在items中</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p><code>Object</code>的原型中有一个<code>hasOwnProperty</code>方法用于判断传入的值是否在this中，使用call改变this指向到<code>this.items</code>中，直接使用<code>this.items.prototype.hasOwnProperty(element)</code>可能存在问题，因为<code>this.items</code>的原型可能已经改写<code>hasOwnProperty</code>，使用<code>Object</code>最为保险</p>
+</li>
+<li><p>向集合中添加元素</p>
+<p>先判断是否重复再添加</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="title function_">add</span>(<span class="params">element</span>) &#123;</span><br><span class="line">  <span class="keyword">if</span>(!<span class="variable language_">this</span>.<span class="title function_">has</span>(element)) &#123;</span><br><span class="line">    <span class="variable language_">this</span>.<span class="property">items</span>[element]=element;<span class="comment">//添加一个 element 的时候，把它同时作为键和值保存，因为这样有利于查找该元素</span></span><br><span class="line">    <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>删除某元素</p>
+<p>先判断是否存在再删除</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="title function_">delete</span>(<span class="params">element</span>) &#123;</span><br><span class="line">  <span class="keyword">if</span>(<span class="variable language_">this</span>.<span class="title function_">has</span>(element)) &#123;</span><br><span class="line">    <span class="keyword">delete</span> <span class="variable language_">this</span>.<span class="property">items</span>[element];<span class="comment">//键值名相同，可以直接删除</span></span><br><span class="line">    <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>清空集合</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="title function_">clear</span>(<span class="params"></span>) &#123;</span><br><span class="line">  <span class="variable language_">this</span>.<span class="property">items</span>=&#123;&#125;;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>获取集合大小</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="title function_">size</span>(<span class="params"></span>) &#123;</span><br><span class="line">  <span class="keyword">return</span> <span class="title class_">Object</span>.<span class="title function_">keys</span>(<span class="variable language_">this</span>.<span class="property">items</span>).<span class="property">length</span>;<span class="comment">//Object 类有一个 keys 方法，它返回一个包含给定对象所有属性的数组。</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>获取集合的所有值</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="title function_">values</span>(<span class="params"></span>) &#123;</span><br><span class="line">  <span class="keyword">return</span> <span class="title class_">Object</span>.<span class="title function_">values</span>(<span class="variable language_">this</span>.<span class="property">items</span>);<span class="comment">//Object.values()方法返回了一个包含给定对象所有属性值的数组</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
+</ul>
+<p>以上就是集合类的基本方法了，但我们还需要定义一些用于集合运算的方法</p>
+<ul>
+<li><p>并集</p>
+<p>因为集合的add方法会判断是否重复，所以直接将两个集合的值全部添加到新集合即可</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="title function_">union</span>(<span class="params">otherSet</span>)&#123;<span class="comment">//集合的并运算</span></span><br><span class="line">  <span class="keyword">const</span> unionSet=<span class="keyword">new</span> <span class="title class_">Set</span>();</span><br><span class="line">  <span class="variable language_">this</span>.<span class="title function_">values</span>().<span class="title function_">forEach</span>(<span class="function"><span class="params">value</span>=&gt;</span>unionSet.<span class="title function_">add</span>(value));</span><br><span class="line">  otherSet.<span class="title function_">values</span>().<span class="title function_">forEach</span>(<span class="function"><span class="params">value</span>=&gt;</span>unionSet.<span class="title function_">add</span>(value));<span class="comment">//因为add方法会检查是否重复，直接全部添加即可</span></span><br><span class="line">  <span class="keyword">return</span> unionSet;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>交集</p>
+<p>对两个集合中较小的那个集合进行遍历，判断再另一个集合中是否存在遍历到的值，存在就添加</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="title function_">intersection</span>(<span class="params">otherSet</span>) &#123;<span class="comment">//集合的交运算</span></span><br><span class="line">  <span class="keyword">const</span> intersectionSet=<span class="keyword">new</span> <span class="title class_">Set</span>();</span><br><span class="line">  <span class="keyword">const</span> values=<span class="variable language_">this</span>.<span class="title function_">values</span>();</span><br><span class="line">  <span class="keyword">const</span> otherValues=otherSet.<span class="title function_">values</span>();</span><br><span class="line">  <span class="keyword">let</span> bigValues=values;</span><br><span class="line">  <span class="keyword">let</span> smallValues=otherValues;</span><br><span class="line">  <span class="keyword">if</span>(otherValues.<span class="property">length</span>&gt;values.<span class="property">length</span>) &#123;</span><br><span class="line">    bigValues=otherValues;</span><br><span class="line">    smallValues=values;</span><br><span class="line">  &#125;<span class="comment">//确定数组长度关系，减少迭代次数</span></span><br><span class="line">  smallValues.<span class="title function_">forEach</span>(<span class="function"><span class="params">value</span>=&gt;</span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(bigValues.<span class="title function_">includes</span>(value)) &#123;</span><br><span class="line">      intersectionSet.<span class="title function_">add</span>(value);</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;)</span><br><span class="line">  <span class="keyword">return</span> intersectionSet;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>差集</p>
+<p>与交集类似，但是遍历到的元素若在另一个集合中不存在则添加</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="title function_">difference</span>(<span class="params">otherSet</span>) &#123;<span class="comment">//集合的差集运算</span></span><br><span class="line">  <span class="keyword">const</span> differenceSet=<span class="keyword">new</span> <span class="title class_">Set</span>();</span><br><span class="line">  <span class="variable language_">this</span>.<span class="title function_">values</span>().<span class="title function_">forEach</span>(<span class="function"><span class="params">value</span>=&gt;</span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(!otherSet.<span class="title function_">has</span>(value)) &#123;</span><br><span class="line">      differenceSet.<span class="title function_">add</span>(value);</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;)</span><br><span class="line">  <span class="keyword">return</span> differenceSet;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>子集</p>
+<p>首先比较大小，大的不可能是小的的子集</p>
+<p>然后遍历，若发现某个值不存在于大集合中则跳出，全部存在则返回true</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="title function_">isSubsetOf</span>(<span class="params">otherSet</span>) &#123;<span class="comment">//判断是否是otherSet的子集</span></span><br><span class="line">  <span class="keyword">if</span>(otherSet.<span class="title function_">size</span>()&lt;<span class="variable language_">this</span>.<span class="title function_">size</span>()) &#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">let</span> isSubset=<span class="literal">true</span>;</span><br><span class="line">  <span class="variable language_">this</span>.<span class="title function_">values</span>().<span class="title function_">every</span>(<span class="function"><span class="params">value</span>=&gt;</span>&#123;<span class="comment">//every:直到返回false退出</span></span><br><span class="line">    <span class="keyword">if</span>(!otherSet.<span class="title function_">has</span>(value)) &#123;</span><br><span class="line">      isSubset=<span class="literal">false</span>;</span><br><span class="line">      <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">  &#125;)</span><br><span class="line">  <span class="keyword">return</span> isSubset;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
+</ul>
+<p>这样我们创建的集合类就包含了基本的集合操作方法</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Set</span> &#123;</span><br><span class="line">  <span class="title function_">constructor</span>(<span class="params"></span>) &#123;</span><br><span class="line">    <span class="variable language_">this</span>.<span class="property">items</span>=&#123;&#125;;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="title function_">has</span>(<span class="params">element</span>) &#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="title class_">Object</span>.<span class="property"><span class="keyword">prototype</span></span>.<span class="property">hasOwnProperty</span>.<span class="title function_">call</span>(<span class="variable language_">this</span>.<span class="property">items</span>,element);<span class="comment">//判断element是否在items中</span></span><br><span class="line">  &#125;</span><br><span class="line">  <span class="title function_">add</span>(<span class="params">element</span>) &#123;</span><br><span class="line">    <span class="keyword">if</span>(!<span class="variable language_">this</span>.<span class="title function_">has</span>(element)) &#123;</span><br><span class="line">      <span class="variable language_">this</span>.<span class="property">items</span>[element]=element;<span class="comment">//添加一个 element 的时候，把它同时作为键和值保存，因为这样有利于查找该元素</span></span><br><span class="line">      <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="title function_">delete</span>(<span class="params">element</span>) &#123;</span><br><span class="line">    <span class="keyword">if</span>(<span class="variable language_">this</span>.<span class="title function_">has</span>(element)) &#123;</span><br><span class="line">      <span class="keyword">delete</span> <span class="variable language_">this</span>.<span class="property">items</span>[element];<span class="comment">//键值名相同，可以直接删除</span></span><br><span class="line">      <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="title function_">clear</span>(<span class="params"></span>) &#123;</span><br><span class="line">    <span class="variable language_">this</span>.<span class="property">items</span>=&#123;&#125;;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="title function_">size</span>(<span class="params"></span>) &#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="title class_">Object</span>.<span class="title function_">keys</span>(<span class="variable language_">this</span>.<span class="property">items</span>).<span class="property">length</span>;<span class="comment">//Object 类有一个 keys 方法，它返回一个包含给定对象所有属性的数组。</span></span><br><span class="line">  &#125;</span><br><span class="line">  <span class="title function_">values</span>(<span class="params"></span>) &#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="title class_">Object</span>.<span class="title function_">values</span>(<span class="variable language_">this</span>.<span class="property">items</span>);<span class="comment">//Object.values()方法返回了一个包含给定对象所有属性值的数组</span></span><br><span class="line">  &#125;</span><br><span class="line">  <span class="title function_">union</span>(<span class="params">otherSet</span>)&#123;<span class="comment">//集合的并运算</span></span><br><span class="line">    <span class="keyword">const</span> unionSet=<span class="keyword">new</span> <span class="title class_">Set</span>();</span><br><span class="line">    <span class="variable language_">this</span>.<span class="title function_">values</span>().<span class="title function_">forEach</span>(<span class="function"><span class="params">value</span>=&gt;</span>unionSet.<span class="title function_">add</span>(value));</span><br><span class="line">    otherSet.<span class="title function_">values</span>().<span class="title function_">forEach</span>(<span class="function"><span class="params">value</span>=&gt;</span>unionSet.<span class="title function_">add</span>(value));<span class="comment">//因为add方法会检查是否重复，直接全部添加即可</span></span><br><span class="line">    <span class="keyword">return</span> unionSet;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="title function_">intersection</span>(<span class="params">otherSet</span>) &#123;<span class="comment">//集合的交运算</span></span><br><span class="line">    <span class="keyword">const</span> intersectionSet=<span class="keyword">new</span> <span class="title class_">Set</span>();</span><br><span class="line">    <span class="keyword">const</span> values=<span class="variable language_">this</span>.<span class="title function_">values</span>();</span><br><span class="line">    <span class="keyword">const</span> otherValues=otherSet.<span class="title function_">values</span>();</span><br><span class="line">    <span class="keyword">let</span> bigValues=values;</span><br><span class="line">    <span class="keyword">let</span> smallValues=otherValues;</span><br><span class="line">    <span class="keyword">if</span>(otherValues.<span class="property">length</span>&gt;values.<span class="property">length</span>) &#123;</span><br><span class="line">      bigValues=otherValues;</span><br><span class="line">      smallValues=values;</span><br><span class="line">    &#125;<span class="comment">//确定数组长度关系，减少迭代次数</span></span><br><span class="line">    smallValues.<span class="title function_">forEach</span>(<span class="function"><span class="params">value</span>=&gt;</span>&#123;</span><br><span class="line">      <span class="keyword">if</span>(bigValues.<span class="title function_">includes</span>(value)) &#123;</span><br><span class="line">        intersectionSet.<span class="title function_">add</span>(value);</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;)</span><br><span class="line">    <span class="keyword">return</span> intersectionSet;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="title function_">difference</span>(<span class="params">otherSet</span>) &#123;<span class="comment">//集合的差集运算</span></span><br><span class="line">    <span class="keyword">const</span> differenceSet=<span class="keyword">new</span> <span class="title class_">Set</span>();</span><br><span class="line">    <span class="variable language_">this</span>.<span class="title function_">values</span>().<span class="title function_">forEach</span>(<span class="function"><span class="params">value</span>=&gt;</span>&#123;</span><br><span class="line">      <span class="keyword">if</span>(!otherSet.<span class="title function_">has</span>(value)) &#123;</span><br><span class="line">        differenceSet.<span class="title function_">add</span>(value);</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;)</span><br><span class="line">    <span class="keyword">return</span> differenceSet;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="title function_">isSubsetOf</span>(<span class="params">otherSet</span>) &#123;<span class="comment">//判断是否是otherSet的子集</span></span><br><span class="line">    <span class="keyword">if</span>(otherSet.<span class="title function_">size</span>()&lt;<span class="variable language_">this</span>.<span class="title function_">size</span>()) &#123;</span><br><span class="line">      <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">let</span> isSubset=<span class="literal">true</span>;</span><br><span class="line">    <span class="variable language_">this</span>.<span class="title function_">values</span>().<span class="title function_">every</span>(<span class="function"><span class="params">value</span>=&gt;</span>&#123;<span class="comment">//every:直到返回false退出</span></span><br><span class="line">      <span class="keyword">if</span>(!otherSet.<span class="title function_">has</span>(value)) &#123;</span><br><span class="line">        isSubset=<span class="literal">false</span>;</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">      &#125;</span><br><span class="line">      <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">    &#125;)</span><br><span class="line">    <span class="keyword">return</span> isSubset;</span><br><span class="line">  &#125;</span><br><span class="line">  </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h4 id="ES2015提供的集合类"><a href="#ES2015提供的集合类" class="headerlink" title="ES2015提供的集合类"></a>ES2015提供的集合类</h4><p>ES6也为我们提供了一个set类</p>
+<p>与我们编写的set类不同的是，ES6提供的set类中的没有集合运算的相关方法，<code>size</code>是作为Set的一个属性。</p>
+<p>我们可以为Set类编写相关集合运算的函数，下面的代码展示了并集函数的模拟</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> <span class="title function_">union</span>=(<span class="params">setA,setB</span>)=&gt;&#123;<span class="comment">//模拟并集函数</span></span><br><span class="line">  <span class="keyword">const</span> unionAB=<span class="keyword">new</span> <span class="title class_">Set</span>();</span><br><span class="line">  setA.<span class="title function_">forEach</span>(<span class="function"><span class="params">value</span>=&gt;</span>unionAB.<span class="title function_">add</span>(value));</span><br><span class="line">  setB.<span class="title function_">forEach</span>(<span class="function"><span class="params">value</span>=&gt;</span>unionAB.<span class="title function_">add</span>(value));</span><br><span class="line">  <span class="keyword">return</span> unionAB;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>使用拓展运算符<code>...</code>会让编写变得更简洁</p>
+<p><code>...</code>作用是将值展开为一个数组</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> unionAB=<span class="keyword">new</span> <span class="title class_">Set</span>([...setA,...setB])<span class="comment">//并集</span></span><br><span class="line"><span class="keyword">const</span> intersectionAB=<span class="keyword">new</span> <span class="title class_">Set</span>([...setA].<span class="title function_">filter</span>(<span class="function"><span class="params">value</span>=&gt;</span>setB.<span class="title function_">has</span>(value)));<span class="comment">//交集</span></span><br><span class="line"><span class="keyword">const</span> differenceAB=<span class="keyword">new</span> <span class="title class_">Set</span>([...setA].<span class="title function_">filter</span>(<span class="function"><span class="params">value</span>=&gt;</span>!setB.<span class="title function_">has</span>(value)));<span class="comment">//差集</span></span><br></pre></td></tr></table></figure>
+            <!--[if lt IE 9]><script>document.createElement('audio');</script><![endif]-->
+            <audio id="audio" loop="1" preload="auto" controls="controls" data-autoplay="false">
+                <source type="audio/mpeg" src="">
+            </audio>
+            
+                <ul id="audio-list" style="display:none">
+                    
+                        
+                            <li title="0" data-url="http://link.hhtjim.com/163/425570952.mp3"></li>
+                        
+                    
+                        
+                            <li title="1" data-url="http://link.hhtjim.com/163/425570952.mp3"></li>
+                        
+                    
+                </ul>
+            
+        </div>
+        
+        
+    <div id="gitalk-container" class="comment link"
+		data-enable="false"
+        data-ae="false"
+        data-ci=""
+        data-cs=""
+        data-r=""
+        data-o=""
+        data-a=""
+        data-d="false"
+    >查看评论</div>
+
+
+    </div>
+    
+</div>
+
+
+    </div>
+</div>
+</body>
+
+
+<script src="//lib.baomitu.com/jquery/1.8.3/jquery.min.js"></script>
+<script src="/js/plugin.js"></script>
+<script src="/js/typed.js"></script>
+<script src="/js/diaspora.js"></script>
+
+
+<link rel="stylesheet" href="/photoswipe/photoswipe.css">
+<link rel="stylesheet" href="/photoswipe/default-skin/default-skin.css">
+
+
+<script src="/photoswipe/photoswipe.min.js"></script>
+<script src="/photoswipe/photoswipe-ui-default.min.js"></script>
+
+
+<!-- Root element of PhotoSwipe. Must have class pswp. -->
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+    <!-- Background of PhotoSwipe. 
+         It's a separate element as animating opacity is faster than rgba(). -->
+    <div class="pswp__bg"></div>
+    <!-- Slides wrapper with overflow:hidden. -->
+    <div class="pswp__scroll-wrap">
+        <!-- Container that holds slides. 
+            PhotoSwipe keeps only 3 of them in the DOM to save memory.
+            Don't modify these 3 pswp__item elements, data is added later on. -->
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+        <!-- Default (PhotoSwipeUI_Default) interface on top of sliding area. Can be changed. -->
+        <div class="pswp__ui pswp__ui--hidden">
+            <div class="pswp__top-bar">
+                <!--  Controls are self-explanatory. Order can be changed. -->
+                <div class="pswp__counter"></div>
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+                <button class="pswp__button pswp__button--share" title="Share"></button>
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+                <!-- Preloader demo http://codepen.io/dimsemenov/pen/yyBWoR -->
+                <!-- element will get class pswp__preloader--active when preloader is running -->
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                      <div class="pswp__preloader__cut">
+                        <div class="pswp__preloader__donut"></div>
+                      </div>
+                    </div>
+                </div>
+            </div>
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div> 
+            </div>
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+</html>
