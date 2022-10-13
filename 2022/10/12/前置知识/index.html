@@ -1,0 +1,255 @@
+
+<!DOCTYPE html>
+<html lang="zh-CN" class="loading">
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>js数据结构：前置知识 - ly-blog</title>
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="google" content="notranslate" />
+    <meta name="keywords" content="Fechin,"> 
+    <meta name="description" content="一个超级懒虫的博客,学习数据结构与算法JS版本的前置知识（JS基础）数组解析let [x,y]=[&amp;quot;a&amp;quot;,&amp;quot;b&amp;quot;],直接对x，y两个变量声明
+[x,y]=[y,x]直接对x，y交,"> 
+    <meta name="author" content="Lazy-ly"> 
+    <link rel="alternative" href="atom.xml" title="ly-blog" type="application/atom+xml"> 
+    <link rel="icon" href="/img/favicon.jpg"> 
+    
+    
+    
+    <meta name="twitter:card" content="summary"/>
+    <meta name="twitter:title" content="js数据结构：前置知识 - ly-blog"/>
+    <meta name="twitter:description" content="一个超级懒虫的博客,学习数据结构与算法JS版本的前置知识（JS基础）数组解析let [x,y]=[&amp;quot;a&amp;quot;,&amp;quot;b&amp;quot;],直接对x，y两个变量声明
+[x,y]=[y,x]直接对x，y交,"/>
+    
+    
+    
+    
+    <meta property="og:site_name" content="ly-blog"/>
+    <meta property="og:type" content="object"/>
+    <meta property="og:title" content="js数据结构：前置知识 - ly-blog"/>
+    <meta property="og:description" content="一个超级懒虫的博客,学习数据结构与算法JS版本的前置知识（JS基础）数组解析let [x,y]=[&amp;quot;a&amp;quot;,&amp;quot;b&amp;quot;],直接对x，y两个变量声明
+[x,y]=[y,x]直接对x，y交,"/>
+    
+<link rel="stylesheet" href="/css/diaspora.css">
+
+    <script>window.searchDbPath = "/search.xml";</script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Source+Code+Pro&display=swap" rel="stylesheet">
+<meta name="generator" content="Hexo 6.2.0"></head>
+
+<body class="loading">
+    <span id="config-title" style="display:none">ly-blog</span>
+    <div id="loader"></div>
+    <div id="single">
+    <div id="top" style="display: block;">
+    <div class="bar" style="width: 0;"></div>
+    <a class="iconfont icon-home image-icon" href="javascript:;" data-url="http://example.com"></a>
+    <div title="播放/暂停" class="iconfont icon-play"></div>
+    <h3 class="subtitle">js数据结构：前置知识</h3>
+    <div class="social">
+        <div>
+            <div class="share">
+                <a title="获取二维码" class="iconfont icon-scan" href="javascript:;"></a>
+            </div>
+            <div id="qr"></div>
+        </div>
+    </div>
+    <div class="scrollbar"></div>
+</div>
+
+    <div class="section">
+        <div class="article">
+    <div class='main'>
+        <h1 class="title">js数据结构：前置知识</h1>
+        <div class="stuff">
+            <span>十月 12, 2022</span>
+            
+  <ul class="post-tags-list" itemprop="keywords"><li class="post-tags-list-item"><a class="post-tags-list-link" href="/tags/ES6/" rel="tag">ES6</a></li><li class="post-tags-list-item"><a class="post-tags-list-link" href="/tags/JavaScript/" rel="tag">JavaScript</a></li><li class="post-tags-list-item"><a class="post-tags-list-link" href="/tags/%E5%AF%B9%E8%B1%A1/" rel="tag">对象</a></li><li class="post-tags-list-item"><a class="post-tags-list-link" href="/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/" rel="tag">数据结构</a></li><li class="post-tags-list-item"><a class="post-tags-list-link" href="/tags/%E6%95%B0%E7%BB%84/" rel="tag">数组</a></li></ul>
+
+
+        </div>
+        <div class="content markdown">
+            <h2 id="学习数据结构与算法JS版本的前置知识（JS基础）"><a href="#学习数据结构与算法JS版本的前置知识（JS基础）" class="headerlink" title="学习数据结构与算法JS版本的前置知识（JS基础）"></a>学习数据结构与算法JS版本的前置知识（JS基础）</h2><h3 id="数组解析"><a href="#数组解析" class="headerlink" title="数组解析"></a>数组解析</h3><p><code>let [x,y]=[&quot;a&quot;,&quot;b&quot;]</code>,直接对x，y两个变量声明</p>
+<p><code>[x,y]=[y,x]</code>直接对x，y交换</p>
+<h3 id="属性简写"><a href="#属性简写" class="headerlink" title="属性简写"></a>属性简写</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> [x, y] = [<span class="string">&#x27;a&#x27;</span>, <span class="string">&#x27;b&#x27;</span>]; </span><br><span class="line"><span class="keyword">let</span> obj = &#123; x, y &#125;; </span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(obj); <span class="comment">// &#123; x: &quot;a&quot;, y: &quot;b&quot; &#125; </span></span><br></pre></td></tr></table></figure>
+
+<p>可以直接声明对象属性</p>
+<h3 id="面向对象"><a href="#面向对象" class="headerlink" title="面向对象"></a>面向对象</h3><h4 id="声明类"><a href="#声明类" class="headerlink" title="声明类"></a>声明类</h4><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Book</span>&#123;</span><br><span class="line">    <span class="title function_">constructor</span>(<span class="params">title,pages,isbn</span>) &#123;</span><br><span class="line">        <span class="variable language_">this</span>.<span class="property">title</span>=title;</span><br><span class="line">        <span class="variable language_">this</span>.<span class="property">pages</span>=pages;</span><br><span class="line">        <span class="variable language_">this</span>.<span class="property">isbn</span>=isbn;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="title function_">printIsbn</span>(<span class="params"></span>) &#123;</span><br><span class="line">        <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="variable language_">this</span>.<span class="property">isbn</span>)</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h4 id="继承"><a href="#继承" class="headerlink" title="继承"></a>继承</h4><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">ITBook</span> <span class="keyword">extends</span> <span class="title class_ inherited__">Book</span> &#123; <span class="comment">// &#123;1&#125; </span></span><br><span class="line"> <span class="title function_">constructor</span> (title, pages, isbn, technology) &#123; </span><br><span class="line"> <span class="variable language_">super</span>(title, pages, isbn); <span class="comment">// &#123;2&#125; </span></span><br><span class="line"> <span class="variable language_">this</span>.<span class="property">technology</span> = technology; </span><br><span class="line"> &#125; </span><br><span class="line"> <span class="title function_">printTechnology</span>(<span class="params"></span>) &#123; </span><br><span class="line"> <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="variable language_">this</span>.<span class="property">technology</span>); </span><br><span class="line"> &#125; </span><br><span class="line">&#125; </span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>使用<code>extends</code>继承一个父类</li>
+<li>使用<code>super</code>引入父类构造器</li>
+</ul>
+<h3 id="模块"><a href="#模块" class="headerlink" title="模块"></a>模块</h3><ul>
+<li><p>导出模块：<code>export &#123; circleArea, squareArea &#125;;</code></p>
+</li>
+<li><p>导入模块：<code>import &#123; circleArea, squareArea &#125; from &#39;./17-CalcArea&#39;;</code></p>
+</li>
+<li><p>导出模块时命名：<code>export &#123; circleArea as circle, squareArea as square &#125;;</code></p>
+</li>
+<li><p>导入模块时命名：<code>import &#123; circleArea as circle &#125; from &#39;./17-CalcArea&#39;; </code></p>
+</li>
+</ul>
+<h3 id="数组常用方法"><a href="#数组常用方法" class="headerlink" title="数组常用方法"></a>数组常用方法</h3><p><code>push</code>:在数组末尾添加元素</p>
+<p><code>unshift</code>:在数组开头添加元素</p>
+<p><code>pop</code>:在数组末尾删除元素</p>
+<p><code>shift</code>:在数组开头删除元素</p>
+<p><code>splice</code>:在数组给定位置删除元素。如<code>splice(5,3)</code>在数组从索引5开始删除3个元素，即Array[5],Array[6],Array[7]。<code>splice(5,3,2,4)</code>是在删除三个元素后从索引5开始添加2和4两个数</p>
+<p><code>concat</code>:连接 2 个或更多数组，并返回结果</p>
+<p><code>every</code>:会迭代每一个元素直到返回false，传入一个函数</p>
+<p><code>some</code>:与<code>every</code>相反，返回true结束</p>
+<p><code>foeEach</code>:迭代整个数组，和for循环作用相同</p>
+<p><code>map</code>:迭代整个数组，将每个数组元素带入函数得到的返回值构成一个新数组返回</p>
+<p><code>filter</code>:和<code>map</code>类似，但返回的新数组由使函数返回 true 的元素组成</p>
+<p><code>reduce</code>:返回一个将被叠加到累加器的值，reduce 方法停止执行后会返回 这个累加器.reduce 方法接收一个有如下四个参数的函数：previousValue、 currentValue、index 和 array。因为 index 和 array 是可选的参数，所以如果用不到它们 的话，可以不传。如：<code>numbers.reduce((previous, current) =&gt; previous + current);</code>是对数组求和</p>
+<h3 id="ES6数组新语法"><a href="#ES6数组新语法" class="headerlink" title="ES6数组新语法"></a>ES6数组新语法</h3><ul>
+<li><p><code>for...of</code>：更简化的循环迭代</p>
+</li>
+<li><p><code>@@iterator</code>:这是一个对象，通过<code>Symbol.iterator</code>访问。</p>
+<p>如：<code>let iterator = numbers[Symbol.iterator]();</code></p>
+<p>然后，不断调用迭代器的 next 方法，就能依次得到数组中的值</p>
+<p>如：<code>console.log(iterator.next().value); // 1 </code></p>
+<p>数组中的所有值都迭代完之后，<code>iterator.next().value</code> 会返回 undefined。</p>
+</li>
+<li><p><code>entries</code>:方法返回包含键值对的<code>@@iterator</code>,如<code>let aEntries = numbers.entries();</code></p>
+<p><code>console.log(aEntries.next().value); // [0, 1] - 位置 0 的值为 1</code></p>
+</li>
+<li><p><code>keys</code>:返回包含数组索引的<code>@@iterator</code></p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> aKeys = numbers.<span class="title function_">keys</span>(); <span class="comment">// 得到数组索引的迭代器</span></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(aKeys.<span class="title function_">next</span>()); <span class="comment">// &#123;value: 0, done: false &#125; </span></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(aKeys.<span class="title function_">next</span>()); <span class="comment">// &#123;value: 1, done: false &#125; </span></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(aKeys.<span class="title function_">next</span>()); <span class="comment">// &#123;value: 2, done: false &#125;</span></span><br></pre></td></tr></table></figure>
+
+<p><code>done</code>的值为false意味着还有可迭代的值</p>
+</li>
+<li><p><code>values</code>:法返回的<code>@@iterator</code> 则包含数组的值</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> aValues = numbers.<span class="title function_">values</span>(); </span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(aValues.<span class="title function_">next</span>()); <span class="comment">// &#123;value: 1, done: false &#125; </span></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(aValues.<span class="title function_">next</span>()); <span class="comment">// &#123;value: 2, done: false &#125; </span></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(aValues.<span class="title function_">next</span>()); <span class="comment">// &#123;value: 3, done: false &#125; </span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p><code>from</code>:据已有的数组创建一个新数组</p>
+<p><code>let numbers2 = Array.from(numbers);</code>复制了numbers数组</p>
+<p>还可以传入一个用来过滤值的函数</p>
+<p><code>let evens = Array.from(numbers, x =&gt; (x % 2 == 0));</code></p>
+<p>上面的代码会创建一个 evens 数组，以及值 true（如果在原数组中为偶数）或 false（如 果在原数组中为奇数）。</p>
+</li>
+<li><p><code>fill</code>:填充元素</p>
+</li>
+<li><p><code>find</code>:查找第一个符合条件的元素</p>
+</li>
+<li><p><code>findindex</code>:查找第一个符合条件的元素的索引</p>
+</li>
+<li><p><code>includes</code>:如果数组里存在某个元素，includes 方法会返回 true，否则返回 false。</p>
+</li>
+</ul>
+
+            <!--[if lt IE 9]><script>document.createElement('audio');</script><![endif]-->
+            <audio id="audio" loop="1" preload="auto" controls="controls" data-autoplay="false">
+                <source type="audio/mpeg" src="">
+            </audio>
+            
+                <ul id="audio-list" style="display:none">
+                    
+                        
+                            <li title="0" data-url="http://link.hhtjim.com/163/425570952.mp3"></li>
+                        
+                    
+                        
+                            <li title="1" data-url="http://link.hhtjim.com/163/425570952.mp3"></li>
+                        
+                    
+                </ul>
+            
+        </div>
+        
+        
+    <div id="gitalk-container" class="comment link"
+		data-enable="false"
+        data-ae="false"
+        data-ci=""
+        data-cs=""
+        data-r=""
+        data-o=""
+        data-a=""
+        data-d="false"
+    >查看评论</div>
+
+
+    </div>
+    
+</div>
+
+
+    </div>
+</div>
+</body>
+
+
+<script src="//lib.baomitu.com/jquery/1.8.3/jquery.min.js"></script>
+<script src="/js/plugin.js"></script>
+<script src="/js/typed.js"></script>
+<script src="/js/diaspora.js"></script>
+
+
+<link rel="stylesheet" href="/photoswipe/photoswipe.css">
+<link rel="stylesheet" href="/photoswipe/default-skin/default-skin.css">
+
+
+<script src="/photoswipe/photoswipe.min.js"></script>
+<script src="/photoswipe/photoswipe-ui-default.min.js"></script>
+
+
+<!-- Root element of PhotoSwipe. Must have class pswp. -->
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+    <!-- Background of PhotoSwipe. 
+         It's a separate element as animating opacity is faster than rgba(). -->
+    <div class="pswp__bg"></div>
+    <!-- Slides wrapper with overflow:hidden. -->
+    <div class="pswp__scroll-wrap">
+        <!-- Container that holds slides. 
+            PhotoSwipe keeps only 3 of them in the DOM to save memory.
+            Don't modify these 3 pswp__item elements, data is added later on. -->
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+        <!-- Default (PhotoSwipeUI_Default) interface on top of sliding area. Can be changed. -->
+        <div class="pswp__ui pswp__ui--hidden">
+            <div class="pswp__top-bar">
+                <!--  Controls are self-explanatory. Order can be changed. -->
+                <div class="pswp__counter"></div>
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+                <button class="pswp__button pswp__button--share" title="Share"></button>
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+                <!-- Preloader demo http://codepen.io/dimsemenov/pen/yyBWoR -->
+                <!-- element will get class pswp__preloader--active when preloader is running -->
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                      <div class="pswp__preloader__cut">
+                        <div class="pswp__preloader__donut"></div>
+                      </div>
+                    </div>
+                </div>
+            </div>
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div> 
+            </div>
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+</html>

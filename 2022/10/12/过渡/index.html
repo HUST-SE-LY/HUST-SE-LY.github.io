@@ -1,0 +1,241 @@
+
+<!DOCTYPE html>
+<html lang="zh-CN" class="loading">
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>css中的过渡 - ly-blog</title>
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="google" content="notranslate" />
+    <meta name="keywords" content="Fechin,"> 
+    <meta name="description" content="一个超级懒虫的博客,过渡定义过渡属性CSS中使用四个属性定义过渡
+transition-property
+transition-duration
+transition-timing-function
+transitio,"> 
+    <meta name="author" content="Lazy-ly"> 
+    <link rel="alternative" href="atom.xml" title="ly-blog" type="application/atom+xml"> 
+    <link rel="icon" href="/img/favicon.jpg"> 
+    
+    
+    
+    <meta name="twitter:card" content="summary"/>
+    <meta name="twitter:title" content="css中的过渡 - ly-blog"/>
+    <meta name="twitter:description" content="一个超级懒虫的博客,过渡定义过渡属性CSS中使用四个属性定义过渡
+transition-property
+transition-duration
+transition-timing-function
+transitio,"/>
+    
+    
+    
+    
+    <meta property="og:site_name" content="ly-blog"/>
+    <meta property="og:type" content="object"/>
+    <meta property="og:title" content="css中的过渡 - ly-blog"/>
+    <meta property="og:description" content="一个超级懒虫的博客,过渡定义过渡属性CSS中使用四个属性定义过渡
+transition-property
+transition-duration
+transition-timing-function
+transitio,"/>
+    
+<link rel="stylesheet" href="/css/diaspora.css">
+
+    <script>window.searchDbPath = "/search.xml";</script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Source+Code+Pro&display=swap" rel="stylesheet">
+<meta name="generator" content="Hexo 6.2.0"></head>
+
+<body class="loading">
+    <span id="config-title" style="display:none">ly-blog</span>
+    <div id="loader"></div>
+    <div id="single">
+    <div id="top" style="display: block;">
+    <div class="bar" style="width: 0;"></div>
+    <a class="iconfont icon-home image-icon" href="javascript:;" data-url="http://example.com"></a>
+    <div title="播放/暂停" class="iconfont icon-play"></div>
+    <h3 class="subtitle">css中的过渡</h3>
+    <div class="social">
+        <div>
+            <div class="share">
+                <a title="获取二维码" class="iconfont icon-scan" href="javascript:;"></a>
+            </div>
+            <div id="qr"></div>
+        </div>
+    </div>
+    <div class="scrollbar"></div>
+</div>
+
+    <div class="section">
+        <div class="article">
+    <div class='main'>
+        <h1 class="title">css中的过渡</h1>
+        <div class="stuff">
+            <span>十月 12, 2022</span>
+            
+  <ul class="post-tags-list" itemprop="keywords"><li class="post-tags-list-item"><a class="post-tags-list-link" href="/tags/css/" rel="tag">css</a></li></ul>
+
+
+        </div>
+        <div class="content markdown">
+            <h1 id="过渡"><a href="#过渡" class="headerlink" title="过渡"></a>过渡</h1><h2 id="定义过渡属性"><a href="#定义过渡属性" class="headerlink" title="定义过渡属性"></a>定义过渡属性</h2><p>CSS中使用四个属性定义过渡</p>
+<p><code>transition-property</code></p>
+<p><code>transition-duration</code></p>
+<p><code>transition-timing-function</code></p>
+<p><code>transition-delay</code></p>
+<p>以及简写属性<code>transition</code></p>
+<p>与过渡相关的属性加在非悬停状态上可以使开始和结束状态都实现过渡</p>
+<p>而加在悬停状态上只会使开始时实现过渡，结束时瞬时切换</p>
+<h3 id="设置使用过渡的属性transition-property"><a href="#设置使用过渡的属性transition-property" class="headerlink" title="设置使用过渡的属性transition-property"></a>设置使用过渡的属性<code>transition-property</code></h3><p>属性的值是以逗号分隔的属性列表，指使用过渡的属性</p>
+<p>默认值为all，即所有支持动画的属性都采用过渡</p>
+<p>不支持动画的属性会立即变为过渡后的值</p>
+<p>如果需要对某些例外属性单独设置，应该把all设在首位，然后声明例外的属性如：</p>
+<p><code>transition:all,color;  transition-duration:1s,2s;</code></p>
+<p>值为none时禁用所有过渡，如果想禁用部分只能单独列出其他所有元素</p>
+<h3 id="设置过渡持续时间transition-duration"><a href="#设置过渡持续时间transition-duration" class="headerlink" title="设置过渡持续时间transition-duration"></a>设置过渡持续时间<code>transition-duration</code></h3><p>值是以逗号分隔的长度列表，单位为s或ms，指定从一个状态过渡到另一个状态需要多久</p>
+<p>如果在两个状态间来回切换但只设置了一个时间，则那么这个时间只在向那个状态过渡时起作用</p>
+<p>即使值为零也要写成0s</p>
+<p>如果设置的<code>transition-delay</code>时长不为正数，<code>transition-duration</code>又没有声明，不会触发<code>transitionend</code>事件，只要过渡总时间大于0s，就会触发<code>transitionend</code>事件</p>
+<p>如果列表中有一个时间为负数，整个<code>transition-duration</code>属性都会失效</p>
+<p>如果时间列表中时间数量与属性数量不一致，按照浏览器的规则处理</p>
+<p>如果时间数多于属性数，忽略后面的属性</p>
+<p>如果时间数少于属性数且恰好为2个，奇数属性使用第一个，偶数属性使用第二个</p>
+<p>100ms到200ms的时间最佳</p>
+<h3 id="调整过渡的内部时序transition-timing-function"><a href="#调整过渡的内部时序transition-timing-function" class="headerlink" title="调整过渡的内部时序transition-timing-function"></a>调整过渡的内部时序<code>transition-timing-function</code></h3><p>可以取的值有<code>ease,linear,ease-in,ease-out,ease-in-out,step-start,step-end,steps(n,start)(n是步进的次数),step(n,end),cubic-bezier(x1,y1,x2,y2)</code></p>
+<h4 id="通过三次方贝塞尔函数定义"><a href="#通过三次方贝塞尔函数定义" class="headerlink" title="通过三次方贝塞尔函数定义"></a>通过三次方贝塞尔函数定义</h4><p><code>ease</code>慢速开始，中间很快，然后变慢，结尾特别慢</p>
+<p><code>linear</code>整个过程匀速</p>
+<p><code>ease-in</code>慢速开始，然后加速</p>
+<p><code>ease-out</code>快速开始，然后慢速</p>
+<p><code>ease-in-out</code>于ease类似，两端慢中间快，但两端不同速</p>
+<p><code>cubic-bezier(x1,y1,x2,y2)</code>定义一个三次方贝塞尔函数</p>
+<h4 id="通过步进时序函数定义"><a href="#通过步进时序函数定义" class="headerlink" title="通过步进时序函数定义"></a>通过步进时序函数定义</h4><p><code>step-start</code>整个过程都处于最终关键帧上，等同于<code>steps(1,start)</code></p>
+<p><code>step-end</code>整个过渡都在初始关键帧上，等同于<code>steps(1,end)</code></p>
+<p><code>steps(n,start)</code></p>
+<p><code>step(n,end)</code></p>
+<p>这两个函数可以显示固定的镜头数</p>
+<p>使用<code>transition-timing-function</code>不改变过渡的持续时间，只控制过渡的行进节奏</p>
+<h3 id="延时过渡transition-delay"><a href="#延时过渡transition-delay" class="headerlink" title="延时过渡transition-delay"></a>延时过渡<code>transition-delay</code></h3><p>该属性在元素上发生触发过渡的变化与开始过渡之间引入一定的延迟</p>
+<p>默认是0s，即无延迟</p>
+<p>值也可以为负数</p>
+<p>设置延迟可以防止误操作</p>
+<h5 id="值为负数"><a href="#值为负数" class="headerlink" title="值为负数"></a>值为负数</h5><p>如果值为负数，则会从中间某个位置立即过渡</p>
+<p>如：让元素x移动200像素，<code>transition-duration</code>设置为200ms,<code>transition-delay</code>设置为-150ms，那么元素x将立即移动150px，再过渡运动到200px</p>
+<p>从悬停状态回到初始状态时，默认还会使用相同的delay值，所以x会立即反向运动150px，再过渡回到原点</p>
+<h3 id="transition简写"><a href="#transition简写" class="headerlink" title="transition简写"></a><code>transition</code>简写</h3><p>可以同时书写四个属性</p>
+<p>如果没有声明<code>transition-timing-function</code>默认为ease</p>
+<p>要注意<code>transition-duration</code>和<code>transition-delay</code>的顺序，前面的是<code>duration</code>,后面的是<code>delay</code></p>
+<p>持续时间必须设置，否则过渡不可见</p>
+
+            <!--[if lt IE 9]><script>document.createElement('audio');</script><![endif]-->
+            <audio id="audio" loop="1" preload="auto" controls="controls" data-autoplay="false">
+                <source type="audio/mpeg" src="">
+            </audio>
+            
+                <ul id="audio-list" style="display:none">
+                    
+                        
+                            <li title="0" data-url="http://link.hhtjim.com/163/425570952.mp3"></li>
+                        
+                    
+                        
+                            <li title="1" data-url="http://link.hhtjim.com/163/425570952.mp3"></li>
+                        
+                    
+                </ul>
+            
+        </div>
+        
+        
+    <div id="gitalk-container" class="comment link"
+		data-enable="false"
+        data-ae="false"
+        data-ci=""
+        data-cs=""
+        data-r=""
+        data-o=""
+        data-a=""
+        data-d="false"
+    >查看评论</div>
+
+
+    </div>
+    
+</div>
+
+
+    </div>
+</div>
+</body>
+
+
+<script src="//lib.baomitu.com/jquery/1.8.3/jquery.min.js"></script>
+<script src="/js/plugin.js"></script>
+<script src="/js/typed.js"></script>
+<script src="/js/diaspora.js"></script>
+
+
+<link rel="stylesheet" href="/photoswipe/photoswipe.css">
+<link rel="stylesheet" href="/photoswipe/default-skin/default-skin.css">
+
+
+<script src="/photoswipe/photoswipe.min.js"></script>
+<script src="/photoswipe/photoswipe-ui-default.min.js"></script>
+
+
+<!-- Root element of PhotoSwipe. Must have class pswp. -->
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+    <!-- Background of PhotoSwipe. 
+         It's a separate element as animating opacity is faster than rgba(). -->
+    <div class="pswp__bg"></div>
+    <!-- Slides wrapper with overflow:hidden. -->
+    <div class="pswp__scroll-wrap">
+        <!-- Container that holds slides. 
+            PhotoSwipe keeps only 3 of them in the DOM to save memory.
+            Don't modify these 3 pswp__item elements, data is added later on. -->
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+        <!-- Default (PhotoSwipeUI_Default) interface on top of sliding area. Can be changed. -->
+        <div class="pswp__ui pswp__ui--hidden">
+            <div class="pswp__top-bar">
+                <!--  Controls are self-explanatory. Order can be changed. -->
+                <div class="pswp__counter"></div>
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+                <button class="pswp__button pswp__button--share" title="Share"></button>
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+                <!-- Preloader demo http://codepen.io/dimsemenov/pen/yyBWoR -->
+                <!-- element will get class pswp__preloader--active when preloader is running -->
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                      <div class="pswp__preloader__cut">
+                        <div class="pswp__preloader__donut"></div>
+                      </div>
+                    </div>
+                </div>
+            </div>
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div> 
+            </div>
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+</html>

@@ -1,0 +1,239 @@
+
+<!DOCTYPE html>
+<html lang="zh-CN" class="loading">
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>css中position - ly-blog</title>
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="google" content="notranslate" />
+    <meta name="keywords" content="Fechin,"> 
+    <meta name="description" content="一个超级懒虫的博客,定位类型static:正常生成元素框
+relative：元素框偏移一定距离，所占空间不变
+absolute：元素框完全从文档流中移除，相对容纳块定位
+fixed：行为类似absolute，容纳块是视,"> 
+    <meta name="author" content="Lazy-ly"> 
+    <link rel="alternative" href="atom.xml" title="ly-blog" type="application/atom+xml"> 
+    <link rel="icon" href="/img/favicon.jpg"> 
+    
+    
+    
+    <meta name="twitter:card" content="summary"/>
+    <meta name="twitter:title" content="css中position - ly-blog"/>
+    <meta name="twitter:description" content="一个超级懒虫的博客,定位类型static:正常生成元素框
+relative：元素框偏移一定距离，所占空间不变
+absolute：元素框完全从文档流中移除，相对容纳块定位
+fixed：行为类似absolute，容纳块是视,"/>
+    
+    
+    
+    
+    <meta property="og:site_name" content="ly-blog"/>
+    <meta property="og:type" content="object"/>
+    <meta property="og:title" content="css中position - ly-blog"/>
+    <meta property="og:description" content="一个超级懒虫的博客,定位类型static:正常生成元素框
+relative：元素框偏移一定距离，所占空间不变
+absolute：元素框完全从文档流中移除，相对容纳块定位
+fixed：行为类似absolute，容纳块是视,"/>
+    
+<link rel="stylesheet" href="/css/diaspora.css">
+
+    <script>window.searchDbPath = "/search.xml";</script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Source+Code+Pro&display=swap" rel="stylesheet">
+<meta name="generator" content="Hexo 6.2.0"></head>
+
+<body class="loading">
+    <span id="config-title" style="display:none">ly-blog</span>
+    <div id="loader"></div>
+    <div id="single">
+    <div id="top" style="display: block;">
+    <div class="bar" style="width: 0;"></div>
+    <a class="iconfont icon-home image-icon" href="javascript:;" data-url="http://example.com"></a>
+    <div title="播放/暂停" class="iconfont icon-play"></div>
+    <h3 class="subtitle">css中position</h3>
+    <div class="social">
+        <div>
+            <div class="share">
+                <a title="获取二维码" class="iconfont icon-scan" href="javascript:;"></a>
+            </div>
+            <div id="qr"></div>
+        </div>
+    </div>
+    <div class="scrollbar"></div>
+</div>
+
+    <div class="section">
+        <div class="article">
+    <div class='main'>
+        <h1 class="title">css中position</h1>
+        <div class="stuff">
+            <span>十月 12, 2022</span>
+            
+  <ul class="post-tags-list" itemprop="keywords"><li class="post-tags-list-item"><a class="post-tags-list-link" href="/tags/css/" rel="tag">css</a></li></ul>
+
+
+        </div>
+        <div class="content markdown">
+            <h1 id="定位"><a href="#定位" class="headerlink" title="定位"></a>定位</h1><h3 id="类型"><a href="#类型" class="headerlink" title="类型"></a>类型</h3><p>static:正常生成元素框</p>
+<p>relative：元素框偏移一定距离，所占空间不变</p>
+<p>absolute：元素框完全从文档流中移除，相对容纳块定位</p>
+<p>fixed：行为类似absolute，容纳块是视区自身</p>
+<p>sticky：触发粘滞条件时，相当于相对容纳块绝对定位；触发粘滞的条件失效后，回到最初位置</p>
+<h3 id="容纳块"><a href="#容纳块" class="headerlink" title="容纳块"></a>容纳块</h3><p>一般来说，容纳块指包含另一个元素的框体</p>
+<p>对定位元素：</p>
+<p>relative或static：容纳块由最近的祖辈元素框体的内容边界划定</p>
+<p>absolute：容纳块是最近的不是static的祖辈元素</p>
+<ul>
+<li>块级元素：内边距边界</li>
+<li>行内元素：内容边界</li>
+<li>没有：初始容纳块</li>
+</ul>
+<p>定位元素可能位于容纳块之外</p>
+<h3 id="偏移属性"><a href="#偏移属性" class="headerlink" title="偏移属性"></a>偏移属性</h3><p>top</p>
+<p>bottom</p>
+<p>left</p>
+<p>right</p>
+<h3 id="限制宽高"><a href="#限制宽高" class="headerlink" title="限制宽高"></a>限制宽高</h3><p>min-height,min-width:限制最小</p>
+<p>max-width,max-height:限制最大</p>
+<h3 id="内容溢出"><a href="#内容溢出" class="headerlink" title="内容溢出"></a>内容溢出</h3><p>某个元素在内容里放不下：设置overflow属性</p>
+<p>visible：超出内容的部分可见</p>
+<p>hidden：超出部分不可见</p>
+<p>scroll：超出部分会隐藏，但可以通过滚动条查看</p>
+<p>auto：让用户代理自己决定使用哪种方式，在必要时使用滚动条</p>
+<h3 id="可见性"><a href="#可见性" class="headerlink" title="可见性"></a>可见性</h3><p><code>visibility:visible/hidden/collapse</code></p>
+<p><code>visible</code>:可见</p>
+<p><code>hidden</code>:隐藏（仍会占据空间，但不显示，相当于完全透明）</p>
+<p><code>collapse</code>:用于渲染表格，在渲染非表格元素时和hidden一致</p>
+<h3 id="绝对定位"><a href="#绝对定位" class="headerlink" title="绝对定位"></a>绝对定位</h3><p>如果文档能滚动，绝对定位元素也会随之滚动</p>
+<h5 id="自动确定边界"><a href="#自动确定边界" class="headerlink" title="自动确定边界"></a>自动确定边界</h5><p>将绝对定位元素除bottom外的某个偏移属性值设置为auto将得到一种特殊的行为</p>
+<p>即元素的位置会成为静态状态时的位置（即在常规文档流中的位置）</p>
+<p>将left和right同时设成auto会让绝对定位元素水平居中</p>
+<p>当元素各种属性值加起来不足容纳块的长度时（过约束），会对auto的值重新计算，当无auto时，会重新计算left或right的值</p>
+<p>如果属性的值导致过约束，top将永远<strong>不被</strong>忽略</p>
+<h3 id="Z-index"><a href="#Z-index" class="headerlink" title="Z-index"></a>Z-index</h3><p>z-index值越大，元素离读者越近</p>
+<p>设立z-index的父元素的子元素的位置是相对于父元素的，无论子元素设置多小的z-index值都会显示在父元素上方</p>
+<p>z-index：auto可视为z-index：0</p>
+<h3 id="固定定位"><a href="#固定定位" class="headerlink" title="固定定位"></a>固定定位</h3><p>与绝对定位类似，但容纳块是整个视区</p>
+<h3 id="相对定位"><a href="#相对定位" class="headerlink" title="相对定位"></a>相对定位</h3><p>相对定位使用偏移属性移动元素</p>
+<p>如<code>bottom:20px</code>将把元素向上平移20px</p>
+<p>在相对定位中，元素从常规的位置移开了，但其占据的空间没有消失</p>
+<p>相对定位的元素同样可能会重叠</p>
+<h3 id="粘滞定位"><a href="#粘滞定位" class="headerlink" title="粘滞定位"></a>粘滞定位</h3><p>粘滞定位元素通过设置偏移属性确定相对容纳块的粘滞定位矩形</p>
+<p>如<code>.h2 &#123;position:stick;top:2em;bottom:auto;left:auto;right:auto&#125;</code></p>
+<p>就设置了一个到达顶部就被粘滞的举行，想要让矩形在某个方向被粘滞，只需要将那个方向不设成auto即可</p>
+<h3 id="小结"><a href="#小结" class="headerlink" title="小结"></a>小结</h3><p>借助定位可以随意移动元素，这是常规文档流难以企及的。通过z轴确定叠放次序，加上各种溢出模式，定位依旧有用武之力</p>
+
+            <!--[if lt IE 9]><script>document.createElement('audio');</script><![endif]-->
+            <audio id="audio" loop="1" preload="auto" controls="controls" data-autoplay="false">
+                <source type="audio/mpeg" src="">
+            </audio>
+            
+                <ul id="audio-list" style="display:none">
+                    
+                        
+                            <li title="0" data-url="http://link.hhtjim.com/163/425570952.mp3"></li>
+                        
+                    
+                        
+                            <li title="1" data-url="http://link.hhtjim.com/163/425570952.mp3"></li>
+                        
+                    
+                </ul>
+            
+        </div>
+        
+        
+    <div id="gitalk-container" class="comment link"
+		data-enable="false"
+        data-ae="false"
+        data-ci=""
+        data-cs=""
+        data-r=""
+        data-o=""
+        data-a=""
+        data-d="false"
+    >查看评论</div>
+
+
+    </div>
+    
+</div>
+
+
+    </div>
+</div>
+</body>
+
+
+<script src="//lib.baomitu.com/jquery/1.8.3/jquery.min.js"></script>
+<script src="/js/plugin.js"></script>
+<script src="/js/typed.js"></script>
+<script src="/js/diaspora.js"></script>
+
+
+<link rel="stylesheet" href="/photoswipe/photoswipe.css">
+<link rel="stylesheet" href="/photoswipe/default-skin/default-skin.css">
+
+
+<script src="/photoswipe/photoswipe.min.js"></script>
+<script src="/photoswipe/photoswipe-ui-default.min.js"></script>
+
+
+<!-- Root element of PhotoSwipe. Must have class pswp. -->
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+    <!-- Background of PhotoSwipe. 
+         It's a separate element as animating opacity is faster than rgba(). -->
+    <div class="pswp__bg"></div>
+    <!-- Slides wrapper with overflow:hidden. -->
+    <div class="pswp__scroll-wrap">
+        <!-- Container that holds slides. 
+            PhotoSwipe keeps only 3 of them in the DOM to save memory.
+            Don't modify these 3 pswp__item elements, data is added later on. -->
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+        <!-- Default (PhotoSwipeUI_Default) interface on top of sliding area. Can be changed. -->
+        <div class="pswp__ui pswp__ui--hidden">
+            <div class="pswp__top-bar">
+                <!--  Controls are self-explanatory. Order can be changed. -->
+                <div class="pswp__counter"></div>
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+                <button class="pswp__button pswp__button--share" title="Share"></button>
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+                <!-- Preloader demo http://codepen.io/dimsemenov/pen/yyBWoR -->
+                <!-- element will get class pswp__preloader--active when preloader is running -->
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                      <div class="pswp__preloader__cut">
+                        <div class="pswp__preloader__donut"></div>
+                      </div>
+                    </div>
+                </div>
+            </div>
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div> 
+            </div>
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+</html>

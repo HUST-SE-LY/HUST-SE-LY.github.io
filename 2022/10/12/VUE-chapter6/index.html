@@ -1,0 +1,357 @@
+
+<!DOCTYPE html>
+<html lang="zh-CN" class="loading">
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>自学VUE第四章笔记 - ly-blog</title>
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="google" content="notranslate" />
+    <meta name="keywords" content="Fechin,"> 
+    <meta name="description" content="一个超级懒虫的博客,props响应式传递根据vue中的数据流通，子组件是不能修改父组件传进的props值的，因此，如果想从子组件修改传入的值，需要用到子组件的data，将props的值赋给data，修改data的值。
+,"> 
+    <meta name="author" content="Lazy-ly"> 
+    <link rel="alternative" href="atom.xml" title="ly-blog" type="application/atom+xml"> 
+    <link rel="icon" href="/img/favicon.jpg"> 
+    
+    
+    
+    <meta name="twitter:card" content="summary"/>
+    <meta name="twitter:title" content="自学VUE第四章笔记 - ly-blog"/>
+    <meta name="twitter:description" content="一个超级懒虫的博客,props响应式传递根据vue中的数据流通，子组件是不能修改父组件传进的props值的，因此，如果想从子组件修改传入的值，需要用到子组件的data，将props的值赋给data，修改data的值。
+,"/>
+    
+    
+    
+    
+    <meta property="og:site_name" content="ly-blog"/>
+    <meta property="og:type" content="object"/>
+    <meta property="og:title" content="自学VUE第四章笔记 - ly-blog"/>
+    <meta property="og:description" content="一个超级懒虫的博客,props响应式传递根据vue中的数据流通，子组件是不能修改父组件传进的props值的，因此，如果想从子组件修改传入的值，需要用到子组件的data，将props的值赋给data，修改data的值。
+,"/>
+    
+<link rel="stylesheet" href="/css/diaspora.css">
+
+    <script>window.searchDbPath = "/search.xml";</script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Source+Code+Pro&display=swap" rel="stylesheet">
+<meta name="generator" content="Hexo 6.2.0"></head>
+
+<body class="loading">
+    <span id="config-title" style="display:none">ly-blog</span>
+    <div id="loader"></div>
+    <div id="single">
+    <div id="top" style="display: block;">
+    <div class="bar" style="width: 0;"></div>
+    <a class="iconfont icon-home image-icon" href="javascript:;" data-url="http://example.com"></a>
+    <div title="播放/暂停" class="iconfont icon-play"></div>
+    <h3 class="subtitle">自学VUE第四章笔记</h3>
+    <div class="social">
+        <div>
+            <div class="share">
+                <a title="获取二维码" class="iconfont icon-scan" href="javascript:;"></a>
+            </div>
+            <div id="qr"></div>
+        </div>
+    </div>
+    <div class="scrollbar"></div>
+</div>
+
+    <div class="section">
+        <div class="article">
+    <div class='main'>
+        <h1 class="title">自学VUE第四章笔记</h1>
+        <div class="stuff">
+            <span>十月 12, 2022</span>
+            
+  <ul class="post-tags-list" itemprop="keywords"><li class="post-tags-list-item"><a class="post-tags-list-link" href="/tags/vue/" rel="tag">vue</a></li><li class="post-tags-list-item"><a class="post-tags-list-link" href="/tags/%E7%BB%84%E4%BB%B6/" rel="tag">组件</a></li></ul>
+
+
+        </div>
+        <div class="content markdown">
+            <h4 id="props响应式传递"><a href="#props响应式传递" class="headerlink" title="props响应式传递"></a>props响应式传递</h4><p>根据vue中的数据流通，子组件是不能修改父组件传进的props值的，因此，如果想从子组件修改传入的值，需要用到子组件的data，将props的值赋给data，修改data的值。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line">&lt;template&gt;</span><br><span class="line">  &lt;div v-for=&quot;n in pages&quot; @click=&quot;changePage(n)&quot;&gt;&#123;&#123;n&#125;&#125;&lt;/div&gt;</span><br><span class="line">  &lt;p&gt;当前页：&#123;&#123;currentPage&#125;&#125;&lt;/p&gt;</span><br><span class="line">&lt;/template&gt;</span><br><span class="line">&lt;script&gt;</span><br><span class="line">  export default &#123;</span><br><span class="line">    data() &#123;</span><br><span class="line">      return &#123;</span><br><span class="line">        currentPage:this.currentPageDefault,</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;,</span><br><span class="line">    props:[&#x27;pages&#x27;,&#x27;currentPageDefault&#x27;],</span><br><span class="line">    methods:&#123;</span><br><span class="line">      changePage(n) &#123;</span><br><span class="line">        this.currentPage=n;</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;,</span><br><span class="line">    watch:&#123;</span><br><span class="line">      pages(newVal,oldVal) &#123;</span><br><span class="line">        console.log(newVal)</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
+
+<p>父组件传入<code>currentPageDefault</code></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&lt;template&gt;</span><br><span class="line">  &lt;HelloWorld :pages=&quot;num&quot; :current-page-default=&quot;5&quot;&gt;&lt;/HelloWorld&gt;</span><br><span class="line">  &lt;button @click=&quot;num++&quot;&gt;增加页数&lt;/button&gt;</span><br><span class="line">&lt;/template&gt;</span><br></pre></td></tr></table></figure>
+
+<p>可以使用watch监听属性的变化，用法和watch监听data的变化一致</p>
+<h4 id="组件数据的流向设计"><a href="#组件数据的流向设计" class="headerlink" title="组件数据的流向设计"></a>组件数据的流向设计</h4><p>vue中的组件数据流向设计是：父组件通过props向子组件传递数据，子组件通过emit事件向父组件传递数据</p>
+<p>如，现在有两个组件<code>emitMode</code>和<code>propsMode</code></p>
+<p><code>emitMode</code>通过emit向父组件传递事件</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">&lt;template&gt;</span><br><span class="line">  &lt;button @click=&quot;$emit(&#x27;handleEvents&#x27;,&#x27;点击了按钮&#x27;)&quot;&gt;点击按钮&lt;/button&gt;</span><br><span class="line">&lt;/template&gt;</span><br><span class="line">&lt;script&gt;</span><br><span class="line"> export default &#123;</span><br><span class="line">   emits:[&#x27;handleEvents&#x27;]</span><br><span class="line"> &#125;</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
+
+<p><code>propsMode</code>通过父组件传递的props触发事件</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">&lt;template&gt;</span><br><span class="line">  &lt;button @click=&quot;click(&#x27;点击了按钮&#x27;)&quot;&gt;点击按钮&lt;/button&gt;</span><br><span class="line">&lt;/template&gt;</span><br><span class="line"></span><br><span class="line">&lt;script&gt;</span><br><span class="line">  export default &#123;</span><br><span class="line">    props:[&#x27;click&#x27;],</span><br><span class="line">  &#125;</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
+
+<p>在父组件中引入子组件</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">&lt;script&gt;</span><br><span class="line"></span><br><span class="line">import emitMode from &#x27;./components/emitMode.vue&#x27;</span><br><span class="line">import propsMode from &quot;./components/propsMode.vue&quot;;</span><br><span class="line">export default &#123;</span><br><span class="line">  components:&#123;emitMode,propsMode&#125;,</span><br><span class="line">  methods:&#123;</span><br><span class="line">    printMessage(mes) &#123;</span><br><span class="line">      console.log(mes)</span><br><span class="line">    &#125;,</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line">&lt;/script&gt;</span><br><span class="line">&lt;template&gt;</span><br><span class="line">  &lt;emit-mode @handleEvents=&quot;printMessage&quot;&gt;&lt;/emit-mode&gt;</span><br><span class="line">  &lt;props-mode :click=&quot;printMessage&quot;&gt;&lt;/props-mode&gt;</span><br><span class="line">&lt;/template&gt;</span><br></pre></td></tr></table></figure>
+
+<p>两种方法都能达到一样的效果，但区别是，当父组件没有向子组件传递props时，<code>propsMode</code>会提示异常但<code>emitMode</code>不会依赖父组件，因此当子组件需要用到父组件传入的事件处理函数时，使用emit向上传递事件，不要让父组件向下传递props</p>
+<h4 id="组件生命周期"><a href="#组件生命周期" class="headerlink" title="组件生命周期"></a>组件生命周期</h4><p>组件的生命周期和之前的生命周期钩子是一样的，不过多介绍</p>
+<h4 id="provide-x2F-inject传递深层组件"><a href="#provide-x2F-inject传递深层组件" class="headerlink" title="provide&#x2F;inject传递深层组件"></a>provide&#x2F;inject传递深层组件</h4><p>如果父组件引入了子组件，子组件又引入了更深层的组件，可以对父组件提供<code>Provide</code>配置项对更深层次的组件提供属性，用到这个属性的组件使用<code>Inject</code>配置项获取属性</p>
+<p>父组件：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> &#123;</span><br><span class="line">	<span class="attr">components</span>:&#123;</span><br><span class="line"></span><br><span class="line">&#125;,</span><br><span class="line">	<span class="title function_">data</span>(<span class="params"></span>) &#123;</span><br><span class="line">		<span class="keyword">return</span> &#123;</span><br><span class="line"></span><br><span class="line">	&#125;</span><br><span class="line">&#125;,</span><br><span class="line">    <span class="attr">provide</span>:&#123;</span><br><span class="line">        <span class="attr">title</span>:<span class="string">&quot;demo&quot;</span></span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>子组件</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> &#123;</span><br><span class="line">    <span class="attr">inject</span>:[<span class="string">&#x27;title&#x27;</span>]</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>子组件将获得<code>&quot;demo&quot;</code></p>
+<p>如果想用<code>provide</code>传递动态属性，需要将<code>provide</code>写成函数形式并返回对象</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="title function_">provide</span>(<span class="params"></span>) &#123;</span><br><span class="line">    <span class="keyword">return</span> &#123;</span><br><span class="line">        <span class="attr">title</span>:<span class="variable language_">this</span>.<span class="property">demo</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h4 id="在传递的slot模板中访问属性"><a href="#在传递的slot模板中访问属性" class="headerlink" title="在传递的slot模板中访问属性"></a>在传递的slot模板中访问属性</h4><p>我们可能需要在传递给子组件的slot模板中使用子组件中的数据</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&lt;template&gt;</span><br><span class="line">	&lt;li v-if=&quot;contact in contacts&quot; :key=&quot;contact.id&quot;&gt;</span><br><span class="line">        &lt;slot /&gt;</span><br><span class="line">    &lt;/li&gt;</span><br><span class="line">&lt;/template&gt;</span><br></pre></td></tr></table></figure>
+
+<p>如果我们需要在父组件传递的slot模板中使用<code>contact</code>，就需要在子组件中声明想暴露的属性，如：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&lt;template&gt;</span><br><span class="line">	&lt;li v-if=&quot;contact in contacts&quot; :key=&quot;contact.id&quot;&gt;</span><br><span class="line">        &lt;slot :contact=&#x27;contact&#x27;/&gt;</span><br><span class="line">    &lt;/li&gt;</span><br><span class="line">&lt;/template&gt;</span><br></pre></td></tr></table></figure>
+
+<p>在父组件中使用<code>template</code>标签和之前介绍过的<code>v-slot</code></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&lt;template v-slot:default=&#x27;props&#x27;&gt;</span><br><span class="line">	&lt;p&gt;</span><br><span class="line">        &#123;&#123;props.contact.name&#125;&#125;</span><br><span class="line">    &lt;/p&gt;</span><br><span class="line">&lt;/template&gt;</span><br></pre></td></tr></table></figure>
+
+<p><code>default</code>是因为子组件中没有给slot命名,<code>props</code>就是子组件暴露出来的属性集合</p>
+<h4 id="为组件设置样式"><a href="#为组件设置样式" class="headerlink" title="为组件设置样式"></a>为组件设置样式</h4><ul>
+<li><p>直接在<code>style</code>标签中设置：对全局生效</p>
+</li>
+<li><p>带有<code>scope</code>的<code>style</code>标签：对本身生效</p>
+</li>
+<li><p>直接导入css文件：对全局生效，适合在入口组件处设置一些基础样式</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> <span class="string">&#x27;/style.css&#x27;</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p><code>CSS module:在</code>style<code>标签中加上</code>modules<code>，在想要引入的标签中使用</code>$style&#96;</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&lt;style module&gt;</span><br><span class="line">    .p &#123;</span><br><span class="line">        width:200px;</span><br><span class="line">    &#125;</span><br><span class="line">&lt;/style&gt;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&lt;p :class=&#x27;$style.p&#x27;&gt;</span><br><span class="line">    </span><br><span class="line">&lt;/p&gt;</span><br></pre></td></tr></table></figure>
+
+<p>不会影响其他组件</p>
+</li>
+</ul>
+<h4 id="在带有scope的style标签中修改子组件样式"><a href="#在带有scope的style标签中修改子组件样式" class="headerlink" title="在带有scope的style标签中修改子组件样式"></a>在带有scope的style标签中修改子组件样式</h4><p>可以在父组件的带有scope的style标签中修改子组件根元素样式</p>
+<p>子组件中：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&lt;div class=&#x27;text&#x27;&gt;</span><br><span class="line">    text</span><br><span class="line">&lt;/div&gt;</span><br></pre></td></tr></table></figure>
+
+<p>父组件中</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&lt;style scope&gt;</span><br><span class="line">    .text &#123;</span><br><span class="line">        color:&#x27;blue&#x27;;</span><br><span class="line">    &#125;</span><br><span class="line">&lt;/style&gt;</span><br></pre></td></tr></table></figure>
+
+<p>就可以修改子组件的样式</p>
+<p>如果想要修改非根元素的元素，可以使用<code>:deep()</code>选择器</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&lt;style scope&gt;</span><br><span class="line">    .text :deep(a) &#123;</span><br><span class="line">        color:&quot;red&quot;;</span><br><span class="line">    &#125;</span><br><span class="line">&lt;/style&gt;</span><br></pre></td></tr></table></figure>
+
+<p>如果子组件想要修改传递给子组件的slot模板的样式，可以使用<code>:slotted()</code>来修改</p>
+<p>父组件</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&lt;childComponent&gt;</span><br><span class="line">    &lt;div&gt;</span><br><span class="line">        这是slot中的内容</span><br><span class="line">    &lt;/div&gt;</span><br><span class="line">&lt;/childComponent&gt;</span><br></pre></td></tr></table></figure>
+
+<p>子组件：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">&lt;style scope&gt;</span><br><span class="line">    :slotted(div) &#123;</span><br><span class="line">        color:&quot;azure&quot;;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">&lt;/style&gt;</span><br></pre></td></tr></table></figure>
+
+<h4 id="在样式中绑定响应式数据"><a href="#在样式中绑定响应式数据" class="headerlink" title="在样式中绑定响应式数据"></a>在样式中绑定响应式数据</h4><p>在vue3.2版本之后可以使用v-bind指令为样式绑定响应式数据</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.box</span> &#123;</span><br><span class="line">    <span class="attribute">transform</span>:<span class="built_in">rotate</span>(<span class="built_in">v-bind</span>(degree+<span class="string">&#x27;deg&#x27;</span>));</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>如果v-bind中的表达式太长，可以定义为<code>computed</code>计算属性</p>
+<h4 id="为组件设置v-model"><a href="#为组件设置v-model" class="headerlink" title="为组件设置v-model"></a>为组件设置v-model</h4><p>日常开发中可能会有将表单封装成组件的需求，这时候需要为组件设置v-model</p>
+<p>父组件</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">&lt;childComponent  v-model=&#x27;textvalue&#x27;&gt;&lt;/childComponent&gt;</span><br><span class="line">&lt;p&gt;</span><br><span class="line">    &#123;&#123;textvalue&#125;&#125;</span><br><span class="line">&lt;/p&gt;</span><br><span class="line">data() &#123;</span><br><span class="line">	return &#123;</span><br><span class="line">		textvalue:&quot;&quot;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>子组件：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;input :value=&#x27;modelValue&#x27; @input=&#x27;$emit(&quot;update:modelValue&quot;,$event.target.value)&#x27;&gt;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> &#123;</span><br><span class="line">    <span class="attr">props</span>:[<span class="string">&#x27;modelValue&#x27;</span>],</span><br><span class="line">    <span class="attr">emits</span>:[<span class="string">&#x27;update:modelValue&#x27;</span>]</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>这里的<code>modelValue,update:modelValue</code>都是固定写法</p>
+<p>但这种方式设置的v-model只能绑定一个值</p>
+<h4 id="使用多个v-model指令"><a href="#使用多个v-model指令" class="headerlink" title="使用多个v-model指令"></a>使用多个v-model指令</h4><p>如果子组件中有多个input或者其他表单控件，在父组件中需要使用带参数的v-model指令，如：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;childComponent v-model:text1=&#x27;content1&#x27; v-model:text2=&quot;content2&quot;&gt;&lt;/childComponent&gt;</span><br></pre></td></tr></table></figure>
+
+<p>这是父组件的写法</p>
+<p>子组件：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">&lt;script&gt;</span><br><span class="line">    export default &#123;</span><br><span class="line">        props:[&#x27;text1&#x27;,&#x27;text2&#x27;],//名字要与v-model后的参数保持一致</span><br><span class="line">        emits:[&#x27;update:text1&#x27;,&#x27;update:text2&#x27;]//也要保持一致</span><br><span class="line">    &#125;</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&lt;input :value=&#x27;text1&#x27; @input=&#x27;$emits(&quot;text1&quot;,$event.target.value)&#x27;&gt;</span><br><span class="line">&lt;input :value=&#x27;text2&#x27; @input=&#x27;$emits(&quot;text2&quot;,$event.target.value)&#x27;&gt;</span><br></pre></td></tr></table></figure>
+
+<h4 id="ref获取DOM和子组件实例"><a href="#ref获取DOM和子组件实例" class="headerlink" title="ref获取DOM和子组件实例"></a>ref获取DOM和子组件实例</h4><p><code>ref</code>可以获取DOM实例和子组件实例，但这种方式会破坏单向数据流，应该尽量少使用</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">&lt;template&gt;</span><br><span class="line">	&lt;input type=&#x27;text&#x27; ref=&quot;inputControl&quot;&gt;</span><br><span class="line">&lt;/template&gt;</span><br><span class="line"></span><br><span class="line">&lt;script&gt;</span><br><span class="line">    export default &#123;</span><br><span class="line">        mounted() &#123;</span><br><span class="line">            this.$refs.inputControl.focus();</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
+
+<p>这里的<code>$refs</code>是组件里所有的实例对象，获取到的实例和<code>$event.target</code>相同</p>
+<p>父组件可以获取子组件实例</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;childComponent ref=&#x27;child&#x27;&gt;&lt;/childComponent&gt;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="title function_">mounted</span>(<span class="params"></span>) &#123;</span><br><span class="line">    <span class="built_in">setTimeout</span>(<span class="function">()=&gt;</span>&#123;</span><br><span class="line">        <span class="variable language_">this</span>.<span class="property">$refs</span>.<span class="property">child</span>.<span class="title function_">method</span>();</span><br><span class="line">&#125;,<span class="number">3000</span>) </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>这样就做到了父组件获取子组件属性，方法等</p>
+<p><code>this.$refs</code>只能在组件完全加载之后使用</p>
+<h4 id="自定义指令"><a href="#自定义指令" class="headerlink" title="自定义指令"></a>自定义指令</h4><p>我们也可以自己定义<code>v-if</code>这样的指令，但这样会操作DOM，可能造成数据不一致等问题，实际中尽量少使用，尽量多使用组件来拓展功能</p>
+<p>定义指令实际上是给其一系列生命周期钩子定义函数。一般定义全局指令</p>
+<p>引入自定义指令可以用<code>directives</code></p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">directives</span>: &#123;</span><br><span class="line">    fsize</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&lt;p v-fsize=&#x27;fontsize&#x27;&gt;</span><br><span class="line">    text</span><br><span class="line">&lt;/p&gt;</span><br></pre></td></tr></table></figure>
+
+<p>下面介绍全局定义自定义指令方法</p>
+<p>打开<code>main.js</code>，调用<code>app</code>的<code>directive</code>方法</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">app.<span class="title function_">directive</span>(<span class="string">&#x27;fsize&#x27;</span>,&#123;</span><br><span class="line">    <span class="title function_">mounted</span>(<span class="params">el,binding</span>) &#123;</span><br><span class="line">        el.<span class="property">style</span>.<span class="property">fontSize</span>=binding.<span class="property">value</span>+<span class="string">&#x27;px&#x27;</span>;</span><br><span class="line">    &#125;,</span><br><span class="line">    <span class="title function_">updating</span>(<span class="params">el,binding</span>) &#123;</span><br><span class="line">        el.<span class="property">style</span>.<span class="property">fontSize</span>=binding.<span class="property">value</span>+<span class="string">&#x27;px&#x27;</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+
+<p><code>el</code>是DOM实例，<code>binding.value</code>是传入的数据</p>
+<p>常用的钩子是<code>mounted</code>和<code>updated</code>，用于初始化和响应式</p>
+<p>如果只是用了这两个钩子且定义的方法相同，可以简写</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">app.<span class="title function_">directive</span>(<span class="string">&#x27;fsize&#x27;</span>,<span class="function">(<span class="params">el,binding</span>)=&gt;</span>&#123;</span><br><span class="line">    el.<span class="property">style</span>.<span class="property">fontSize</span>=binding.<span class="property">value</span>+<span class="string">&#x27;px&#x27;</span></span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+
+<p>也可以为自定义的指令传递参数，写法如下</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&lt;p v-fsize:[unit]=&#x27;fontsize&#x27;&gt;</span><br><span class="line">    text</span><br><span class="line">&lt;/p&gt;</span><br></pre></td></tr></table></figure>
+
+<p>在定义中使用<code>binding.args</code>获取参数</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">app.<span class="title function_">directive</span>(<span class="string">&#x27;fsize&#x27;</span>,<span class="function">(<span class="params">el,binding</span>)=&gt;</span>&#123;</span><br><span class="line">    el.<span class="property">style</span>.<span class="property">fontSize</span>=binding.<span class="property">value</span>+(binding.<span class="property">arg</span>||<span class="string">&#x27;px&#x27;</span>);</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+
+<h4 id="is动态组件"><a href="#is动态组件" class="headerlink" title=":is动态组件"></a>:is动态组件</h4><p>使用<code>:is</code>可以为组件绑定动态html，需要使用<code>Component</code>标签，如</p>
+<p>子组件：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;Component :is=&#x27;heading&#x27;&gt;&lt;slot&gt;&lt;/slot&gt;&lt;/Component&gt;</span><br></pre></td></tr></table></figure>
+
+<p>然后可以为<code>heading</code>定义计算属性或数据</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">computed</span>:&#123;</span><br><span class="line">    <span class="title function_">heading</span>(<span class="params"></span>) &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="string">`h<span class="subst">$&#123;<span class="variable language_">this</span>.level&#125;</span>`</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>父组件引入子组件：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&lt;childComponent :level=1&gt;一级标题&lt;/childComponent&gt;</span><br><span class="line">&lt;childComponent :level=2&gt;二级标题&lt;/childComponent&gt;</span><br></pre></td></tr></table></figure>
+
+<p>这样就起到了动态绑定HTML的作用</p>
+<p><code>:is</code>还能动态绑定组件，将值换为组件名即可</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&lt;Component :is=&#x27;child1&#x27;&gt;&lt;/Component&gt;</span><br><span class="line">&lt;Component :is=&#x27;child2&#x27;&gt;&lt;/Component&gt;</span><br></pre></td></tr></table></figure>
+
+<h4 id="KeepAlive解决动态组件数据丢失"><a href="#KeepAlive解决动态组件数据丢失" class="headerlink" title="KeepAlive解决动态组件数据丢失"></a><code>KeepAlive</code>解决动态组件数据丢失</h4><p>使用<code>:is</code>动态切换组件时，每一次切换组件组件都会重新渲染，组件中输入的数据（表单等）会丢失。解决的方法很简单，在组件外部套一个<code>KeepAlive</code>标签即可</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&lt;KeepAlive&gt;</span><br><span class="line">    &lt;childComponent&gt;&lt;/childComponent&gt;</span><br><span class="line">&lt;/KeepAlive&gt;</span><br></pre></td></tr></table></figure>
+
+<h4 id="组件传送"><a href="#组件传送" class="headerlink" title="组件传送"></a>组件传送</h4><p>有时候组件在逻辑上不属于任何父组件，使用<code>teleport</code>可以将组件挂载到dom元素上</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&lt;Teleport to=&#x27;body&#x27;&gt;</span><br><span class="line">    ...</span><br><span class="line">&lt;/Teleport&gt;</span><br></pre></td></tr></table></figure>
+
+<p>这样<code>Teleport</code>中的代码就会传送到body下了</p>
+<h4 id="多次传送"><a href="#多次传送" class="headerlink" title="多次传送"></a>多次传送</h4><p>多次传送相同的组件，它们会在节点中顺序追加到节点中</p>
+<h4 id="异步加载组件"><a href="#异步加载组件" class="headerlink" title="异步加载组件"></a>异步加载组件</h4><p>使用异步加载组件，只有当组件第一次被挂载时代码才会加载，能起到减少客户端代码体积的作用</p>
+<p>vue提供了一种异步加载组件的方式</p>
+<p>先导入<code>defineAsyncComponent</code></p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> &#123; defineAsyncComponent &#125; <span class="keyword">from</span> <span class="string">&#x27;vue&#x27;</span>;</span><br></pre></td></tr></table></figure>
+
+<p>然后调用<code>defineAsyncComponent</code>引入组件</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> childComponentName=<span class="title function_">defineAsyncComponent</span>(<span class="function">()=&gt;</span>&#123;</span><br><span class="line">	<span class="title function_">import</span>(<span class="string">&#x27;./child.vue&#x27;</span>)</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+
+<h4 id="全局处理组件错误"><a href="#全局处理组件错误" class="headerlink" title="全局处理组件错误"></a>全局处理组件错误</h4><p>子组件的错误会一层层上传，最终到达最顶层组件并报错，可以在全局注册错误处理</p>
+<p>打开<code>main.js</code></p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> app=<span class="title function_">createApp</span>(<span class="title class_">App</span>);</span><br><span class="line">app.<span class="title function_">mount</span>(<span class="string">&quot;#app&quot;</span>);</span><br><span class="line">app.<span class="property">config</span>.<span class="property">errorHandler</span>=<span class="function">(<span class="params">err,vm,info</span>) =&gt;</span> &#123;</span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">log</span>(err);<span class="comment">//发生的错误</span></span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">log</span>(vm);<span class="comment">//发生错误的vue实例</span></span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">log</span>(info)<span class="comment">//发生错误的位置信息</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>给<code>app.config.errorHandler</code>注册成一个函数用于处理函数</p>
+<h4 id="在组件中处理错误"><a href="#在组件中处理错误" class="headerlink" title="在组件中处理错误"></a>在组件中处理错误</h4><p>当在组件中处理了错误，就相当于声明了一个错误边界，边界内的组件的错误不会再向边界外冒泡</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="title function_">errorCaptured</span>(<span class="params">err,instance,info</span>) &#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>声明<code>errorCaptured</code>方法，它的返回值可以控制错误是否继续向上传播（false是不传播）</p>
+<p>参数和全局处理错误类似</p>
+
+            <!--[if lt IE 9]><script>document.createElement('audio');</script><![endif]-->
+            <audio id="audio" loop="1" preload="auto" controls="controls" data-autoplay="false">
+                <source type="audio/mpeg" src="">
+            </audio>
+            
+                <ul id="audio-list" style="display:none">
+                    
+                        
+                            <li title="0" data-url="http://link.hhtjim.com/163/425570952.mp3"></li>
+                        
+                    
+                        
+                            <li title="1" data-url="http://link.hhtjim.com/163/425570952.mp3"></li>
+                        
+                    
+                </ul>
+            
+        </div>
+        
+        
+    <div id="gitalk-container" class="comment link"
+		data-enable="false"
+        data-ae="false"
+        data-ci=""
+        data-cs=""
+        data-r=""
+        data-o=""
+        data-a=""
+        data-d="false"
+    >查看评论</div>
+
+
+    </div>
+    
+</div>
+
+
+    </div>
+</div>
+</body>
+
+
+<script src="//lib.baomitu.com/jquery/1.8.3/jquery.min.js"></script>
+<script src="/js/plugin.js"></script>
+<script src="/js/typed.js"></script>
+<script src="/js/diaspora.js"></script>
+
+
+<link rel="stylesheet" href="/photoswipe/photoswipe.css">
+<link rel="stylesheet" href="/photoswipe/default-skin/default-skin.css">
+
+
+<script src="/photoswipe/photoswipe.min.js"></script>
+<script src="/photoswipe/photoswipe-ui-default.min.js"></script>
+
+
+<!-- Root element of PhotoSwipe. Must have class pswp. -->
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+    <!-- Background of PhotoSwipe. 
+         It's a separate element as animating opacity is faster than rgba(). -->
+    <div class="pswp__bg"></div>
+    <!-- Slides wrapper with overflow:hidden. -->
+    <div class="pswp__scroll-wrap">
+        <!-- Container that holds slides. 
+            PhotoSwipe keeps only 3 of them in the DOM to save memory.
+            Don't modify these 3 pswp__item elements, data is added later on. -->
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+        <!-- Default (PhotoSwipeUI_Default) interface on top of sliding area. Can be changed. -->
+        <div class="pswp__ui pswp__ui--hidden">
+            <div class="pswp__top-bar">
+                <!--  Controls are self-explanatory. Order can be changed. -->
+                <div class="pswp__counter"></div>
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+                <button class="pswp__button pswp__button--share" title="Share"></button>
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+                <!-- Preloader demo http://codepen.io/dimsemenov/pen/yyBWoR -->
+                <!-- element will get class pswp__preloader--active when preloader is running -->
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                      <div class="pswp__preloader__cut">
+                        <div class="pswp__preloader__donut"></div>
+                      </div>
+                    </div>
+                </div>
+            </div>
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div> 
+            </div>
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+</html>

@@ -1,0 +1,257 @@
+
+<!DOCTYPE html>
+<html lang="zh-CN" class="loading">
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>css中transform - ly-blog</title>
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="google" content="notranslate" />
+    <meta name="keywords" content="Fechin,"> 
+    <meta name="description" content="一个超级懒虫的博客,变形坐标系笛卡尔坐标系：即xyz坐标系，x向右，y向下，z和z-index相同
+球坐标系：显示3D效果所用的坐标系
+变形使用transform:&amp;lt;transform-list&amp;gt;
+变形的元,"> 
+    <meta name="author" content="Lazy-ly"> 
+    <link rel="alternative" href="atom.xml" title="ly-blog" type="application/atom+xml"> 
+    <link rel="icon" href="/img/favicon.jpg"> 
+    
+    
+    
+    <meta name="twitter:card" content="summary"/>
+    <meta name="twitter:title" content="css中transform - ly-blog"/>
+    <meta name="twitter:description" content="一个超级懒虫的博客,变形坐标系笛卡尔坐标系：即xyz坐标系，x向右，y向下，z和z-index相同
+球坐标系：显示3D效果所用的坐标系
+变形使用transform:&amp;lt;transform-list&amp;gt;
+变形的元,"/>
+    
+    
+    
+    
+    <meta property="og:site_name" content="ly-blog"/>
+    <meta property="og:type" content="object"/>
+    <meta property="og:title" content="css中transform - ly-blog"/>
+    <meta property="og:description" content="一个超级懒虫的博客,变形坐标系笛卡尔坐标系：即xyz坐标系，x向右，y向下，z和z-index相同
+球坐标系：显示3D效果所用的坐标系
+变形使用transform:&amp;lt;transform-list&amp;gt;
+变形的元,"/>
+    
+<link rel="stylesheet" href="/css/diaspora.css">
+
+    <script>window.searchDbPath = "/search.xml";</script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Source+Code+Pro&display=swap" rel="stylesheet">
+<meta name="generator" content="Hexo 6.2.0"></head>
+
+<body class="loading">
+    <span id="config-title" style="display:none">ly-blog</span>
+    <div id="loader"></div>
+    <div id="single">
+    <div id="top" style="display: block;">
+    <div class="bar" style="width: 0;"></div>
+    <a class="iconfont icon-home image-icon" href="javascript:;" data-url="http://example.com"></a>
+    <div title="播放/暂停" class="iconfont icon-play"></div>
+    <h3 class="subtitle">css中transform</h3>
+    <div class="social">
+        <div>
+            <div class="share">
+                <a title="获取二维码" class="iconfont icon-scan" href="javascript:;"></a>
+            </div>
+            <div id="qr"></div>
+        </div>
+    </div>
+    <div class="scrollbar"></div>
+</div>
+
+    <div class="section">
+        <div class="article">
+    <div class='main'>
+        <h1 class="title">css中transform</h1>
+        <div class="stuff">
+            <span>十月 12, 2022</span>
+            
+  <ul class="post-tags-list" itemprop="keywords"><li class="post-tags-list-item"><a class="post-tags-list-link" href="/tags/css/" rel="tag">css</a></li></ul>
+
+
+        </div>
+        <div class="content markdown">
+            <h1 id="变形"><a href="#变形" class="headerlink" title="变形"></a>变形</h1><h2 id="坐标系"><a href="#坐标系" class="headerlink" title="坐标系"></a>坐标系</h2><p>笛卡尔坐标系：即xyz坐标系，x向右，y向下，z和z-index相同</p>
+<p>球坐标系：显示3D效果所用的坐标系</p>
+<h2 id="变形-1"><a href="#变形-1" class="headerlink" title="变形"></a>变形</h2><p>使用<code>transform:&lt;transform-list&gt;</code></p>
+<p>变形的元素在视觉上可能会缩小或放大，但在页面中所占的空间是不变的</p>
+<p>变形函数一次只处理一个，从左向右。如果顺序变了结果可能大变</p>
+<p>有多个变形函数时，一旦有一个设置不正确导致失效，整个transform都会失效</p>
+<p>变形通常不叠加</p>
+<h3 id="平移函数"><a href="#平移函数" class="headerlink" title="平移函数"></a>平移函数</h3><p>平移函数是指沿一个轴或多个轴移动</p>
+<p><code>translateX()和translateY()</code>通常称为2D平移函数</p>
+<p>如果先进行旋转变形，那么xy轴也会对应旋转变换从而影响平移效果</p>
+<p>如果值是百分数，那么移动距离相对于元素自身的尺寸计算</p>
+<p>只移动XY轴方向时，可以使用<code>translate()</code>简写，第一个值是x轴移动量，第二个是y轴移动量，如果只有一个值，空缺的值视为0</p>
+<p>使用<code>translateZ</code>沿z轴平移</p>
+<p><code>translateZ()</code>只接受长度值</p>
+<p><code>translate3d()</code>可以同时设置XYZ轴方向的平移量，如果赋值小于3个，视作无效</p>
+<h3 id="缩放函数"><a href="#缩放函数" class="headerlink" title="缩放函数"></a>缩放函数</h3><p>缩放函数把元素放大或缩小，值始终为没有单位的正数</p>
+<p><code>scaleX() scaleY() scaleZ()</code></p>
+<p>赋值当作乘数，但缩放值不能为百分数</p>
+<p>如果想在两个轴上同时缩放，可以使用<code>scale()</code>，第一个值是x，第二个值是y，如果只提供一个值，视作两个值相等</p>
+<p><code>scaleZ()</code>仅在z轴上缩放，需要元素具有一定的深度，如沿x，y轴旋转</p>
+<p><code>scale3d()</code>可以在三个轴方向缩放，不足三个值同样视为无效</p>
+<h3 id="旋转函数"><a href="#旋转函数" class="headerlink" title="旋转函数"></a>旋转函数</h3><p><code>rotate() rotateX() rotateY() rotateZ()</code></p>
+<p>只接受一种值，即角度（deg grad rad turn）,当不使用动画时，如果角度超过了常规范围，将转换为常规范围内的值</p>
+<p><code>rotate</code>使用的是2d旋转，和<code>rotateZ()</code>功能相同</p>
+<p><code>rotateX()</code>沿x轴旋转，<code>rotateY()</code>沿y轴旋转，使元素倾斜</p>
+<p><code>rotate3d()</code>可以在3d空间内旋转元素，前三个值是xyz轴分量，第四个值是旋转角度</p>
+<p>绕两个轴旋转和在绕3d空间中的向量旋转是有区别的</p>
+<h3 id="倾斜函数"><a href="#倾斜函数" class="headerlink" title="倾斜函数"></a>倾斜函数</h3><p><code>skewX() skewY()</code>值为角度，z轴方向不允许倾斜</p>
+<p><code>skew(a,b)</code>通过矩阵运算[ax,ay]实施2d倾斜，与分别设置的效果有所不同</p>
+<h3 id="视域函数"><a href="#视域函数" class="headerlink" title="视域函数"></a>视域函数</h3><p>视域为元素赋予先后深度</p>
+<p>使用<code>perspective(&lt;length&gt;)</code>设置</p>
+<p>小于200px的值特别失真，2000px以上的值失真“特别温和”，500px-100px值产生“适中的视域”</p>
+<p><code>perspective</code>函数在变形函数列表中的位置十分重要，一般将其放在首位</p>
+<h3 id="矩阵函数"><a href="#矩阵函数" class="headerlink" title="矩阵函数"></a>矩阵函数</h3><p><code>martrix()</code>函数通过6个值确定的变换矩阵指定2d空间内的变形</p>
+<p><code>martrix3d()</code>指定3d变形</p>
+<p>可以使用多个变形函数达到matrix函数的最终状态</p>
+<h2 id="其他变形属性"><a href="#其他变形属性" class="headerlink" title="其他变形属性"></a>其他变形属性</h2><h3 id="移动原点"><a href="#移动原点" class="headerlink" title="移动原点"></a>移动原点</h3><p>不设置移动原点，默认的移动原点是元素的绝对中心</p>
+<p>可以使用<code>transform-origin</code>修改</p>
+<p><code>transform-origin</code>的值为2个或三个关键字，用于指定相对于哪个点变形，第一个值指定横向，第二个值指定纵向，可选的第三个值是z轴长度。前两个值可以使用top和right，也可以使用百分数等，z轴只能使用长度</p>
+<p>长度值设置的是距元素左上角的距离</p>
+<p>百分数根据元素尺寸计算</p>
+<h3 id="选择3D变形方式"><a href="#选择3D变形方式" class="headerlink" title="选择3D变形方式"></a>选择3D变形方式</h3><p>通过<code>transform-style:preserve-3d</code>修改3D变形方式</p>
+<p>然而这样设定的3D变形方式可能被其他属性覆盖，因为那些属性必须要元素扁平才能发挥作用</p>
+<p>如果修改CSS属性时发现3d元素被拍扁了，可能是</p>
+<ul>
+<li>overflow</li>
+<li>filter</li>
+<li>clip</li>
+<li>clip-path</li>
+<li>mask-image</li>
+<li>mask-border-source</li>
+<li>mix-blend-mode</li>
+</ul>
+<p>中的某些值发生了改变</p>
+<h3 id="修改视域"><a href="#修改视域" class="headerlink" title="修改视域"></a>修改视域</h3><h4 id="定义视距"><a href="#定义视距" class="headerlink" title="定义视距"></a>定义视距</h4><p>使用perspective修改视域</p>
+<p><code>perspective</code>与<code>perspective()</code>的区别：</p>
+<p><code>perspective</code>运用到当前元素的所有子元素中，而<code>perspective()</code>只运用到当前元素上</p>
+<p>多数时候应该使用perspective</p>
+<h4 id="移动视距原点"><a href="#移动视距原点" class="headerlink" title="移动视距原点"></a>移动视距原点</h4><p>使用<code>perspective-origin</code>修改</p>
+<p>初始值：50% 50%</p>
+<p>和<code>transform-origin</code>用法类似</p>
+<p><code>transform-origin</code>定义在哪点变形，<code>perspective-origin</code>定义视线汇聚于哪一点</p>
+<h3 id="处理背面"><a href="#处理背面" class="headerlink" title="处理背面"></a>处理背面</h3><p>由<code>backface-visibility</code>属性决定</p>
+<p>值：visible&#x2F;hidden</p>
+<p>该属性仅仅决定当背面朝向我们时是否渲染背面</p>
+<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>变形在二维和三维空间中改变元素形态，可以制作出很多引人注目的效果，利用3d变形还可以创造出交互界面，为设计开辟了新天地</p>
+
+            <!--[if lt IE 9]><script>document.createElement('audio');</script><![endif]-->
+            <audio id="audio" loop="1" preload="auto" controls="controls" data-autoplay="false">
+                <source type="audio/mpeg" src="">
+            </audio>
+            
+                <ul id="audio-list" style="display:none">
+                    
+                        
+                            <li title="0" data-url="http://link.hhtjim.com/163/425570952.mp3"></li>
+                        
+                    
+                        
+                            <li title="1" data-url="http://link.hhtjim.com/163/425570952.mp3"></li>
+                        
+                    
+                </ul>
+            
+        </div>
+        
+        
+    <div id="gitalk-container" class="comment link"
+		data-enable="false"
+        data-ae="false"
+        data-ci=""
+        data-cs=""
+        data-r=""
+        data-o=""
+        data-a=""
+        data-d="false"
+    >查看评论</div>
+
+
+    </div>
+    
+</div>
+
+
+    </div>
+</div>
+</body>
+
+
+<script src="//lib.baomitu.com/jquery/1.8.3/jquery.min.js"></script>
+<script src="/js/plugin.js"></script>
+<script src="/js/typed.js"></script>
+<script src="/js/diaspora.js"></script>
+
+
+<link rel="stylesheet" href="/photoswipe/photoswipe.css">
+<link rel="stylesheet" href="/photoswipe/default-skin/default-skin.css">
+
+
+<script src="/photoswipe/photoswipe.min.js"></script>
+<script src="/photoswipe/photoswipe-ui-default.min.js"></script>
+
+
+<!-- Root element of PhotoSwipe. Must have class pswp. -->
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+    <!-- Background of PhotoSwipe. 
+         It's a separate element as animating opacity is faster than rgba(). -->
+    <div class="pswp__bg"></div>
+    <!-- Slides wrapper with overflow:hidden. -->
+    <div class="pswp__scroll-wrap">
+        <!-- Container that holds slides. 
+            PhotoSwipe keeps only 3 of them in the DOM to save memory.
+            Don't modify these 3 pswp__item elements, data is added later on. -->
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+        <!-- Default (PhotoSwipeUI_Default) interface on top of sliding area. Can be changed. -->
+        <div class="pswp__ui pswp__ui--hidden">
+            <div class="pswp__top-bar">
+                <!--  Controls are self-explanatory. Order can be changed. -->
+                <div class="pswp__counter"></div>
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+                <button class="pswp__button pswp__button--share" title="Share"></button>
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+                <!-- Preloader demo http://codepen.io/dimsemenov/pen/yyBWoR -->
+                <!-- element will get class pswp__preloader--active when preloader is running -->
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                      <div class="pswp__preloader__cut">
+                        <div class="pswp__preloader__donut"></div>
+                      </div>
+                    </div>
+                </div>
+            </div>
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div> 
+            </div>
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+</html>

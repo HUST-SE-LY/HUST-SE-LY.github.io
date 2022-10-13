@@ -1,0 +1,334 @@
+
+<!DOCTYPE html>
+<html lang="zh-CN" class="loading">
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>git常用指令 - ly-blog</title>
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="google" content="notranslate" />
+    <meta name="keywords" content="Fechin,"> 
+    <meta name="description" content="一个超级懒虫的博客,git
+初始化一个仓库
+git init
+
+追踪&amp;#x2F;暂存仓库中的文件
+git add *
+
+查看文件状态
+git status
+
+提交
+git commit
+git commit -m &amp;#,"> 
+    <meta name="author" content="Lazy-ly"> 
+    <link rel="alternative" href="atom.xml" title="ly-blog" type="application/atom+xml"> 
+    <link rel="icon" href="/img/favicon.jpg"> 
+    
+    
+    
+    <meta name="twitter:card" content="summary"/>
+    <meta name="twitter:title" content="git常用指令 - ly-blog"/>
+    <meta name="twitter:description" content="一个超级懒虫的博客,git
+初始化一个仓库
+git init
+
+追踪&amp;#x2F;暂存仓库中的文件
+git add *
+
+查看文件状态
+git status
+
+提交
+git commit
+git commit -m &amp;#,"/>
+    
+    
+    
+    
+    <meta property="og:site_name" content="ly-blog"/>
+    <meta property="og:type" content="object"/>
+    <meta property="og:title" content="git常用指令 - ly-blog"/>
+    <meta property="og:description" content="一个超级懒虫的博客,git
+初始化一个仓库
+git init
+
+追踪&amp;#x2F;暂存仓库中的文件
+git add *
+
+查看文件状态
+git status
+
+提交
+git commit
+git commit -m &amp;#,"/>
+    
+<link rel="stylesheet" href="/css/diaspora.css">
+
+    <script>window.searchDbPath = "/search.xml";</script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Source+Code+Pro&display=swap" rel="stylesheet">
+<meta name="generator" content="Hexo 6.2.0"></head>
+
+<body class="loading">
+    <span id="config-title" style="display:none">ly-blog</span>
+    <div id="loader"></div>
+    <div id="single">
+    <div id="top" style="display: block;">
+    <div class="bar" style="width: 0;"></div>
+    <a class="iconfont icon-home image-icon" href="javascript:;" data-url="http://example.com"></a>
+    <div title="播放/暂停" class="iconfont icon-play"></div>
+    <h3 class="subtitle">git常用指令</h3>
+    <div class="social">
+        <div>
+            <div class="share">
+                <a title="获取二维码" class="iconfont icon-scan" href="javascript:;"></a>
+            </div>
+            <div id="qr"></div>
+        </div>
+    </div>
+    <div class="scrollbar"></div>
+</div>
+
+    <div class="section">
+        <div class="article">
+    <div class='main'>
+        <h1 class="title">git常用指令</h1>
+        <div class="stuff">
+            <span>十月 13, 2022</span>
+            
+  <ul class="post-tags-list" itemprop="keywords"><li class="post-tags-list-item"><a class="post-tags-list-link" href="/tags/git/" rel="tag">git</a></li><li class="post-tags-list-item"><a class="post-tags-list-link" href="/tags/%E5%8F%82%E8%80%83/" rel="tag">参考</a></li></ul>
+
+
+        </div>
+        <div class="content markdown">
+            <h3 id="git"><a href="#git" class="headerlink" title="git"></a>git</h3><ul>
+<li><p>初始化一个仓库</p>
+<p><code>git init</code></p>
+</li>
+<li><p>追踪&#x2F;暂存仓库中的文件</p>
+<p><code>git add *</code></p>
+</li>
+<li><p>查看文件状态</p>
+<p><code>git status</code></p>
+</li>
+<li><p>提交</p>
+<p><code>git commit</code></p>
+<p><code>git commit -m &#39;commitWord&#39;</code></p>
+<p><code>git commit -a -m &#39;commitWord&#39;//暂存并提交</code></p>
+</li>
+<li><p>克隆</p>
+<p><code>git clone URL projectName//克隆仓库并给本地项目命名</code></p>
+</li>
+<li><p>查看文件区别</p>
+<p><code>git diff</code>:当前文件和暂存区域快照之间的差异。 也就是修改之后还没有暂存起来的变化内容。</p>
+<p><code>git diff --staged</code>:比对已暂存文件与最后一次提交的文件差异</p>
+</li>
+<li><p>移除文件</p>
+<p><code>git rm fileName</code></p>
+<p><code>git rm -f fileName</code>:强制删除已经添加到暂存区和提交的文件</p>
+<p><code>git rm --cached fileName</code>:取消对文件的追踪（不删除文件）</p>
+<p><code>git mv fileName1 fileName2</code>:文件重命名</p>
+</li>
+<li><p>查看提交历史</p>
+<p><code>git log</code></p>
+<p><code>git log -p -num</code>:打印每次提交的差异并限制涉及到的提交数目（最近num次提交）</p>
+<p><code>git log --stat</code>:打印提交的简洁信息</p>
+<p><code>git log --graph</code>:以图形界面显示</p>
+<p><code>git log --oneline</code>:<code>--pretty=oneline和--abbrev-commit</code>合用</p>
+<p><code>git log --abnrev-commit</code>:显示较短的校验字符</p>
+<p><code>git log --pretty</code>:使用其他格式显示</p>
+<ul>
+<li><code>oneline</code>:每个提交放在一行显示</li>
+<li><code>format</code>:定制显示格式</li>
+</ul>
+<p><code>git log --since</code>:从时间上限制某时间之后的提交显示如<code>git log --since=2.weeks</code>限制两周内的提交</p>
+<p><code>git log -S string</code>:打印添加或删除了某字符串的提交</p>
+<p><code>git log --author name</code> :显示包含指定作者名的提交</p>
+<p><code>git log --grep string</code> :显示说明中包含指定字符串</p>
+<p><code>git log --committer string</code>显示包含指定提交者的提交</p>
+<p><code>git log --util</code>:从时间上限制某时间之前的提交</p>
+</li>
+<li><p>撤销操作</p>
+<p><code>git commit --amend</code> :重新进行一次提交</p>
+<p><code>git reset HEAD filename</code>:取消对某文件的暂存</p>
+<p><code>git checkout -- filename</code>:撤销对某文件的修改（还原成上次提交的样子）</p>
+</li>
+<li><p>查看远程仓库</p>
+<p><code>git remote</code></p>
+<p><code>git remote -v</code>:会显示需要读写远程仓库使用的 Git 保存的简写与其对应的 URL</p>
+</li>
+<li><p>添加远程仓库</p>
+<p><code>git clone</code>会自行添加远程仓库</p>
+<p><code>git remote add &lt;shortName&gt; &lt;URL&gt;</code>:添加远程仓库并给定一个简写名称</p>
+</li>
+<li><p>抓取与拉取</p>
+<p><code>git fetch &lt;remote&gt;</code>:从远程仓库中拉取还没有的数据，不会改变当前工作，抓取到的内容需要手动合并</p>
+<p><code>git pull</code>抓取并合并</p>
+</li>
+<li><p>推送</p>
+<p><code>git push &lt;remote&gt; &lt;branch&gt;</code>把branch分支推送到remote上</p>
+</li>
+<li><p>重命名远程仓库</p>
+<p><code>git remote rename &lt;originName&gt; &lt;nowName&gt;</code></p>
+</li>
+<li><p>移除一个远程仓库</p>
+<p><code>git remote rm</code></p>
+</li>
+<li><p>查看标签</p>
+<p><code>git tag </code></p>
+<p><code>git tag -l &lt;string&gt;</code>查看含有某字符串的标签</p>
+</li>
+<li><p>创建标签</p>
+<p><code>git tag -a &lt;tagName&gt; -m &lt;tagInfo&gt;</code>创建标签并附加信息</p>
+<p><code>git tag &lt;tagName&gt;</code>创建轻量级标签（<code>git show</code>不显示）</p>
+<p><code>git tag -a &lt;tagName&gt; &lt;hashCode&gt;</code>补标签，需要指定之前的某次提交的全部或部分校验和</p>
+</li>
+<li><p>推送标签</p>
+<p><code>git push &lt;remote&gt; --tags</code></p>
+</li>
+<li><p>删除标签</p>
+<p><code>git tag -d &lt;tagname&gt;//从本地删除标签</code></p>
+<p><code>git push &lt;remote&gt; :ref/tag/&lt;tagName&gt;//从远程仓库中删除标签</code></p>
+</li>
+<li><p>别名</p>
+<p><code>git config --global alias.&lt;shortName&gt; &lt;originName&gt;</code></p>
+</li>
+<li><p>创建分支</p>
+<p><code>git branch &lt;branchName&gt;</code>:新建分支</p>
+</li>
+<li><p>切换分支</p>
+<p><code>git checkout &lt;branchName&gt;</code></p>
+<p><code>git checkout -b &lt;branchName&gt;</code>:创建并切换到创建的分支</p>
+</li>
+<li><p>合并分支</p>
+<p><code>git merge &lt;branchName&gt;</code>将某分支合并到当前分</p>
+</li>
+<li><p>删除分支</p>
+<p><code>git branch -d &lt;branchName&gt;</code></p>
+<p><code>git branch -D &lt;branchName&gt;</code>强制删除某分支</p>
+</li>
+<li><p>查看分支列表</p>
+<p><code>git branch</code></p>
+<p><code>git branch -v</code>查看每个分支最后一次提交</p>
+<p><code>git branch --merged</code>查看已经合并到当前分支的分支</p>
+<p><code>git branch --no-merged</code>:查看未合并到当前分支的分支</p>
+</li>
+<li><p>删除远程分支</p>
+<p><code>git push &lt;remote&gt; --delete &lt;branchName&gt;</code></p>
+</li>
+</ul>
+
+            <!--[if lt IE 9]><script>document.createElement('audio');</script><![endif]-->
+            <audio id="audio" loop="1" preload="auto" controls="controls" data-autoplay="false">
+                <source type="audio/mpeg" src="">
+            </audio>
+            
+                <ul id="audio-list" style="display:none">
+                    
+                        
+                            <li title="0" data-url="http://link.hhtjim.com/163/425570952.mp3"></li>
+                        
+                    
+                        
+                            <li title="1" data-url="http://link.hhtjim.com/163/425570952.mp3"></li>
+                        
+                    
+                </ul>
+            
+        </div>
+        
+        
+    <div id="gitalk-container" class="comment link"
+		data-enable="false"
+        data-ae="false"
+        data-ci=""
+        data-cs=""
+        data-r=""
+        data-o=""
+        data-a=""
+        data-d="false"
+    >查看评论</div>
+
+
+    </div>
+    
+</div>
+
+
+    </div>
+</div>
+</body>
+
+
+<script src="//lib.baomitu.com/jquery/1.8.3/jquery.min.js"></script>
+<script src="/js/plugin.js"></script>
+<script src="/js/typed.js"></script>
+<script src="/js/diaspora.js"></script>
+
+
+<link rel="stylesheet" href="/photoswipe/photoswipe.css">
+<link rel="stylesheet" href="/photoswipe/default-skin/default-skin.css">
+
+
+<script src="/photoswipe/photoswipe.min.js"></script>
+<script src="/photoswipe/photoswipe-ui-default.min.js"></script>
+
+
+<!-- Root element of PhotoSwipe. Must have class pswp. -->
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+    <!-- Background of PhotoSwipe. 
+         It's a separate element as animating opacity is faster than rgba(). -->
+    <div class="pswp__bg"></div>
+    <!-- Slides wrapper with overflow:hidden. -->
+    <div class="pswp__scroll-wrap">
+        <!-- Container that holds slides. 
+            PhotoSwipe keeps only 3 of them in the DOM to save memory.
+            Don't modify these 3 pswp__item elements, data is added later on. -->
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+        <!-- Default (PhotoSwipeUI_Default) interface on top of sliding area. Can be changed. -->
+        <div class="pswp__ui pswp__ui--hidden">
+            <div class="pswp__top-bar">
+                <!--  Controls are self-explanatory. Order can be changed. -->
+                <div class="pswp__counter"></div>
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+                <button class="pswp__button pswp__button--share" title="Share"></button>
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+                <!-- Preloader demo http://codepen.io/dimsemenov/pen/yyBWoR -->
+                <!-- element will get class pswp__preloader--active when preloader is running -->
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                      <div class="pswp__preloader__cut">
+                        <div class="pswp__preloader__donut"></div>
+                      </div>
+                    </div>
+                </div>
+            </div>
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div> 
+            </div>
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+</html>

@@ -1,0 +1,213 @@
+
+<!DOCTYPE html>
+<html lang="zh-CN" class="loading">
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>css中list列表相关 - ly-blog</title>
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="google" content="notranslate" />
+    <meta name="keywords" content="Fechin,"> 
+    <meta name="description" content="一个超级懒虫的博客,列表和生成的内容改变记号类型使用list-style-type属性
+与列表相关的属性只能应用到display属性为list-item的元素上，css并不区分有序列表和无序列表的项目。可以让有序列表使,"> 
+    <meta name="author" content="Lazy-ly"> 
+    <link rel="alternative" href="atom.xml" title="ly-blog" type="application/atom+xml"> 
+    <link rel="icon" href="/img/favicon.jpg"> 
+    
+    
+    
+    <meta name="twitter:card" content="summary"/>
+    <meta name="twitter:title" content="css中list列表相关 - ly-blog"/>
+    <meta name="twitter:description" content="一个超级懒虫的博客,列表和生成的内容改变记号类型使用list-style-type属性
+与列表相关的属性只能应用到display属性为list-item的元素上，css并不区分有序列表和无序列表的项目。可以让有序列表使,"/>
+    
+    
+    
+    
+    <meta property="og:site_name" content="ly-blog"/>
+    <meta property="og:type" content="object"/>
+    <meta property="og:title" content="css中list列表相关 - ly-blog"/>
+    <meta property="og:description" content="一个超级懒虫的博客,列表和生成的内容改变记号类型使用list-style-type属性
+与列表相关的属性只能应用到display属性为list-item的元素上，css并不区分有序列表和无序列表的项目。可以让有序列表使,"/>
+    
+<link rel="stylesheet" href="/css/diaspora.css">
+
+    <script>window.searchDbPath = "/search.xml";</script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Source+Code+Pro&display=swap" rel="stylesheet">
+<meta name="generator" content="Hexo 6.2.0"></head>
+
+<body class="loading">
+    <span id="config-title" style="display:none">ly-blog</span>
+    <div id="loader"></div>
+    <div id="single">
+    <div id="top" style="display: block;">
+    <div class="bar" style="width: 0;"></div>
+    <a class="iconfont icon-home image-icon" href="javascript:;" data-url="http://example.com"></a>
+    <div title="播放/暂停" class="iconfont icon-play"></div>
+    <h3 class="subtitle">css中list列表相关</h3>
+    <div class="social">
+        <div>
+            <div class="share">
+                <a title="获取二维码" class="iconfont icon-scan" href="javascript:;"></a>
+            </div>
+            <div id="qr"></div>
+        </div>
+    </div>
+    <div class="scrollbar"></div>
+</div>
+
+    <div class="section">
+        <div class="article">
+    <div class='main'>
+        <h1 class="title">css中list列表相关</h1>
+        <div class="stuff">
+            <span>十月 12, 2022</span>
+            
+  <ul class="post-tags-list" itemprop="keywords"><li class="post-tags-list-item"><a class="post-tags-list-link" href="/tags/css/" rel="tag">css</a></li><li class="post-tags-list-item"><a class="post-tags-list-link" href="/tags/%E4%B8%8D%E5%B8%B8%E7%94%A8/" rel="tag">不常用</a></li></ul>
+
+
+        </div>
+        <div class="content markdown">
+            <h1 id="列表和生成的内容"><a href="#列表和生成的内容" class="headerlink" title="列表和生成的内容"></a>列表和生成的内容</h1><h3 id="改变记号类型"><a href="#改变记号类型" class="headerlink" title="改变记号类型"></a>改变记号类型</h3><p>使用<code>list-style-type</code>属性</p>
+<p>与列表相关的属性只能应用到display属性为list-item的元素上，css并不区分有序列表和无序列表的项目。可以让有序列表使用圆点</p>
+<p>如果不想要记号，可以设置none值，但none值只是让记号不显示，并没有阻断计数</p>
+<p><code>list-style-type</code>的值是继承的，因此如果嵌套的列表需要使用不同的记号需要分别定义</p>
+<p>除了默认提供的<code>list-style-type</code>值外，还可以使用字符串值作为记号</p>
+<p>使用<code>list-style-image</code>属性</p>
+<p>使用该属性可以将列表记号设置为图片</p>
+<p>可以在声明图片记号之后再声明一个<code>list-style-type</code>作为后备记号类型</p>
+<p>嵌套的列表同样会继承image属性</p>
+<p>为嵌套的列表的image设置none阻止继承</p>
+<p>但实际情况中用户代理可能会为列表设置一个list-style-type值，因此继承的list-style-type值可能不能生效</p>
+<p>使用<code>list-style-position</code></p>
+<p>该属性会改变列表记号的位置，设置为outside（默认值）时，记号显示在外部，设置为inside时，显示在内容内部</p>
+<p>使用<code>list-style</code>简写属性</p>
+<p><code>list-style:list-style-type list-style-image list-style-position</code></p>
+<p>可以按任意顺序列出</p>
+<p>列表项目本身是类似块级的元素，放在列表内容外部的记号对其他元素的布局没有影响，记号相对于列表内容类似于绝对定位</p>
+<h3 id="生成的内容"><a href="#生成的内容" class="headerlink" title="生成的内容"></a>生成的内容</h3><p>生成的内容使用::before和::after伪元素插入文档。通过设置伪元素的content属性将指定的内容插入文档内容之前或之后</p>
+<p>如果::before或::after选择符的目标是块级元素，那么display的值只能为none，inline，block，和marker，其他值都为block</p>
+<p>如果是行内元素，那么display的值只能为none或inline，其他值都为inline</p>
+<h5 id="content"><a href="#content" class="headerlink" title="content"></a>content</h5><p>content的值为字符串时，显示为字面当量，即使有特殊标签也直接显示出来</p>
+<p>如果需要换行需要添加\A,如果需要将较长的字符串分多行书写需要\</p>
+<p>content值为URI时，会将引入的资源插入合适的位置，如果是用户代理不支持的资源会完全忽略</p>
+<p>如果想把属性值显示出来，可以使用<code>attr()</code>,如<code>content:attr(href)</code></p>
+<p>如果属性不存在，将显示空字符串</p>
+<h5 id="生成引号"><a href="#生成引号" class="headerlink" title="生成引号"></a>生成引号</h5><p>引号使用quote或open-quote等值生成</p>
+<p><code>quote:&lt;string&gt; &lt;string&gt;</code></p>
+<p>第一个字符定义开始引号，第二个字符定义结束引号</p>
+
+            <!--[if lt IE 9]><script>document.createElement('audio');</script><![endif]-->
+            <audio id="audio" loop="1" preload="auto" controls="controls" data-autoplay="false">
+                <source type="audio/mpeg" src="">
+            </audio>
+            
+                <ul id="audio-list" style="display:none">
+                    
+                        
+                            <li title="0" data-url="http://link.hhtjim.com/163/425570952.mp3"></li>
+                        
+                    
+                        
+                            <li title="1" data-url="http://link.hhtjim.com/163/425570952.mp3"></li>
+                        
+                    
+                </ul>
+            
+        </div>
+        
+        
+    <div id="gitalk-container" class="comment link"
+		data-enable="false"
+        data-ae="false"
+        data-ci=""
+        data-cs=""
+        data-r=""
+        data-o=""
+        data-a=""
+        data-d="false"
+    >查看评论</div>
+
+
+    </div>
+    
+</div>
+
+
+    </div>
+</div>
+</body>
+
+
+<script src="//lib.baomitu.com/jquery/1.8.3/jquery.min.js"></script>
+<script src="/js/plugin.js"></script>
+<script src="/js/typed.js"></script>
+<script src="/js/diaspora.js"></script>
+
+
+<link rel="stylesheet" href="/photoswipe/photoswipe.css">
+<link rel="stylesheet" href="/photoswipe/default-skin/default-skin.css">
+
+
+<script src="/photoswipe/photoswipe.min.js"></script>
+<script src="/photoswipe/photoswipe-ui-default.min.js"></script>
+
+
+<!-- Root element of PhotoSwipe. Must have class pswp. -->
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+    <!-- Background of PhotoSwipe. 
+         It's a separate element as animating opacity is faster than rgba(). -->
+    <div class="pswp__bg"></div>
+    <!-- Slides wrapper with overflow:hidden. -->
+    <div class="pswp__scroll-wrap">
+        <!-- Container that holds slides. 
+            PhotoSwipe keeps only 3 of them in the DOM to save memory.
+            Don't modify these 3 pswp__item elements, data is added later on. -->
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+        <!-- Default (PhotoSwipeUI_Default) interface on top of sliding area. Can be changed. -->
+        <div class="pswp__ui pswp__ui--hidden">
+            <div class="pswp__top-bar">
+                <!--  Controls are self-explanatory. Order can be changed. -->
+                <div class="pswp__counter"></div>
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+                <button class="pswp__button pswp__button--share" title="Share"></button>
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+                <!-- Preloader demo http://codepen.io/dimsemenov/pen/yyBWoR -->
+                <!-- element will get class pswp__preloader--active when preloader is running -->
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                      <div class="pswp__preloader__cut">
+                        <div class="pswp__preloader__donut"></div>
+                      </div>
+                    </div>
+                </div>
+            </div>
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div> 
+            </div>
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+</html>

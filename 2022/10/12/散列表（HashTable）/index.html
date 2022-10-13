@@ -1,0 +1,253 @@
+
+<!DOCTYPE html>
+<html lang="zh-CN" class="loading">
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>js数据结构：哈希表 - ly-blog</title>
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="google" content="notranslate" />
+    <meta name="keywords" content="Fechin,"> 
+    <meta name="description" content="一个超级懒虫的博客,散列表（HashTable）哈希表是通过使用哈希函数得到一个哈希值，通过哈希值可以直接找到元素在表中的位置。
+
+先创建一个哈希表类的骨架
+1234567class HashTable &amp;#123; ,"> 
+    <meta name="author" content="Lazy-ly"> 
+    <link rel="alternative" href="atom.xml" title="ly-blog" type="application/atom+xml"> 
+    <link rel="icon" href="/img/favicon.jpg"> 
+    
+    
+    
+    <meta name="twitter:card" content="summary"/>
+    <meta name="twitter:title" content="js数据结构：哈希表 - ly-blog"/>
+    <meta name="twitter:description" content="一个超级懒虫的博客,散列表（HashTable）哈希表是通过使用哈希函数得到一个哈希值，通过哈希值可以直接找到元素在表中的位置。
+
+先创建一个哈希表类的骨架
+1234567class HashTable &amp;#123; ,"/>
+    
+    
+    
+    
+    <meta property="og:site_name" content="ly-blog"/>
+    <meta property="og:type" content="object"/>
+    <meta property="og:title" content="js数据结构：哈希表 - ly-blog"/>
+    <meta property="og:description" content="一个超级懒虫的博客,散列表（HashTable）哈希表是通过使用哈希函数得到一个哈希值，通过哈希值可以直接找到元素在表中的位置。
+
+先创建一个哈希表类的骨架
+1234567class HashTable &amp;#123; ,"/>
+    
+<link rel="stylesheet" href="/css/diaspora.css">
+
+    <script>window.searchDbPath = "/search.xml";</script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Source+Code+Pro&display=swap" rel="stylesheet">
+<meta name="generator" content="Hexo 6.2.0"></head>
+
+<body class="loading">
+    <span id="config-title" style="display:none">ly-blog</span>
+    <div id="loader"></div>
+    <div id="single">
+    <div id="top" style="display: block;">
+    <div class="bar" style="width: 0;"></div>
+    <a class="iconfont icon-home image-icon" href="javascript:;" data-url="http://example.com"></a>
+    <div title="播放/暂停" class="iconfont icon-play"></div>
+    <h3 class="subtitle">js数据结构：哈希表</h3>
+    <div class="social">
+        <div>
+            <div class="share">
+                <a title="获取二维码" class="iconfont icon-scan" href="javascript:;"></a>
+            </div>
+            <div id="qr"></div>
+        </div>
+    </div>
+    <div class="scrollbar"></div>
+</div>
+
+    <div class="section">
+        <div class="article">
+    <div class='main'>
+        <h1 class="title">js数据结构：哈希表</h1>
+        <div class="stuff">
+            <span>十月 12, 2022</span>
+            
+  <ul class="post-tags-list" itemprop="keywords"><li class="post-tags-list-item"><a class="post-tags-list-link" href="/tags/JavaScript/" rel="tag">JavaScript</a></li><li class="post-tags-list-item"><a class="post-tags-list-link" href="/tags/%E5%88%86%E7%A6%BB%E9%93%BE%E6%8E%A5/" rel="tag">分离链接</a></li><li class="post-tags-list-item"><a class="post-tags-list-link" href="/tags/%E5%93%88%E5%B8%8C%E5%86%B2%E7%AA%81/" rel="tag">哈希冲突</a></li><li class="post-tags-list-item"><a class="post-tags-list-link" href="/tags/%E5%93%88%E5%B8%8C%E5%87%BD%E6%95%B0/" rel="tag">哈希函数</a></li><li class="post-tags-list-item"><a class="post-tags-list-link" href="/tags/%E5%93%88%E5%B8%8C%E8%A1%A8/" rel="tag">哈希表</a></li><li class="post-tags-list-item"><a class="post-tags-list-link" href="/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/" rel="tag">数据结构</a></li><li class="post-tags-list-item"><a class="post-tags-list-link" href="/tags/%E7%BA%BF%E6%80%A7%E6%8E%A2%E6%9F%A5/" rel="tag">线性探查</a></li></ul>
+
+
+        </div>
+        <div class="content markdown">
+            <h3 id="散列表（HashTable）"><a href="#散列表（HashTable）" class="headerlink" title="散列表（HashTable）"></a>散列表（HashTable）</h3><p>哈希表是通过使用哈希函数得到一个哈希值，通过哈希值可以直接找到元素在表中的位置。</p>
+<p><img src="/image/img_20.png" alt="image-20220908155723989"></p>
+<p>先创建一个哈希表类的骨架</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">HashTable</span> &#123; </span><br><span class="line"> <span class="title function_">constructor</span>(<span class="params">toStrFn = defaultToString</span>) &#123; </span><br><span class="line"> <span class="variable language_">this</span>.<span class="property">toStrFn</span> = toStrFn; </span><br><span class="line"> <span class="variable language_">this</span>.<span class="property">table</span> = &#123;&#125;; </span><br><span class="line"> &#125; </span><br><span class="line">&#125; </span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p>然后我们需要一个哈希函数（算法）</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="title function_">loseloseHashCode</span>(<span class="params">key</span>) &#123;</span><br><span class="line">  <span class="keyword">if</span>(<span class="keyword">typeof</span> key === <span class="string">&quot;number&quot;</span>) &#123;</span><br><span class="line">    <span class="keyword">return</span> key;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">const</span> tableKey=<span class="variable language_">this</span>.<span class="title function_">toStrFn</span>(key);</span><br><span class="line">  <span class="keyword">let</span> hash=<span class="number">0</span>;</span><br><span class="line">  <span class="keyword">for</span>(<span class="keyword">let</span> i = <span class="number">0</span>;i &lt; tableKey.<span class="property">length</span>;i++) &#123;</span><br><span class="line">    hash+=tableKey.<span class="title function_">charCodeAt</span>(i);</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">return</span> hash%<span class="number">37</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="title function_">hashCode</span>(<span class="params">key</span>) &#123;</span><br><span class="line">  <span class="keyword">return</span> <span class="variable language_">this</span>.<span class="title function_">loseloseHashCode</span>(key);<span class="comment">//获取哈希值</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>算法是将key字符串化后将每一个字母的ASKII码相加，为防止数值移除，对任意一个数（这里取37）取余得到哈希值，<code>hashCode</code>方法知识简单的调用了<code>loseloseHashCode</code></p>
+<ul>
+<li><p>向表中添加元素</p>
+<p>先通过哈希函数得到哈希值，将哈希值作为要插入的位置<code>position</code>，将哈希表的position属性设置为要添加的键值对</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="title function_">put</span>(<span class="params">key,value</span>) &#123;<span class="comment">//向表中添加元素</span></span><br><span class="line">  <span class="keyword">if</span>(key!=<span class="literal">null</span>&amp;&amp;value!=<span class="literal">null</span>) &#123;</span><br><span class="line">    <span class="keyword">const</span> position=<span class="variable language_">this</span>.<span class="title function_">hashCode</span>(key);</span><br><span class="line">    <span class="variable language_">this</span>.<span class="property">table</span>[position]=<span class="keyword">new</span> <span class="title class_">ValuePair</span>(key,value);</span><br><span class="line">    <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>从表中获取元素</p>
+<p>查找变得简单，只需要通过哈希函数就能计算出位置，通过位置直接获取即可</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="title function_">get</span>(<span class="params">key</span>) &#123;<span class="comment">//根据key获取元素</span></span><br><span class="line">  <span class="keyword">const</span> valuePair=<span class="variable language_">this</span>.<span class="property">table</span>[<span class="variable language_">this</span>.<span class="title function_">hashCode</span>(key)];</span><br><span class="line">  <span class="keyword">return</span> valuePair==<span class="literal">null</span>?<span class="attr">undefined</span>:valuePair.<span class="property">value</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>从表中删除元素</p>
+<p>先得到哈希值，从而找到要删除的元素，确定要删除的键值对存在后<code>delete</code>即可</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="title function_">remove</span>(<span class="params">key</span>) &#123;<span class="comment">//根据key删除元素</span></span><br><span class="line">  <span class="keyword">const</span> hash=<span class="variable language_">this</span>.<span class="title function_">hashCode</span>(key);</span><br><span class="line">  <span class="keyword">const</span> valuePair=<span class="variable language_">this</span>.<span class="property">table</span>[hash];</span><br><span class="line">  <span class="keyword">if</span>(valuePair!=<span class="literal">null</span>) &#123;</span><br><span class="line">    <span class="keyword">delete</span> <span class="variable language_">this</span>.<span class="property">table</span>[hash];</span><br><span class="line">    <span class="keyword">return</span> <span class="literal">true</span></span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
+</ul>
+<p>我们得到完整的HashTable类：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">HashTable</span> &#123;</span><br><span class="line">  <span class="title function_">constructor</span>(<span class="params">toStrFn=defaultToString</span>) &#123;</span><br><span class="line">    <span class="variable language_">this</span>.<span class="property">toStrFn</span>=toStrFn;</span><br><span class="line">    <span class="variable language_">this</span>.<span class="property">table</span>=&#123;&#125;;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="title function_">loseloseHashCode</span>(<span class="params">key</span>) &#123;</span><br><span class="line">    <span class="keyword">if</span>(<span class="keyword">typeof</span> key === <span class="string">&quot;number&quot;</span>) &#123;</span><br><span class="line">      <span class="keyword">return</span> key;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">const</span> tableKey=<span class="variable language_">this</span>.<span class="title function_">toStrFn</span>(key);</span><br><span class="line">    <span class="keyword">let</span> hash=<span class="number">0</span>;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">let</span> i = <span class="number">0</span>;i &lt; tableKey.<span class="property">length</span>;i++) &#123;</span><br><span class="line">      hash+=tableKey.<span class="title function_">charCodeAt</span>(i);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> hash%<span class="number">37</span>;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="title function_">hashCode</span>(<span class="params">key</span>) &#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="variable language_">this</span>.<span class="title function_">loseloseHashCode</span>(key);<span class="comment">//获取哈希值</span></span><br><span class="line">  &#125;</span><br><span class="line">  <span class="title function_">put</span>(<span class="params">key,value</span>) &#123;<span class="comment">//向表中添加元素</span></span><br><span class="line">    <span class="keyword">if</span>(key!=<span class="literal">null</span>&amp;&amp;value!=<span class="literal">null</span>) &#123;</span><br><span class="line">      <span class="keyword">const</span> position=<span class="variable language_">this</span>.<span class="title function_">hashCode</span>(key);</span><br><span class="line">      <span class="variable language_">this</span>.<span class="property">table</span>[position]=<span class="keyword">new</span> <span class="title class_">ValuePair</span>(key,value);</span><br><span class="line">      <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="title function_">get</span>(<span class="params">key</span>) &#123;<span class="comment">//根据key获取元素</span></span><br><span class="line">    <span class="keyword">const</span> valuePair=<span class="variable language_">this</span>.<span class="property">table</span>[<span class="variable language_">this</span>.<span class="title function_">hashCode</span>(key)];</span><br><span class="line">    <span class="keyword">return</span> valuePair==<span class="literal">null</span>?<span class="attr">undefined</span>:valuePair.<span class="property">value</span>;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="title function_">remove</span>(<span class="params">key</span>) &#123;<span class="comment">//根据key删除元素</span></span><br><span class="line">    <span class="keyword">const</span> hash=<span class="variable language_">this</span>.<span class="title function_">hashCode</span>(key);</span><br><span class="line">    <span class="keyword">const</span> valuePair=<span class="variable language_">this</span>.<span class="property">table</span>[hash];</span><br><span class="line">    <span class="keyword">if</span>(valuePair!=<span class="literal">null</span>) &#123;</span><br><span class="line">      <span class="keyword">delete</span> <span class="variable language_">this</span>.<span class="property">table</span>[hash];</span><br><span class="line">      <span class="keyword">return</span> <span class="literal">true</span></span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="哈希冲突"><a href="#哈希冲突" class="headerlink" title="哈希冲突"></a>哈希冲突</h3><p>通过哈希表的原理我们可以发现，每一个键值对绑定了一个哈希值，但是哈希值是通过函数计算出来的，当不同的key带入时可能会出现相同的哈希值，这样我们在进行添加操作时就会在相同的位置添加造成值被覆盖，这就是哈希冲突。我们可以选择更好的哈希函数避免出现这种情况，但当数据量较大时难免出现哈希冲突，解决哈希冲突就需要我们对哈希表进行优化，这里介绍两种解决方案</p>
+<h4 id="分离链接"><a href="#分离链接" class="headerlink" title="分离链接"></a>分离链接</h4><p>这种方法简单易懂，就是在每个位置维护一个链表，当出现重复哈希值的元素要添加时，在链表尾部添加即可</p>
+<p><img src="/image/img_21.png" alt="image-20220908161116930"></p>
+<ul>
+<li><p>重写put方法</p>
+<p>在添加元素时注意哈希值对应的位置是否为空，为空就需要创建一个链表，不为空就调用链表的push方法</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="title function_">put</span>(<span class="params">key,value</span>) &#123;</span><br><span class="line">  <span class="keyword">if</span>(key!=<span class="literal">null</span>&amp;&amp;value!=<span class="literal">null</span>) &#123;</span><br><span class="line">    <span class="keyword">const</span> position=<span class="variable language_">this</span>.<span class="title function_">hashCode</span>(key);</span><br><span class="line">    <span class="keyword">if</span>(<span class="variable language_">this</span>.<span class="property">table</span>[position]==<span class="literal">null</span>) &#123;</span><br><span class="line">      <span class="variable language_">this</span>.<span class="property">table</span>[position]=<span class="keyword">new</span> <span class="title class_">LinkedList</span>();</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="variable language_">this</span>.<span class="property">table</span>[position].<span class="title function_">push</span>(<span class="keyword">new</span> <span class="title class_">ValuePair</span>(key,value));</span><br><span class="line">    <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>重写get方法</p>
+<p>与普通的get方法相比增加了遍历链表找到匹配的key值的内容</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="title function_">get</span>(<span class="params">key</span>) &#123;</span><br><span class="line">  <span class="keyword">const</span> position=<span class="variable language_">this</span>.<span class="title function_">hashCode</span>(key);</span><br><span class="line">  <span class="keyword">const</span> linkedList=<span class="variable language_">this</span>.<span class="property">table</span>[position];</span><br><span class="line">  <span class="keyword">if</span>(linkedList!=<span class="literal">null</span>&amp;&amp;!linkedList.<span class="title function_">isEmpty</span>()) &#123;</span><br><span class="line">    <span class="keyword">let</span> current=linkedList.<span class="title function_">getHead</span>();</span><br><span class="line">    <span class="keyword">while</span>(current!=<span class="literal">null</span>) &#123;</span><br><span class="line">      <span class="keyword">if</span>(current.<span class="property">element</span>.<span class="property">key</span>===key) &#123;</span><br><span class="line">        <span class="keyword">return</span> current.<span class="property">element</span>.<span class="property">value</span>;</span><br><span class="line">      &#125;</span><br><span class="line">      current=current.<span class="property">next</span>;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">return</span> <span class="literal">undefined</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>重写remove方法</p>
+<p>即对对应位置的链表做删除结点操作，要注意最后链表是否为空，为空要删除</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="title function_">remove</span>(<span class="params">key</span>) &#123;</span><br><span class="line">  <span class="keyword">const</span> position=<span class="variable language_">this</span>.<span class="title function_">hashCode</span>(key);</span><br><span class="line">  <span class="keyword">const</span> linkedList=<span class="variable language_">this</span>.<span class="property">table</span>[position];</span><br><span class="line">  <span class="keyword">if</span>(linkedList!=<span class="literal">null</span>&amp;&amp;!linkedList.<span class="title function_">isEmpty</span>()) &#123;</span><br><span class="line">    <span class="keyword">let</span> current=linkedList.<span class="title function_">getHead</span>();</span><br><span class="line">    <span class="keyword">while</span>(current!=<span class="literal">null</span>) &#123;</span><br><span class="line">      <span class="keyword">if</span>(current.<span class="property">element</span>.<span class="property">key</span>===key) &#123;</span><br><span class="line">        linkedList.<span class="title function_">remove</span>(current.<span class="property">element</span>);</span><br><span class="line">        <span class="keyword">if</span>(linkedList.<span class="title function_">isEmpty</span>()) &#123;</span><br><span class="line">          <span class="keyword">delete</span> <span class="variable language_">this</span>.<span class="property">table</span>[position];</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">true</span></span><br><span class="line">      &#125;</span><br><span class="line">      current=current.<span class="property">next</span>;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
+</ul>
+<h4 id="线性探查"><a href="#线性探查" class="headerlink" title="线性探查"></a>线性探查</h4><p>当想向表中某个位置添加一个新元素的时候，如果索引为 position 的位置已经被占据了就尝试 position+1 的位置。如果 position+1的位置也被占据了，就尝试 position+2 的位置，以此类推，直到在散列表中找到一个空闲的位置。</p>
+<p><img src="/image/img_22.png" alt="image-20220908162404363"></p>
+<p>线性探查技术分为两种。第一种是软删除方法。我们使用一个特殊的值（标记）来表示键值对被删除了（惰性删除或软删除），而不是真的删除它。经过一段时间，散列表被操作过后， 我们会得到一个标记了若干删除位置的散列表。这会逐渐降低散列表的效率，因为搜索键值会随时间变得更慢。</p>
+<p>第二种方法需要检验是否有必要将一个或多个元素移动到之前的位置。当搜索一个键的时候，这种方法可以避免找到一个空位置。如果移动元素是必要的，我们就需要在散列表中挪动键 值对。下图展现了这个过程。</p>
+<p><img src="/image/img_22.png" alt="image-20220908162549774"></p>
+<ul>
+<li><p>重写put方法</p>
+<p>添加时若位置已有元素就向下继续查找直到找到空位</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="title function_">put</span>(<span class="params">key,value</span>) &#123;</span><br><span class="line">  <span class="keyword">if</span>(key!=<span class="literal">null</span>&amp;&amp;value!=<span class="literal">null</span>) &#123;</span><br><span class="line">    <span class="keyword">const</span> position=<span class="variable language_">this</span>.<span class="title function_">hashCode</span>(key);</span><br><span class="line">    <span class="keyword">if</span>(<span class="variable language_">this</span>.<span class="property">table</span>[position]==<span class="literal">null</span>) &#123;</span><br><span class="line">      <span class="variable language_">this</span>.<span class="property">table</span>[position]=<span class="keyword">new</span> <span class="title class_">ValuePair</span>(key,value);</span><br><span class="line">    &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">      <span class="keyword">let</span> index=position+<span class="number">1</span>;</span><br><span class="line">      <span class="keyword">while</span>(<span class="variable language_">this</span>.<span class="property">table</span>[index]!=<span class="literal">null</span>) &#123;</span><br><span class="line">        index++;</span><br><span class="line">      &#125;</span><br><span class="line">      <span class="variable language_">this</span>.<span class="property">table</span>[index]=<span class="keyword">new</span> <span class="title class_">ValuePair</span>(key,value);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">  &#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>重写get方法</p>
+<p>若哈希值对应的位置上的key与需要的key不相同就依次向下查找知道找到需要的key</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="title function_">get</span>(<span class="params">key</span>) &#123;</span><br><span class="line">  <span class="keyword">const</span> position=<span class="variable language_">this</span>.<span class="title function_">hashCode</span>(key);</span><br><span class="line">  <span class="keyword">if</span>(<span class="variable language_">this</span>.<span class="property">table</span>[position]!=<span class="literal">null</span>) &#123;</span><br><span class="line">    <span class="keyword">if</span>(<span class="variable language_">this</span>.<span class="property">table</span>[position].<span class="property">key</span>===key) &#123;</span><br><span class="line">      <span class="keyword">return</span> <span class="variable language_">this</span>.<span class="property">table</span>[position].<span class="property">value</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">let</span> index=position+<span class="number">1</span>;</span><br><span class="line">    <span class="keyword">while</span>(<span class="variable language_">this</span>.<span class="property">table</span>[index].<span class="property">key</span>!==key&amp;&amp;<span class="variable language_">this</span>.<span class="property">table</span>[index]!=<span class="literal">null</span>) &#123;</span><br><span class="line">      index++;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">if</span>(<span class="variable language_">this</span>.<span class="property">table</span>[index]!=<span class="literal">null</span>&amp;&amp;<span class="variable language_">this</span>.<span class="property">table</span>[index].<span class="property">key</span>===key) &#123;</span><br><span class="line">      <span class="keyword">return</span> <span class="variable language_">this</span>.<span class="property">table</span>[index].<span class="property">value</span>;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">return</span> <span class="literal">undefined</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>重写remove方法</p>
+<p>查找要删除的元素与get逻辑类似，但删除后要让后面需要位移的元素位移到删除位置填充空位</p>
+<p>需要位移的元素特点是：根据key计算的hash值小于等于删除位置的哈希值或要查找的key对应的哈希值，因为整个哈希表的位置值是从小到大排序的，若出现了后面元素的哈希值比前面元素的哈希值小则一定经过了位移，需要调整</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line"><span class="title function_">remove</span>(<span class="params">key</span>) &#123;</span><br><span class="line">  <span class="keyword">const</span> position=<span class="variable language_">this</span>.<span class="title function_">hashCode</span>(key);</span><br><span class="line">  <span class="keyword">if</span>(<span class="variable language_">this</span>.<span class="property">table</span>[position]!=<span class="literal">null</span>) &#123;</span><br><span class="line">    <span class="keyword">if</span>(<span class="variable language_">this</span>.<span class="property">table</span>[position].<span class="property">key</span>===key) &#123;</span><br><span class="line">      <span class="keyword">delete</span> <span class="variable language_">this</span>.<span class="property">table</span>[position];</span><br><span class="line">      <span class="variable language_">this</span>.<span class="title function_">verifyRemoveSideEffect</span>(key,position);</span><br><span class="line">      <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">let</span> index=position+<span class="number">1</span>;</span><br><span class="line">  <span class="keyword">while</span>(<span class="variable language_">this</span>.<span class="property">table</span>[index]!=<span class="literal">null</span>) &#123;</span><br><span class="line">    <span class="keyword">if</span>(<span class="variable language_">this</span>.<span class="property">table</span>[index].<span class="property">key</span>===key) &#123;</span><br><span class="line">      <span class="keyword">delete</span> <span class="variable language_">this</span>.<span class="property">table</span>[index];</span><br><span class="line">      <span class="variable language_">this</span>.<span class="title function_">verifyRemoveSideEffect</span>(key,index);</span><br><span class="line">      <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    index++</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="title function_">verifyRemoveSideEffect</span>(<span class="params">key, removedPosition</span>) &#123;</span><br><span class="line">  <span class="keyword">const</span> hash=<span class="variable language_">this</span>.<span class="title function_">hashCode</span>(key);</span><br><span class="line">  <span class="keyword">let</span> index=removedPosition+<span class="number">1</span>;</span><br><span class="line">  <span class="keyword">while</span>(<span class="variable language_">this</span>.<span class="property">table</span>[index]!=<span class="literal">null</span>) &#123;</span><br><span class="line">    <span class="keyword">let</span> posHash=<span class="variable language_">this</span>.<span class="title function_">hashCode</span>(<span class="variable language_">this</span>.<span class="property">table</span>[index].<span class="property">key</span>);</span><br><span class="line">    <span class="keyword">if</span>(posHash&lt;=hash||posHash&lt;=removedPosition) &#123;</span><br><span class="line">      <span class="variable language_">this</span>.<span class="property">table</span>[removedPosition]=<span class="variable language_">this</span>.<span class="property">table</span>[index];</span><br><span class="line">      <span class="keyword">delete</span> <span class="variable language_">this</span>.<span class="property">table</span>[index];</span><br><span class="line">      removedPosition=index;</span><br><span class="line">    &#125;</span><br><span class="line">    index++;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>虽然有解决方案但我们要尽量避免哈希冲突的发生，因此应该寻找更好的哈希函数</p>
+</li>
+</ul>
+
+            <!--[if lt IE 9]><script>document.createElement('audio');</script><![endif]-->
+            <audio id="audio" loop="1" preload="auto" controls="controls" data-autoplay="false">
+                <source type="audio/mpeg" src="">
+            </audio>
+            
+                <ul id="audio-list" style="display:none">
+                    
+                        
+                            <li title="0" data-url="http://link.hhtjim.com/163/425570952.mp3"></li>
+                        
+                    
+                        
+                            <li title="1" data-url="http://link.hhtjim.com/163/425570952.mp3"></li>
+                        
+                    
+                </ul>
+            
+        </div>
+        
+        
+    <div id="gitalk-container" class="comment link"
+		data-enable="false"
+        data-ae="false"
+        data-ci=""
+        data-cs=""
+        data-r=""
+        data-o=""
+        data-a=""
+        data-d="false"
+    >查看评论</div>
+
+
+    </div>
+    
+</div>
+
+
+    </div>
+</div>
+</body>
+
+
+<script src="//lib.baomitu.com/jquery/1.8.3/jquery.min.js"></script>
+<script src="/js/plugin.js"></script>
+<script src="/js/typed.js"></script>
+<script src="/js/diaspora.js"></script>
+
+
+<link rel="stylesheet" href="/photoswipe/photoswipe.css">
+<link rel="stylesheet" href="/photoswipe/default-skin/default-skin.css">
+
+
+<script src="/photoswipe/photoswipe.min.js"></script>
+<script src="/photoswipe/photoswipe-ui-default.min.js"></script>
+
+
+<!-- Root element of PhotoSwipe. Must have class pswp. -->
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+    <!-- Background of PhotoSwipe. 
+         It's a separate element as animating opacity is faster than rgba(). -->
+    <div class="pswp__bg"></div>
+    <!-- Slides wrapper with overflow:hidden. -->
+    <div class="pswp__scroll-wrap">
+        <!-- Container that holds slides. 
+            PhotoSwipe keeps only 3 of them in the DOM to save memory.
+            Don't modify these 3 pswp__item elements, data is added later on. -->
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+        <!-- Default (PhotoSwipeUI_Default) interface on top of sliding area. Can be changed. -->
+        <div class="pswp__ui pswp__ui--hidden">
+            <div class="pswp__top-bar">
+                <!--  Controls are self-explanatory. Order can be changed. -->
+                <div class="pswp__counter"></div>
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+                <button class="pswp__button pswp__button--share" title="Share"></button>
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+                <!-- Preloader demo http://codepen.io/dimsemenov/pen/yyBWoR -->
+                <!-- element will get class pswp__preloader--active when preloader is running -->
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                      <div class="pswp__preloader__cut">
+                        <div class="pswp__preloader__donut"></div>
+                      </div>
+                    </div>
+                </div>
+            </div>
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div> 
+            </div>
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+</html>

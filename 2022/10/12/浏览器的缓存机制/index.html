@@ -1,0 +1,205 @@
+
+<!DOCTYPE html>
+<html lang="zh-CN" class="loading">
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>浏览器的缓存机制 - ly-blog</title>
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="google" content="notranslate" />
+    <meta name="keywords" content="Fechin,"> 
+    <meta name="description" content="一个超级懒虫的博客,浏览器的缓存机制​	浏览器的缓存机制就是HTTP的缓存机制，是根据HTTP报文的缓存标识进行的
+强制缓存​	强制缓存就算像浏览器缓存查找请求结果，并根据结果的缓存规则来判断是否使用缓存。强制缓存有三,"> 
+    <meta name="author" content="Lazy-ly"> 
+    <link rel="alternative" href="atom.xml" title="ly-blog" type="application/atom+xml"> 
+    <link rel="icon" href="/img/favicon.jpg"> 
+    
+    
+    
+    <meta name="twitter:card" content="summary"/>
+    <meta name="twitter:title" content="浏览器的缓存机制 - ly-blog"/>
+    <meta name="twitter:description" content="一个超级懒虫的博客,浏览器的缓存机制​	浏览器的缓存机制就是HTTP的缓存机制，是根据HTTP报文的缓存标识进行的
+强制缓存​	强制缓存就算像浏览器缓存查找请求结果，并根据结果的缓存规则来判断是否使用缓存。强制缓存有三,"/>
+    
+    
+    
+    
+    <meta property="og:site_name" content="ly-blog"/>
+    <meta property="og:type" content="object"/>
+    <meta property="og:title" content="浏览器的缓存机制 - ly-blog"/>
+    <meta property="og:description" content="一个超级懒虫的博客,浏览器的缓存机制​	浏览器的缓存机制就是HTTP的缓存机制，是根据HTTP报文的缓存标识进行的
+强制缓存​	强制缓存就算像浏览器缓存查找请求结果，并根据结果的缓存规则来判断是否使用缓存。强制缓存有三,"/>
+    
+<link rel="stylesheet" href="/css/diaspora.css">
+
+    <script>window.searchDbPath = "/search.xml";</script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Source+Code+Pro&display=swap" rel="stylesheet">
+<meta name="generator" content="Hexo 6.2.0"></head>
+
+<body class="loading">
+    <span id="config-title" style="display:none">ly-blog</span>
+    <div id="loader"></div>
+    <div id="single">
+    <div id="top" style="display: block;">
+    <div class="bar" style="width: 0;"></div>
+    <a class="iconfont icon-home image-icon" href="javascript:;" data-url="http://example.com"></a>
+    <div title="播放/暂停" class="iconfont icon-play"></div>
+    <h3 class="subtitle">浏览器的缓存机制</h3>
+    <div class="social">
+        <div>
+            <div class="share">
+                <a title="获取二维码" class="iconfont icon-scan" href="javascript:;"></a>
+            </div>
+            <div id="qr"></div>
+        </div>
+    </div>
+    <div class="scrollbar"></div>
+</div>
+
+    <div class="section">
+        <div class="article">
+    <div class='main'>
+        <h1 class="title">浏览器的缓存机制</h1>
+        <div class="stuff">
+            <span>十月 12, 2022</span>
+            
+  <ul class="post-tags-list" itemprop="keywords"><li class="post-tags-list-item"><a class="post-tags-list-link" href="/tags/%E7%BC%93%E5%AD%98/" rel="tag">缓存</a></li><li class="post-tags-list-item"><a class="post-tags-list-link" href="/tags/%E8%AE%A1%E7%BD%91/" rel="tag">计网</a></li></ul>
+
+
+        </div>
+        <div class="content markdown">
+            <h3 id="浏览器的缓存机制"><a href="#浏览器的缓存机制" class="headerlink" title="浏览器的缓存机制"></a>浏览器的缓存机制</h3><p>​	浏览器的缓存机制就是HTTP的缓存机制，是根据HTTP报文的缓存标识进行的</p>
+<h4 id="强制缓存"><a href="#强制缓存" class="headerlink" title="强制缓存"></a>强制缓存</h4><p>​	强制缓存就算像浏览器缓存查找请求结果，并根据结果的缓存规则来判断是否使用缓存。强制缓存有三种情况</p>
+<ul>
+<li>不存在缓存结果和缓存标识，强制缓存失败，直接向服务器发送请求</li>
+<li>存在缓存结果和缓存标识，但结果已失效，强制缓存失效，使用协商缓存</li>
+<li>存在缓存结果和缓存标识，且结果尚未失效，则强制缓存生效，直接返回结果</li>
+</ul>
+<p>判断缓存结果是否失效的缓存规则放在HTTP响应报文中，控制强制缓存的字段是<code>Expires</code>和<code>Cache-Control</code>，后者优先级更高</p>
+<ul>
+<li><code>Expires</code>的时间值是一个绝对值，当客户端时间超过其值时强制缓存失效</li>
+<li><code>Cache-Control</code>的时间值是一个相对值，它的值表示缓存的有效时间，用<code>max-age</code>表示</li>
+</ul>
+<h4 id="协商缓存"><a href="#协商缓存" class="headerlink" title="协商缓存"></a>协商缓存</h4><p>​	强制缓存失效后，浏览器携带缓存标识向服务器发送请求，服务器根据缓存标识决定是否使用缓存。协商缓存生效，返回304，协商缓存失效，返回200和请求结果</p>
+<p>​	缓存标识也是在响应报文中返回浏览器的。控制协商缓存的字段分别有：<code>Last-Modified</code>和<code> If-Modified-Since</code></p>
+<h5 id="Last-Modified-x2F-If-Modified-Since"><a href="#Last-Modified-x2F-If-Modified-Since" class="headerlink" title="Last-Modified&#x2F;If-Modified-Since"></a><code>Last-Modified</code>&#x2F;<code>If-Modified-Since</code></h5><p>Last-Modified是服务器响应请求时，返回该资源文件在服务器最后被修改的时间</p>
+<p>If-Modified-Since则是客户端再次发起该请求时，携带上次请求返回的Last-Modified值，通过此字段值告诉服务器该资源上次请求返回的最后被修改时间。服务器收到该请求，发现请求头含有If-Modified-Since字段，则会根据If-Modified-Since的字段值与该资源在服务器的最后被修改时间做对比，若服务器的资源最后被修改时间大于If-Modified-Since的字段值，则重新返回资源，状态码为200；否则则返回304，代表资源无更新，可继续使用缓存文件</p>
+<h5 id="Etag-x2F-If-None-Match"><a href="#Etag-x2F-If-None-Match" class="headerlink" title="Etag&#x2F;If-None-Match"></a><code>Etag</code>&#x2F;<code>If-None-Match</code></h5><p><code>Etag</code>是服务器响应请求时，返回当前资源文件的一个唯一标识(由服务器生成)</p>
+<p>If-None-Match是客户端再次发起该请求时，携带上次请求返回的唯一标识<code>Etag</code>值，通过此字段值告诉服务器该资源上次请求返回的唯一标识值。服务器收到该请求后，发现该请求头中含有<code>If-None-Match</code>，则会根据<code>If-None-Match</code>的字段值与该资源在服务器的<code>Etag</code>值做对比，一致则返回304，代表资源无更新，继续使用缓存文件；不一致则重新返回资源文件，状态码为200</p>
+<h3 id="总结一下"><a href="#总结一下" class="headerlink" title="总结一下"></a>总结一下</h3><p>在 Header 内的字段用于控制缓存机制<br>老方法 Expires，记录的绝对值<br>新方法 Cache-Control 多了一堆选项，记录的时间是相对值<br>获取缓存检测缓存是否过期，如果没过期取缓存，优先从内存，其次硬盘，如果过期，则与服务器协商缓存是否仍然可用，如果不可用则获取，可用取缓存</p>
+<p>​	</p>
+
+            <!--[if lt IE 9]><script>document.createElement('audio');</script><![endif]-->
+            <audio id="audio" loop="1" preload="auto" controls="controls" data-autoplay="false">
+                <source type="audio/mpeg" src="">
+            </audio>
+            
+                <ul id="audio-list" style="display:none">
+                    
+                        
+                            <li title="0" data-url="http://link.hhtjim.com/163/425570952.mp3"></li>
+                        
+                    
+                        
+                            <li title="1" data-url="http://link.hhtjim.com/163/425570952.mp3"></li>
+                        
+                    
+                </ul>
+            
+        </div>
+        
+        
+    <div id="gitalk-container" class="comment link"
+		data-enable="false"
+        data-ae="false"
+        data-ci=""
+        data-cs=""
+        data-r=""
+        data-o=""
+        data-a=""
+        data-d="false"
+    >查看评论</div>
+
+
+    </div>
+    
+</div>
+
+
+    </div>
+</div>
+</body>
+
+
+<script src="//lib.baomitu.com/jquery/1.8.3/jquery.min.js"></script>
+<script src="/js/plugin.js"></script>
+<script src="/js/typed.js"></script>
+<script src="/js/diaspora.js"></script>
+
+
+<link rel="stylesheet" href="/photoswipe/photoswipe.css">
+<link rel="stylesheet" href="/photoswipe/default-skin/default-skin.css">
+
+
+<script src="/photoswipe/photoswipe.min.js"></script>
+<script src="/photoswipe/photoswipe-ui-default.min.js"></script>
+
+
+<!-- Root element of PhotoSwipe. Must have class pswp. -->
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+    <!-- Background of PhotoSwipe. 
+         It's a separate element as animating opacity is faster than rgba(). -->
+    <div class="pswp__bg"></div>
+    <!-- Slides wrapper with overflow:hidden. -->
+    <div class="pswp__scroll-wrap">
+        <!-- Container that holds slides. 
+            PhotoSwipe keeps only 3 of them in the DOM to save memory.
+            Don't modify these 3 pswp__item elements, data is added later on. -->
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+        <!-- Default (PhotoSwipeUI_Default) interface on top of sliding area. Can be changed. -->
+        <div class="pswp__ui pswp__ui--hidden">
+            <div class="pswp__top-bar">
+                <!--  Controls are self-explanatory. Order can be changed. -->
+                <div class="pswp__counter"></div>
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+                <button class="pswp__button pswp__button--share" title="Share"></button>
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+                <!-- Preloader demo http://codepen.io/dimsemenov/pen/yyBWoR -->
+                <!-- element will get class pswp__preloader--active when preloader is running -->
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                      <div class="pswp__preloader__cut">
+                        <div class="pswp__preloader__donut"></div>
+                      </div>
+                    </div>
+                </div>
+            </div>
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div> 
+            </div>
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+</html>
