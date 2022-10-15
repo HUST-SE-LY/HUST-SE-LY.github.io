@@ -156,6 +156,26 @@
       </tags>
   </entry>
   <entry>
+    <title></title>
+    <url>/2022/10/15/Docker/</url>
+    <content><![CDATA[<h3 id="Docker"><a href="#Docker" class="headerlink" title="Docker"></a>Docker</h3><h4 id="获取镜像"><a href="#获取镜像" class="headerlink" title="获取镜像"></a>获取镜像</h4><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">docker pull [选项] [Docker Registry 地址[:端口号]/]仓库名[:标签]</span><br></pre></td></tr></table></figure>
+
+<h4 id="运行镜像"><a href="#运行镜像" class="headerlink" title="运行镜像"></a>运行镜像</h4><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta prompt_">$ </span><span class="language-bash">docker run -it --<span class="built_in">rm</span> ubuntu:18.04 bash</span></span><br></pre></td></tr></table></figure>
+
+<p>运行一个容器并启动bash</p>
+<h4 id="列出镜像"><a href="#列出镜像" class="headerlink" title="列出镜像"></a>列出镜像</h4><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta prompt_">$ </span><span class="language-bash">docker image <span class="built_in">ls</span></span></span><br></pre></td></tr></table></figure>
+
+<p>查看镜像所占空间</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta prompt_">$ </span><span class="language-bash">docker system <span class="built_in">df</span></span></span><br></pre></td></tr></table></figure>
+
+<p>显示包含中间层镜像在内的所有镜像</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta prompt_">$ </span><span class="language-bash">docker image <span class="built_in">ls</span> -a</span></span><br></pre></td></tr></table></figure>
+
+<h4 id="删除镜像"><a href="#删除镜像" class="headerlink" title="删除镜像"></a>删除镜像</h4><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta prompt_">$ </span><span class="language-bash">docker image <span class="built_in">rm</span> &lt;name&gt;</span></span><br></pre></td></tr></table></figure>
+
+]]></content>
+  </entry>
+  <entry>
     <title>Echarts</title>
     <url>/2022/10/12/Echarts%E4%BD%BF%E7%94%A8%E6%89%8B%E5%86%8C/</url>
     <content><![CDATA[<h2 id="Echarts使用手册"><a href="#Echarts使用手册" class="headerlink" title="Echarts使用手册"></a>Echarts使用手册</h2><h3 id="入门"><a href="#入门" class="headerlink" title="入门"></a>入门</h3><h4 id="引入"><a href="#引入" class="headerlink" title="引入"></a>引入</h4><figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">&lt;script src=<span class="string">&quot;https://cdn.jsdelivr.net/npm/echarts@5.3.3/dist/echarts.min.js&quot;</span>&gt;&lt;/script&gt;</span><br></pre></td></tr></table></figure>
@@ -590,6 +610,241 @@
       <tags>
         <tag>计算机网络</tag>
       </tags>
+  </entry>
+  <entry>
+    <title></title>
+    <url>/2022/10/14/Linux%E5%91%BD%E4%BB%A4%E8%A1%8C/</url>
+    <content><![CDATA[<h3 id="Linux-CommandLine"><a href="#Linux-CommandLine" class="headerlink" title="Linux CommandLine"></a>Linux CommandLine</h3><h4 id="ls"><a href="#ls" class="headerlink" title="ls"></a>ls</h4><ul>
+<li>列出所有文件按行显示<code>ls -l</code></li>
+<li>列出包含隐藏文件<code>ls -a</code></li>
+<li>在目录后加&#x2F;<code>ls -F</code></li>
+<li>显示访问时间（默认显示修改时间）<code>ls -l --time=atime &lt;filename&gt;</code></li>
+</ul>
+<h4 id="touch"><a href="#touch" class="headerlink" title="touch"></a>touch</h4><ul>
+<li>创建文件<code>touch &lt;fileName&gt;</code></li>
+<li>改变修改时间<code>touch &lt;filename&gt;</code></li>
+<li>改变访问时间<code>touch -a &lt;filename&gt;</code></li>
+</ul>
+<h4 id="cp"><a href="#cp" class="headerlink" title="cp"></a>cp</h4><ul>
+<li>复制文件<code>cp &lt;filename&gt; &lt;destination&gt;</code>,<code>&lt;destination&gt;</code>为文件名就会复制并重命名文件</li>
+<li>提醒目标文件是否存在<code>cp -i &lt;filename&gt; &lt;destination&gt;</code></li>
+<li>复制整个目录<code>cp -R &lt;foldName&gt; &lt;destination&gt;</code></li>
+</ul>
+<h4 id="mv"><a href="#mv" class="headerlink" title="mv"></a>mv</h4><ul>
+<li>重命名<code>mv &lt;originalName&gt; &lt;hopedName&gt;</code></li>
+<li>移动文件<code>mv &lt;filename&gt; &lt;destination&gt;</code></li>
+<li>移动并重命名文件<code>mv &lt;path1&gt; &lt;path2&gt;</code></li>
+</ul>
+<h4 id="rm"><a href="#rm" class="headerlink" title="rm"></a>rm</h4><ul>
+<li><p>提示是否删除<code>rm -i &lt;filename&gt;</code></p>
+</li>
+<li><p>强制删除<code>rm -f &lt;filename&gt;</code></p>
+</li>
+<li><p>删除目录<code>rm -r &lt;folderName&gt;</code></p>
+</li>
+</ul>
+<h4 id="ln"><a href="#ln" class="headerlink" title="ln"></a>ln</h4><ul>
+<li>创建符号链接<code>ln -s &lt;filename&gt; &lt;hopedName&gt;</code></li>
+<li>查看原始文件<code>readlink -f &lt;filename&gt;</code></li>
+<li>创建硬连接<code>ln &lt;filename&gt; &lt;hopedname&gt;</code></li>
+</ul>
+<h4 id="mkdir"><a href="#mkdir" class="headerlink" title="mkdir"></a>mkdir</h4><ul>
+<li>创建文件夹<code>mkdir &lt;folderName&gt;</code></li>
+<li>创建父目录以及其子目录<code>mkdir -p &lt;path&gt;</code></li>
+</ul>
+<h4 id="file"><a href="#file" class="headerlink" title="file"></a>file</h4><ul>
+<li><p>查看文件类型<code>file &lt;filename&gt;</code></p>
+</li>
+<li><p>查看文件末尾<code>tail &lt;filename&gt;</code></p>
+</li>
+<li><p>查看指定行数的文件末尾<code>tail -n &lt;num&gt; &lt;filename&gt;</code></p>
+</li>
+<li><p>查看文件开头<code>head &lt;filename&gt;</code></p>
+</li>
+<li><p>查看指定行数的文件开头<code>head -n &lt;num&gt; &lt;filename&gt;</code></p>
+</li>
+<li><p>查看文件内容<code>cat &lt;filename&gt;</code></p>
+</li>
+<li><p>阅读文件<code>less</code></p>
+<ul>
+<li><code>b</code>:向上翻页</li>
+<li><code>space</code>向下翻页</li>
+<li><code>/&lt;string&gt;</code>查找匹配字符串</li>
+<li><code>G</code>到达文件末尾</li>
+<li><code>g</code>到达文件开头</li>
+<li><code>v</code>用编辑器打开</li>
+<li><code>q</code>推出</li>
+</ul>
+</li>
+</ul>
+<h4 id="ps"><a href="#ps" class="headerlink" title="ps"></a>ps</h4><ul>
+<li>查看进程<code>ps</code></li>
+<li>查看所有进程<code>ps -e</code></li>
+<li>显示更多进程信息<code>ps -f</code></li>
+<li>显示更多进程信息<code>ps -l</code></li>
+<li>BSD模式输出<code>ps l</code></li>
+</ul>
+<h4 id="top"><a href="#top" class="headerlink" title="top"></a>top</h4><ul>
+<li>显示进程实时信息<code>top</code><ul>
+<li><code>f</code>选择排序字段</li>
+<li><code>d</code>修改查询间隔</li>
+</ul>
+</li>
+</ul>
+<h4 id="kill"><a href="#kill" class="headerlink" title="kill"></a>kill</h4><ul>
+<li>向进程发送<code>TERM</code>信号<code>kill &lt;PID&gt;</code></li>
+<li>向进程发送其他信号<code>kill -s &lt;name&gt; &lt;PID&gt;</code></li>
+</ul>
+<h4 id="killall"><a href="#killall" class="headerlink" title="killall"></a>killall</h4><ul>
+<li>通过进程名发送信号<code>killall &lt;processName&gt;</code></li>
+</ul>
+<h4 id="grep"><a href="#grep" class="headerlink" title="grep"></a>grep</h4><ul>
+<li>输出文件中搜索匹配的行<code>grep &lt;string&gt; &lt;filename&gt;</code></li>
+<li>输出不匹配的行<code>grep -v &lt;string&gt; &lt;filename&gt; </code></li>
+<li>输出匹配行的行数<code>grep -c &lt;string&gt; &lt;filename&gt;</code></li>
+<li>输出多个匹配<code>grep -e &lt;string1&gt; -e &lt;string2&gt; &lt;filename&gt;</code></li>
+</ul>
+<h4 id="jobs"><a href="#jobs" class="headerlink" title="jobs"></a>jobs</h4><ul>
+<li>显示后台进程<code>jobs</code></li>
+<li>显示包含<code>PID</code>的后ps台进程<code>jobs -l</code></li>
+</ul>
+<h4 id="amp"><a href="#amp" class="headerlink" title="&amp;"></a>&amp;</h4><ul>
+<li>将命令放入后台<code>&lt;command&gt; &amp;</code></li>
+</ul>
+<h4 id="alias"><a href="#alias" class="headerlink" title="alias"></a>alias</h4><ul>
+<li>创建一个别名<code>alias &lt;shortname&gt; = &quot;&lt;command&gt;&quot;</code></li>
+</ul>
+<h4 id="chmod"><a href="#chmod" class="headerlink" title="chmod"></a>chmod</h4><ul>
+<li>改变文件权限<code>chmod &lt;options&gt; &lt;mode&gt; &lt;filename&gt;</code><ul>
+<li>文件的权限有三种：rwx（读，写，执行）,根据有无先转成二进制在转成8进制可表示成唯一符号，如r-x为101，5；rwx为111，7</li>
+<li>在八进制模式下修改直接指定3个八进制参数就行，分别代表用户，组，其他的权限</li>
+<li>在符号模式下：<code>chmod [ugoa...] [+=-] [rwx...]</code><ul>
+<li>u：用户</li>
+<li>g：组</li>
+<li>o：其他</li>
+<li>a：全部</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h4 id="chown"><a href="#chown" class="headerlink" title="chown"></a>chown</h4><ul>
+<li><p>改变文件属主<code>chown &lt;username&gt; &lt;filename&gt;</code></p>
+</li>
+<li><p>改变文件属主和组别<code>chown &lt;username&gt;.&lt;groupname&gt; &lt;filename&gt;</code></p>
+</li>
+<li><p>只改变组属<code>chown .&lt;groupname&gt; filename</code></p>
+</li>
+<li><p>递归改变子目录<code>chown -R &lt;username&gt; &lt;filename&gt;</code></p>
+</li>
+</ul>
+]]></content>
+  </entry>
+  <entry>
+    <title></title>
+    <url>/2022/10/16/React%E5%85%A5%E9%97%A8%E7%AC%94%E8%AE%B0/</url>
+    <content><![CDATA[<h3 id="React入门笔记"><a href="#React入门笔记" class="headerlink" title="React入门笔记"></a>React入门笔记</h3><p>这篇笔记对应React官方文档中&#x3D;&#x3D;核心概念&#x3D;&#x3D;部分内容，网址：<a href="https://zh-hans.reactjs.org/docs/hello-world.html">https://zh-hans.reactjs.org/docs/hello-world.html</a></p>
+<h4 id="引入React和JSX"><a href="#引入React和JSX" class="headerlink" title="引入React和JSX"></a>引入React和JSX</h4><p>入门时直接使用<code>script</code>标签的方式引入，但在React开发中使用JSX语法在编写模板时会方便很多，因此可以使用babel对JSX语法进行解析，同样使用<code>script</code>标签引入</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">script</span></span></span><br><span class="line"><span class="tag">     <span class="attr">crossorigin</span></span></span><br><span class="line"><span class="tag">     <span class="attr">src</span>=<span class="string">&quot;https://unpkg.com/react@18/umd/react.development.js&quot;</span></span></span><br><span class="line"><span class="tag">   &gt;</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line">   <span class="tag">&lt;<span class="name">script</span></span></span><br><span class="line"><span class="tag">     <span class="attr">crossorigin</span></span></span><br><span class="line"><span class="tag">     <span class="attr">src</span>=<span class="string">&quot;https://unpkg.com/react-dom@18/umd/react-dom.development.js&quot;</span></span></span><br><span class="line"><span class="tag">   &gt;</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">&quot;https://unpkg.com/babel-standalone@6/babel.min.js&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>引入编写的script标签时要添加type属性</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">&quot;index.js&quot;</span> <span class="attr">async</span> <span class="attr">defer</span> <span class="attr">type</span>=<span class="string">&quot;text/babel&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>JSX语法<ul>
+<li>入门的话只需要了解<code>&#123;&#125;</code>引入表达式</li>
+</ul>
+</li>
+</ul>
+<h4 id="创建一个根元素"><a href="#创建一个根元素" class="headerlink" title="创建一个根元素"></a>创建一个根元素</h4><p>首先我们需要在HTML模板中创建一个根标签</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">&quot;root&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>然后设置根元素</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">const</span> root = <span class="title class_">ReactDOM</span>.<span class="title function_">createRoot</span>(<span class="variable language_">document</span>.<span class="title function_">getElementById</span>(<span class="string">&quot;root&quot;</span>));</span><br></pre></td></tr></table></figure>
+
+<p>然后可以为根元素声明渲染的模板</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">root.render(&lt;div&gt;helloworld&lt;div&gt;)</span><br></pre></td></tr></table></figure>
+
+<p>这样在根标签下就渲染出了一个以helloworld为内容的div</p>
+<p>如果想要更新渲染的内容的话，可以重新渲染，但不推荐这么做，有更好的处理方式</p>
+<h4 id="组件"><a href="#组件" class="headerlink" title="组件"></a>组件</h4><p>vue和react组件具有相似之处</p>
+<h5 id="声明组件"><a href="#声明组件" class="headerlink" title="声明组件"></a>声明组件</h5><p>声明组件可以用函数形式也可以用创建类的形式，下面演示后者</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">class HelloWorld extends React.Component &#123;</span><br><span class="line"> render() &#123;</span><br><span class="line">     return (</span><br><span class="line">         &lt;h1&gt;hello world&lt;/h1&gt;</span><br><span class="line">     )</span><br><span class="line"> &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>我们需要让声明的类继承<code>React.Component</code>,它便是一个有效的react组件</p>
+<p>然后通过<code>render</code>方法声明组件要渲染的html模板</p>
+<p>然后我们可以把组件挂载到根元素上</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">const</span> element = <span class="language-xml"><span class="tag">&lt;<span class="name">HelloWorld</span>&gt;</span><span class="tag">&lt;/<span class="name">HelloWorld</span>&gt;</span></span>;</span><br><span class="line">root.<span class="title function_">render</span>(element);</span><br></pre></td></tr></table></figure>
+
+<h5 id="使用props"><a href="#使用props" class="headerlink" title="使用props"></a>使用props</h5><p>和vue组件一样，react组件也可以使用props,在class式声明中使用<code>this.props.&lt;name&gt;</code>使用props,如</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">HelloWorld</span> <span class="keyword">extends</span> <span class="title class_ inherited__">React.Component</span> &#123;</span><br><span class="line"> <span class="title function_">render</span>(<span class="params"></span>) &#123;</span><br><span class="line">     <span class="keyword">return</span> (</span><br><span class="line">         <span class="language-xml"><span class="tag">&lt;<span class="name">h1</span>&gt;</span>&#123;this.props.title&#125;<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></span></span><br><span class="line">     )</span><br><span class="line"> &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>然后使用时指定属性值就行</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">const</span> element = <span class="language-xml"><span class="tag">&lt;<span class="name">HelloWorld</span> <span class="attr">title</span>=<span class="string">&quot;helloworld&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">HelloWorld</span>&gt;</span></span>;</span><br><span class="line">root.<span class="title function_">render</span>(element);</span><br></pre></td></tr></table></figure>
+
+<p>hellowrold将显示在屏幕上</p>
+<p>和vue一样，react组件也不能修改props的值</p>
+<h4 id="state"><a href="#state" class="headerlink" title="state"></a>state</h4><p>react使用<code>state</code>来更新组件</p>
+<h5 id="设置一个初始state"><a href="#设置一个初始state" class="headerlink" title="设置一个初始state"></a>设置一个初始state</h5><p>我们引入构造函数来初始化state</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="title function_">constructor</span>(<span class="params">props</span>) &#123;</span><br><span class="line">    <span class="variable language_">super</span>(props);</span><br><span class="line">    <span class="variable language_">this</span>.<span class="property">state</span> = &#123;</span><br><span class="line">      <span class="attr">date</span>: <span class="keyword">new</span> <span class="title class_">Date</span>(),</span><br><span class="line">      <span class="attr">title</span>: <span class="string">&quot;YEAH!!&quot;</span>,</span><br><span class="line">    &#125;;</span><br></pre></td></tr></table></figure>
+
+<p>类似于vue中的data,这里定义了date和title的初始值</p>
+<h5 id="使用state"><a href="#使用state" class="headerlink" title="使用state"></a>使用state</h5><p>和props的用法类似，我们使用<code>this.state.&lt;name&gt;</code>来使用state</p>
+<h5 id="修改state"><a href="#修改state" class="headerlink" title="修改state"></a>修改state</h5><p>和小程序中的<code>setdata</code>类似，我们可以使用<code>this.setState</code>来修改state的值，但和vue中不同的是，不能直接通过<code>this.state</code>来修改。修改state可以用对象式和函数式（当要用到props等参数时）</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="variable language_">this</span>.<span class="title function_">setState</span>(&#123;</span><br><span class="line">    <span class="attr">title</span>:<span class="string">&quot;hello&quot;</span>,</span><br><span class="line">&#125;)<span class="comment">//对象式</span></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="variable language_">this</span>.<span class="title function_">setState</span>(<span class="function">(<span class="params">state,props</span>)=&gt;</span>&#123;</span><br><span class="line">    <span class="keyword">return</span> &#123;</span><br><span class="line">        <span class="attr">title</span>:props.<span class="property">title</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;)<span class="comment">//函数式</span></span><br></pre></td></tr></table></figure>
+
+<h4 id="生命周期"><a href="#生命周期" class="headerlink" title="生命周期"></a>生命周期</h4><p>react中也有生命周期的概念，这里介绍两个生命周期函数</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="title function_">componentDidMount</span>(<span class="params"></span>) &#123;&#125;<span class="comment">//在组件渲染到dom后运行</span></span><br><span class="line"><span class="title function_">componentWillUnmount</span>(<span class="params"></span>) &#123;&#125;<span class="comment">//当组件发生更改或被销毁取消挂载时使用</span></span><br></pre></td></tr></table></figure>
+
+<h4 id="事件处理"><a href="#事件处理" class="headerlink" title="事件处理"></a>事件处理</h4><h5 id="注册事件"><a href="#注册事件" class="headerlink" title="注册事件"></a>注册事件</h5><figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">button</span> <span class="attr">onClick</span>=<span class="string">&#123;事件处理函数&#125;</span>&gt;</span></span><br><span class="line">    </span><br><span class="line"><span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>事件处理函数中编写要处理的内容</p>
+<p>事件处理函数默认可以传入一个参数e,和传统网页开发中的用法相同</p>
+<p>react事件中只能通过<code>e.preventDefault</code>来禁止默认行为</p>
+<p>定义好的事件处理函数还要在构造函数中改变this指向才可以正常使用this,按照下面这种模板即可</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="variable language_">this</span>.<span class="property">changeTitle</span> = <span class="variable language_">this</span>.<span class="property">changeTitle</span>.<span class="title function_">bind</span>(<span class="variable language_">this</span>);</span><br></pre></td></tr></table></figure>
+
+<h4 id="条件渲染"><a href="#条件渲染" class="headerlink" title="条件渲染"></a>条件渲染</h4><p>和vue使用v-if在html中实现条件渲染不同，在react中仍使用if等条件控制语句控制render方法的返回值实现条件渲染</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="title function_">render</span>(<span class="params"></span>) &#123;</span><br><span class="line">    <span class="keyword">if</span>(<span class="variable language_">this</span>.<span class="property">islogin</span>) &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="language-xml"><span class="tag">&lt;<span class="name">Login</span>&gt;</span><span class="tag">&lt;/<span class="name">Login</span>&gt;</span></span></span><br><span class="line">    &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="language-xml"><span class="tag">&lt;<span class="name">Greet</span>&gt;</span><span class="tag">&lt;/<span class="name">Greet</span>&gt;</span></span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>之间返回null可以起到阻止渲染的作用</p>
+<h4 id="列表渲染和key"><a href="#列表渲染和key" class="headerlink" title="列表渲染和key"></a>列表渲染和key</h4><p>可以使用数组的map方法定义出一个“模板数组”，和vue一样最好指定唯一的key值</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="title function_">render</span>(<span class="params"></span>) &#123;</span><br><span class="line">          <span class="keyword">const</span> list = numList.<span class="title function_">map</span>(<span class="function">(<span class="params">num</span>) =&gt;</span> &#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="language-xml"><span class="tag">&lt;<span class="name">li</span> <span class="attr">key</span>=<span class="string">&#123;num.toString()&#125;</span>&gt;</span>&#123;num&#125;<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span>;</span><br><span class="line">          &#125;);</span><br><span class="line">          <span class="keyword">return</span> (</span><br><span class="line">            <span class="language-xml"><span class="tag">&lt;<span class="name">div</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">              <span class="tag">&lt;<span class="name">ul</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">                &#123;list&#125;</span></span><br><span class="line"><span class="language-xml">              <span class="tag">&lt;/<span class="name">ul</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">            <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span></span><br><span class="line">          );</span><br><span class="line">        &#125;</span><br></pre></td></tr></table></figure>
+
+<p>当然JSX也可以直接嵌入map</p>
+<figure class="highlight jsx"><table><tr><td class="code"><pre><span class="line"><span class="keyword">return</span> (</span><br><span class="line">    <span class="language-xml"><span class="tag">&lt;<span class="name">div</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">        <span class="tag">&lt;<span class="name">ul</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">            &#123;numList.map((num) =&gt; &#123;</span></span><br><span class="line"><span class="language-xml">            return <span class="tag">&lt;<span class="name">li</span> <span class="attr">key</span>=<span class="string">&#123;num.toString()&#125;</span>&gt;</span>&#123;num&#125;<span class="tag">&lt;/<span class="name">li</span>&gt;</span>;</span></span><br><span class="line"><span class="language-xml">          &#125;)&#125;</span></span><br><span class="line"><span class="language-xml">        <span class="tag">&lt;/<span class="name">ul</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span></span><br><span class="line">)</span><br></pre></td></tr></table></figure>
+
+<h4 id="表单控件处理"><a href="#表单控件处理" class="headerlink" title="表单控件处理"></a>表单控件处理</h4><p>通过指定表单的value为state里的变量，再监听表单的change事件改变这个变量实现一种双向绑定</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">textarea</span> <span class="attr">value</span>=<span class="string">&#123;this.state.value&#125;</span> <span class="attr">onChange</span>=<span class="string">&#123;this.handleChange&#125;</span>&gt;</span><span class="tag">&lt;/<span class="name">textarea</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="title function_">handleChange</span>(<span class="params">e</span>) &#123;</span><br><span class="line">          <span class="variable language_">this</span>.<span class="title function_">setState</span>(&#123;</span><br><span class="line">            <span class="attr">value</span>:e.<span class="property">target</span>.<span class="property">value</span>,</span><br><span class="line">          &#125;)</span><br><span class="line">          <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="variable language_">this</span>.<span class="property">state</span>.<span class="property">value</span>)</span><br><span class="line">        &#125;</span><br></pre></td></tr></table></figure>
+
+<h4 id="向子组件传入模板"><a href="#向子组件传入模板" class="headerlink" title="向子组件传入模板"></a>向子组件传入模板</h4><p>和vue中的插槽类似，在react也可以向子组件传入模板</p>
+<p>在子组件中使用<code>this.props.children</code>定义模板所在的位置</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">render() &#123;</span><br><span class="line">          return (</span><br><span class="line">            &lt;div&gt;</span><br><span class="line">              &#123;this.props.children&#125;</span><br><span class="line">            &lt;/div&gt;</span><br><span class="line">          )</span><br><span class="line">        &#125;</span><br></pre></td></tr></table></figure>
+
+<p>然后父组件在渲染子组件时可以传入模板</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">render() &#123;</span><br><span class="line">          return (</span><br><span class="line">            &lt;Child&gt;</span><br><span class="line">              &lt;h1&gt;HELLO&lt;/h1&gt;</span><br><span class="line">            &lt;/Child&gt;</span><br><span class="line">          )</span><br><span class="line">        &#125;</span><br></pre></td></tr></table></figure>
+
+<p>如果需要在不同地方使用多个模板呢，我们可以不使用children而使用自己定义的内容是JSX的props传递给子组件</p>
+]]></content>
+  </entry>
+  <entry>
+    <title></title>
+    <url>/2022/10/15/SQL/</url>
+    <content><![CDATA[<h3 id="SQL"><a href="#SQL" class="headerlink" title="SQL"></a>SQL</h3><h4 id="查询数据"><a href="#查询数据" class="headerlink" title="查询数据"></a>查询数据</h4><figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="comment">--从某个表中查询所有数据</span></span><br><span class="line"><span class="keyword">SELECT</span> <span class="operator">*</span> <span class="keyword">FROM</span> <span class="operator">&lt;</span>tablename<span class="operator">&gt;</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">--条件查询</span></span><br><span class="line"><span class="keyword">SELECT</span> <span class="operator">*</span> <span class="keyword">FROM</span> <span class="operator">&lt;</span>tablename<span class="operator">&gt;</span> <span class="keyword">WHERE</span> <span class="operator">&lt;</span><span class="keyword">condition</span><span class="operator">&gt;</span></span><br><span class="line"><span class="comment">--并条件</span></span><br><span class="line"><span class="operator">&lt;</span>condition1<span class="operator">&gt;</span> <span class="keyword">AND</span> <span class="operator">&lt;</span>condition2<span class="operator">&gt;</span></span><br><span class="line"><span class="comment">--或条件</span></span><br><span class="line"><span class="operator">&lt;</span>condition1<span class="operator">&gt;</span> <span class="keyword">OR</span> <span class="operator">&lt;</span>condition2<span class="operator">&gt;</span></span><br><span class="line"><span class="comment">--非条件</span></span><br><span class="line"><span class="keyword">NOT</span> <span class="operator">&lt;</span><span class="keyword">condition</span><span class="operator">&gt;</span></span><br><span class="line"><span class="comment">--多条件混用</span></span><br><span class="line">(<span class="operator">&lt;</span>condition1<span class="operator">&gt;</span> <span class="keyword">AND</span> <span class="operator">&lt;</span>condition2<span class="operator">&gt;</span>) <span class="keyword">OR</span> <span class="operator">&lt;</span>condition3<span class="operator">&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="comment">--投影查询</span></span><br><span class="line"><span class="keyword">SELECT</span> column1,column2... <span class="keyword">FROM</span> <span class="operator">&lt;</span>tablename<span class="operator">&gt;</span></span><br><span class="line"><span class="comment">--投影查询并起别名</span></span><br><span class="line"><span class="keyword">SELECT</span> column1 shortname1,column2... <span class="keyword">FROM</span> <span class="operator">&lt;</span>tablename<span class="operator">&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="comment">--排序</span></span><br><span class="line"><span class="comment">--根据某列的值排序</span></span><br><span class="line"><span class="keyword">SELECT</span> <span class="operator">*</span> <span class="keyword">FROM</span> <span class="operator">&lt;</span>tablename<span class="operator">&gt;</span> <span class="keyword">ORDER</span> <span class="keyword">BY</span> <span class="operator">&lt;</span><span class="keyword">column</span><span class="operator">&gt;</span> </span><br><span class="line"><span class="comment">--升序/降序排列</span></span><br><span class="line"><span class="keyword">SELECT</span> <span class="operator">*</span> <span class="keyword">FROM</span> <span class="operator">&lt;</span>tablename<span class="operator">&gt;</span> <span class="keyword">ORDER</span> <span class="keyword">BY</span> <span class="operator">&lt;</span><span class="keyword">COLUMN</span><span class="operator">&gt;</span> <span class="operator">&lt;</span><span class="keyword">DESC</span><span class="operator">/</span><span class="keyword">ASC</span><span class="operator">&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="comment">--分页查询</span></span><br><span class="line"><span class="keyword">SELECT</span> <span class="operator">*</span> <span class="keyword">FROM</span> <span class="operator">&lt;</span>tablename<span class="operator">&gt;</span> LIMIT <span class="operator">&lt;</span>num<span class="operator">&gt;</span> <span class="keyword">OFFSET</span> <span class="operator">&lt;</span>num<span class="operator">&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="comment">--聚合查询</span></span><br><span class="line"><span class="comment">--查询记录数目</span></span><br><span class="line"><span class="keyword">SELECT</span> <span class="built_in">COUNT</span>(<span class="operator">*</span>) <span class="keyword">FROM</span> <span class="operator">&lt;</span>tablename<span class="operator">&gt;</span>;</span><br><span class="line"><span class="comment">--设置别名</span></span><br><span class="line"><span class="keyword">SELECT</span> <span class="built_in">COUNT</span>(<span class="operator">*</span>) <span class="operator">&lt;</span>SHORTNAME<span class="operator">&gt;</span> <span class="keyword">FROM</span> <span class="operator">&lt;</span>tablename<span class="operator">&gt;</span>;</span><br><span class="line"><span class="comment">--查询合计值</span></span><br><span class="line"><span class="keyword">SELECT</span> <span class="built_in">SUM</span>(<span class="operator">*</span>) <span class="keyword">FROM</span> <span class="operator">&lt;</span>tablename<span class="operator">&gt;</span> ;</span><br><span class="line"><span class="comment">--查询平均值</span></span><br><span class="line"><span class="keyword">SELECT</span> <span class="built_in">AVG</span>(<span class="operator">*</span>) <span class="keyword">FROM</span> <span class="operator">&lt;</span>tablename<span class="operator">&gt;</span>;</span><br><span class="line"><span class="comment">--查询最大值</span></span><br><span class="line"><span class="keyword">SELECT</span> <span class="built_in">MAX</span>(<span class="operator">*</span>) <span class="keyword">FROM</span> <span class="operator">&lt;</span>tablename<span class="operator">&gt;</span>;</span><br><span class="line"><span class="comment">--查询最小值</span></span><br><span class="line"><span class="keyword">SELECT</span> <span class="built_in">MIN</span>(<span class="operator">*</span>) <span class="keyword">FROM</span> <span class="operator">&lt;</span>tablename<span class="operator">&gt;</span>;</span><br><span class="line"><span class="comment">--分组聚合</span></span><br><span class="line"><span class="keyword">SELECT</span> <span class="built_in">COUNT</span>(<span class="operator">*</span>) <span class="keyword">FROM</span> <span class="operator">&lt;</span>tablename<span class="operator">&gt;</span> <span class="keyword">GROUP</span> <span class="keyword">BY</span> <span class="operator">&lt;</span>COLUMN1<span class="operator">&gt;</span>,<span class="operator">&lt;</span>column2<span class="operator">&gt;</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">--多表查询</span></span><br><span class="line"><span class="keyword">SELECT</span> <span class="operator">*</span> <span class="keyword">FROM</span> <span class="operator">&lt;</span>tablename1<span class="operator">&gt;</span>,<span class="operator">&lt;</span>tablename2<span class="operator">&gt;</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">--连接查询</span></span><br><span class="line"><span class="comment">--符合condition的行被连接起来</span></span><br><span class="line"><span class="keyword">SELECT</span> shortname.colunmname <span class="keyword">from</span> <span class="operator">&lt;</span>table1<span class="operator">&gt;</span> shortname <span class="keyword">inner</span> <span class="keyword">join</span> <span class="operator">&lt;</span>table2<span class="operator">&gt;</span> <span class="keyword">on</span> <span class="operator">&lt;</span><span class="keyword">condition</span><span class="operator">&gt;</span>;</span><br><span class="line"><span class="comment">--显示右表全部</span></span><br><span class="line"><span class="keyword">SELECT</span> shortname.colunmname <span class="keyword">from</span> <span class="operator">&lt;</span>table1<span class="operator">&gt;</span> shortname <span class="keyword">right</span> <span class="keyword">outer</span> <span class="keyword">join</span> <span class="operator">&lt;</span>table2<span class="operator">&gt;</span> <span class="keyword">on</span> <span class="operator">&lt;</span><span class="keyword">condition</span><span class="operator">&gt;</span>;</span><br><span class="line"><span class="comment">--显示左表全部</span></span><br><span class="line"><span class="keyword">SELECT</span> shortname.colunmname <span class="keyword">from</span> <span class="operator">&lt;</span>table1<span class="operator">&gt;</span> shortname <span class="keyword">left</span> <span class="keyword">outer</span> <span class="keyword">join</span> <span class="operator">&lt;</span>table2<span class="operator">&gt;</span> <span class="keyword">on</span> <span class="operator">&lt;</span><span class="keyword">condition</span><span class="operator">&gt;</span>;</span><br><span class="line"><span class="comment">--显示全部</span></span><br><span class="line"><span class="keyword">SELECT</span> shortname.colunmname <span class="keyword">from</span> <span class="operator">&lt;</span>table1<span class="operator">&gt;</span> shortname <span class="keyword">full</span> <span class="keyword">outer</span> <span class="keyword">join</span> <span class="operator">&lt;</span>table2<span class="operator">&gt;</span> <span class="keyword">on</span> <span class="operator">&lt;</span><span class="keyword">condition</span><span class="operator">&gt;</span>;</span><br></pre></td></tr></table></figure>
+
+<h4 id="插入"><a href="#插入" class="headerlink" title="插入"></a>插入</h4><figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">INSERT</span> INFO <span class="operator">&lt;</span>TABLENAME<span class="operator">&gt;</span> (<span class="operator">&lt;</span>COLUMN1<span class="operator">&gt;</span>,<span class="operator">&lt;</span>COLUMN2<span class="operator">&gt;</span>...) <span class="keyword">VALUES</span> (<span class="operator">&lt;</span>INFO1<span class="operator">&gt;</span>,<span class="operator">&lt;</span>INFO2<span class="operator">&gt;</span>...)...;</span><br></pre></td></tr></table></figure>
+
+<h4 id="修改"><a href="#修改" class="headerlink" title="修改"></a>修改</h4><figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">UPDATE</span> <span class="operator">&lt;</span>TABLENAME<span class="operator">&gt;</span> <span class="keyword">SET</span> <span class="operator">&lt;</span>NAME1<span class="operator">&gt;=</span><span class="operator">&lt;</span>VLAUE1<span class="operator">&gt;</span>,<span class="operator">&lt;</span>NAME2<span class="operator">&gt;=</span><span class="operator">&lt;</span>VALUE2<span class="operator">&gt;</span>...<span class="keyword">WHERE</span> <span class="operator">&lt;</span><span class="keyword">CONDITION</span><span class="operator">&gt;</span>;</span><br></pre></td></tr></table></figure>
+
+<h4 id="删除"><a href="#删除" class="headerlink" title="删除"></a>删除</h4><figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">DELETE</span> <span class="keyword">FROM</span> <span class="operator">&lt;</span>TABLENAME<span class="operator">&gt;</span> <span class="keyword">WHERE</span> <span class="operator">&lt;</span><span class="keyword">CONDITION</span><span class="operator">&gt;</span></span><br></pre></td></tr></table></figure>
+
+
+
+]]></content>
   </entry>
   <entry>
     <title>TCP/IP知识点总结</title>
@@ -1597,6 +1852,17 @@
       <tags>
         <tag>ppt</tag>
       </tags>
+  </entry>
+  <entry>
+    <title></title>
+    <url>/2022/10/15/shell/</url>
+    <content><![CDATA[<h3 id="shell"><a href="#shell" class="headerlink" title="shell"></a>shell</h3><h4 id="声明和使用变量"><a href="#声明和使用变量" class="headerlink" title="声明和使用变量"></a>声明和使用变量</h4><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta prompt_">#</span><span class="language-bash">声明</span></span><br><span class="line">varName=&#x27;name&#x27;</span><br><span class="line"><span class="meta prompt_">#</span><span class="language-bash">使用</span></span><br><span class="line">echo $&#123;varName&#125;</span><br><span class="line"><span class="meta prompt_">#</span><span class="language-bash">设为只读</span></span><br><span class="line">readonly varName</span><br><span class="line"><span class="meta prompt_">#</span><span class="language-bash">删除变量</span></span><br><span class="line">unset varName</span><br></pre></td></tr></table></figure>
+
+<h5 id="字符串变量"><a href="#字符串变量" class="headerlink" title="字符串变量"></a>字符串变量</h5><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta prompt_">#</span><span class="language-bash">字符串拼接</span></span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_">#</span><span class="language-bash">使用双引号拼接</span></span><br><span class="line">greeting=&quot;hello, &quot;$your_name&quot; !&quot;</span><br><span class="line">greeting_1=&quot;hello, $&#123;your_name&#125; !&quot;</span><br><span class="line"><span class="meta prompt_">#</span><span class="language-bash">使用单引号拼接（greeting_3不会正常拼接）</span></span><br><span class="line">greeting_2=&#x27;hello, &#x27;$your_name&#x27; !&#x27;</span><br><span class="line">greeting_3=&#x27;hello, $&#123;your_name&#125; !&#x27;</span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_">#</span><span class="language-bash">提取子字符串(如从第二个字符开始截取4个字符)</span></span><br><span class="line">echo $&#123;string:1:4&#125;</span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_">#</span><span class="language-bash">查找子串(如匹配12则返回1的位置1)</span></span><br><span class="line">string=&quot;123456&quot;</span><br><span class="line">echo `expr index $&#123;string&#125; 12`</span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_">#</span><span class="language-bash">获取字符串长度</span></span><br><span class="line"><span class="meta prompt_">$</span><span class="language-bash">&#123;<span class="comment">#string&#125;</span></span></span><br></pre></td></tr></table></figure>
+
+<h5 id="数组"><a href="#数组" class="headerlink" title="数组"></a>数组</h5><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta prompt_">#</span><span class="language-bash">定义数组</span></span><br><span class="line">array=(1 2 3 4 5)</span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_">#</span><span class="language-bash">定义数组分量</span></span><br><span class="line">array[0]=value0</span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_">#</span><span class="language-bash">读取数组某个元素</span></span><br><span class="line"><span class="meta prompt_">$</span><span class="language-bash">&#123;array[0]&#125;</span></span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_">#</span><span class="language-bash">读取数组所有元素</span></span><br><span class="line"><span class="meta prompt_">$</span><span class="language-bash">&#123;array[@]&#125;</span></span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_">#</span><span class="language-bash">获取数组长度</span></span><br><span class="line"><span class="meta prompt_">$</span><span class="language-bash">&#123;<span class="comment">#array[@]&#125;</span></span></span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_">#</span><span class="language-bash">获取单个元素长度</span></span><br><span class="line"><span class="meta prompt_">$</span><span class="language-bash">&#123;<span class="comment">#array[num]&#125;</span></span></span><br></pre></td></tr></table></figure>
+
+<h4 id="传参"><a href="#传参" class="headerlink" title="传参"></a>传参</h4>]]></content>
   </entry>
   <entry>
     <title>一个前端小实例：拖动选项卡（原生实现）</title>

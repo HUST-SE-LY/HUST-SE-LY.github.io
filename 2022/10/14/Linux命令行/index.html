@@ -1,0 +1,316 @@
+
+<!DOCTYPE html>
+<html lang="zh-CN" class="loading">
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title> - ly-blog</title>
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="google" content="notranslate" />
+    <meta name="keywords" content="Fechin,"> 
+    <meta name="description" content="一个超级懒虫的博客,Linux CommandLinels
+列出所有文件按行显示ls -l
+列出包含隐藏文件ls -a
+在目录后加&amp;#x2F;ls -F
+显示访问时间（默认显示修改时间）ls -l --time=ati,"> 
+    <meta name="author" content="Lazy-ly"> 
+    <link rel="alternative" href="atom.xml" title="ly-blog" type="application/atom+xml"> 
+    <link rel="icon" href="/img/favicon.jpg"> 
+    
+    
+    
+    <meta name="twitter:card" content="summary"/>
+    <meta name="twitter:title" content=" - ly-blog"/>
+    <meta name="twitter:description" content="一个超级懒虫的博客,Linux CommandLinels
+列出所有文件按行显示ls -l
+列出包含隐藏文件ls -a
+在目录后加&amp;#x2F;ls -F
+显示访问时间（默认显示修改时间）ls -l --time=ati,"/>
+    
+    
+    
+    
+    <meta property="og:site_name" content="ly-blog"/>
+    <meta property="og:type" content="object"/>
+    <meta property="og:title" content=" - ly-blog"/>
+    <meta property="og:description" content="一个超级懒虫的博客,Linux CommandLinels
+列出所有文件按行显示ls -l
+列出包含隐藏文件ls -a
+在目录后加&amp;#x2F;ls -F
+显示访问时间（默认显示修改时间）ls -l --time=ati,"/>
+    
+<link rel="stylesheet" href="/css/diaspora.css">
+
+    <script>window.searchDbPath = "/search.xml";</script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Source+Code+Pro&display=swap" rel="stylesheet">
+<meta name="generator" content="Hexo 6.2.0"></head>
+
+<body class="loading">
+    <span id="config-title" style="display:none">ly-blog</span>
+    <div id="loader"></div>
+    <div id="single">
+    <div id="top" style="display: block;">
+    <div class="bar" style="width: 0;"></div>
+    <a class="iconfont icon-home image-icon" href="javascript:;" data-url="http://example.com"></a>
+    <div title="播放/暂停" class="iconfont icon-play"></div>
+    <h3 class="subtitle"></h3>
+    <div class="social">
+        <div>
+            <div class="share">
+                <a title="获取二维码" class="iconfont icon-scan" href="javascript:;"></a>
+            </div>
+            <div id="qr"></div>
+        </div>
+    </div>
+    <div class="scrollbar"></div>
+</div>
+
+    <div class="section">
+        <div class="article">
+    <div class='main'>
+        <h1 class="title"></h1>
+        <div class="stuff">
+            <span>十月 14, 2022</span>
+            
+
+        </div>
+        <div class="content markdown">
+            <h3 id="Linux-CommandLine"><a href="#Linux-CommandLine" class="headerlink" title="Linux CommandLine"></a>Linux CommandLine</h3><h4 id="ls"><a href="#ls" class="headerlink" title="ls"></a>ls</h4><ul>
+<li>列出所有文件按行显示<code>ls -l</code></li>
+<li>列出包含隐藏文件<code>ls -a</code></li>
+<li>在目录后加&#x2F;<code>ls -F</code></li>
+<li>显示访问时间（默认显示修改时间）<code>ls -l --time=atime &lt;filename&gt;</code></li>
+</ul>
+<h4 id="touch"><a href="#touch" class="headerlink" title="touch"></a>touch</h4><ul>
+<li>创建文件<code>touch &lt;fileName&gt;</code></li>
+<li>改变修改时间<code>touch &lt;filename&gt;</code></li>
+<li>改变访问时间<code>touch -a &lt;filename&gt;</code></li>
+</ul>
+<h4 id="cp"><a href="#cp" class="headerlink" title="cp"></a>cp</h4><ul>
+<li>复制文件<code>cp &lt;filename&gt; &lt;destination&gt;</code>,<code>&lt;destination&gt;</code>为文件名就会复制并重命名文件</li>
+<li>提醒目标文件是否存在<code>cp -i &lt;filename&gt; &lt;destination&gt;</code></li>
+<li>复制整个目录<code>cp -R &lt;foldName&gt; &lt;destination&gt;</code></li>
+</ul>
+<h4 id="mv"><a href="#mv" class="headerlink" title="mv"></a>mv</h4><ul>
+<li>重命名<code>mv &lt;originalName&gt; &lt;hopedName&gt;</code></li>
+<li>移动文件<code>mv &lt;filename&gt; &lt;destination&gt;</code></li>
+<li>移动并重命名文件<code>mv &lt;path1&gt; &lt;path2&gt;</code></li>
+</ul>
+<h4 id="rm"><a href="#rm" class="headerlink" title="rm"></a>rm</h4><ul>
+<li><p>提示是否删除<code>rm -i &lt;filename&gt;</code></p>
+</li>
+<li><p>强制删除<code>rm -f &lt;filename&gt;</code></p>
+</li>
+<li><p>删除目录<code>rm -r &lt;folderName&gt;</code></p>
+</li>
+</ul>
+<h4 id="ln"><a href="#ln" class="headerlink" title="ln"></a>ln</h4><ul>
+<li>创建符号链接<code>ln -s &lt;filename&gt; &lt;hopedName&gt;</code></li>
+<li>查看原始文件<code>readlink -f &lt;filename&gt;</code></li>
+<li>创建硬连接<code>ln &lt;filename&gt; &lt;hopedname&gt;</code></li>
+</ul>
+<h4 id="mkdir"><a href="#mkdir" class="headerlink" title="mkdir"></a>mkdir</h4><ul>
+<li>创建文件夹<code>mkdir &lt;folderName&gt;</code></li>
+<li>创建父目录以及其子目录<code>mkdir -p &lt;path&gt;</code></li>
+</ul>
+<h4 id="file"><a href="#file" class="headerlink" title="file"></a>file</h4><ul>
+<li><p>查看文件类型<code>file &lt;filename&gt;</code></p>
+</li>
+<li><p>查看文件末尾<code>tail &lt;filename&gt;</code></p>
+</li>
+<li><p>查看指定行数的文件末尾<code>tail -n &lt;num&gt; &lt;filename&gt;</code></p>
+</li>
+<li><p>查看文件开头<code>head &lt;filename&gt;</code></p>
+</li>
+<li><p>查看指定行数的文件开头<code>head -n &lt;num&gt; &lt;filename&gt;</code></p>
+</li>
+<li><p>查看文件内容<code>cat &lt;filename&gt;</code></p>
+</li>
+<li><p>阅读文件<code>less</code></p>
+<ul>
+<li><code>b</code>:向上翻页</li>
+<li><code>space</code>向下翻页</li>
+<li><code>/&lt;string&gt;</code>查找匹配字符串</li>
+<li><code>G</code>到达文件末尾</li>
+<li><code>g</code>到达文件开头</li>
+<li><code>v</code>用编辑器打开</li>
+<li><code>q</code>推出</li>
+</ul>
+</li>
+</ul>
+<h4 id="ps"><a href="#ps" class="headerlink" title="ps"></a>ps</h4><ul>
+<li>查看进程<code>ps</code></li>
+<li>查看所有进程<code>ps -e</code></li>
+<li>显示更多进程信息<code>ps -f</code></li>
+<li>显示更多进程信息<code>ps -l</code></li>
+<li>BSD模式输出<code>ps l</code></li>
+</ul>
+<h4 id="top"><a href="#top" class="headerlink" title="top"></a>top</h4><ul>
+<li>显示进程实时信息<code>top</code><ul>
+<li><code>f</code>选择排序字段</li>
+<li><code>d</code>修改查询间隔</li>
+</ul>
+</li>
+</ul>
+<h4 id="kill"><a href="#kill" class="headerlink" title="kill"></a>kill</h4><ul>
+<li>向进程发送<code>TERM</code>信号<code>kill &lt;PID&gt;</code></li>
+<li>向进程发送其他信号<code>kill -s &lt;name&gt; &lt;PID&gt;</code></li>
+</ul>
+<h4 id="killall"><a href="#killall" class="headerlink" title="killall"></a>killall</h4><ul>
+<li>通过进程名发送信号<code>killall &lt;processName&gt;</code></li>
+</ul>
+<h4 id="grep"><a href="#grep" class="headerlink" title="grep"></a>grep</h4><ul>
+<li>输出文件中搜索匹配的行<code>grep &lt;string&gt; &lt;filename&gt;</code></li>
+<li>输出不匹配的行<code>grep -v &lt;string&gt; &lt;filename&gt; </code></li>
+<li>输出匹配行的行数<code>grep -c &lt;string&gt; &lt;filename&gt;</code></li>
+<li>输出多个匹配<code>grep -e &lt;string1&gt; -e &lt;string2&gt; &lt;filename&gt;</code></li>
+</ul>
+<h4 id="jobs"><a href="#jobs" class="headerlink" title="jobs"></a>jobs</h4><ul>
+<li>显示后台进程<code>jobs</code></li>
+<li>显示包含<code>PID</code>的后ps台进程<code>jobs -l</code></li>
+</ul>
+<h4 id="amp"><a href="#amp" class="headerlink" title="&amp;"></a>&amp;</h4><ul>
+<li>将命令放入后台<code>&lt;command&gt; &amp;</code></li>
+</ul>
+<h4 id="alias"><a href="#alias" class="headerlink" title="alias"></a>alias</h4><ul>
+<li>创建一个别名<code>alias &lt;shortname&gt; = &quot;&lt;command&gt;&quot;</code></li>
+</ul>
+<h4 id="chmod"><a href="#chmod" class="headerlink" title="chmod"></a>chmod</h4><ul>
+<li>改变文件权限<code>chmod &lt;options&gt; &lt;mode&gt; &lt;filename&gt;</code><ul>
+<li>文件的权限有三种：rwx（读，写，执行）,根据有无先转成二进制在转成8进制可表示成唯一符号，如r-x为101，5；rwx为111，7</li>
+<li>在八进制模式下修改直接指定3个八进制参数就行，分别代表用户，组，其他的权限</li>
+<li>在符号模式下：<code>chmod [ugoa...] [+=-] [rwx...]</code><ul>
+<li>u：用户</li>
+<li>g：组</li>
+<li>o：其他</li>
+<li>a：全部</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h4 id="chown"><a href="#chown" class="headerlink" title="chown"></a>chown</h4><ul>
+<li><p>改变文件属主<code>chown &lt;username&gt; &lt;filename&gt;</code></p>
+</li>
+<li><p>改变文件属主和组别<code>chown &lt;username&gt;.&lt;groupname&gt; &lt;filename&gt;</code></p>
+</li>
+<li><p>只改变组属<code>chown .&lt;groupname&gt; filename</code></p>
+</li>
+<li><p>递归改变子目录<code>chown -R &lt;username&gt; &lt;filename&gt;</code></p>
+</li>
+</ul>
+
+            <!--[if lt IE 9]><script>document.createElement('audio');</script><![endif]-->
+            <audio id="audio" loop="1" preload="auto" controls="controls" data-autoplay="false">
+                <source type="audio/mpeg" src="">
+            </audio>
+            
+                <ul id="audio-list" style="display:none">
+                    
+                        
+                            <li title="0" data-url="http://link.hhtjim.com/163/425570952.mp3"></li>
+                        
+                    
+                        
+                            <li title="1" data-url="http://link.hhtjim.com/163/425570952.mp3"></li>
+                        
+                    
+                </ul>
+            
+        </div>
+        
+        
+    <div id="gitalk-container" class="comment link"
+		data-enable="false"
+        data-ae="false"
+        data-ci=""
+        data-cs=""
+        data-r=""
+        data-o=""
+        data-a=""
+        data-d="false"
+    >查看评论</div>
+
+
+    </div>
+    
+</div>
+
+
+    </div>
+</div>
+</body>
+
+
+<script src="//lib.baomitu.com/jquery/1.8.3/jquery.min.js"></script>
+<script src="/js/plugin.js"></script>
+<script src="/js/typed.js"></script>
+<script src="/js/diaspora.js"></script>
+
+
+<link rel="stylesheet" href="/photoswipe/photoswipe.css">
+<link rel="stylesheet" href="/photoswipe/default-skin/default-skin.css">
+
+
+<script src="/photoswipe/photoswipe.min.js"></script>
+<script src="/photoswipe/photoswipe-ui-default.min.js"></script>
+
+
+<!-- Root element of PhotoSwipe. Must have class pswp. -->
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+    <!-- Background of PhotoSwipe. 
+         It's a separate element as animating opacity is faster than rgba(). -->
+    <div class="pswp__bg"></div>
+    <!-- Slides wrapper with overflow:hidden. -->
+    <div class="pswp__scroll-wrap">
+        <!-- Container that holds slides. 
+            PhotoSwipe keeps only 3 of them in the DOM to save memory.
+            Don't modify these 3 pswp__item elements, data is added later on. -->
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+        <!-- Default (PhotoSwipeUI_Default) interface on top of sliding area. Can be changed. -->
+        <div class="pswp__ui pswp__ui--hidden">
+            <div class="pswp__top-bar">
+                <!--  Controls are self-explanatory. Order can be changed. -->
+                <div class="pswp__counter"></div>
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+                <button class="pswp__button pswp__button--share" title="Share"></button>
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+                <!-- Preloader demo http://codepen.io/dimsemenov/pen/yyBWoR -->
+                <!-- element will get class pswp__preloader--active when preloader is running -->
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                      <div class="pswp__preloader__cut">
+                        <div class="pswp__preloader__donut"></div>
+                      </div>
+                    </div>
+                </div>
+            </div>
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div> 
+            </div>
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+</html>

@@ -1,0 +1,266 @@
+
+<!DOCTYPE html>
+<html lang="zh-CN" class="loading">
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title> - ly-blog</title>
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="google" content="notranslate" />
+    <meta name="keywords" content="Fechin,"> 
+    <meta name="description" content="一个超级懒虫的博客,React入门笔记这篇笔记对应React官方文档中&amp;#x3D;&amp;#x3D;核心概念&amp;#x3D;&amp;#x3D;部分内容，网址：https://zh-hans.reactjs.org/docs/hello,"> 
+    <meta name="author" content="Lazy-ly"> 
+    <link rel="alternative" href="atom.xml" title="ly-blog" type="application/atom+xml"> 
+    <link rel="icon" href="/img/favicon.jpg"> 
+    
+    
+    
+    <meta name="twitter:card" content="summary"/>
+    <meta name="twitter:title" content=" - ly-blog"/>
+    <meta name="twitter:description" content="一个超级懒虫的博客,React入门笔记这篇笔记对应React官方文档中&amp;#x3D;&amp;#x3D;核心概念&amp;#x3D;&amp;#x3D;部分内容，网址：https://zh-hans.reactjs.org/docs/hello,"/>
+    
+    
+    
+    
+    <meta property="og:site_name" content="ly-blog"/>
+    <meta property="og:type" content="object"/>
+    <meta property="og:title" content=" - ly-blog"/>
+    <meta property="og:description" content="一个超级懒虫的博客,React入门笔记这篇笔记对应React官方文档中&amp;#x3D;&amp;#x3D;核心概念&amp;#x3D;&amp;#x3D;部分内容，网址：https://zh-hans.reactjs.org/docs/hello,"/>
+    
+<link rel="stylesheet" href="/css/diaspora.css">
+
+    <script>window.searchDbPath = "/search.xml";</script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Source+Code+Pro&display=swap" rel="stylesheet">
+<meta name="generator" content="Hexo 6.2.0"></head>
+
+<body class="loading">
+    <span id="config-title" style="display:none">ly-blog</span>
+    <div id="loader"></div>
+    <div id="single">
+    <div id="top" style="display: block;">
+    <div class="bar" style="width: 0;"></div>
+    <a class="iconfont icon-home image-icon" href="javascript:;" data-url="http://example.com"></a>
+    <div title="播放/暂停" class="iconfont icon-play"></div>
+    <h3 class="subtitle"></h3>
+    <div class="social">
+        <div>
+            <div class="share">
+                <a title="获取二维码" class="iconfont icon-scan" href="javascript:;"></a>
+            </div>
+            <div id="qr"></div>
+        </div>
+    </div>
+    <div class="scrollbar"></div>
+</div>
+
+    <div class="section">
+        <div class="article">
+    <div class='main'>
+        <h1 class="title"></h1>
+        <div class="stuff">
+            <span>十月 16, 2022</span>
+            
+
+        </div>
+        <div class="content markdown">
+            <h3 id="React入门笔记"><a href="#React入门笔记" class="headerlink" title="React入门笔记"></a>React入门笔记</h3><p>这篇笔记对应React官方文档中&#x3D;&#x3D;核心概念&#x3D;&#x3D;部分内容，网址：<a target="_blank" rel="noopener" href="https://zh-hans.reactjs.org/docs/hello-world.html">https://zh-hans.reactjs.org/docs/hello-world.html</a></p>
+<h4 id="引入React和JSX"><a href="#引入React和JSX" class="headerlink" title="引入React和JSX"></a>引入React和JSX</h4><p>入门时直接使用<code>script</code>标签的方式引入，但在React开发中使用JSX语法在编写模板时会方便很多，因此可以使用babel对JSX语法进行解析，同样使用<code>script</code>标签引入</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">script</span></span></span><br><span class="line"><span class="tag">     <span class="attr">crossorigin</span></span></span><br><span class="line"><span class="tag">     <span class="attr">src</span>=<span class="string">&quot;https://unpkg.com/react@18/umd/react.development.js&quot;</span></span></span><br><span class="line"><span class="tag">   &gt;</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line">   <span class="tag">&lt;<span class="name">script</span></span></span><br><span class="line"><span class="tag">     <span class="attr">crossorigin</span></span></span><br><span class="line"><span class="tag">     <span class="attr">src</span>=<span class="string">&quot;https://unpkg.com/react-dom@18/umd/react-dom.development.js&quot;</span></span></span><br><span class="line"><span class="tag">   &gt;</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">&quot;https://unpkg.com/babel-standalone@6/babel.min.js&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>引入编写的script标签时要添加type属性</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">&quot;index.js&quot;</span> <span class="attr">async</span> <span class="attr">defer</span> <span class="attr">type</span>=<span class="string">&quot;text/babel&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>JSX语法<ul>
+<li>入门的话只需要了解<code>&#123;&#125;</code>引入表达式</li>
+</ul>
+</li>
+</ul>
+<h4 id="创建一个根元素"><a href="#创建一个根元素" class="headerlink" title="创建一个根元素"></a>创建一个根元素</h4><p>首先我们需要在HTML模板中创建一个根标签</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">&quot;root&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>然后设置根元素</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> root = <span class="title class_">ReactDOM</span>.<span class="title function_">createRoot</span>(<span class="variable language_">document</span>.<span class="title function_">getElementById</span>(<span class="string">&quot;root&quot;</span>));</span><br></pre></td></tr></table></figure>
+
+<p>然后可以为根元素声明渲染的模板</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">root.render(&lt;div&gt;helloworld&lt;div&gt;)</span><br></pre></td></tr></table></figure>
+
+<p>这样在根标签下就渲染出了一个以helloworld为内容的div</p>
+<p>如果想要更新渲染的内容的话，可以重新渲染，但不推荐这么做，有更好的处理方式</p>
+<h4 id="组件"><a href="#组件" class="headerlink" title="组件"></a>组件</h4><p>vue和react组件具有相似之处</p>
+<h5 id="声明组件"><a href="#声明组件" class="headerlink" title="声明组件"></a>声明组件</h5><p>声明组件可以用函数形式也可以用创建类的形式，下面演示后者</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">class HelloWorld extends React.Component &#123;</span><br><span class="line"> render() &#123;</span><br><span class="line">     return (</span><br><span class="line">         &lt;h1&gt;hello world&lt;/h1&gt;</span><br><span class="line">     )</span><br><span class="line"> &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>我们需要让声明的类继承<code>React.Component</code>,它便是一个有效的react组件</p>
+<p>然后通过<code>render</code>方法声明组件要渲染的html模板</p>
+<p>然后我们可以把组件挂载到根元素上</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> element = <span class="language-xml"><span class="tag">&lt;<span class="name">HelloWorld</span>&gt;</span><span class="tag">&lt;/<span class="name">HelloWorld</span>&gt;</span></span>;</span><br><span class="line">root.<span class="title function_">render</span>(element);</span><br></pre></td></tr></table></figure>
+
+<h5 id="使用props"><a href="#使用props" class="headerlink" title="使用props"></a>使用props</h5><p>和vue组件一样，react组件也可以使用props,在class式声明中使用<code>this.props.&lt;name&gt;</code>使用props,如</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">HelloWorld</span> <span class="keyword">extends</span> <span class="title class_ inherited__">React.Component</span> &#123;</span><br><span class="line"> <span class="title function_">render</span>(<span class="params"></span>) &#123;</span><br><span class="line">     <span class="keyword">return</span> (</span><br><span class="line">         <span class="language-xml"><span class="tag">&lt;<span class="name">h1</span>&gt;</span>&#123;this.props.title&#125;<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></span></span><br><span class="line">     )</span><br><span class="line"> &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>然后使用时指定属性值就行</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> element = <span class="language-xml"><span class="tag">&lt;<span class="name">HelloWorld</span> <span class="attr">title</span>=<span class="string">&quot;helloworld&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">HelloWorld</span>&gt;</span></span>;</span><br><span class="line">root.<span class="title function_">render</span>(element);</span><br></pre></td></tr></table></figure>
+
+<p>hellowrold将显示在屏幕上</p>
+<p>和vue一样，react组件也不能修改props的值</p>
+<h4 id="state"><a href="#state" class="headerlink" title="state"></a>state</h4><p>react使用<code>state</code>来更新组件</p>
+<h5 id="设置一个初始state"><a href="#设置一个初始state" class="headerlink" title="设置一个初始state"></a>设置一个初始state</h5><p>我们引入构造函数来初始化state</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="title function_">constructor</span>(<span class="params">props</span>) &#123;</span><br><span class="line">    <span class="variable language_">super</span>(props);</span><br><span class="line">    <span class="variable language_">this</span>.<span class="property">state</span> = &#123;</span><br><span class="line">      <span class="attr">date</span>: <span class="keyword">new</span> <span class="title class_">Date</span>(),</span><br><span class="line">      <span class="attr">title</span>: <span class="string">&quot;YEAH!!&quot;</span>,</span><br><span class="line">    &#125;;</span><br></pre></td></tr></table></figure>
+
+<p>类似于vue中的data,这里定义了date和title的初始值</p>
+<h5 id="使用state"><a href="#使用state" class="headerlink" title="使用state"></a>使用state</h5><p>和props的用法类似，我们使用<code>this.state.&lt;name&gt;</code>来使用state</p>
+<h5 id="修改state"><a href="#修改state" class="headerlink" title="修改state"></a>修改state</h5><p>和小程序中的<code>setdata</code>类似，我们可以使用<code>this.setState</code>来修改state的值，但和vue中不同的是，不能直接通过<code>this.state</code>来修改。修改state可以用对象式和函数式（当要用到props等参数时）</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable language_">this</span>.<span class="title function_">setState</span>(&#123;</span><br><span class="line">    <span class="attr">title</span>:<span class="string">&quot;hello&quot;</span>,</span><br><span class="line">&#125;)<span class="comment">//对象式</span></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable language_">this</span>.<span class="title function_">setState</span>(<span class="function">(<span class="params">state,props</span>)=&gt;</span>&#123;</span><br><span class="line">    <span class="keyword">return</span> &#123;</span><br><span class="line">        <span class="attr">title</span>:props.<span class="property">title</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;)<span class="comment">//函数式</span></span><br></pre></td></tr></table></figure>
+
+<h4 id="生命周期"><a href="#生命周期" class="headerlink" title="生命周期"></a>生命周期</h4><p>react中也有生命周期的概念，这里介绍两个生命周期函数</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="title function_">componentDidMount</span>(<span class="params"></span>) &#123;&#125;<span class="comment">//在组件渲染到dom后运行</span></span><br><span class="line"><span class="title function_">componentWillUnmount</span>(<span class="params"></span>) &#123;&#125;<span class="comment">//当组件发生更改或被销毁取消挂载时使用</span></span><br></pre></td></tr></table></figure>
+
+<h4 id="事件处理"><a href="#事件处理" class="headerlink" title="事件处理"></a>事件处理</h4><h5 id="注册事件"><a href="#注册事件" class="headerlink" title="注册事件"></a>注册事件</h5><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">button</span> <span class="attr">onClick</span>=<span class="string">&#123;事件处理函数&#125;</span>&gt;</span></span><br><span class="line">    </span><br><span class="line"><span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>事件处理函数中编写要处理的内容</p>
+<p>事件处理函数默认可以传入一个参数e,和传统网页开发中的用法相同</p>
+<p>react事件中只能通过<code>e.preventDefault</code>来禁止默认行为</p>
+<p>定义好的事件处理函数还要在构造函数中改变this指向才可以正常使用this,按照下面这种模板即可</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable language_">this</span>.<span class="property">changeTitle</span> = <span class="variable language_">this</span>.<span class="property">changeTitle</span>.<span class="title function_">bind</span>(<span class="variable language_">this</span>);</span><br></pre></td></tr></table></figure>
+
+<h4 id="条件渲染"><a href="#条件渲染" class="headerlink" title="条件渲染"></a>条件渲染</h4><p>和vue使用v-if在html中实现条件渲染不同，在react中仍使用if等条件控制语句控制render方法的返回值实现条件渲染</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="title function_">render</span>(<span class="params"></span>) &#123;</span><br><span class="line">    <span class="keyword">if</span>(<span class="variable language_">this</span>.<span class="property">islogin</span>) &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="language-xml"><span class="tag">&lt;<span class="name">Login</span>&gt;</span><span class="tag">&lt;/<span class="name">Login</span>&gt;</span></span></span><br><span class="line">    &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="language-xml"><span class="tag">&lt;<span class="name">Greet</span>&gt;</span><span class="tag">&lt;/<span class="name">Greet</span>&gt;</span></span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>之间返回null可以起到阻止渲染的作用</p>
+<h4 id="列表渲染和key"><a href="#列表渲染和key" class="headerlink" title="列表渲染和key"></a>列表渲染和key</h4><p>可以使用数组的map方法定义出一个“模板数组”，和vue一样最好指定唯一的key值</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="title function_">render</span>(<span class="params"></span>) &#123;</span><br><span class="line">          <span class="keyword">const</span> list = numList.<span class="title function_">map</span>(<span class="function">(<span class="params">num</span>) =&gt;</span> &#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="language-xml"><span class="tag">&lt;<span class="name">li</span> <span class="attr">key</span>=<span class="string">&#123;num.toString()&#125;</span>&gt;</span>&#123;num&#125;<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span>;</span><br><span class="line">          &#125;);</span><br><span class="line">          <span class="keyword">return</span> (</span><br><span class="line">            <span class="language-xml"><span class="tag">&lt;<span class="name">div</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">              <span class="tag">&lt;<span class="name">ul</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">                &#123;list&#125;</span></span><br><span class="line"><span class="language-xml">              <span class="tag">&lt;/<span class="name">ul</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">            <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span></span><br><span class="line">          );</span><br><span class="line">        &#125;</span><br></pre></td></tr></table></figure>
+
+<p>当然JSX也可以直接嵌入map</p>
+<figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">return</span> (</span><br><span class="line">    <span class="language-xml"><span class="tag">&lt;<span class="name">div</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">        <span class="tag">&lt;<span class="name">ul</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">            &#123;numList.map((num) =&gt; &#123;</span></span><br><span class="line"><span class="language-xml">            return <span class="tag">&lt;<span class="name">li</span> <span class="attr">key</span>=<span class="string">&#123;num.toString()&#125;</span>&gt;</span>&#123;num&#125;<span class="tag">&lt;/<span class="name">li</span>&gt;</span>;</span></span><br><span class="line"><span class="language-xml">          &#125;)&#125;</span></span><br><span class="line"><span class="language-xml">        <span class="tag">&lt;/<span class="name">ul</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span></span><br><span class="line">)</span><br></pre></td></tr></table></figure>
+
+<h4 id="表单控件处理"><a href="#表单控件处理" class="headerlink" title="表单控件处理"></a>表单控件处理</h4><p>通过指定表单的value为state里的变量，再监听表单的change事件改变这个变量实现一种双向绑定</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">textarea</span> <span class="attr">value</span>=<span class="string">&#123;this.state.value&#125;</span> <span class="attr">onChange</span>=<span class="string">&#123;this.handleChange&#125;</span>&gt;</span><span class="tag">&lt;/<span class="name">textarea</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="title function_">handleChange</span>(<span class="params">e</span>) &#123;</span><br><span class="line">          <span class="variable language_">this</span>.<span class="title function_">setState</span>(&#123;</span><br><span class="line">            <span class="attr">value</span>:e.<span class="property">target</span>.<span class="property">value</span>,</span><br><span class="line">          &#125;)</span><br><span class="line">          <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="variable language_">this</span>.<span class="property">state</span>.<span class="property">value</span>)</span><br><span class="line">        &#125;</span><br></pre></td></tr></table></figure>
+
+<h4 id="向子组件传入模板"><a href="#向子组件传入模板" class="headerlink" title="向子组件传入模板"></a>向子组件传入模板</h4><p>和vue中的插槽类似，在react也可以向子组件传入模板</p>
+<p>在子组件中使用<code>this.props.children</code>定义模板所在的位置</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">render() &#123;</span><br><span class="line">          return (</span><br><span class="line">            &lt;div&gt;</span><br><span class="line">              &#123;this.props.children&#125;</span><br><span class="line">            &lt;/div&gt;</span><br><span class="line">          )</span><br><span class="line">        &#125;</span><br></pre></td></tr></table></figure>
+
+<p>然后父组件在渲染子组件时可以传入模板</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">render() &#123;</span><br><span class="line">          return (</span><br><span class="line">            &lt;Child&gt;</span><br><span class="line">              &lt;h1&gt;HELLO&lt;/h1&gt;</span><br><span class="line">            &lt;/Child&gt;</span><br><span class="line">          )</span><br><span class="line">        &#125;</span><br></pre></td></tr></table></figure>
+
+<p>如果需要在不同地方使用多个模板呢，我们可以不使用children而使用自己定义的内容是JSX的props传递给子组件</p>
+
+            <!--[if lt IE 9]><script>document.createElement('audio');</script><![endif]-->
+            <audio id="audio" loop="1" preload="auto" controls="controls" data-autoplay="false">
+                <source type="audio/mpeg" src="">
+            </audio>
+            
+                <ul id="audio-list" style="display:none">
+                    
+                        
+                            <li title="0" data-url="http://link.hhtjim.com/163/425570952.mp3"></li>
+                        
+                    
+                        
+                            <li title="1" data-url="http://link.hhtjim.com/163/425570952.mp3"></li>
+                        
+                    
+                </ul>
+            
+        </div>
+        
+        
+    <div id="gitalk-container" class="comment link"
+		data-enable="false"
+        data-ae="false"
+        data-ci=""
+        data-cs=""
+        data-r=""
+        data-o=""
+        data-a=""
+        data-d="false"
+    >查看评论</div>
+
+
+    </div>
+    
+</div>
+
+
+    </div>
+</div>
+</body>
+
+
+<script src="//lib.baomitu.com/jquery/1.8.3/jquery.min.js"></script>
+<script src="/js/plugin.js"></script>
+<script src="/js/typed.js"></script>
+<script src="/js/diaspora.js"></script>
+
+
+<link rel="stylesheet" href="/photoswipe/photoswipe.css">
+<link rel="stylesheet" href="/photoswipe/default-skin/default-skin.css">
+
+
+<script src="/photoswipe/photoswipe.min.js"></script>
+<script src="/photoswipe/photoswipe-ui-default.min.js"></script>
+
+
+<!-- Root element of PhotoSwipe. Must have class pswp. -->
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+    <!-- Background of PhotoSwipe. 
+         It's a separate element as animating opacity is faster than rgba(). -->
+    <div class="pswp__bg"></div>
+    <!-- Slides wrapper with overflow:hidden. -->
+    <div class="pswp__scroll-wrap">
+        <!-- Container that holds slides. 
+            PhotoSwipe keeps only 3 of them in the DOM to save memory.
+            Don't modify these 3 pswp__item elements, data is added later on. -->
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+        <!-- Default (PhotoSwipeUI_Default) interface on top of sliding area. Can be changed. -->
+        <div class="pswp__ui pswp__ui--hidden">
+            <div class="pswp__top-bar">
+                <!--  Controls are self-explanatory. Order can be changed. -->
+                <div class="pswp__counter"></div>
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+                <button class="pswp__button pswp__button--share" title="Share"></button>
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+                <!-- Preloader demo http://codepen.io/dimsemenov/pen/yyBWoR -->
+                <!-- element will get class pswp__preloader--active when preloader is running -->
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                      <div class="pswp__preloader__cut">
+                        <div class="pswp__preloader__donut"></div>
+                      </div>
+                    </div>
+                </div>
+            </div>
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div> 
+            </div>
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+</html>
