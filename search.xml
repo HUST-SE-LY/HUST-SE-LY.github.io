@@ -612,7 +612,7 @@
       </tags>
   </entry>
   <entry>
-    <title></title>
+    <title>Linux常用指令</title>
     <url>/2022/10/14/Linux%E5%91%BD%E4%BB%A4%E8%A1%8C/</url>
     <content><![CDATA[<h3 id="Linux-CommandLine"><a href="#Linux-CommandLine" class="headerlink" title="Linux CommandLine"></a>Linux CommandLine</h3><h4 id="ls"><a href="#ls" class="headerlink" title="ls"></a>ls</h4><ul>
 <li>列出所有文件按行显示<code>ls -l</code></li>
@@ -739,9 +739,17 @@
 </li>
 </ul>
 ]]></content>
+      <categories>
+        <category>技术</category>
+      </categories>
+      <tags>
+        <tag>linux</tag>
+        <tag>速查</tag>
+        <tag>入门</tag>
+      </tags>
   </entry>
   <entry>
-    <title></title>
+    <title>React入门笔记</title>
     <url>/2022/10/16/React%E5%85%A5%E9%97%A8%E7%AC%94%E8%AE%B0/</url>
     <content><![CDATA[<h3 id="React入门笔记"><a href="#React入门笔记" class="headerlink" title="React入门笔记"></a>React入门笔记</h3><p>这篇笔记对应React官方文档中&#x3D;&#x3D;核心概念&#x3D;&#x3D;部分内容，网址：<a href="https://zh-hans.reactjs.org/docs/hello-world.html">https://zh-hans.reactjs.org/docs/hello-world.html</a></p>
 <h4 id="引入React和JSX"><a href="#引入React和JSX" class="headerlink" title="引入React和JSX"></a>引入React和JSX</h4><p>入门时直接使用<code>script</code>标签的方式引入，但在React开发中使用JSX语法在编写模板时会方便很多，因此可以使用babel对JSX语法进行解析，同样使用<code>script</code>标签引入</p>
@@ -830,9 +838,16 @@
 
 <p>如果需要在不同地方使用多个模板呢，我们可以不使用children而使用自己定义的内容是JSX的props传递给子组件</p>
 ]]></content>
+      <categories>
+        <category>技术</category>
+      </categories>
+      <tags>
+        <tag>入门</tag>
+        <tag>react</tag>
+      </tags>
   </entry>
   <entry>
-    <title></title>
+    <title>SQL入门笔记</title>
     <url>/2022/10/15/SQL/</url>
     <content><![CDATA[<h3 id="SQL"><a href="#SQL" class="headerlink" title="SQL"></a>SQL</h3><h4 id="查询数据"><a href="#查询数据" class="headerlink" title="查询数据"></a>查询数据</h4><figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="comment">--从某个表中查询所有数据</span></span><br><span class="line"><span class="keyword">SELECT</span> <span class="operator">*</span> <span class="keyword">FROM</span> <span class="operator">&lt;</span>tablename<span class="operator">&gt;</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">--条件查询</span></span><br><span class="line"><span class="keyword">SELECT</span> <span class="operator">*</span> <span class="keyword">FROM</span> <span class="operator">&lt;</span>tablename<span class="operator">&gt;</span> <span class="keyword">WHERE</span> <span class="operator">&lt;</span><span class="keyword">condition</span><span class="operator">&gt;</span></span><br><span class="line"><span class="comment">--并条件</span></span><br><span class="line"><span class="operator">&lt;</span>condition1<span class="operator">&gt;</span> <span class="keyword">AND</span> <span class="operator">&lt;</span>condition2<span class="operator">&gt;</span></span><br><span class="line"><span class="comment">--或条件</span></span><br><span class="line"><span class="operator">&lt;</span>condition1<span class="operator">&gt;</span> <span class="keyword">OR</span> <span class="operator">&lt;</span>condition2<span class="operator">&gt;</span></span><br><span class="line"><span class="comment">--非条件</span></span><br><span class="line"><span class="keyword">NOT</span> <span class="operator">&lt;</span><span class="keyword">condition</span><span class="operator">&gt;</span></span><br><span class="line"><span class="comment">--多条件混用</span></span><br><span class="line">(<span class="operator">&lt;</span>condition1<span class="operator">&gt;</span> <span class="keyword">AND</span> <span class="operator">&lt;</span>condition2<span class="operator">&gt;</span>) <span class="keyword">OR</span> <span class="operator">&lt;</span>condition3<span class="operator">&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="comment">--投影查询</span></span><br><span class="line"><span class="keyword">SELECT</span> column1,column2... <span class="keyword">FROM</span> <span class="operator">&lt;</span>tablename<span class="operator">&gt;</span></span><br><span class="line"><span class="comment">--投影查询并起别名</span></span><br><span class="line"><span class="keyword">SELECT</span> column1 shortname1,column2... <span class="keyword">FROM</span> <span class="operator">&lt;</span>tablename<span class="operator">&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="comment">--排序</span></span><br><span class="line"><span class="comment">--根据某列的值排序</span></span><br><span class="line"><span class="keyword">SELECT</span> <span class="operator">*</span> <span class="keyword">FROM</span> <span class="operator">&lt;</span>tablename<span class="operator">&gt;</span> <span class="keyword">ORDER</span> <span class="keyword">BY</span> <span class="operator">&lt;</span><span class="keyword">column</span><span class="operator">&gt;</span> </span><br><span class="line"><span class="comment">--升序/降序排列</span></span><br><span class="line"><span class="keyword">SELECT</span> <span class="operator">*</span> <span class="keyword">FROM</span> <span class="operator">&lt;</span>tablename<span class="operator">&gt;</span> <span class="keyword">ORDER</span> <span class="keyword">BY</span> <span class="operator">&lt;</span><span class="keyword">COLUMN</span><span class="operator">&gt;</span> <span class="operator">&lt;</span><span class="keyword">DESC</span><span class="operator">/</span><span class="keyword">ASC</span><span class="operator">&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="comment">--分页查询</span></span><br><span class="line"><span class="keyword">SELECT</span> <span class="operator">*</span> <span class="keyword">FROM</span> <span class="operator">&lt;</span>tablename<span class="operator">&gt;</span> LIMIT <span class="operator">&lt;</span>num<span class="operator">&gt;</span> <span class="keyword">OFFSET</span> <span class="operator">&lt;</span>num<span class="operator">&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="comment">--聚合查询</span></span><br><span class="line"><span class="comment">--查询记录数目</span></span><br><span class="line"><span class="keyword">SELECT</span> <span class="built_in">COUNT</span>(<span class="operator">*</span>) <span class="keyword">FROM</span> <span class="operator">&lt;</span>tablename<span class="operator">&gt;</span>;</span><br><span class="line"><span class="comment">--设置别名</span></span><br><span class="line"><span class="keyword">SELECT</span> <span class="built_in">COUNT</span>(<span class="operator">*</span>) <span class="operator">&lt;</span>SHORTNAME<span class="operator">&gt;</span> <span class="keyword">FROM</span> <span class="operator">&lt;</span>tablename<span class="operator">&gt;</span>;</span><br><span class="line"><span class="comment">--查询合计值</span></span><br><span class="line"><span class="keyword">SELECT</span> <span class="built_in">SUM</span>(<span class="operator">*</span>) <span class="keyword">FROM</span> <span class="operator">&lt;</span>tablename<span class="operator">&gt;</span> ;</span><br><span class="line"><span class="comment">--查询平均值</span></span><br><span class="line"><span class="keyword">SELECT</span> <span class="built_in">AVG</span>(<span class="operator">*</span>) <span class="keyword">FROM</span> <span class="operator">&lt;</span>tablename<span class="operator">&gt;</span>;</span><br><span class="line"><span class="comment">--查询最大值</span></span><br><span class="line"><span class="keyword">SELECT</span> <span class="built_in">MAX</span>(<span class="operator">*</span>) <span class="keyword">FROM</span> <span class="operator">&lt;</span>tablename<span class="operator">&gt;</span>;</span><br><span class="line"><span class="comment">--查询最小值</span></span><br><span class="line"><span class="keyword">SELECT</span> <span class="built_in">MIN</span>(<span class="operator">*</span>) <span class="keyword">FROM</span> <span class="operator">&lt;</span>tablename<span class="operator">&gt;</span>;</span><br><span class="line"><span class="comment">--分组聚合</span></span><br><span class="line"><span class="keyword">SELECT</span> <span class="built_in">COUNT</span>(<span class="operator">*</span>) <span class="keyword">FROM</span> <span class="operator">&lt;</span>tablename<span class="operator">&gt;</span> <span class="keyword">GROUP</span> <span class="keyword">BY</span> <span class="operator">&lt;</span>COLUMN1<span class="operator">&gt;</span>,<span class="operator">&lt;</span>column2<span class="operator">&gt;</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">--多表查询</span></span><br><span class="line"><span class="keyword">SELECT</span> <span class="operator">*</span> <span class="keyword">FROM</span> <span class="operator">&lt;</span>tablename1<span class="operator">&gt;</span>,<span class="operator">&lt;</span>tablename2<span class="operator">&gt;</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">--连接查询</span></span><br><span class="line"><span class="comment">--符合condition的行被连接起来</span></span><br><span class="line"><span class="keyword">SELECT</span> shortname.colunmname <span class="keyword">from</span> <span class="operator">&lt;</span>table1<span class="operator">&gt;</span> shortname <span class="keyword">inner</span> <span class="keyword">join</span> <span class="operator">&lt;</span>table2<span class="operator">&gt;</span> <span class="keyword">on</span> <span class="operator">&lt;</span><span class="keyword">condition</span><span class="operator">&gt;</span>;</span><br><span class="line"><span class="comment">--显示右表全部</span></span><br><span class="line"><span class="keyword">SELECT</span> shortname.colunmname <span class="keyword">from</span> <span class="operator">&lt;</span>table1<span class="operator">&gt;</span> shortname <span class="keyword">right</span> <span class="keyword">outer</span> <span class="keyword">join</span> <span class="operator">&lt;</span>table2<span class="operator">&gt;</span> <span class="keyword">on</span> <span class="operator">&lt;</span><span class="keyword">condition</span><span class="operator">&gt;</span>;</span><br><span class="line"><span class="comment">--显示左表全部</span></span><br><span class="line"><span class="keyword">SELECT</span> shortname.colunmname <span class="keyword">from</span> <span class="operator">&lt;</span>table1<span class="operator">&gt;</span> shortname <span class="keyword">left</span> <span class="keyword">outer</span> <span class="keyword">join</span> <span class="operator">&lt;</span>table2<span class="operator">&gt;</span> <span class="keyword">on</span> <span class="operator">&lt;</span><span class="keyword">condition</span><span class="operator">&gt;</span>;</span><br><span class="line"><span class="comment">--显示全部</span></span><br><span class="line"><span class="keyword">SELECT</span> shortname.colunmname <span class="keyword">from</span> <span class="operator">&lt;</span>table1<span class="operator">&gt;</span> shortname <span class="keyword">full</span> <span class="keyword">outer</span> <span class="keyword">join</span> <span class="operator">&lt;</span>table2<span class="operator">&gt;</span> <span class="keyword">on</span> <span class="operator">&lt;</span><span class="keyword">condition</span><span class="operator">&gt;</span>;</span><br></pre></td></tr></table></figure>
 
@@ -845,6 +860,14 @@
 
 
 ]]></content>
+      <categories>
+        <category>技术</category>
+      </categories>
+      <tags>
+        <tag>速查</tag>
+        <tag>入门</tag>
+        <tag>sql</tag>
+      </tags>
   </entry>
   <entry>
     <title>TCP/IP知识点总结</title>
@@ -1854,7 +1877,7 @@
       </tags>
   </entry>
   <entry>
-    <title></title>
+    <title>Shell入门笔记</title>
     <url>/2022/10/15/shell/</url>
     <content><![CDATA[<h3 id="shell"><a href="#shell" class="headerlink" title="shell"></a>shell</h3><h4 id="声明和使用变量"><a href="#声明和使用变量" class="headerlink" title="声明和使用变量"></a>声明和使用变量</h4><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta prompt_">#</span><span class="language-bash">声明</span></span><br><span class="line">varName=&#x27;name&#x27;</span><br><span class="line"><span class="meta prompt_">#</span><span class="language-bash">使用</span></span><br><span class="line">echo $&#123;varName&#125;</span><br><span class="line"><span class="meta prompt_">#</span><span class="language-bash">设为只读</span></span><br><span class="line">readonly varName</span><br><span class="line"><span class="meta prompt_">#</span><span class="language-bash">删除变量</span></span><br><span class="line">unset varName</span><br></pre></td></tr></table></figure>
 
@@ -1863,6 +1886,13 @@
 <h5 id="数组"><a href="#数组" class="headerlink" title="数组"></a>数组</h5><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta prompt_">#</span><span class="language-bash">定义数组</span></span><br><span class="line">array=(1 2 3 4 5)</span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_">#</span><span class="language-bash">定义数组分量</span></span><br><span class="line">array[0]=value0</span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_">#</span><span class="language-bash">读取数组某个元素</span></span><br><span class="line"><span class="meta prompt_">$</span><span class="language-bash">&#123;array[0]&#125;</span></span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_">#</span><span class="language-bash">读取数组所有元素</span></span><br><span class="line"><span class="meta prompt_">$</span><span class="language-bash">&#123;array[@]&#125;</span></span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_">#</span><span class="language-bash">获取数组长度</span></span><br><span class="line"><span class="meta prompt_">$</span><span class="language-bash">&#123;<span class="comment">#array[@]&#125;</span></span></span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_">#</span><span class="language-bash">获取单个元素长度</span></span><br><span class="line"><span class="meta prompt_">$</span><span class="language-bash">&#123;<span class="comment">#array[num]&#125;</span></span></span><br></pre></td></tr></table></figure>
 
 <h4 id="传参"><a href="#传参" class="headerlink" title="传参"></a>传参</h4>]]></content>
+      <categories>
+        <category>技术</category>
+      </categories>
+      <tags>
+        <tag>入门</tag>
+        <tag>shell</tag>
+      </tags>
   </entry>
   <entry>
     <title>一个前端小实例：拖动选项卡（原生实现）</title>
