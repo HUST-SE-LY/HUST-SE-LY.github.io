@@ -156,24 +156,64 @@
       </tags>
   </entry>
   <entry>
-    <title></title>
+    <title>Docker入门</title>
     <url>/2022/10/15/Docker/</url>
     <content><![CDATA[<h3 id="Docker"><a href="#Docker" class="headerlink" title="Docker"></a>Docker</h3><h4 id="获取镜像"><a href="#获取镜像" class="headerlink" title="获取镜像"></a>获取镜像</h4><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">docker pull [选项] [Docker Registry 地址[:端口号]/]仓库名[:标签]</span><br></pre></td></tr></table></figure>
 
 <h4 id="运行镜像"><a href="#运行镜像" class="headerlink" title="运行镜像"></a>运行镜像</h4><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta prompt_">$ </span><span class="language-bash">docker run -it --<span class="built_in">rm</span> ubuntu:18.04 bash</span></span><br></pre></td></tr></table></figure>
 
-<p>运行一个容器并启动bash</p>
 <h4 id="列出镜像"><a href="#列出镜像" class="headerlink" title="列出镜像"></a>列出镜像</h4><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta prompt_">$ </span><span class="language-bash">docker image <span class="built_in">ls</span></span></span><br></pre></td></tr></table></figure>
 
-<p>查看镜像所占空间</p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta prompt_">$ </span><span class="language-bash">docker system <span class="built_in">df</span></span></span><br></pre></td></tr></table></figure>
+<h4 id="查看镜像所占空间"><a href="#查看镜像所占空间" class="headerlink" title="查看镜像所占空间"></a>查看镜像所占空间</h4><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta prompt_">$ </span><span class="language-bash">docker system <span class="built_in">df</span></span></span><br></pre></td></tr></table></figure>
 
-<p>显示包含中间层镜像在内的所有镜像</p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta prompt_">$ </span><span class="language-bash">docker image <span class="built_in">ls</span> -a</span></span><br></pre></td></tr></table></figure>
+<h4 id="显示包含中间层镜像在内的所有镜像"><a href="#显示包含中间层镜像在内的所有镜像" class="headerlink" title="显示包含中间层镜像在内的所有镜像"></a>显示包含中间层镜像在内的所有镜像</h4><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta prompt_">$ </span><span class="language-bash">docker image <span class="built_in">ls</span> -a</span></span><br></pre></td></tr></table></figure>
 
 <h4 id="删除镜像"><a href="#删除镜像" class="headerlink" title="删除镜像"></a>删除镜像</h4><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta prompt_">$ </span><span class="language-bash">docker image <span class="built_in">rm</span> &lt;name&gt;</span></span><br></pre></td></tr></table></figure>
 
+
+
+
+
+<h4 id="启动容器"><a href="#启动容器" class="headerlink" title="启动容器"></a>启动容器</h4><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta prompt_">$ </span><span class="language-bash">docker run</span></span><br></pre></td></tr></table></figure>
+
+<h4 id="守护态运行"><a href="#守护态运行" class="headerlink" title="守护态运行"></a>守护态运行</h4><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta prompt_">$ </span><span class="language-bash">docker run -d</span></span><br></pre></td></tr></table></figure>
+
+<h4 id="查看容器列表"><a href="#查看容器列表" class="headerlink" title="查看容器列表"></a>查看容器列表</h4><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta prompt_">$ </span><span class="language-bash">docker container <span class="built_in">ls</span></span></span><br></pre></td></tr></table></figure>
+
+<h4 id="获取守护态容器输出信息"><a href="#获取守护态容器输出信息" class="headerlink" title="获取守护态容器输出信息"></a>获取守护态容器输出信息</h4><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta prompt_">$ </span><span class="language-bash">docker logs &lt;contatinerID or Name&gt;</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h4 id="查看所有容器"><a href="#查看所有容器" class="headerlink" title="查看所有容器"></a>查看所有容器</h4><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta prompt_">$ </span><span class="language-bash">docker container <span class="built_in">ls</span> -a</span></span><br></pre></td></tr></table></figure>
+
+<h4 id="进入容器"><a href="#进入容器" class="headerlink" title="进入容器"></a>进入容器</h4><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta prompt_">$ </span><span class="language-bash">docker <span class="built_in">exec</span> -it 69d1 bash</span></span><br></pre></td></tr></table></figure>
+
+<h4 id="导出容器"><a href="#导出容器" class="headerlink" title="导出容器"></a>导出容器</h4><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta prompt_">$ </span><span class="language-bash">docker <span class="built_in">export</span> &lt;<span class="built_in">id</span>&gt; &gt; &lt;filename&gt;</span></span><br></pre></td></tr></table></figure>
+
+<h4 id="导入容器快照"><a href="#导入容器快照" class="headerlink" title="导入容器快照"></a>导入容器快照</h4><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta prompt_">$ </span><span class="language-bash">docker import &lt;url&gt;</span></span><br></pre></td></tr></table></figure>
+
+<h4 id="删除容器"><a href="#删除容器" class="headerlink" title="删除容器"></a>删除容器</h4><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta prompt_">$ </span><span class="language-bash">docker container <span class="built_in">rm</span>  -f &lt;<span class="built_in">id</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<h4 id="删除所有容器"><a href="#删除所有容器" class="headerlink" title="删除所有容器"></a>删除所有容器</h4><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta prompt_">$ </span><span class="language-bash">docker container prune</span></span><br></pre></td></tr></table></figure>
+
+
+
+<h4 id="Dockerfile-指令"><a href="#Dockerfile-指令" class="headerlink" title="Dockerfile 指令"></a>Dockerfile 指令</h4><h5 id="COPY"><a href="#COPY" class="headerlink" title="COPY"></a>COPY</h5><figure class="highlight dockerfile"><table><tr><td class="code"><pre><span class="line"><span class="keyword">COPY</span><span class="language-bash"> [--<span class="built_in">chown</span>=&lt;user&gt;:&lt;group&gt;] &lt;源路径&gt;... &lt;目标路径&gt;</span></span><br><span class="line"><span class="keyword">COPY</span><span class="language-bash"> [--<span class="built_in">chown</span>=&lt;user&gt;:&lt;group&gt;] [<span class="string">&quot;&lt;源路径1&gt;&quot;</span>,... <span class="string">&quot;&lt;目标路径&gt;&quot;</span>]</span></span><br></pre></td></tr></table></figure>
+
+<p>如果源路径为文件夹，复制的时候不是直接复制该文件夹，而是将文件夹中的内容复制到目标路径。</p>
+<h4 id="ADD"><a href="#ADD" class="headerlink" title="ADD"></a>ADD</h4><figure class="highlight dockerfile"><table><tr><td class="code"><pre><span class="line"><span class="keyword">ADD</span><span class="language-bash"> [--<span class="built_in">chown</span>=&lt;user&gt;:&lt;group&gt;] &lt;源路径&gt;... &lt;目标路径&gt;</span></span><br><span class="line"><span class="keyword">ADD</span><span class="language-bash"> [--<span class="built_in">chown</span>=&lt;user&gt;:&lt;group&gt;] [<span class="string">&quot;&lt;源路径1&gt;&quot;</span>,... <span class="string">&quot;&lt;目标路径&gt;&quot;</span>]</span></span><br></pre></td></tr></table></figure>
+
+<p>ADD可以使用URL作为路径，对压缩包文件会自动解压缩</p>
+<h4 id="CMD"><a href="#CMD" class="headerlink" title="CMD"></a>CMD</h4><p>CMD命令指定了容器启动时执行的命令</p>
+<figure class="highlight dockerfile"><table><tr><td class="code"><pre><span class="line"><span class="keyword">CMD</span><span class="language-bash"> &lt;命令&gt;</span></span><br><span class="line"><span class="keyword">CMD</span><span class="language-bash"> [<span class="string">&quot;可执行文件&quot;</span>,<span class="string">&quot;参数1&quot;</span>,<span class="string">&quot;参数2&quot;</span>...]</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+
+
 ]]></content>
+      <categories>
+        <category>技术</category>
+      </categories>
+      <tags>
+        <tag>docker</tag>
+      </tags>
   </entry>
   <entry>
     <title>Echarts</title>
@@ -673,7 +713,30 @@
 <li><code>G</code>到达文件末尾</li>
 <li><code>g</code>到达文件开头</li>
 <li><code>v</code>用编辑器打开</li>
-<li><code>q</code>推出</li>
+<li><code>q</code>退出</li>
+</ul>
+</li>
+<li><p>阅读文件按页显示<code>more</code></p>
+<ul>
+<li><code>enter</code>向下n行，默认1行</li>
+<li><code>ctrl F/space</code>向下滚动一屏</li>
+<li><code>=</code>输出行号</li>
+<li><code>ctrl B</code>返回上一屏</li>
+<li><code>q</code>退出</li>
+</ul>
+</li>
+<li><p>按照某种方式打印文件<code>awk &#39;&lt;options&gt;&#39; </code><filename></p>
+<ul>
+<li>以空格为分隔符，打印文件每行第五列(也称作字段)：<code>awk &#39;&#123;print $5&#125;&#39; &lt;filename&gt;</code></li>
+<li>以空格为分隔符，打印文件包含“foo” 的所有行的第二列：<code>awk &#39;/foo/ &#123;print $2&#125;&#39; &lt;filename&gt;</code></li>
+</ul>
+</li>
+</ul>
+<h4 id="find"><a href="#find" class="headerlink" title="find"></a>find</h4><ul>
+<li>通过拓展名查找文件<code>find &lt;path&gt; -name &#39;*.&lt;name&gt;&#39;</code></li>
+<li>查找指定类型的文件<code>find &lt;path&gt; -type &lt;options&gt;</code><ul>
+<li><code>f</code>一般文件</li>
+<li><code>d</code>目录</li>
 </ul>
 </li>
 </ul>
@@ -698,6 +761,9 @@
 <h4 id="killall"><a href="#killall" class="headerlink" title="killall"></a>killall</h4><ul>
 <li>通过进程名发送信号<code>killall &lt;processName&gt;</code></li>
 </ul>
+<h4 id="pkill"><a href="#pkill" class="headerlink" title="pkill"></a>pkill</h4><ul>
+<li>通过进程名发送信号<code>pkill &lt;processName&gt;</code></li>
+</ul>
 <h4 id="grep"><a href="#grep" class="headerlink" title="grep"></a>grep</h4><ul>
 <li>输出文件中搜索匹配的行<code>grep &lt;string&gt; &lt;filename&gt;</code></li>
 <li>输出不匹配的行<code>grep -v &lt;string&gt; &lt;filename&gt; </code></li>
@@ -710,6 +776,10 @@
 </ul>
 <h4 id="amp"><a href="#amp" class="headerlink" title="&amp;"></a>&amp;</h4><ul>
 <li>将命令放入后台<code>&lt;command&gt; &amp;</code></li>
+</ul>
+<h4 id="lsof"><a href="#lsof" class="headerlink" title="lsof"></a>lsof</h4><ul>
+<li>查看端口占用情况<code>losf -i:&lt;port&gt;</code></li>
+<li>ps</li>
 </ul>
 <h4 id="alias"><a href="#alias" class="headerlink" title="alias"></a>alias</h4><ul>
 <li>创建一个别名<code>alias &lt;shortname&gt; = &quot;&lt;command&gt;&quot;</code></li>
@@ -738,6 +808,16 @@
 <li><p>递归改变子目录<code>chown -R &lt;username&gt; &lt;filename&gt;</code></p>
 </li>
 </ul>
+<h4 id="systemd"><a href="#systemd" class="headerlink" title="systemd"></a>systemd</h4><ul>
+<li>列出所有的unit<code>systemctl list-units</code></li>
+<li>列出所有的unit<code>systemctl list-units --all</code></li>
+<li>启动<code>sudo systemctl start &lt;unit&gt;</code></li>
+<li>终止<code>sudo systemctl stop &lt;unit&gt;</code></li>
+<li>结束<code>sudo systemctl kill &lt;unit&gt;</code></li>
+<li>查看配置<code>systemctl cat &lt;unit&gt;</code></li>
+<li>查看日志<code>sudo journalctl</code></li>
+<li>滚动显示最新日志<code>sudo journalctl -f</code></li>
+</ul>
 ]]></content>
       <categories>
         <category>技术</category>
@@ -746,6 +826,29 @@
         <tag>linux</tag>
         <tag>速查</tag>
         <tag>入门</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>SQL入门笔记</title>
+    <url>/2022/10/15/SQL/</url>
+    <content><![CDATA[<h3 id="SQL"><a href="#SQL" class="headerlink" title="SQL"></a>SQL</h3><h4 id="查询数据"><a href="#查询数据" class="headerlink" title="查询数据"></a>查询数据</h4><figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="comment">--从某个表中查询所有数据</span></span><br><span class="line"><span class="keyword">SELECT</span> <span class="operator">*</span> <span class="keyword">FROM</span> <span class="operator">&lt;</span>tablename<span class="operator">&gt;</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">--条件查询</span></span><br><span class="line"><span class="keyword">SELECT</span> <span class="operator">*</span> <span class="keyword">FROM</span> <span class="operator">&lt;</span>tablename<span class="operator">&gt;</span> <span class="keyword">WHERE</span> <span class="operator">&lt;</span><span class="keyword">condition</span><span class="operator">&gt;</span></span><br><span class="line"><span class="comment">--并条件</span></span><br><span class="line"><span class="operator">&lt;</span>condition1<span class="operator">&gt;</span> <span class="keyword">AND</span> <span class="operator">&lt;</span>condition2<span class="operator">&gt;</span></span><br><span class="line"><span class="comment">--或条件</span></span><br><span class="line"><span class="operator">&lt;</span>condition1<span class="operator">&gt;</span> <span class="keyword">OR</span> <span class="operator">&lt;</span>condition2<span class="operator">&gt;</span></span><br><span class="line"><span class="comment">--非条件</span></span><br><span class="line"><span class="keyword">NOT</span> <span class="operator">&lt;</span><span class="keyword">condition</span><span class="operator">&gt;</span></span><br><span class="line"><span class="comment">--多条件混用</span></span><br><span class="line">(<span class="operator">&lt;</span>condition1<span class="operator">&gt;</span> <span class="keyword">AND</span> <span class="operator">&lt;</span>condition2<span class="operator">&gt;</span>) <span class="keyword">OR</span> <span class="operator">&lt;</span>condition3<span class="operator">&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="comment">--投影查询</span></span><br><span class="line"><span class="keyword">SELECT</span> column1,column2... <span class="keyword">FROM</span> <span class="operator">&lt;</span>tablename<span class="operator">&gt;</span></span><br><span class="line"><span class="comment">--投影查询并起别名</span></span><br><span class="line"><span class="keyword">SELECT</span> column1 shortname1,column2... <span class="keyword">FROM</span> <span class="operator">&lt;</span>tablename<span class="operator">&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="comment">--排序</span></span><br><span class="line"><span class="comment">--根据某列的值排序</span></span><br><span class="line"><span class="keyword">SELECT</span> <span class="operator">*</span> <span class="keyword">FROM</span> <span class="operator">&lt;</span>tablename<span class="operator">&gt;</span> <span class="keyword">ORDER</span> <span class="keyword">BY</span> <span class="operator">&lt;</span><span class="keyword">column</span><span class="operator">&gt;</span> </span><br><span class="line"><span class="comment">--升序/降序排列</span></span><br><span class="line"><span class="keyword">SELECT</span> <span class="operator">*</span> <span class="keyword">FROM</span> <span class="operator">&lt;</span>tablename<span class="operator">&gt;</span> <span class="keyword">ORDER</span> <span class="keyword">BY</span> <span class="operator">&lt;</span><span class="keyword">COLUMN</span><span class="operator">&gt;</span> <span class="operator">&lt;</span><span class="keyword">DESC</span><span class="operator">/</span><span class="keyword">ASC</span><span class="operator">&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="comment">--分页查询</span></span><br><span class="line"><span class="keyword">SELECT</span> <span class="operator">*</span> <span class="keyword">FROM</span> <span class="operator">&lt;</span>tablename<span class="operator">&gt;</span> LIMIT <span class="operator">&lt;</span>num<span class="operator">&gt;</span> <span class="keyword">OFFSET</span> <span class="operator">&lt;</span>num<span class="operator">&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="comment">--聚合查询</span></span><br><span class="line"><span class="comment">--查询记录数目</span></span><br><span class="line"><span class="keyword">SELECT</span> <span class="built_in">COUNT</span>(<span class="operator">*</span>) <span class="keyword">FROM</span> <span class="operator">&lt;</span>tablename<span class="operator">&gt;</span>;</span><br><span class="line"><span class="comment">--设置别名</span></span><br><span class="line"><span class="keyword">SELECT</span> <span class="built_in">COUNT</span>(<span class="operator">*</span>) <span class="operator">&lt;</span>SHORTNAME<span class="operator">&gt;</span> <span class="keyword">FROM</span> <span class="operator">&lt;</span>tablename<span class="operator">&gt;</span>;</span><br><span class="line"><span class="comment">--查询合计值</span></span><br><span class="line"><span class="keyword">SELECT</span> <span class="built_in">SUM</span>(<span class="operator">*</span>) <span class="keyword">FROM</span> <span class="operator">&lt;</span>tablename<span class="operator">&gt;</span> ;</span><br><span class="line"><span class="comment">--查询平均值</span></span><br><span class="line"><span class="keyword">SELECT</span> <span class="built_in">AVG</span>(<span class="operator">*</span>) <span class="keyword">FROM</span> <span class="operator">&lt;</span>tablename<span class="operator">&gt;</span>;</span><br><span class="line"><span class="comment">--查询最大值</span></span><br><span class="line"><span class="keyword">SELECT</span> <span class="built_in">MAX</span>(<span class="operator">*</span>) <span class="keyword">FROM</span> <span class="operator">&lt;</span>tablename<span class="operator">&gt;</span>;</span><br><span class="line"><span class="comment">--查询最小值</span></span><br><span class="line"><span class="keyword">SELECT</span> <span class="built_in">MIN</span>(<span class="operator">*</span>) <span class="keyword">FROM</span> <span class="operator">&lt;</span>tablename<span class="operator">&gt;</span>;</span><br><span class="line"><span class="comment">--分组聚合</span></span><br><span class="line"><span class="keyword">SELECT</span> <span class="built_in">COUNT</span>(<span class="operator">*</span>) <span class="keyword">FROM</span> <span class="operator">&lt;</span>tablename<span class="operator">&gt;</span> <span class="keyword">GROUP</span> <span class="keyword">BY</span> <span class="operator">&lt;</span>COLUMN1<span class="operator">&gt;</span>,<span class="operator">&lt;</span>column2<span class="operator">&gt;</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">--多表查询</span></span><br><span class="line"><span class="keyword">SELECT</span> <span class="operator">*</span> <span class="keyword">FROM</span> <span class="operator">&lt;</span>tablename1<span class="operator">&gt;</span>,<span class="operator">&lt;</span>tablename2<span class="operator">&gt;</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">--连接查询</span></span><br><span class="line"><span class="comment">--符合condition的行被连接起来</span></span><br><span class="line"><span class="keyword">SELECT</span> shortname.colunmname <span class="keyword">from</span> <span class="operator">&lt;</span>table1<span class="operator">&gt;</span> shortname <span class="keyword">inner</span> <span class="keyword">join</span> <span class="operator">&lt;</span>table2<span class="operator">&gt;</span> <span class="keyword">on</span> <span class="operator">&lt;</span><span class="keyword">condition</span><span class="operator">&gt;</span>;</span><br><span class="line"><span class="comment">--显示右表全部</span></span><br><span class="line"><span class="keyword">SELECT</span> shortname.colunmname <span class="keyword">from</span> <span class="operator">&lt;</span>table1<span class="operator">&gt;</span> shortname <span class="keyword">right</span> <span class="keyword">outer</span> <span class="keyword">join</span> <span class="operator">&lt;</span>table2<span class="operator">&gt;</span> <span class="keyword">on</span> <span class="operator">&lt;</span><span class="keyword">condition</span><span class="operator">&gt;</span>;</span><br><span class="line"><span class="comment">--显示左表全部</span></span><br><span class="line"><span class="keyword">SELECT</span> shortname.colunmname <span class="keyword">from</span> <span class="operator">&lt;</span>table1<span class="operator">&gt;</span> shortname <span class="keyword">left</span> <span class="keyword">outer</span> <span class="keyword">join</span> <span class="operator">&lt;</span>table2<span class="operator">&gt;</span> <span class="keyword">on</span> <span class="operator">&lt;</span><span class="keyword">condition</span><span class="operator">&gt;</span>;</span><br><span class="line"><span class="comment">--显示全部</span></span><br><span class="line"><span class="keyword">SELECT</span> shortname.colunmname <span class="keyword">from</span> <span class="operator">&lt;</span>table1<span class="operator">&gt;</span> shortname <span class="keyword">full</span> <span class="keyword">outer</span> <span class="keyword">join</span> <span class="operator">&lt;</span>table2<span class="operator">&gt;</span> <span class="keyword">on</span> <span class="operator">&lt;</span><span class="keyword">condition</span><span class="operator">&gt;</span>;</span><br></pre></td></tr></table></figure>
+
+<h4 id="插入"><a href="#插入" class="headerlink" title="插入"></a>插入</h4><figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">INSERT</span> INFO <span class="operator">&lt;</span>TABLENAME<span class="operator">&gt;</span> (<span class="operator">&lt;</span>COLUMN1<span class="operator">&gt;</span>,<span class="operator">&lt;</span>COLUMN2<span class="operator">&gt;</span>...) <span class="keyword">VALUES</span> (<span class="operator">&lt;</span>INFO1<span class="operator">&gt;</span>,<span class="operator">&lt;</span>INFO2<span class="operator">&gt;</span>...)...;</span><br></pre></td></tr></table></figure>
+
+<h4 id="修改"><a href="#修改" class="headerlink" title="修改"></a>修改</h4><figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">UPDATE</span> <span class="operator">&lt;</span>TABLENAME<span class="operator">&gt;</span> <span class="keyword">SET</span> <span class="operator">&lt;</span>NAME1<span class="operator">&gt;=</span><span class="operator">&lt;</span>VLAUE1<span class="operator">&gt;</span>,<span class="operator">&lt;</span>NAME2<span class="operator">&gt;=</span><span class="operator">&lt;</span>VALUE2<span class="operator">&gt;</span>...<span class="keyword">WHERE</span> <span class="operator">&lt;</span><span class="keyword">CONDITION</span><span class="operator">&gt;</span>;</span><br></pre></td></tr></table></figure>
+
+<h4 id="删除"><a href="#删除" class="headerlink" title="删除"></a>删除</h4><figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">DELETE</span> <span class="keyword">FROM</span> <span class="operator">&lt;</span>TABLENAME<span class="operator">&gt;</span> <span class="keyword">WHERE</span> <span class="operator">&lt;</span><span class="keyword">CONDITION</span><span class="operator">&gt;</span></span><br></pre></td></tr></table></figure>
+
+
+
+]]></content>
+      <categories>
+        <category>技术</category>
+      </categories>
+      <tags>
+        <tag>速查</tag>
+        <tag>入门</tag>
+        <tag>sql</tag>
       </tags>
   </entry>
   <entry>
@@ -844,29 +947,6 @@
       <tags>
         <tag>入门</tag>
         <tag>react</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>SQL入门笔记</title>
-    <url>/2022/10/15/SQL/</url>
-    <content><![CDATA[<h3 id="SQL"><a href="#SQL" class="headerlink" title="SQL"></a>SQL</h3><h4 id="查询数据"><a href="#查询数据" class="headerlink" title="查询数据"></a>查询数据</h4><figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="comment">--从某个表中查询所有数据</span></span><br><span class="line"><span class="keyword">SELECT</span> <span class="operator">*</span> <span class="keyword">FROM</span> <span class="operator">&lt;</span>tablename<span class="operator">&gt;</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">--条件查询</span></span><br><span class="line"><span class="keyword">SELECT</span> <span class="operator">*</span> <span class="keyword">FROM</span> <span class="operator">&lt;</span>tablename<span class="operator">&gt;</span> <span class="keyword">WHERE</span> <span class="operator">&lt;</span><span class="keyword">condition</span><span class="operator">&gt;</span></span><br><span class="line"><span class="comment">--并条件</span></span><br><span class="line"><span class="operator">&lt;</span>condition1<span class="operator">&gt;</span> <span class="keyword">AND</span> <span class="operator">&lt;</span>condition2<span class="operator">&gt;</span></span><br><span class="line"><span class="comment">--或条件</span></span><br><span class="line"><span class="operator">&lt;</span>condition1<span class="operator">&gt;</span> <span class="keyword">OR</span> <span class="operator">&lt;</span>condition2<span class="operator">&gt;</span></span><br><span class="line"><span class="comment">--非条件</span></span><br><span class="line"><span class="keyword">NOT</span> <span class="operator">&lt;</span><span class="keyword">condition</span><span class="operator">&gt;</span></span><br><span class="line"><span class="comment">--多条件混用</span></span><br><span class="line">(<span class="operator">&lt;</span>condition1<span class="operator">&gt;</span> <span class="keyword">AND</span> <span class="operator">&lt;</span>condition2<span class="operator">&gt;</span>) <span class="keyword">OR</span> <span class="operator">&lt;</span>condition3<span class="operator">&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="comment">--投影查询</span></span><br><span class="line"><span class="keyword">SELECT</span> column1,column2... <span class="keyword">FROM</span> <span class="operator">&lt;</span>tablename<span class="operator">&gt;</span></span><br><span class="line"><span class="comment">--投影查询并起别名</span></span><br><span class="line"><span class="keyword">SELECT</span> column1 shortname1,column2... <span class="keyword">FROM</span> <span class="operator">&lt;</span>tablename<span class="operator">&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="comment">--排序</span></span><br><span class="line"><span class="comment">--根据某列的值排序</span></span><br><span class="line"><span class="keyword">SELECT</span> <span class="operator">*</span> <span class="keyword">FROM</span> <span class="operator">&lt;</span>tablename<span class="operator">&gt;</span> <span class="keyword">ORDER</span> <span class="keyword">BY</span> <span class="operator">&lt;</span><span class="keyword">column</span><span class="operator">&gt;</span> </span><br><span class="line"><span class="comment">--升序/降序排列</span></span><br><span class="line"><span class="keyword">SELECT</span> <span class="operator">*</span> <span class="keyword">FROM</span> <span class="operator">&lt;</span>tablename<span class="operator">&gt;</span> <span class="keyword">ORDER</span> <span class="keyword">BY</span> <span class="operator">&lt;</span><span class="keyword">COLUMN</span><span class="operator">&gt;</span> <span class="operator">&lt;</span><span class="keyword">DESC</span><span class="operator">/</span><span class="keyword">ASC</span><span class="operator">&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="comment">--分页查询</span></span><br><span class="line"><span class="keyword">SELECT</span> <span class="operator">*</span> <span class="keyword">FROM</span> <span class="operator">&lt;</span>tablename<span class="operator">&gt;</span> LIMIT <span class="operator">&lt;</span>num<span class="operator">&gt;</span> <span class="keyword">OFFSET</span> <span class="operator">&lt;</span>num<span class="operator">&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="comment">--聚合查询</span></span><br><span class="line"><span class="comment">--查询记录数目</span></span><br><span class="line"><span class="keyword">SELECT</span> <span class="built_in">COUNT</span>(<span class="operator">*</span>) <span class="keyword">FROM</span> <span class="operator">&lt;</span>tablename<span class="operator">&gt;</span>;</span><br><span class="line"><span class="comment">--设置别名</span></span><br><span class="line"><span class="keyword">SELECT</span> <span class="built_in">COUNT</span>(<span class="operator">*</span>) <span class="operator">&lt;</span>SHORTNAME<span class="operator">&gt;</span> <span class="keyword">FROM</span> <span class="operator">&lt;</span>tablename<span class="operator">&gt;</span>;</span><br><span class="line"><span class="comment">--查询合计值</span></span><br><span class="line"><span class="keyword">SELECT</span> <span class="built_in">SUM</span>(<span class="operator">*</span>) <span class="keyword">FROM</span> <span class="operator">&lt;</span>tablename<span class="operator">&gt;</span> ;</span><br><span class="line"><span class="comment">--查询平均值</span></span><br><span class="line"><span class="keyword">SELECT</span> <span class="built_in">AVG</span>(<span class="operator">*</span>) <span class="keyword">FROM</span> <span class="operator">&lt;</span>tablename<span class="operator">&gt;</span>;</span><br><span class="line"><span class="comment">--查询最大值</span></span><br><span class="line"><span class="keyword">SELECT</span> <span class="built_in">MAX</span>(<span class="operator">*</span>) <span class="keyword">FROM</span> <span class="operator">&lt;</span>tablename<span class="operator">&gt;</span>;</span><br><span class="line"><span class="comment">--查询最小值</span></span><br><span class="line"><span class="keyword">SELECT</span> <span class="built_in">MIN</span>(<span class="operator">*</span>) <span class="keyword">FROM</span> <span class="operator">&lt;</span>tablename<span class="operator">&gt;</span>;</span><br><span class="line"><span class="comment">--分组聚合</span></span><br><span class="line"><span class="keyword">SELECT</span> <span class="built_in">COUNT</span>(<span class="operator">*</span>) <span class="keyword">FROM</span> <span class="operator">&lt;</span>tablename<span class="operator">&gt;</span> <span class="keyword">GROUP</span> <span class="keyword">BY</span> <span class="operator">&lt;</span>COLUMN1<span class="operator">&gt;</span>,<span class="operator">&lt;</span>column2<span class="operator">&gt;</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">--多表查询</span></span><br><span class="line"><span class="keyword">SELECT</span> <span class="operator">*</span> <span class="keyword">FROM</span> <span class="operator">&lt;</span>tablename1<span class="operator">&gt;</span>,<span class="operator">&lt;</span>tablename2<span class="operator">&gt;</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">--连接查询</span></span><br><span class="line"><span class="comment">--符合condition的行被连接起来</span></span><br><span class="line"><span class="keyword">SELECT</span> shortname.colunmname <span class="keyword">from</span> <span class="operator">&lt;</span>table1<span class="operator">&gt;</span> shortname <span class="keyword">inner</span> <span class="keyword">join</span> <span class="operator">&lt;</span>table2<span class="operator">&gt;</span> <span class="keyword">on</span> <span class="operator">&lt;</span><span class="keyword">condition</span><span class="operator">&gt;</span>;</span><br><span class="line"><span class="comment">--显示右表全部</span></span><br><span class="line"><span class="keyword">SELECT</span> shortname.colunmname <span class="keyword">from</span> <span class="operator">&lt;</span>table1<span class="operator">&gt;</span> shortname <span class="keyword">right</span> <span class="keyword">outer</span> <span class="keyword">join</span> <span class="operator">&lt;</span>table2<span class="operator">&gt;</span> <span class="keyword">on</span> <span class="operator">&lt;</span><span class="keyword">condition</span><span class="operator">&gt;</span>;</span><br><span class="line"><span class="comment">--显示左表全部</span></span><br><span class="line"><span class="keyword">SELECT</span> shortname.colunmname <span class="keyword">from</span> <span class="operator">&lt;</span>table1<span class="operator">&gt;</span> shortname <span class="keyword">left</span> <span class="keyword">outer</span> <span class="keyword">join</span> <span class="operator">&lt;</span>table2<span class="operator">&gt;</span> <span class="keyword">on</span> <span class="operator">&lt;</span><span class="keyword">condition</span><span class="operator">&gt;</span>;</span><br><span class="line"><span class="comment">--显示全部</span></span><br><span class="line"><span class="keyword">SELECT</span> shortname.colunmname <span class="keyword">from</span> <span class="operator">&lt;</span>table1<span class="operator">&gt;</span> shortname <span class="keyword">full</span> <span class="keyword">outer</span> <span class="keyword">join</span> <span class="operator">&lt;</span>table2<span class="operator">&gt;</span> <span class="keyword">on</span> <span class="operator">&lt;</span><span class="keyword">condition</span><span class="operator">&gt;</span>;</span><br></pre></td></tr></table></figure>
-
-<h4 id="插入"><a href="#插入" class="headerlink" title="插入"></a>插入</h4><figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">INSERT</span> INFO <span class="operator">&lt;</span>TABLENAME<span class="operator">&gt;</span> (<span class="operator">&lt;</span>COLUMN1<span class="operator">&gt;</span>,<span class="operator">&lt;</span>COLUMN2<span class="operator">&gt;</span>...) <span class="keyword">VALUES</span> (<span class="operator">&lt;</span>INFO1<span class="operator">&gt;</span>,<span class="operator">&lt;</span>INFO2<span class="operator">&gt;</span>...)...;</span><br></pre></td></tr></table></figure>
-
-<h4 id="修改"><a href="#修改" class="headerlink" title="修改"></a>修改</h4><figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">UPDATE</span> <span class="operator">&lt;</span>TABLENAME<span class="operator">&gt;</span> <span class="keyword">SET</span> <span class="operator">&lt;</span>NAME1<span class="operator">&gt;=</span><span class="operator">&lt;</span>VLAUE1<span class="operator">&gt;</span>,<span class="operator">&lt;</span>NAME2<span class="operator">&gt;=</span><span class="operator">&lt;</span>VALUE2<span class="operator">&gt;</span>...<span class="keyword">WHERE</span> <span class="operator">&lt;</span><span class="keyword">CONDITION</span><span class="operator">&gt;</span>;</span><br></pre></td></tr></table></figure>
-
-<h4 id="删除"><a href="#删除" class="headerlink" title="删除"></a>删除</h4><figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">DELETE</span> <span class="keyword">FROM</span> <span class="operator">&lt;</span>TABLENAME<span class="operator">&gt;</span> <span class="keyword">WHERE</span> <span class="operator">&lt;</span><span class="keyword">CONDITION</span><span class="operator">&gt;</span></span><br></pre></td></tr></table></figure>
-
-
-
-]]></content>
-      <categories>
-        <category>技术</category>
-      </categories>
-      <tags>
-        <tag>速查</tag>
-        <tag>入门</tag>
-        <tag>sql</tag>
       </tags>
   </entry>
   <entry>

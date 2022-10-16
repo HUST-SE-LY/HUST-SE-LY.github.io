@@ -140,7 +140,30 @@
 <li><code>G</code>到达文件末尾</li>
 <li><code>g</code>到达文件开头</li>
 <li><code>v</code>用编辑器打开</li>
-<li><code>q</code>推出</li>
+<li><code>q</code>退出</li>
+</ul>
+</li>
+<li><p>阅读文件按页显示<code>more</code></p>
+<ul>
+<li><code>enter</code>向下n行，默认1行</li>
+<li><code>ctrl F/space</code>向下滚动一屏</li>
+<li><code>=</code>输出行号</li>
+<li><code>ctrl B</code>返回上一屏</li>
+<li><code>q</code>退出</li>
+</ul>
+</li>
+<li><p>按照某种方式打印文件<code>awk &#39;&lt;options&gt;&#39; </code><filename></p>
+<ul>
+<li>以空格为分隔符，打印文件每行第五列(也称作字段)：<code>awk &#39;&#123;print $5&#125;&#39; &lt;filename&gt;</code></li>
+<li>以空格为分隔符，打印文件包含“foo” 的所有行的第二列：<code>awk &#39;/foo/ &#123;print $2&#125;&#39; &lt;filename&gt;</code></li>
+</ul>
+</li>
+</ul>
+<h4 id="find"><a href="#find" class="headerlink" title="find"></a>find</h4><ul>
+<li>通过拓展名查找文件<code>find &lt;path&gt; -name &#39;*.&lt;name&gt;&#39;</code></li>
+<li>查找指定类型的文件<code>find &lt;path&gt; -type &lt;options&gt;</code><ul>
+<li><code>f</code>一般文件</li>
+<li><code>d</code>目录</li>
 </ul>
 </li>
 </ul>
@@ -165,6 +188,9 @@
 <h4 id="killall"><a href="#killall" class="headerlink" title="killall"></a>killall</h4><ul>
 <li>通过进程名发送信号<code>killall &lt;processName&gt;</code></li>
 </ul>
+<h4 id="pkill"><a href="#pkill" class="headerlink" title="pkill"></a>pkill</h4><ul>
+<li>通过进程名发送信号<code>pkill &lt;processName&gt;</code></li>
+</ul>
 <h4 id="grep"><a href="#grep" class="headerlink" title="grep"></a>grep</h4><ul>
 <li>输出文件中搜索匹配的行<code>grep &lt;string&gt; &lt;filename&gt;</code></li>
 <li>输出不匹配的行<code>grep -v &lt;string&gt; &lt;filename&gt; </code></li>
@@ -177,6 +203,10 @@
 </ul>
 <h4 id="amp"><a href="#amp" class="headerlink" title="&amp;"></a>&amp;</h4><ul>
 <li>将命令放入后台<code>&lt;command&gt; &amp;</code></li>
+</ul>
+<h4 id="lsof"><a href="#lsof" class="headerlink" title="lsof"></a>lsof</h4><ul>
+<li>查看端口占用情况<code>losf -i:&lt;port&gt;</code></li>
+<li>ps</li>
 </ul>
 <h4 id="alias"><a href="#alias" class="headerlink" title="alias"></a>alias</h4><ul>
 <li>创建一个别名<code>alias &lt;shortname&gt; = &quot;&lt;command&gt;&quot;</code></li>
@@ -204,6 +234,16 @@
 </li>
 <li><p>递归改变子目录<code>chown -R &lt;username&gt; &lt;filename&gt;</code></p>
 </li>
+</ul>
+<h4 id="systemd"><a href="#systemd" class="headerlink" title="systemd"></a>systemd</h4><ul>
+<li>列出所有的unit<code>systemctl list-units</code></li>
+<li>列出所有的unit<code>systemctl list-units --all</code></li>
+<li>启动<code>sudo systemctl start &lt;unit&gt;</code></li>
+<li>终止<code>sudo systemctl stop &lt;unit&gt;</code></li>
+<li>结束<code>sudo systemctl kill &lt;unit&gt;</code></li>
+<li>查看配置<code>systemctl cat &lt;unit&gt;</code></li>
+<li>查看日志<code>sudo journalctl</code></li>
+<li>滚动显示最新日志<code>sudo journalctl -f</code></li>
 </ul>
 
             <!--[if lt IE 9]><script>document.createElement('audio');</script><![endif]-->
