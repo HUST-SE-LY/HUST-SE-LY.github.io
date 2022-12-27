@@ -12,7 +12,7 @@
     <meta name="keywords" content="Fechin,"> 
     <meta name="description" content="一个超级懒虫的博客,软件综合实践这篇文章是对学院课程《软件综合实践》的学习整理，主要是编译原理的部分过程学习（编译前端）
 省略了第一章的内容
-词法分析词法分析过程将源程序文件是做一个字符型文本文件并读取字符，将其分为若,"> 
+词法分析词法分析过程将源程序文件视作一个字符型文本文件并读取字符，将其分为若,"> 
     <meta name="author" content="Lazy-ly"> 
     <link rel="alternative" href="atom.xml" title="ly-blog" type="application/atom+xml"> 
     <link rel="icon" href="/img/favicon.jpg"> 
@@ -23,7 +23,7 @@
     <meta name="twitter:title" content="软件综合实践 - ly-blog"/>
     <meta name="twitter:description" content="一个超级懒虫的博客,软件综合实践这篇文章是对学院课程《软件综合实践》的学习整理，主要是编译原理的部分过程学习（编译前端）
 省略了第一章的内容
-词法分析词法分析过程将源程序文件是做一个字符型文本文件并读取字符，将其分为若,"/>
+词法分析词法分析过程将源程序文件视作一个字符型文本文件并读取字符，将其分为若,"/>
     
     
     
@@ -33,7 +33,7 @@
     <meta property="og:title" content="软件综合实践 - ly-blog"/>
     <meta property="og:description" content="一个超级懒虫的博客,软件综合实践这篇文章是对学院课程《软件综合实践》的学习整理，主要是编译原理的部分过程学习（编译前端）
 省略了第一章的内容
-词法分析词法分析过程将源程序文件是做一个字符型文本文件并读取字符，将其分为若,"/>
+词法分析词法分析过程将源程序文件视作一个字符型文本文件并读取字符，将其分为若,"/>
     
 <link rel="stylesheet" href="/css/diaspora.css">
 
@@ -77,7 +77,7 @@
         <div class="content markdown">
             <h3 id="软件综合实践"><a href="#软件综合实践" class="headerlink" title="软件综合实践"></a>软件综合实践</h3><p>这篇文章是对学院课程《软件综合实践》的学习整理，主要是编译原理的部分过程学习（编译前端）</p>
 <p>省略了第一章的内容</p>
-<h4 id="词法分析"><a href="#词法分析" class="headerlink" title="词法分析"></a>词法分析</h4><p>词法分析过程将源程序文件是做一个字符型文本文件并读取字符，将其分为若干个记号（token）。每个token都是表示源程序中信息单元的字符序列，如关键字（keyword），标识符（identifier），特殊符号（special symbol）等。token表示扫描程序从剩余字符串开头识别或匹配的某种字符格式</p>
+<h4 id="词法分析"><a href="#词法分析" class="headerlink" title="词法分析"></a>词法分析</h4><p>词法分析过程将源程序文件视作一个字符型文本文件并读取字符，将其分为若干个记号（token）。每个token都是表示源程序中信息单元的字符序列，如关键字（keyword），标识符（identifier），特殊符号（special symbol）等。token表示扫描程序从剩余字符串开头识别或匹配的某种字符格式</p>
 <p>因此扫描程序的任务是格式匹配的一种。我们需要研究扫描过程中的格式说明和识别方法，其中最重要的是<strong>正则表达式</strong>和<strong>有穷自动机</strong>。扫描程序也是编译器处理源代码输入的部分，需要尽可能高校，要注意实际细节</p>
 <p>我们通过以下几个部分来研究扫描程序：</p>
 <ol>
