@@ -678,6 +678,62 @@
 
 <p>下面是github源码</p>
 <p><a target="_blank" rel="noopener" href="https://github.com/HUST-SE-LY/loucomp_linux">https://github.com/HUST-SE-LY/loucomp_linux</a></p>
+<h3 id="报告部分"><a href="#报告部分" class="headerlink" title="报告部分"></a>报告部分</h3><h4 id="词法分析-1"><a href="#词法分析-1" class="headerlink" title="词法分析"></a>词法分析</h4><h5 id="主要设计和实现思路"><a href="#主要设计和实现思路" class="headerlink" title="主要设计和实现思路"></a>主要设计和实现思路</h5><p>词法分析过程将源程序文件视作一个字符型文本文件并读取字符，将其分为若干个记号（token）。每个token都是表示源程序中信息单元的字符序列，如关键字（keyword），标识符（identifier），特殊符号（special symbol）等。</p>
+<p>词法分析的扫描程序由语法分析的分析程序所驱动，因此只需要关心获取单个token（getToken函数）的过程。</p>
+<p>针对C–语言的语言规范，可以设计出如下token（含义在括号里表示）：</p>
+<p>ENDFILE（文件结束符EOF）,ERROR（表示出现错误的token）,IF（if保留字）,ELSE（else保留字）,WHILE（while保留字）,INPUT（input系统函数保留字）,OUTPUT（output系统函数保留字）,RETURN（return保留字）,VOID（void类型保留字）,INT（int类型保留字）,MAIN（main函数保留字）,ID（标识符）,NUM（数字），ASSIGN（赋值符号&#x3D;）,EQ（相等比较符&#x3D;）,LT（小于比较符&lt;）,NEQ（不等于比较符!&#x3D;）,BT（大于比较符&gt;）,LET（小于等于比较符&lt;&#x3D;）,BET（大于等于比较符&gt;&#x3D;）,PLUS（加号运算符+）,MINUS（减号运算符-）,TIMES（乘号运算符*）,OVER（除号运算符&#x2F;）,LPAREN（左括号(）,RPAREN（右括号)）,SEMI（分号;）,LBPAREN（左大括号{）,RBPAREN（右大括号}）,COMMA（逗号,）</p>
+<p>getToken函数的设计是基于有穷自动机（DFA）实现的，在构造DFA之前，我们需要先构造各个token对应的正则表达式</p>
+<p>letter &#x3D; [a-zA-Z]<br>digit &#x3D; [0-9]<br>ID &#x3D; letter(letter|digit)*<br>NUM &#x3D; digit+<br>ASSIGN &#x3D; &#x3D;<br>EQ &#x3D; &#x3D;&#x3D;<br>LT &#x3D; &lt;<br>NEQ &#x3D; !&#x3D;<br>BT &#x3D; &gt;<br>LET &#x3D; &lt;&#x3D;<br>BET &#x3D; &gt;&#x3D;<br>PLUS &#x3D; +<br>MINUS &#x3D; -<br>TIMES &#x3D; *<br>OVER &#x3D; &#x2F;<br>LPAREN &#x3D; (<br>RPAREN &#x3D; )<br>LBPAREN &#x3D; {<br>RBPAREN &#x3D; }<br>COMMA &#x3D; ,</p>
+<p>然后基于正则表达式构造各自的有穷自动机，再把有穷自动机结合起来形成分析程序依照的有穷自动机</p>
+<p>这里配图</p>
+<p>分析程序根据有穷自动机设计,这里给出分析程序的算法流程图</p>
+<p>这里配图</p>
+<p>主要的数据结构：</p>
+<p>当前token的类型(TokenType)使用一个枚举类型定义</p>
+<p>当前有穷自动机所处的状态(StateType)使用一个枚举类型定义</p>
+<p>token的串值采用一个定长数组（41），表示标识符长度不能超过40</p>
+<p>保留字的集合采用一个结构体数组定义</p>
+<h5 id="词法分析程序代码"><a href="#词法分析程序代码" class="headerlink" title="词法分析程序代码"></a>词法分析程序代码</h5><p>token集合定义部分代码：</p>
+<p>这里贴代码</p>
+<p>有穷自动机状态集合定义部分代码：</p>
+<p>这里贴代码</p>
+<p>保留字集合定义部分代码：</p>
+<p>这里贴代码</p>
+<p>区别标识符和保留字的函数部分代码：</p>
+<p>这里贴代码</p>
+<p>从输入缓冲区中读入字符和处理先行问题的回退输入的代码：</p>
+<p>这里贴代码</p>
+<p>获取token的函数代码：</p>
+<p>这里贴代码</p>
+<p>根据token打印相关内容的工具函数的代码：</p>
+<p>这里贴代码</p>
+<h5 id="运行截图"><a href="#运行截图" class="headerlink" title="运行截图"></a>运行截图</h5><p>这里附截图</p>
+<h4 id="Lex文件"><a href="#Lex文件" class="headerlink" title="Lex文件"></a>Lex文件</h4><h5 id="Lex输入文件代码"><a href="#Lex输入文件代码" class="headerlink" title="Lex输入文件代码"></a>Lex输入文件代码</h5><p>这里贴代码</p>
+<h5 id="实验截图"><a href="#实验截图" class="headerlink" title="实验截图"></a>实验截图</h5><p>对Lex输入文件编译构建得到词法分析程序的截图：</p>
+<p>这里附图</p>
+<p>对斐波那契数代码运行该分析程序的截图：</p>
+<p>这里附图</p>
+<h4 id="BNF描述"><a href="#BNF描述" class="headerlink" title="BNF描述"></a>BNF描述</h4><p>C–语言的BNF描述：</p>
+<p>program → function-sequence<br>function-sequence → other-function function-sequence | main-function<br>other-function → return-type identifier “(“(params|void)”)” { statement-sequence }<br>main-function → void main”(“void”)” {statement-sequence}<br>return-type → void|int<br>params → params,assignment-stmt|assignment-stmt<br>statement-sequence → statement-sequence statement|statement<br>statement → if-stmt|while-stmt|declaration-stmt|assignment-stmt|input-stmt|output-stmt|return-stmt|func-stmt<br>if-stmt → if”(“exp”)”({stmt-sequence}|statement)|<br>          if”(“exp”)”({stmt-sequence}|statment)else({stmt-sequence}|statement)<br>while-stmt → while”(“exp”)”({statement-seqence}|statement)<br>declaration-stmt → int identifier<br>assignment-stmt → identifier &#x3D; (number|identifier)<br>func-stmt → identifier”(“arg-list|ε”)”<br>arg-list → arg-list, exp|exp<br>input-stmt → input”(“”)”<br>output-stmt → output”(“(identifier|number)”)”<br>return-stmt → return (identifier|number)<br>exp → simple-exp comparasion-op simple-exp|simple-exp<br>comparation-op → &lt;|&lt;&#x3D;|&#x3D;&#x3D;|&gt;&#x3D;|&gt;|!&#x3D;<br>simple-exp → simple-exp addop term|term<br>addop → +|-<br>term → term mulop factor|factor<br>mulop → *|&#x2F;<br>factor → “(“exp”)”|num|identifier|func-exp<br>func-exp → func-stmt</p>
+<h4 id="语法分析程序"><a href="#语法分析程序" class="headerlink" title="语法分析程序"></a>语法分析程序</h4><h5 id="主要的设计和实现思路"><a href="#主要的设计和实现思路" class="headerlink" title="主要的设计和实现思路"></a>主要的设计和实现思路</h5><p>首先设计抽象语法树节点的数据结构</p>
+<p>一个抽象语法树节点由一个结构体构造而来，包括了至多3个子节点，一个兄弟节点，节点所在的行号，节点类型，用联合体（union）构造节点类型下更为细分的子类型和节点包含的属性，为表达式类型专门设计的表达式的值类型，为函数类型专门设计的返回值类型</p>
+<p>用这样的语法树节点构造出的语法树可以用下图来粗略表示</p>
+<p>上面给出了BNF，但在构造语法分析程序时使用的是EBNF，先将BNF转换为EBNF</p>
+<p>program → function-sequence<br>function-sequence → {other-function} main-function<br>other-function → return-type identifier “(“(params|void)”)” “{“ statement-sequence “}”<br>main-function → void main”(“void”)” “{“statement-sequence”}”<br>return-type → void|int<br>params → declaration-stmt {,declaration-stmt}<br>statement-sequence → {statement}<br>statement → (if-stmt|while-stmt|declaration-stmt|assignment-stmt|input-stmt|output-stmt|return-stmt|<br>            func-statement);<br>if-stmt → if”(“exp”)” (“{“stmt-sequence”}”|statement)[else(“{“stmt-sequence”}”|statement)]<br>while-stmt → while”(“exp”)” (“{“statement-seqence”}”|statement)<br>declaration-stmt → int identifier<br>assignment-stmt → identifier &#x3D; (number|identifier)<br>input-stmt → input”(“”)”<br>output-stmt → output”(“(identifier|number)”)”<br>return-stmt → return (identifier|number)<br>exp → simple-exp[comparasion-op simple-exp]   </p>
+<p> comparation-op → &lt;|&lt;&#x3D;|&#x3D;&#x3D;|&gt;&#x3D;|&gt;|!&#x3D;<br>simple-exp → term {addop term}<br>term → factor{mulop factor}<br>mulop → *|&#x2F;<br>factor → “(“exp”)” | number | identifier | func-exp<br>func-exp → func-stmt</p>
+<p>然后根据EBNF构造出不同类型文法所对应的节点数据结构</p>
+<p>下面一组图片是每种节点所对应的具体的数据结构</p>
+<p>这里配很多图片</p>
+<p>每种节点都对应一个匹配函数，在分析程序运行时，会递归地调用它们，递归程序的算法流程图如图所示</p>
+<p>这里配图</p>
+<p>在分析程序运行过程中同样会调用用于打印语法树的工具函数，实现打印缩进的原理是：</p>
+<p>可以看到每调用一次工具函数都会先让缩进增加两格空格，如果有子节点的话就会递归调用工具函数，导致缩进继续增加，缩进效果就是这样实现的。而当没有孩子节点的时候转到兄弟节点（没有兄弟节点就结束while循环），转到兄弟节点后会让缩进减少两格空格，所以同级的节点缩进数一定相同，依靠缩进便于展示树状结构。用流程图表示如下：</p>
+<p>这里配图</p>
+<h5 id="递归下降语法分析代码"><a href="#递归下降语法分析代码" class="headerlink" title="递归下降语法分析代码"></a>递归下降语法分析代码</h5><p>语法树节点定义部分代码：</p>
+<p>这里配代码</p>
+<p>分析程序的代码：</p>
+<p>这里配代码</p>
+<h5 id="实验演示"><a href="#实验演示" class="headerlink" title="实验演示"></a>实验演示</h5><p>这里配图</p>
 <p>​                                                                                                                                                                                                                                        </p>
 <p>​                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                </p>
 <p>​                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            ​                 </p>
